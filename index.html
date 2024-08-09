@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Favero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4d8a92; /* Azul Royal */
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #9ec3c8;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Centraliza os botões */
+            padding: 10px 0;
+        }
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            margin: 0 10px; /* Espaçamento entre os botões */
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #ddd; /* Adiciona borda */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 2em;
+            margin: 1em 0;
+            display: none; /* Esconde as seções inicialmente */
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        #contact form label {
+            margin-bottom: 0.5em;
+        }
+        #contact form input, #contact form textarea {
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #contact form input[type="submit"] {
+            background-color: #4d8a92; /* Azul Royal */
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 0.75em;
+            border-radius: 4px;
+        }
+        .portfolio-gallery {
+            display: flex;
+            flex-direction: column; /* Alinha as imagens em coluna */
+            align-items: center; /* Centraliza as imagens horizontalmente */
+        }
+        .portfolio-gallery img {
+            max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guilherme Favero</h1>
+    </header>
+    <nav>
+        <a onclick="showSection('about')">Sobre Mim</a>
+        <a onclick="showSection('education')">Formação Educacional e Idiomas</a>
+        <a onclick="showSection('portfolio')">Portfólio</a>
+        <a onclick="showSection('contact')">Contato</a>
+    </nav>
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Me chamo Guilherme Favero, tenho 20 anos de idade, moro em São Paulo-SP e curso Análise e Desenvolvimento de Sistemas.
+            Moro sozinho, tenho um gato de estimação chamado Bartolomeu e nos tempos livre costumo praticar vôlei e sair para algum
+            parque etc. Aos fins de semana assisto séries e vou a shows/festivais.
+         </p>
+    </section>
+    <section id="education">
+        <h2>Formação Educacional e Idiomas</h2>
+        <p>Atualmente estou no 4° semestre do ensino superior em Análise e Desenvolvimento
+            de Sistemas na Universidade UNINTER. Possuo inglês nivel básico II e Espanhol nivel intermediário. </p>
+    </section>
+    <section id="portfolio">
+        <h2>Portfólio</h2>
+        <p>Logomarcas; Sites; Banners.</p>
+        <div class="portfolio-gallery">
+            <img src="imagens/Projeto.jpg" alt="Projeto">
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contato</h2>
+        <form action="mailto:seuemail@example.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message"></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+    <script>
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Mostra a seção correspondente
+            const sectionToShow = document.getElementById(sectionId);
+            sectionToShow.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
