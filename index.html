@@ -97,6 +97,15 @@
         #cart ul li {
             margin-bottom: 10px;
         }
+        .product-options {
+            margin-top: 10px;
+        }
+        .product-options select {
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
@@ -125,13 +134,41 @@
                 <img src="imagens/produto1.jpg" alt="Produto 1">
                 <h3>Wicked</h3>
                 <p>R$ 59,99</p>
-                <button onclick="addToCart('Wicked', 59.99)">Adicionar ao Carrinho</button>
+                <div class="product-options">
+                    <label for="size1">Tamanho:</label>
+                    <select id="size1">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                    </select>
+                    <br>
+                    <label for="color1">Cor:</label>
+                    <select id="color1">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Wicked', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
                 <img src="imagens/produto2.jpg" alt="Produto 2">
                 <h3>Glinda</h3>
                 <p>R$ 59,99</p>
-                <button onclick="addToCart('Glinda', 59.99)">Adicionar ao Carrinho</button>
+                <div class="product-options">
+                    <label for="size2">Tamanho:</label>
+                    <select id="size2">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                    </select>
+                    <br>
+                    <label for="color2">Cor:</label>
+                    <select id="color2">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Glinda', 59.99, document.getElementById('size2').value, document.getElementById('color2').value)">Adicionar ao Carrinho</button>
             </div>
             <!-- Adicione mais produtos aqui -->
         </div>
@@ -176,8 +213,8 @@
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        function addToCart(product, price) {
-            cart.push({ product, price });
+        function addToCart(product, price, size, color) {
+            cart.push({ product, price, size, color });
             updateCart();
         }
 
@@ -186,7 +223,7 @@
             cartItems.innerHTML = '';
             cart.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = `${item.product} - R$ ${item.price}`;
+                li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
                 cartItems.appendChild(li);
             });
         }
