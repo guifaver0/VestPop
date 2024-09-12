@@ -14,16 +14,24 @@
             color: #333;
         }
         header {
-            background-color: #4d8a92; /* Azul Royal */
+            background-color: #4d8a92;
             color: white;
             padding: 1em 0;
             text-align: center;
+            position: relative;
+        }
+        #cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
         }
         nav {
             background-color: #9ec3c8;
             overflow: hidden;
             display: flex;
-            justify-content: center; /* Centraliza os botões */
+            justify-content: center;
             padding: 10px 0;
         }
         nav a {
@@ -31,11 +39,11 @@
             color: white;
             text-align: center;
             padding: 14px 20px;
-            margin: 0 10px; /* Espaçamento entre os botões */
+            margin: 0 10px;
             text-decoration: none;
             cursor: pointer;
-            border: 2px solid #ddd; /* Adiciona borda */
-            border-radius: 5px; /* Bordas arredondadas */
+            border: 2px solid #ddd;
+            border-radius: 5px;
         }
         nav a:hover {
             background-color: #ddd;
@@ -44,69 +52,136 @@
         section {
             padding: 2em;
             margin: 1em 0;
-            display: none; /* Esconde as seções inicialmente */
+            display: none;
         }
-        #contact form {
+        #collection .product {
             display: flex;
-            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
-        #contact form label {
-            margin-bottom: 0.5em;
-        }
-        #contact form input, #contact form textarea {
-            margin-bottom: 1em;
-            padding: 0.5em;
+        #collection .product-item {
+            background-color: white;
+            padding: 1em;
+            margin: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
         }
-        #contact form input[type="submit"] {
-            background-color: #4d8a92; /* Azul Royal */
+        #collection .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        #collection .product-item button {
+            background-color: #4d8a92;
             color: white;
             border: none;
+            padding: 10px;
             cursor: pointer;
-            padding: 0.75em;
+            margin-top: 10px;
             border-radius: 4px;
         }
-        .portfolio-gallery {
-            display: flex;
-            flex-direction: column; /* Alinha as imagens em coluna */
-            align-items: center; /* Centraliza as imagens horizontalmente */
+        #collection .product-item button:hover {
+            background-color: #333;
         }
-        .portfolio-gallery img {
-            max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
-            height: auto; /* Mantém a proporção da imagem */
+        #cart {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
+        }
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        #cart ul li {
+            margin-bottom: 10px;
+        }
+        .product-options {
+            margin-top: 10px;
+        }
+        .product-options select {
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>VESTPOP</h1>
+        <div id="cart-icon" onclick="showSection('cart')">🛒 Carrinho</div>
     </header>
     <nav>
         <a onclick="showSection('about')">Início</a>
-        <a onclick="showSection('education')">Coleções</a>
-        <a onclick="showSection('portfolio')">Sobre a Loja</a>
+        <a onclick="showSection('collection')">Coleções</a>
+        <a onclick="showSection('sobre')">Sobre a Loja</a>
         <a onclick="showSection('contact')">Contato</a>
     </nav>
+
     <section id="about">
         <h2>EM ALTA!</h2>
         <div class="portfolio-gallery">
-            <img src="imagens/1.jpg" alt="1">
+            <img src="imagens/" alt="1">
         </div>
     </section>
-    <section id="education">
-        <h2>Formação Educacional e Idiomas</h2>
-        <p>Atualmente estou no 4° semestre do ensino superior em Análise e Desenvolvimento
-            de Sistemas na Universidade UNINTER. Possuo inglês nivel básico II e Espanhol nivel intermediário. </p>
+
+    <section id="collection">
+        <h2>Nossas Coleções</h2>
+        <div class="product">
+            <div class="product-item">
+                <img src="imagens/8.jpg" alt="8">
+                <h3>Wicked</h3>
+                <p>R$ 59,99</p>
+                <div class="product-options">
+                    <label for="size1">Tamanho:</label>
+                    <select id="size1">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                    </select>
+                    <br>
+                    <label for="color1">Cor:</label>
+                    <select id="color1">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Wicked', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-item">
+                <img src="imagens/10.jpg" alt="10">
+                <h3>Glinda</h3>
+                <p>R$ 59,99</p>
+                <div class="product-options">
+                    <label for="size2">Tamanho:</label>
+                    <select id="size2">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                    </select>
+                    <br>
+                    <label for="color2">Cor:</label>
+                    <select id="color2">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Glinda', 59.99, document.getElementById('size2').value, document.getElementById('color2').value)">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Adicione mais produtos aqui -->
+        </div>
     </section>
-    <section id="portfolio">
-        <h2>Portfólio</h2>
-        <p>Logomarcas; Sites; Banners.</p>
+
+    <section id="sobre">
+        <h2>Sobre a Loja</h2>
+        <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
         <div class="portfolio-gallery">
             <img src="imagens/Projeto.jpg" alt="Projeto">
         </div>
     </section>
+
     <section id="contact">
         <h2>Contato</h2>
         <form action="faverogui@yahoo.com" method="post" enctype="text/plain">
@@ -119,18 +194,42 @@
             <input type="submit" value="Enviar">
         </form>
     </section>
+
+    <section id="cart">
+        <h2>Seu Carrinho</h2>
+        <div id="cart-items">
+            <ul></ul>
+        </div>
+    </section>
+
     <script>
+        let cart = [];
+
         function showSection(sectionId) {
-            // Esconde todas as seções
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.style.display = 'none';
             });
-
-            // Mostra a seção correspondente
-            const sectionToShow = document.getElementById(sectionId);
-            sectionToShow.style.display = 'block';
+            document.getElementById(sectionId).style.display = 'block';
         }
+
+        function addToCart(product, price, size, color) {
+            cart.push({ product, price, size, color });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items').querySelector('ul');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
+                cartItems.appendChild(li);
+            });
+        }
+
+        // Mostra a seção inicial
+        showSection('about');
     </script>
 </body>
 </html>
