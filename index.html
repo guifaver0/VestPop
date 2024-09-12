@@ -133,6 +133,28 @@ header h1 {
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+        /* Container da imagem com lupa */
+        .zoom-container {
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        /* A imagem original */
+        .zoom-container img {
+            max-width: 100%;
+            transition: transform 0.2s ease; /* Transição suave do zoom */
+        }
+
+        /* Imagem ampliada */
+        .zoom-container:hover img {
+            transform: scale(1.5); /* Define o nível de zoom */
+        }
+
+        /* Mostra o efeito de zoom ao passar o mouse */
+        .zoom-container:hover {
+            cursor: zoom-out;
+        }
     </style>
 </head>
 <body>
@@ -162,6 +184,7 @@ header h1 {
         <h2>Nossas Peças</h2>
         <div class="product">
             <div class="product-item">
+                <div class="zoom-container"></div>
                 <img src="imagens/tateb.jpg" alt="tateb">
                 <h3>Tate Mcrae</h3>
                 <p>R$ 59,99</p>
@@ -183,6 +206,7 @@ header h1 {
                 <button onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
+                <div class="zoom-container"></div>
                 <img src="imagens/tatepb.jpg" alt="8">
                 <h3>Tatepalooza</h3>
                 <p>R$ 59,99</p>
