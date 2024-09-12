@@ -5,33 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VESTPOP</title>
     <style>
-        #logo-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-#logo {
-    height: 50px;
-    margin-right: 10px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #fafeff;
-}
-
-#cart-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
+        /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -40,6 +14,7 @@ header h1 {
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background-color: #4d8a92;
             color: white;
@@ -47,13 +22,7 @@ header h1 {
             text-align: center;
             position: relative;
         }
-        #cart-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
+
         nav {
             background-color: #4d8a92;
             overflow: hidden;
@@ -61,31 +30,29 @@ header h1 {
             justify-content: center;
             padding: 10px 0;
         }
+
         nav a {
-            display: block;
             color: white;
             text-align: center;
             padding: 14px 20px;
             margin: 0 10px;
             text-decoration: none;
-            cursor: pointer;
             border: 2px solid #ddd;
             border-radius: 5px;
         }
+
         nav a:hover {
             background-color: #ddd;
             color: black;
         }
-        section {
-            padding: 2em;
-            margin: 1em 0;
-            display: none;
-        }
+
+        /* Produtos e coleções */
         #collection .product {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+
         #collection .product-item {
             background-color: white;
             padding: 1em;
@@ -95,44 +62,12 @@ header h1 {
             width: 200px;
             text-align: center;
         }
+
         #collection .product-item img {
             max-width: 100%;
             height: auto;
         }
-        #collection .product-item button {
-            background-color: #4d8a92;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-        #collection .product-item button:hover {
-            background-color: #333;
-        }
-        #cart {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #cart ul {
-            list-style: none;
-            padding: 0;
-        }
-        #cart ul li {
-            margin-bottom: 10px;
-        }
-        .product-options {
-            margin-top: 10px;
-        }
-        .product-options select {
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
+
         /* Container da imagem com lupa */
         .zoom-container {
             position: relative;
@@ -159,30 +94,19 @@ header h1 {
 </head>
 <body>
     <header>
-        <div id="logo-container">
-            <img src="imagens/logo.jpg" alt="VestPop Logo" id="logo">
-            <h1>VESTPOP</h1>
-        </div>
-        <div id="cart-icon" onclick="showSection('cart')">🛒</div>
+        <h1>VESTPOP</h1>
     </header>
-    
+
     <nav>
-        <a onclick="showSection('about')">Início</a>
         <a onclick="showSection('collection')">Coleções</a>
         <a onclick="showSection('sobre')">Sobre a Loja</a>
         <a onclick="showSection('contact')">Contato</a>
     </nav>
 
-    <section id="about">
-        <h2>EM ALTA!</h2>
-        <div class="portfolio-gallery">
-            <img src="imagens/" alt="1">
-        </div>
-    </section>
-
     <section id="collection">
         <h2>Nossas Peças</h2>
         <div class="product">
+            <!-- Produto 1 -->
             <div class="product-item">
                 <div class="zoom-container">
                     <img src="imagens/tateb.jpg" alt="Tate Mcrae">
@@ -205,268 +129,109 @@ header h1 {
                     </select>
                 </div>
                 <button onclick="addToCart('Tate Mcrae', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>            
+            </div>
+
+            <!-- Produto 2 -->
             <div class="product-item">
-                <div class="zoom-container"></div>
-                <img src="imagens/tatepb.jpg" alt="8">
+                <div class="zoom-container">
+                    <img src="imagens/tatepb.jpg" alt="Tatepalooza">
+                </div>
                 <h3>Tatepalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size2">Tamanho:</label>
+                    <select id="size2">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color2">Cor:</label>
+                    <select id="color2">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value)">Adicionar ao Carrinho</button>
             </div>
+
+            <!-- Produto 3 -->
             <div class="product-item">
-                <img src="imagens/thinkb.jpg" alt="thinkb">
+                <div class="zoom-container">
+                    <img src="imagens/thinkb.jpg" alt="Think Later">
+                </div>
                 <h3>Think Later</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size3">Tamanho:</label>
+                    <select id="size3">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color3">Cor:</label>
+                    <select id="color3">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Think Later', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value)">Adicionar ao Carrinho</button>
             </div>
+
+            <!-- Produto 4 -->
             <div class="product-item">
-                <img src="imagens/gutsb.jpg" alt="gutsb">
+                <div class="zoom-container">
+                    <img src="imagens/gutsb.jpg" alt="Guts">
+                </div>
                 <h3>Guts</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size4">Tamanho:</label>
+                    <select id="size4">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color4">Cor:</label>
+                    <select id="color4">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Guts', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value)">Adicionar ao Carrinho</button>
             </div>
+
+            <!-- Produto 5 -->
             <div class="product-item">
-                <img src="imagens/orb.jpg" alt="orb">
+                <div class="zoom-container">
+                    <img src="imagens/orb.jpg" alt="O.R">
+                </div>
                 <h3>O.R</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size5">Tamanho:</label>
+                    <select id="size5">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color5">Cor:</label>
+                    <select id="color5">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('O.R', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value)">Adicionar ao Carrinho</button>
             </div>
-            <div class="product-item">
-                <img src="imagens/oliviapb.jpg" alt="oliviapb">
-                <h3>Oliviapalooza</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img src="imagens/jaob.jpg" alt="jaob">
-                <h3>Jão</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Jão', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img src="imagens/jaoob.jpg" alt="jaoob">
-                <h3>Cowboy</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Cowboy', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img src="imagens/jaopb.jpg" alt="jaopb">
-                <h3>Jãopalooza</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img src="imagens/shawnb.jpg" alt="shawnb">
-                <h3>Shawn</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Shawn', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img src="imagens/mendesb.jpg" alt="mendesb">
-                <h3>Shawn Mendes</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img src="imagens/shpb.jpg" alt="shpb">
-                <h3>Shawnpalooza</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
-            <!-- Adicione mais produtos aqui -->
-        </div>
-    </section>
 
-    <section id="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
-        <div class="portfolio-gallery">
-            <img src="imagens/Projeto.jpg" alt="Projeto">
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contato</h2>
-        <form action="faverogui@yahoo.com" method="post" enctype="text/plain">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message"></textarea>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
-
-    <section id="cart">
-        <h2>Seu Carrinho</h2>
-        <div id="cart-items">
-            <ul></ul>
+            <!-- Continue para os outros produtos -->
         </div>
     </section>
 
@@ -487,17 +252,17 @@ header h1 {
         }
 
         function updateCart() {
-            const cartItems = document.getElementById('cart-items').querySelector('ul');
-            cartItems.innerHTML = '';
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = ''; // Limpar o conteúdo antes de atualizar
             cart.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
+                li.textContent = `${item.product} - R$${item.price.toFixed(2)} - Tamanho: ${item.size} - Cor: ${item.color}`;
                 cartItems.appendChild(li);
             });
         }
 
-        // Mostra a seção inicial
-        showSection('about');
+        // Mostrar a seção inicial (Coleções)
+        showSection('collection');
     </script>
 </body>
 </html>
