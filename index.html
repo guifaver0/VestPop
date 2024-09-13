@@ -622,24 +622,36 @@ function processPayment() {
         return;
     }
 
-    const product = cart[0]; // Para simplicidade, pegamos o primeiro produto
-    const paymentLink = `https://sacola.pagbank.com.br/348f7d37-9a06-49b0-8c91-ecab81aceef5`; // Substitua pelo seu link de pagamento
+    let paymentLink;
+    if (cart.length === 1) {
+        // Link de pagamento para 1 produto
+        const product = cart[0];
+        paymentLink = `https://pag.ae/7-Vqr-LQm`; // Substitua pela lógica do seu serviço de pagamento
+    } else if (cart.length === 2) {
+        // Link de pagamento para 2 produtos
+        paymentLink = `https://pag.ae/7-VqsmFB9`; // Substitua pela lógica do seu serviço de pagamento
+    } else if (cart.length >= 3) {
+        // Link de pagamento para 3 ou mais produtos
+        paymentLink = `https://pag.ae/7-VqsJ411`; // Substitua pela lógica do seu serviço de pagamento
+    }
 
     // Simular a geração de um link de pagamento
     window.open(paymentLink, '_blank');
 
     // Enviar e-mail
-    sendEmail(product);
+    sendEmail(cart); // Agora vamos enviar todos os itens do carrinho
 }
 
-function sendEmail(product) {
+function sendEmail(cartItems) {
+    const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+    
     const emailData = {
         to: 'vestpop@yahoo.com',
         subject: 'Nova Compra',
-        body: `Produto comprado: ${product.product} - Tamanho: ${product.size} - Cor: ${product.color} - Preço: R$ ${product.price}`
+        body: `Produtos comprados:\n${productsDetails}`
     };
 
-    fetch('seu_backend_para_enviar_email', {
+    fetch('http://localhost:3000/send-email', { // Altere a URL conforme necessário
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -658,6 +670,7 @@ function sendEmail(product) {
         console.error('Erro:', error);
     });
 }
+
 
 showSection('about');
     </script>
