@@ -15,14 +15,21 @@ class Main extends CI_Controller
     }
 
     public function sendEmail()
-    {
-        // Dados do cliente enviados via POST
-        $cpf = $this->input->post('cpf');
-        $telefone = $this->input->post('telefone');
-        $emailCliente = $this->input->post('email');
-        $cart = $this->input->post('cart'); // Carrinho (produtos selecionados)
+{
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-        // Detalhes dos produtos
+    if ($this->input->server('REQUEST_METHOD') === 'POST') {
+        $inputJSON = file_get_contents('php://input');
+        $input = json_decode($inputJSON, true);
+
+        $cpf = $input['cpf'];
+        $telefone = $input['telefone'];
+        $emailCliente = $input['email'];
+        $cart = $input['cart'];
+
+        // Processa os produtos no carrinho
         $productsDetails = "";
         foreach ($cart as $item) {
             $productsDetails .= "{$item['product']} - Tamanho: {$item['size']} - Cor: {$item['color']} - Preço: R$ {$item['price']}\n";
@@ -38,31 +45,29 @@ class Main extends CI_Controller
         // Configuração do PHPMailer
         $mail = new PHPMailer(true);
 
-try {
-    // Configurações do servidor SMTP
-    $mail->isSMTP();
-    $mail->Host = 'smtp.mail.yahoo.com';  // Servidor SMTP do Yahoo
-    $mail->SMTPAuth = true;
-    $mail->Username = 'vestpop@yahoo.com'; // Seu e-mail do Yahoo
-    $mail->Password = 'trmikxbfdvrvtwdy';           // Sua senha do Yahoo
-    $mail->SMTPSecure = 'ssl';              // Tipo de criptografia (SSL para Yahoo)
-    $mail->Port = 465;                      // Porta para SSL
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.mail.yahoo.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'vestpop@yahoo.com';
+            $mail->Password = 'trmikxbfdvrvtwdy';
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
 
-    // Remetente e destinatário
-    $mail->setFrom('vestpop@yahoo.com', 'VESTPOP');
-    $mail->addAddress('vestpop@yahoo.com');  // O e-mail da loja (destinatário)
+            $mail->setFrom('vestpop@yahoo.com', 'VESTPOP');
+            $mail->addAddress('vestpop@yahoo.com');
 
-    // Conteúdo do e-mail
-    $mail->isHTML(false);  // Definir o formato do e-mail como texto simples
-    $mail->Subject = 'Nova Compra - VESTPOP';
-    $mail->Body = $emailBody;
+            $mail->isHTML(false);
+            $mail->Subject = 'Nova Compra - VESTPOP';
+            $mail->Body = $emailBody;
 
-    // Enviar o e-mail
-    $mail->send();
-    echo json_encode(['status' => 'success', 'message' => 'E-mail enviado com sucesso!']);
-} catch (Exception $e) {
-    echo json_encode(['status' => 'error', 'message' => "Erro ao enviar e-mail: {$mail->ErrorInfo}"]);
-}
-
+            $mail->send();
+            echo json_encode(['status' => 'success', 'message' => 'E-mail enviado com sucesso!']);
+        } catch (Exception $e) {
+            echo json_encode(['status' => 'error', 'message' => "Erro ao enviar e-mail: {$mail->ErrorInfo}"]);
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Método de requisição inválido']);
     }
 }
+
