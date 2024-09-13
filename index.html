@@ -183,7 +183,6 @@ header h1 {
                 </div>
                 <button onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
             </div>
-            
             <div class="product-item">
                 <img id="tatepb-image" src="imagens/tatepb.jpg" alt="tatepb">
                 <h3>Tatepalooza</h3>
@@ -205,27 +204,26 @@ header h1 {
                 </div>
                 <button onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value)">Adicionar ao Carrinho</button>
             </div>
-            
             <div class="product-item">
                 <img src="imagens/thinkb.jpg" alt="thinkb">
                 <h3>Think Later</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size3">Tamanho:</label>
+                    <select id="size3">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color3">Cor:</label>
+                    <select id="color3" onchange="changeImage('think-image', this.value, 'think')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Think Later', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
                 <img src="imagens/gutsb.jpg" alt="gutsb">
