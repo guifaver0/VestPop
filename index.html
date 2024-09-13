@@ -375,46 +375,46 @@ header h1 {
                 <button onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
-                <img src="imagens/mendesb.jpg" alt="mendesb">
+                <img id="mendes-image" src="imagens/mendesb.jpg" alt="mendesb">
                 <h3>Shawn Mendes</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size11">Tamanho:</label>
+                    <select id="size11">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color11">Cor:</label>
+                    <select id="color11" onchange="changeImage('mendes-image', this.value, 'mendes')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
-                <img src="imagens/shpb.jpg" alt="shpb">
+                <img id="shp-image" src="imagens/shpb.jpg" alt="shpb">
                 <h3>Shawnpalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size12">Tamanho:</label>
+                    <select id="size12">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color11">Cor:</label>
+                    <select id="color11 "onchange="changeImage('shp-image', this.value, 'shp')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size11').value, document.getElementById('color11').value)">Adicionar ao Carrinho</button>
             </div>
             <!-- Adicione mais produtos aqui -->
         </div>
