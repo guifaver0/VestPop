@@ -6,31 +6,31 @@
     <title>VESTPOP</title>
     <style>
         #logo-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
 
-#logo {
-    height: 50px;
-    margin-right: 10px;
-}
+        #logo {
+            height: 50px;
+            margin-right: 10px;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #ffffff;
-}
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #ffffff;
+        }
 
-#cart-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-}
+        #cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +40,7 @@ header h1 {
             background-color: #f4f4f4;
             color: #333;
         }
+        
         header {
             background-color: #4d8a92;
             color: white;
@@ -47,6 +48,7 @@ header h1 {
             text-align: center;
             position: relative;
         }
+        
         #cart-icon {
             position: absolute;
             top: 20px;
@@ -54,6 +56,7 @@ header h1 {
             font-size: 24px;
             cursor: pointer;
         }
+        
         nav {
             background-color: #4d8a92;
             overflow: hidden;
@@ -61,6 +64,7 @@ header h1 {
             justify-content: center;
             padding: 10px 0;
         }
+        
         nav a {
             display: block;
             color: white;
@@ -72,20 +76,24 @@ header h1 {
             border: 2px solid #ddd;
             border-radius: 5px;
         }
+        
         nav a:hover {
             background-color: #ddd;
             color: black;
         }
+        
         section {
             padding: 2em;
             margin: 1em 0;
             display: none;
         }
+        
         #collection .product {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        
         #collection .product-item {
             background-color: white;
             padding: 1em;
@@ -95,10 +103,12 @@ header h1 {
             width: 200px;
             text-align: center;
         }
+        
         #collection .product-item img {
             max-width: 100%;
             height: auto;
         }
+        
         #collection .product-item button {
             background-color: #4d8a92;
             color: white;
@@ -108,25 +118,31 @@ header h1 {
             margin-top: 10px;
             border-radius: 4px;
         }
+        
         #collection .product-item button:hover {
             background-color: #333;
         }
+        
         #cart {
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        
         #cart ul {
             list-style: none;
             padding: 0;
         }
+        
         #cart ul li {
             margin-bottom: 10px;
         }
+        
         .product-options {
             margin-top: 10px;
         }
+        
         .product-options select {
             margin-top: 5px;
             padding: 5px;
@@ -138,7 +154,7 @@ header h1 {
 <body>
     <header>
         <div id="logo-container">
-            <img src="imagens/logo.jpg" alt="VestPop Logo" id="logo">
+            <img src="imagens/logo.jpg" alt="Logotipo da VestPop" id="logo">
             <h1>VESTPOP</h1>
         </div>
         <div id="cart-icon" onclick="showSection('cart')">🛒</div>
@@ -249,8 +265,8 @@ header h1 {
                 <button onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
-                <img id="or-image" src="imagens/orb.jpg" alt="orb">
-                <h3>O.R</h3>
+                <img id="dragon-image" src="imagens/dragonb.jpg" alt="dragonb">
+                <h3>Dragon Fruit</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
                     <label for="size5">Tamanho:</label>
@@ -262,230 +278,63 @@ header h1 {
                     </select>
                     <br>
                     <label for="color5">Cor:</label>
-                    <select id="color5" onchange="changeImage('or-image', this.value, 'or')">
+                    <select id="color5" onchange="changeImage('dragon-image', this.value, 'dragon')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Dragon Fruit', 59.99, document.getElementById('size5').value, document.getElementById('color5').value)">Adicionar ao Carrinho</button>
             </div>
-            <div class="product-item">
-                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb">
-                <h3>Oliviapalooza</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size6">Tamanho:</label>
-                    <select id="size6">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color6">Cor:</label>
-                    <select id="color6" onchange="changeImage('oliviap-image', this.value, 'oliviap')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size6').value, document.getElementById('color6').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img id="jao-image" src="imagens/jaob.jpg" alt="jaob">
-                <h3>Jão</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size7">Tamanho:</label>
-                    <select id="size7">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color7">Cor:</label>
-                    <select id="color7" onchange="changeImage('jao-image', this.value, 'jao')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Jão', 59.99, document.getElementById('size7').value, document.getElementById('color7').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img id="jaoo-image" src="imagens/jaoob.jpg" alt="jaoob">
-                <h3>Cowboy</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size8">Tamanho:</label>
-                    <select id="size8">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color8">Cor:</label>
-                    <select id="color8" onchange="changeImage('jaoo-image', this.value, 'jaoo')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Cowboy', 59.99, document.getElementById('size8').value, document.getElementById('color8').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img id="jaop-image" src="imagens/jaopb.jpg" alt="jaopb">
-                <h3>Jãopalooza</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size9">Tamanho:</label>
-                    <select id="size9">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color9">Cor:</label>
-                    <select id="color9" onchange="changeImage('jaop-image', this.value, 'jaop')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size9').value, document.getElementById('color9').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img id="shawn-image" src="imagens/shawnb.jpg" alt="shawnb">
-                <h3>Shawn</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size10">Tamanho:</label>
-                    <select id="size10">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color10">Cor:</label>
-                    <select id="color10" onchange="changeImage('shawn-image', this.value, 'shawn')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img id="mendes-image" src="imagens/mendesb.jpg" alt="mendesb">
-                <h3>Shawn Mendes</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size11">Tamanho:</label>
-                    <select id="size11">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color11">Cor:</label>
-                    <select id="color11" onchange="changeImage('mendes-image', this.value, 'mendes')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item">
-                <img id="shp-image" src="imagens/shpb.jpg" alt="shpb">
-                <h3>Shawnpalooza</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size12">Tamanho:</label>
-                    <select id="size12">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color11">Cor:</label>
-                    <select id="color11 "onchange="changeImage('shp-image', this.value, 'shp')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size11').value, document.getElementById('color11').value)">Adicionar ao Carrinho</button>
-            </div>
-            <!-- Adicione mais produtos aqui -->
         </div>
     </section>
 
-    <section id="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
-        <div class="portfolio-gallery">
-            <img src="imagens/Projeto.jpg" alt="Projeto">
-        </div>
+    <section id="cart">
+        <h2>Carrinho</h2>
+        <ul>
+            <li>Nenhum item no carrinho.</li>
+        </ul>
     </section>
 
     <section id="contact">
         <h2>Contato</h2>
-        <form action="faverogui@yahoo.com" method="post" enctype="text/plain">
+        <form>
             <label for="name">Nome:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
+            <br>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
+            <br>
             <label for="message">Mensagem:</label>
-            <textarea id="message" name="message"></textarea>
+            <textarea id="message" name="message" required></textarea>
+            <br>
             <input type="submit" value="Enviar">
         </form>
     </section>
 
-    <section id="cart">
-        <h2>Seu Carrinho</h2>
-        <div id="cart-items">
-            <ul></ul>
-        </div>
-    </section>
-
     <script>
-
-function changeImage(imageId, color, productName) {
-    const imageElement = document.getElementById(imageId);
-    if (color === 'Branco') {
-        imageElement.src = `imagens/${productName}w.jpg`; // Caminho da imagem branca
-    } else {
-        imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
-    }
-}
-
-
-        let cart = [];
+        function changeImage(imageId, color, productName) {
+            const imageElement = document.getElementById(imageId);
+            if (color === "Preto") {
+                imageElement.src = `imagens/${productName}b.jpg`; // Supondo que a imagem preta termine com 'b'
+            } else {
+                imageElement.src = `imagens/${productName}w.jpg`; // Supondo que a imagem branca termine com 'w'
+            }
+        }
 
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
-                section.style.display = 'none';
+                section.style.display = 'none'; // Esconder todas as seções
             });
-            document.getElementById(sectionId).style.display = 'block';
+            document.getElementById(sectionId).style.display = 'block'; // Mostrar a seção selecionada
         }
 
-        function addToCart(product, price, size, color) {
-            cart.push({ product, price, size, color });
-            updateCart();
-        }
-
-        function updateCart() {
+        function addToCart(productName, price, size, color) {
             const cartItems = document.getElementById('cart-items').querySelector('ul');
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
-                cartItems.appendChild(li);
-            });
+            const newItem = document.createElement('li');
+            newItem.textContent = `${productName} - ${size} - ${color} - R$ ${price.toFixed(2)}`;
+            cartItems.appendChild(newItem);
         }
-
-        showSection('about');
     </script>
 </body>
 </html>
