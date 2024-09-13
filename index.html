@@ -165,7 +165,7 @@
     <nav>
         <a onclick="showSection('about')">Início</a>
         <a onclick="showSection('collection')">Vestpalooza</a>
-        <a onclick="showSection('movies')">Filmes</a>
+        <a onclick="showSection('movies')">Vestcine</a>
         <a onclick="showSection('camiseta')">Camisetas</a>
         <a onclick="showSection('corta')">Corta Vento</a>
         <a onclick="showSection('sobre')">Sobre a Loja</a>
@@ -425,13 +425,76 @@
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color11">Cor:</label>
-                    <select id="color11 "onchange="changeImage('shp-image', this.value, 'shp')">
+                    <label for="color12">Cor:</label>
+                    <select id="color12 "onchange="changeImage('shp-image', this.value, 'shp')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size11').value, document.getElementById('color11').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size12').value, document.getElementById('color12').value)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-item">
+                <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb">
+                <h3>Alanis Morissette</h3>
+                <p>R$ 59,99</p>
+                <div class="product-options">
+                    <label for="size13">Tamanho:</label>
+                    <select id="size13">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color13">Cor:</label>
+                    <select id="color13 "onchange="changeImage('alanis-image', this.value, 'alanis')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-item">
+                <img id="lanis-image" src="imagens/lanisb.jpg" alt="lanisb">
+                <h3>Alanis</h3>
+                <p>R$ 59,99</p>
+                <div class="product-options">
+                    <label for="size14">Tamanho:</label>
+                    <select id="size14">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color14">Cor:</label>
+                    <select id="color14 "onchange="changeImage('lanis-image', this.value, 'lanis')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-item">
+                <img id="red-image" src="imagens/redb.jpg" alt="redb">
+                <h3>Red</h3>
+                <p>R$ 59,99</p>
+                <div class="product-options">
+                    <label for="size15">Tamanho:</label>
+                    <select id="size15">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color15">Cor:</label>
+                    <select id="color15" onchange="changeImage('red-image', this.value, 'red')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Red', 59.99, document.getElementById('size15').value, document.getElementById('color15').value)">Adicionar ao Carrinho</button>
             </div>
             <!-- Adicione mais produtos aqui -->
         </div>
