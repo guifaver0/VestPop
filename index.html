@@ -176,34 +176,36 @@ header h1 {
                     </select>
                     <br>
                     <label for="color1">Cor:</label>
-                    <select id="color1" onchange="changeImage('tate-image', this.value)">
+                    <select id="color1" onchange="changeImage('tate-image', this.value, 'tate')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
                 <button onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>            
+            </div>
+            
             <div class="product-item">
-                <img src="imagens/tatepb.jpg" alt="8">
+                <img id="tatepb-image" src="imagens/tatepb.jpg" alt="tatepb">
                 <h3>Tatepalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size2">Tamanho:</label>
+                    <select id="size2">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color2">Cor:</label>
+                    <select id="color2" onchange="changeImage('tatepb-image', this.value, 'tatepb')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value)">Adicionar ao Carrinho</button>
             </div>
+            
             <div class="product-item">
                 <img src="imagens/thinkb.jpg" alt="thinkb">
                 <h3>Think Later</h3>
@@ -448,14 +450,15 @@ header h1 {
 
     <script>
 
-function changeImage(imageId, color) {
+function changeImage(imageId, color, productName) {
     const imageElement = document.getElementById(imageId);
     if (color === 'Branco') {
-        imageElement.src = 'imagens/tatew.jpg'; // Substitua pelo caminho da imagem branca
+        imageElement.src = `imagens/${productName}w.jpg`; // Caminho da imagem branca
     } else {
-        imageElement.src = 'imagens/tateb.jpg'; // Substitua pelo caminho da imagem original
+        imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
     }
 }
+
 
         let cart = [];
 
