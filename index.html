@@ -628,62 +628,33 @@ function updateCart() {
 }
 
 function processPayment() {
-    if (cart.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-    }
-
-    // Capturar os dados do cliente
     const cpf = document.getElementById('cpf').value;
     const telefone = document.getElementById('telefone').value;
-    const email = document.getElementById('email').value;
+    const emailCliente = document.getElementById('email').value;
 
-    if (!cpf || !telefone || !email) {
+    if (!cpf || !telefone || !emailCliente) {
         alert("Por favor, preencha todos os campos!");
         return;
     }
 
-    let paymentLink;
-    if (cart.length === 1) {
-        // Link de pagamento para 1 produto
-        const product = cart[0];
-        paymentLink = `https://pag.ae/7-Vqr-LQm`; // Substitua pela lógica do seu serviço de pagamento
-    } else if (cart.length === 2) {
-        // Link de pagamento para 2 produtos
-        paymentLink = `https://pag.ae/7-VqsmFB9`; // Substitua pela lógica do seu serviço de pagamento
-    } else if (cart.length >= 3) {
-        // Link de pagamento para 3 ou mais produtos
-        paymentLink = `https://pag.ae/7-VqsJ411`; // Substitua pela lógica do seu serviço de pagamento
-    }
-
-    // Simular a geração de um link de pagamento
-    window.open(paymentLink, '_blank');
-
-    // Enviar e-mail
-    sendEmail(cart, { cpf, telefone, email }); // Agora vamos enviar todos os itens do carrinho e os dados do cliente
-}
-
-function sendEmail(cartItems, customerData) {
-    const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-    
-    const emailData = {
-        to: 'vestpop@yahoo.com',
-        subject: 'Nova Compra',
-        body: `Produtos comprados:\n${productsDetails}\n\nDados do Cliente:\nCPF: ${customerData.cpf}\nTelefone: ${customerData.telefone}\nE-mail: ${customerData.email}`
-    };
-
-    fetch('http://localhost:3000/send-email', { // Altere a URL conforme necessário
+    fetch('http://localhost/seu_projeto/index.php/main/sendEmail', { // Substitua pela URL correta
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(emailData)
+        body: JSON.stringify({
+            cpf: cpf,
+            telefone: telefone,
+            email: emailCliente,
+            cart: cart
+        })
     })
-    .then(response => {
-        if (response.ok) {
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
             alert('E-mail enviado com sucesso!');
         } else {
-            alert('Erro ao enviar e-mail.');
+            alert('Erro ao enviar e-mail: ' + data.message);
         }
     })
     .catch(error => {
