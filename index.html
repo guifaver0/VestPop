@@ -146,9 +146,10 @@ header h1 {
     
     <nav>
         <a onclick="showSection('about')">Início</a>
-        <a onclick="showSection('collection')">Lollapalooza</a>
+        <a onclick="showSection('collection')">Vestpalooza</a>
+        <a onclick="showSection('movies')">Filmes</a>
+        <a onclick="showSection('camiseta')">Camisetas</a>
         <a onclick="showSection('corta')">Corta Vento</a>
-        <a onclick="showSection('camiseta')">Camiseta</a>
         <a onclick="showSection('sobre')">Sobre a Loja</a>
         <a onclick="showSection('contact')">Contato</a>
     </nav>
@@ -336,21 +337,21 @@ header h1 {
                 <h3>Jãopalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
+                    <label for="size9">Tamanho:</label>
+                    <select id="size9">
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
                     <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <label for="color9">Cor:</label>
+                    <select id="color9" onchange="changeImage('jaop-image', this.value, 'jaop')">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
-                <button onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+                <button onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size9').value, document.getElementById('color9').value)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item">
                 <img src="imagens/shawnb.jpg" alt="shawnb">
