@@ -41,10 +41,10 @@ class Main extends CI_Controller
         try {
             // Configurações do servidor SMTP
             $mail->isSMTP();
-            $mail->Host = 'smtp.seuprovedor.com';  // Provedor de e-mail (exemplo: smtp.gmail.com)
+            $mail->Host = 'smtp.yahoo.com';  // Provedor de e-mail (exemplo: smtp.gmail.com)
             $mail->SMTPAuth = true;
-            $mail->Username = 'seuemail@dominio.com'; // Seu e-mail
-            $mail->Password = 'suasenha';            // Sua senha
+            $mail->Username = 'vestpop@yahoo.com'; // Seu e-mail
+            $mail->Password = 'Gui@140704';            // Sua senha
             $mail->SMTPSecure = 'tls';               // Criptografia (TLS/SSL)
             $mail->Port = 587;                       // Porta do servidor SMTP
 
