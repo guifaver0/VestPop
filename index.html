@@ -163,7 +163,7 @@ header h1 {
         <h2>Nossas Peças</h2>
         <div class="product">
             <div class="product-item">
-                <img src="imagens/tateb.jpg" alt="tateb">
+                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb">
                 <h3>Tate Mcrae</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -176,13 +176,13 @@ header h1 {
                     </select>
                     <br>
                     <label for="color1">Cor:</label>
-                    <select id="color1">
+                    <select id="color1" onchange="changeImage('tate-image', this.value)">
                         <option value="Preto">Preto</option>
                         <option value="Branco">Branco</option>
                     </select>
                 </div>
                 <button onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
-            </div>
+            </div>            
             <div class="product-item">
                 <img src="imagens/tatepb.jpg" alt="8">
                 <h3>Tatepalooza</h3>
@@ -447,6 +447,16 @@ header h1 {
     </section>
 
     <script>
+
+function changeImage(imageId, color) {
+    const imageElement = document.getElementById(imageId);
+    if (color === 'Branco') {
+        imageElement.src = 'imagens/tatew.jpg'; // Substitua pelo caminho da imagem branca
+    } else {
+        imageElement.src = 'imagens/tateb.jpg'; // Substitua pelo caminho da imagem original
+    }
+}
+
         let cart = [];
 
         function showSection(sectionId) {
