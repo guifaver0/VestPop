@@ -552,15 +552,6 @@
 
     <section id="contact">
         <h2>Contato</h2>
-        <form action="faverogui@yahoo.com" method="post" enctype="text/plain">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message"></textarea>
-            <input type="submit" value="Enviar">
-        </form>
     </section>
 
     <section id="cart">
@@ -590,32 +581,75 @@ function changeImage(imageId, color, productName) {
 }
 
 
-        let cart = [];
+let cart = [];
 
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+function addToCart(product, price, size, color) {
+    cart.push({ product, price, size, color });
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById('cart-items').querySelector('ul');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
+        cartItems.appendChild(li);
+    });
+}
+
+function processPayment() {
+    if (cart.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    const product = cart[0]; // Para simplicidade, pegamos o primeiro produto
+    const paymentLink = `https://sacola.pagbank.com.br/348f7d37-9a06-49b0-8c91-ecab81aceef5`; // Substitua pelo seu link de pagamento
+
+    // Simular a geração de um link de pagamento
+    window.open(paymentLink, '_blank');
+
+    // Enviar e-mail
+    sendEmail(product);
+}
+
+function sendEmail(product) {
+    const emailData = {
+        to: 'vestpop@yahoo.com',
+        subject: 'Nova Compra',
+        body: `Produto comprado: ${product.product} - Tamanho: ${product.size} - Cor: ${product.color} - Preço: R$ ${product.price}`
+    };
+
+    fetch('seu_backend_para_enviar_email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('E-mail enviado com sucesso!');
+        } else {
+            alert('Erro ao enviar e-mail.');
         }
+    })
+    .catch(error => {
+        alert('Erro na comunicação com o servidor.');
+        console.error('Erro:', error);
+    });
+}
 
-        function addToCart(product, price, size, color) {
-            cart.push({ product, price, size, color });
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items').querySelector('ul');
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
-                cartItems.appendChild(li);
-            });
-        }
-
-        showSection('about');
+showSection('about');
     </script>
 </body>
 </html>
