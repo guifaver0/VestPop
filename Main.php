@@ -38,30 +38,31 @@ class Main extends CI_Controller
         // Configuração do PHPMailer
         $mail = new PHPMailer(true);
 
-        try {
-            // Configurações do servidor SMTP
-            $mail->isSMTP();
-            $mail->Host = 'smtp.yahoo.com';  // Provedor de e-mail (exemplo: smtp.gmail.com)
-            $mail->SMTPAuth = true;
-            $mail->Username = 'vestpop@yahoo.com'; // Seu e-mail
-            $mail->Password = 'Gui@140704';            // Sua senha
-            $mail->SMTPSecure = 'tls';               // Criptografia (TLS/SSL)
-            $mail->Port = 587;                       // Porta do servidor SMTP
+try {
+    // Configurações do servidor SMTP
+    $mail->isSMTP();
+    $mail->Host = 'smtp.mail.yahoo.com';  // Servidor SMTP do Yahoo
+    $mail->SMTPAuth = true;
+    $mail->Username = 'vestpop@yahoo.com'; // Seu e-mail do Yahoo
+    $mail->Password = 'trmikxbfdvrvtwdy';           // Sua senha do Yahoo
+    $mail->SMTPSecure = 'ssl';              // Tipo de criptografia (SSL para Yahoo)
+    $mail->Port = 465;                      // Porta para SSL
 
-            // Remetente e destinatário
-            $mail->setFrom('seuemail@dominio.com', 'VESTPOP');
-            $mail->addAddress('vestpop@yahoo.com');  // E-mail da loja
+    // Remetente e destinatário
+    $mail->setFrom('vestpop@yahoo.com', 'VESTPOP');
+    $mail->addAddress('vestpop@yahoo.com');  // O e-mail da loja (destinatário)
 
-            // Conteúdo do e-mail
-            $mail->isHTML(false);  // Definir o formato do e-mail como texto simples
-            $mail->Subject = 'Nova Compra - VESTPOP';
-            $mail->Body = $emailBody;
+    // Conteúdo do e-mail
+    $mail->isHTML(false);  // Definir o formato do e-mail como texto simples
+    $mail->Subject = 'Nova Compra - VESTPOP';
+    $mail->Body = $emailBody;
 
-            // Enviar o e-mail
-            $mail->send();
-            echo json_encode(['status' => 'success', 'message' => 'E-mail enviado com sucesso!']);
-        } catch (Exception $e) {
-            echo json_encode(['status' => 'error', 'message' => "Erro ao enviar e-mail: {$mail->ErrorInfo}"]);
-        }
+    // Enviar o e-mail
+    $mail->send();
+    echo json_encode(['status' => 'success', 'message' => 'E-mail enviado com sucesso!']);
+} catch (Exception $e) {
+    echo json_encode(['status' => 'error', 'message' => "Erro ao enviar e-mail: {$mail->ErrorInfo}"]);
+}
+
     }
 }
