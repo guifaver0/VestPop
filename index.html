@@ -544,54 +544,24 @@
 
 </section>
 
-
-    <section id="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
-        <div class="portfolio-gallery">
-            <img src="imagens/Projeto.jpg" alt="Projeto">
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contato</h2>
-    </section>
-
-    <section id="cart">
-    <h2>Carrinho de Compras</h2>
-    <div id="cart-items">
-        <ul></ul>
+<section id="sobre">
+    <h2>Sobre a Loja</h2>
+    <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
+    <div class="portfolio-gallery">
+        <img src="imagens/Projeto.jpg" alt="Projeto">
     </div>
-    <div>
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" placeholder="Digite seu CPF" required>
-
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" placeholder="Digite seu telefone" required>
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" placeholder="Digite seu e-mail" required>
-    </div>
-    <button onclick="processPayment()">Finalizar Compra</button>
 </section>
 
+<section id="contact">
+    <h2>Contato</h2>
+</section>
 
-    <section id="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
-        <div class="portfolio-gallery">
-            <img src="imagens/Projeto.jpg" alt="Projeto">
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contato</h2>
-    </section>
-    <section id="cart">
+<section id="cart">
     <h2>Carrinho de Compras</h2>
     <div id="cart-items">
         <ul></ul>
     </div>
-    <form action="https://formspree.io/f/xanwzlee" method="POST">
+    <form id="checkout-form" action="https://formspree.io/f/xanwzlee" method="POST">
         <div>
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
@@ -604,8 +574,10 @@
         <button type="submit">Finalizar Compra</button>
     </form>
 </section>
+
 <script>
     let cart = [];
+
     function showSection(sectionId) {
         const sections = document.querySelectorAll('section');
         sections.forEach(section => {
@@ -613,10 +585,12 @@
         });
         document.getElementById(sectionId).style.display = 'block';
     }
+
     function addToCart(product, price, size, color) {
         cart.push({ product, price, size, color });
         updateCart();
     }
+
     function updateCart() {
         const cartItems = document.getElementById('cart-items').querySelector('ul');
         cartItems.innerHTML = '';
@@ -626,14 +600,42 @@
             cartItems.appendChild(li);
         });
     }
-    // Preencher o campo hidden com os dados do carrinho antes de enviar
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function () {
+
+    const form = document.getElementById('checkout-form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir o envio padrão do formulário
+
+        // Verifica se o carrinho está vazio
+        if (cart.length === 0) {
+            alert("Seu carrinho está vazio!");
+            return;
+        }
+
+        // Preencher o campo hidden com os dados do carrinho
         const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
         document.getElementById('cart-data').value = cartData;
+
+        // Defina o link de pagamento
+        let paymentLink;
+        if (cart.length === 1) {
+            paymentLink = `https://pag.ae/7-Vqr-LQm`;
+        } else if (cart.length === 2) {
+            paymentLink = `https://pag.ae/7-VqsmFB9`;
+        } else if (cart.length >= 3) {
+            paymentLink = `https://pag.ae/7-VqsJ411`;
+        }
+
+        // Envia o formulário
+        form.submit();
+
+        // Abre o link de pagamento após um pequeno atraso
+        setTimeout(() => {
+            window.open(paymentLink, '_blank');
+        }, 500); // 500 milissegundos de atraso
     });
-showSection('about');
-    </script>
+
+    showSection('sobre'); // Ajustado para exibir a seção correta
+</script>
 
 </body>
 </html>
