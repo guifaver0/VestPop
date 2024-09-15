@@ -604,7 +604,9 @@
         });
     }
 
-    function processPayment() {
+    function processPayment(event) {
+        event.preventDefault(); // Previne o envio padrão do formulário
+
         if (cart.length === 0) {
             alert("Seu carrinho está vazio!");
             return;
@@ -620,6 +622,11 @@
             return;
         }
 
+        // Preencher o campo hidden com os dados do carrinho
+        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+        document.getElementById('cart-data').value = cartData;
+
+        // Abrir o link de pagamento
         let paymentLink;
         if (cart.length === 1) {
             paymentLink = `https://pag.ae/7-Vqr-LQm`;
@@ -629,12 +636,9 @@
             paymentLink = `https://pag.ae/7-VqsJ411`;
         }
 
-        // Preencher o campo hidden com os dados do carrinho
-        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-        document.getElementById('cart-data').value = cartData;
-
-        // Enviar o formulário
-        document.querySelector('form').submit();
+        // Enviar o formulário para o Formspree
+        const form = document.querySelector('form');
+        form.submit(); // Envia o formulário
 
         // Abrir o link de pagamento após um pequeno atraso
         setTimeout(() => {
@@ -642,8 +646,13 @@
         }, 1000); // 1 segundo de atraso
     }
 
+    // Adicionando o evento ao botão
+    const paymentButton = document.querySelector('button[type="submit"]');
+    paymentButton.addEventListener('click', processPayment);
+
     showSection('about');
 </script>
+
 
 </body>
 </html>
