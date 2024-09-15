@@ -544,6 +544,23 @@
 
 </section>
 
+    function changeImage(imageId, color, productName) {
+    const imageElement = document.getElementById(imageId);
+    if (color === 'Branco') {
+        imageElement.src = `imagens/${productName}w.jpg`; // Caminho da imagem branca
+    } else {
+        imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
+    }
+}
+let cart = [];
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+}
+
 <section id="sobre">
     <h2>Sobre a Loja</h2>
     <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
