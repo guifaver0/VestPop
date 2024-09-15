@@ -625,13 +625,25 @@
             paymentLink = `https://pag.ae/7-VqsJ411`;
         }
 
-        // Envia o formulário
-        form.submit();
-
-        // Abre o link de pagamento após um pequeno atraso
-        setTimeout(() => {
-            window.open(paymentLink, '_blank');
-        }, 500); // 500 milissegundos de atraso
+        // Envia o formulário usando AJAX para evitar o redirecionamento
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            if (response.ok) {
+                // Abre o link de pagamento após um pequeno atraso
+                window.open(paymentLink, '_blank');
+                alert("E-mail enviado com sucesso!");
+            } else {
+                alert("Ocorreu um erro ao enviar o e-mail. Tente novamente.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao enviar o e-mail:", error);
+            alert("Erro ao enviar o e-mail. Tente novamente.");
+        });
     });
 
     showSection('sobre'); // Ajustado para exibir a seção correta
@@ -639,3 +651,4 @@
 
 </body>
 </html>
+
