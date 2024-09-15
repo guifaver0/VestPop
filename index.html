@@ -611,6 +611,46 @@
         document.getElementById('cart-data').value = cartData;
     });
 
+    function processPayment() {
+    if (cart.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    // Capturar os dados do cliente
+    const cpf = document.getElementById('cpf').value;
+    const telefone = document.getElementById('telefone').value;
+    const email = document.getElementById('email').value;
+
+    if (!cpf || !telefone || !email) {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
+
+    let paymentLink;
+    if (cart.length === 1) {
+        // Link de pagamento para 1 produto
+        paymentLink = `https://pag.ae/7-Vqr-LQm`; // Substitua pela lógica do seu serviço de pagamento
+    } else if (cart.length === 2) {
+        // Link de pagamento para 2 produtos
+        paymentLink = `https://pag.ae/7-VqsmFB9`; // Substitua pela lógica do seu serviço de pagamento
+    } else if (cart.length >= 3) {
+        // Link de pagamento para 3 ou mais produtos
+        paymentLink = `https://pag.ae/7-VqsJ411`; // Substitua pela lógica do seu serviço de pagamento
+    }
+
+    // Preencher o campo hidden com os dados do carrinho antes de enviar
+    const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+    document.getElementById('cart-data').value = cartData;
+
+    // Abrir o link de pagamento
+    window.open(paymentLink, '_blank');
+
+    // Agora enviar o formulário
+    document.querySelector('form').submit();
+}
+
+
 
 
 showSection('about');
