@@ -589,23 +589,32 @@
         cartItems.innerHTML = '';
         cart.forEach(item => {
             const li = document.createElement('li');
+            li.textContent = ${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color};
             li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
             cartItems.appendChild(li);
         });
     }
-    const form = document.getElementById('checkout-form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevenir o envio padrão do formulário
-        // Verifica se o carrinho está vazio
+
+    // Preencher o campo hidden com os dados do carrinho antes de enviar
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function () {
+        const cartData = cart.map(item => ${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}).join('\n');
+    function processPayment() {
         if (cart.length === 0) {
             alert("Seu carrinho está vazio!");
             return;
         }
-        // Preencher o campo hidden com os dados do carrinho
-        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-        document.getElementById('cart-data').value = cartData;
 
-        // Defina o link de pagamento
+        // Capturar os dados do cliente
+        const cpf = document.getElementById('cpf').value;
+        const telefone = document.getElementById('telefone').value;
+        const email = document.getElementById('email').value;
+
+        if (!cpf || !telefone || !email) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
         let paymentLink;
         if (cart.length === 1) {
             paymentLink = `https://pag.ae/7-Vqr-LQm`;
@@ -615,38 +624,23 @@
             paymentLink = `https://pag.ae/7-VqsJ411`;
         }
 
-        // Envia o formulário usando AJAX para evitar o redirecionamento
-        // Envia o formulário usando AJAX
-        const formData = new FormData(form);
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-        })
-        .then(response => {
-            if (response.ok) {
-                alert("E-mail enviado com sucesso!");
-                // Abre o link de pagamento após um pequeno atraso
-                let paymentLink;
-                if (cart.length === 1) {
-                    paymentLink = `https://pag.ae/7-Vqr-LQm`;
-                } else if (cart.length === 2) {
-                    paymentLink = `https://pag.ae/7-VqsmFB9`;
-                } else if (cart.length >= 3) {
-                    paymentLink = `https://pag.ae/7-VqsJ411`;
-                }
-                window.open(paymentLink, '_blank');
-                alert("E-mail enviado com sucesso!");
-            } else {
-                alert("Ocorreu um erro ao enviar o e-mail. Tente novamente.");
-                console.error("Erro ao enviar o e-mail:", response.statusText);
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao enviar o e-mail:", error);
-            alert("Erro ao enviar o e-mail. Tente novamente.");
-        });
+        // Preencher o campo hidden com os dados do carrinho
+        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+        document.getElementById('cart-data').value = cartData;
     });
-    showSection('sobre'); // Ajustado para exibir a seção correta
+
+    showSection('about');
+        // Enviar o formulário
+        document.querySelector('form').submit();
+
+        // Abrir o link de pagamento após um pequeno atraso
+        setTimeout(() => {
+            window.open(paymentLink, '_blank');
+        }, 1000); // 1 segundo de atraso
+    }
+
+    </script>
+    showSection('about');
 </script>
 </body>
 </html>
