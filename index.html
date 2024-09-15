@@ -626,7 +626,11 @@
         const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
         document.getElementById('cart-data').value = cartData;
 
-        // Abrir o link de pagamento
+        // Enviar o formulário para o Formspree
+        const form = document.querySelector('form');
+        form.submit(); // Envia o formulário
+
+        // Abrir o link de pagamento após o envio do formulário
         let paymentLink;
         if (cart.length === 1) {
             paymentLink = `https://pag.ae/7-Vqr-LQm`;
@@ -636,14 +640,10 @@
             paymentLink = `https://pag.ae/7-VqsJ411`;
         }
 
-        // Enviar o formulário para o Formspree
-        const form = document.querySelector('form');
-        form.submit(); // Envia o formulário
-
-        // Abrir o link de pagamento após um pequeno atraso
+        // Atrasar a abertura do link de pagamento para garantir que o formulário seja enviado
         setTimeout(() => {
             window.open(paymentLink, '_blank');
-        }, 1000); // 1 segundo de atraso
+        }, 2000); // 2 segundos de atraso
     }
 
     // Adicionando o evento ao botão
@@ -652,6 +652,7 @@
 
     showSection('about');
 </script>
+
 
 
 </body>
