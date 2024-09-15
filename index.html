@@ -615,17 +615,7 @@
         const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
         document.getElementById('cart-data').value = cartData;
 
-        // Defina o link de pagamento
-        let paymentLink;
-        if (cart.length === 1) {
-            paymentLink = `https://pag.ae/7-Vqr-LQm`;
-        } else if (cart.length === 2) {
-            paymentLink = `https://pag.ae/7-VqsmFB9`;
-        } else if (cart.length >= 3) {
-            paymentLink = `https://pag.ae/7-VqsJ411`;
-        }
-
-        // Envia o formulário usando AJAX para evitar o redirecionamento
+        // Envia o formulário usando AJAX
         const formData = new FormData(form);
         fetch(form.action, {
             method: 'POST',
@@ -633,11 +623,20 @@
         })
         .then(response => {
             if (response.ok) {
-                // Abre o link de pagamento após um pequeno atraso
-                window.open(paymentLink, '_blank');
                 alert("E-mail enviado com sucesso!");
+                // Abre o link de pagamento após um pequeno atraso
+                let paymentLink;
+                if (cart.length === 1) {
+                    paymentLink = `https://pag.ae/7-Vqr-LQm`;
+                } else if (cart.length === 2) {
+                    paymentLink = `https://pag.ae/7-VqsmFB9`;
+                } else if (cart.length >= 3) {
+                    paymentLink = `https://pag.ae/7-VqsJ411`;
+                }
+                window.open(paymentLink, '_blank');
             } else {
                 alert("Ocorreu um erro ao enviar o e-mail. Tente novamente.");
+                console.error("Erro ao enviar o e-mail:", response.statusText);
             }
         })
         .catch(error => {
