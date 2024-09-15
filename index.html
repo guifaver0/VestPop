@@ -672,13 +672,14 @@ function sendEmail(cartItems, customerData) {
         body: `Produtos comprados:\n${productsDetails}\n\nDados do Cliente:\nCPF: ${customerData.cpf}\nTelefone: ${customerData.telefone}\nE-mail: ${customerData.email}`
     };
 
-    fetch('http://localhost:3000/send-email', { // Altere a URL conforme necessário
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(emailData)
-    })
+    fetch('https://guifaver0.github.io/VestPop/', { // Altere para o domínio do seu site
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(emailData)
+})
+
     .then(response => {
         if (response.ok) {
             alert('E-mail enviado com sucesso!');
