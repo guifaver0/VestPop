@@ -46,13 +46,14 @@ class Main extends CI_Controller
         $mail = new PHPMailer(true);
 
         try {
-            $mail->isSMTP();
-            $mail->Host = 'smtp.mail.yahoo.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'vestpop@yahoo.com';
-            $mail->Password = 'trmikxbfdvrvtwdy';
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port = 465;
+           $mail->isSMTP();
+$mail->Host = 'smtp.mail.yahoo.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'vestpop@yahoo.com'; // Seu e-mail do Yahoo
+$mail->Password = 'trmikxbfdvrvtwdy'; // Sua senha de aplicativo do Yahoo
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL
+$mail->Port = 465; // Porta SMTP SSL para Yahoo
+
 
             $mail->setFrom('vestpop@yahoo.com', 'VESTPOP');
             $mail->addAddress('vestpop@yahoo.com');
