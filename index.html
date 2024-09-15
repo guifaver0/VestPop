@@ -542,7 +542,20 @@
         </div>
     </section>
 
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VESTPOP</title>
+    <style>
+        section {
+            display: none; /* Esconder todas as seções por padrão */
+        }
+    </style>
+</head>
+<body>
+
 <section id="sobre">
     <h2>Sobre a Loja</h2>
     <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
@@ -550,15 +563,17 @@
         <img src="imagens/Projeto.jpg" alt="Projeto">
     </div>
 </section>
+
 <section id="contact">
     <h2>Contato</h2>
 </section>
- <section id="cart">
+
+<section id="cart">
     <h2>Carrinho de Compras</h2>
     <div id="cart-items">
         <ul></ul>
     </div>
-    <form action="https://formspree.io/f/xanwzlee" method="POST">
+    <form id="checkout-form" action="https://formspree.io/f/xanwzlee" method="POST">
         <div>
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
@@ -571,39 +586,37 @@
         <button type="submit">Finalizar Compra</button>
     </form>
 </section>
+
 <script>
     let cart = [];
+
     function showSection(sectionId) {
         const sections = document.querySelectorAll('section');
         sections.forEach(section => {
-            section.style.display = 'none';
+            section.style.display = 'none'; // Esconder todas as seções
         });
-        document.getElementById(sectionId).style.display = 'block';
+        document.getElementById(sectionId).style.display = 'block'; // Mostrar a seção especificada
     }
+
     function addToCart(product, price, size, color) {
         cart.push({ product, price, size, color });
         updateCart();
     }
+
     function updateCart() {
         const cartItems = document.getElementById('cart-items').querySelector('ul');
-        cartItems.innerHTML = '';
+        cartItems.innerHTML = ''; // Limpar a lista existente
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = ${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color};
             li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
             cartItems.appendChild(li);
         });
     }
 
     // Preencher o campo hidden com os dados do carrinho antes de enviar
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function () {
-        const cartData = cart.map(item => ${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}).join('\n');
-    function processPayment() {
-        if (cart.length === 0) {
-            alert("Seu carrinho está vazio!");
-            return;
-        }
+    const form = document.getElementById('checkout-form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir o envio padrão do formulário
 
         // Capturar os dados do cliente
         const cpf = document.getElementById('cpf').value;
@@ -615,6 +628,14 @@
             return;
         }
 
+        // Preencher o campo hidden com os dados do carrinho
+        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+        document.getElementById('cart-data').value = `CPF: ${cpf}\nTelefone: ${telefone}\nEmail: ${email}\n\nProdutos:\n${cartData}`;
+
+        // Enviar o formulário
+        form.submit();
+
+        // Abrir o link de pagamento após um pequeno atraso
         let paymentLink;
         if (cart.length === 1) {
             paymentLink = `https://pag.ae/7-Vqr-LQm`;
@@ -624,21 +645,18 @@
             paymentLink = `https://pag.ae/7-VqsJ411`;
         }
 
-        // Preencher o campo hidden com os dados do carrinho
-        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-        document.getElementById('cart-data').value = cartData;
-    });
-
-    showSection('about');
-        // Enviar o formulário
-        document.querySelector('form').submit();
-
-        // Abrir o link de pagamento após um pequeno atraso
         setTimeout(() => {
             window.open(paymentLink, '_blank');
         }, 1000); // 1 segundo de atraso
-    }
-    
+    });
+
+    // Exibir a seção "sobre" ao carregar a página
+    showSection('sobre'); // Certifique-se de que "sobre" é o ID da seção que você deseja mostrar
+
+    // Exemplo de adição de produtos ao carrinho
+    addToCart("Camiseta", 59.90, "M", "Preto"); // Exemplo de uso
 </script>
+
 </body>
 </html>
+
