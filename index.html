@@ -602,42 +602,39 @@
     // Preencher o campo hidden com os dados do carrinho antes de enviar
     const form = document.getElementById('checkout-form');
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevenir o envio padrão do formulário
+    event.preventDefault(); // Prevenir o envio padrão do formulário
 
-        // Capturar os dados do cliente
-        const cpf = document.getElementById('cpf').value;
-        const telefone = document.getElementById('telefone').value;
-        const email = document.getElementById('email').value;
+    // Capturar os dados do cliente
+    const cpf = document.getElementById('cpf').value;
+    const telefone = document.getElementById('telefone').value;
+    const email = document.getElementById('email').value;
 
-        if (!cpf || !telefone || !email) {
-            alert("Por favor, preencha todos os campos!");
-            return;
-        }
+    if (!cpf || !telefone || !email) {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
 
-        // Preencher o campo hidden com os dados do carrinho
-        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-        document.getElementById('cart-data').value = `CPF: ${cpf}\nTelefone: ${telefone}\nEmail: ${email}\n\nProdutos:\n${cartData}`;
+    // Preencher o campo hidden com os dados do carrinho
+    const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+    document.getElementById('cart-data').value = `CPF: ${cpf}\nTelefone: ${telefone}\nEmail: ${email}\n\nProdutos:\n${cartData}`;
 
-        // Enviar o formulário
-        form.submit();
+    console.log("Enviando e-mail com os dados do cliente e do carrinho..."); // Log para verificar o envio
+    form.submit();
 
-        // Abrir o link de pagamento após um pequeno atraso
-        let paymentLink;
-        if (cart.length === 1) {
-            paymentLink = `https://pag.ae/7-Vqr-LQm`;
-        } else if (cart.length === 2) {
-            paymentLink = `https://pag.ae/7-VqsmFB9`;
-        } else if (cart.length >= 3) {
-            paymentLink = `https://pag.ae/7-VqsJ411`;
-        }
+    // Abrir o link de pagamento após um pequeno atraso
+    let paymentLink;
+    if (cart.length === 1) {
+        paymentLink = `https://pag.ae/7-Vqr-LQm`;
+    } else if (cart.length === 2) {
+        paymentLink = `https://pag.ae/7-VqsmFB9`;
+    } else if (cart.length >= 3) {
+        paymentLink = `https://pag.ae/7-VqsJ411`;
+    }
 
-        setTimeout(() => {
-            window.open(paymentLink, '_blank');
-        }, 1000); // 1 segundo de atraso
-    });
-
-    // Exibir a seção "sobre" ao carregar a página
-    showSection('sobre'); // Certifique-se de que "sobre" é o ID da seção que você deseja mostrar
+    setTimeout(() => {
+        window.open(paymentLink, '_blank');
+    }, 1000); // 1 segundo de atraso
+});
 
 </script>
 
