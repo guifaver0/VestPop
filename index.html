@@ -630,22 +630,51 @@
         cartItems.innerHTML = '';
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = ${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color};
+            li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
             cartItems.appendChild(li);
         });
     }
 
-    // Preencher o campo hidden com os dados do carrinho antes de enviar
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function () {
-        const cartData = cart.map(item => ${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}).join('\n');
+    function processPayment() {
+        if (cart.length === 0) {
+            alert("Seu carrinho está vazio!");
+            return;
+        }
+
+        // Capturar os dados do cliente
+        const cpf = document.getElementById('cpf').value;
+        const telefone = document.getElementById('telefone').value;
+        const email = document.getElementById('email').value;
+
+        if (!cpf || !telefone || !email) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        let paymentLink;
+        if (cart.length === 1) {
+            paymentLink = `https://pag.ae/7-Vqr-LQm`;
+        } else if (cart.length === 2) {
+            paymentLink = `https://pag.ae/7-VqsmFB9`;
+        } else if (cart.length >= 3) {
+            paymentLink = `https://pag.ae/7-VqsJ411`;
+        }
+
+        // Preencher o campo hidden com os dados do carrinho
+        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
         document.getElementById('cart-data').value = cartData;
-    });
+
+        // Enviar o formulário
+        document.querySelector('form').submit();
+
+        // Abrir o link de pagamento após um pequeno atraso
+        setTimeout(() => {
+            window.open(paymentLink, '_blank');
+        }, 1000); // 1 segundo de atraso
+    }
 
     showSection('about');
-
-
-    </script>
+</script>
 </body>
 </html>
 
