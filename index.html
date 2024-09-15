@@ -542,71 +542,70 @@
         </div>
     </section>
 
+</section>
+
 <section id="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
-    </section>
+    <h2>Sobre a Loja</h2>
+    <p>A VESTPOP oferece o que há de melhor em moda e acessórios!</p>
+</section>
 
-    <section id="cart">
-        <h2>Carrinho de Compras</h2>
-        <div id="cart-items">
-            <ul></ul>
+<section id="cart">
+    <h2>Carrinho de Compras</h2>
+    <div id="cart-items">
+        <ul></ul>
+    </div>
+    <form id="checkout-form" action="https://formspree.io/f/xanwzlee" method="POST">
+        <div>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
         </div>
-        <form id="checkout-form" action="https://formspree.io/f/xanwzlee" method="POST">
-            <input type="hidden" name="message" id="cart-data">
-            <button type="submit">Finalizar Compra</button>
-        </form>
-    </section>
+        <input type="hidden" name="message" id="cart-data">
+        <button type="submit">Finalizar Compra</button>
+    </form>
+</section>
 
-    <script>
-        let cart = [];
+<script>
+    let cart = [];
 
-        function addToCart(product, price, size, color) {
-            cart.push({ product, price, size, color });
-            updateCart();
-            alert(`${product} adicionado ao carrinho!`);
-        }
+    function addToCart(product, price, size, color) {
+        cart.push({ product, price, size, color });
+        updateCart();
+        alert(`${product} adicionado ao carrinho!`); // Confirmação
+    }
 
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items').querySelector('ul');
-            cartItems.innerHTML = ''; // Limpar a lista existente
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
-                cartItems.appendChild(li);
-            });
-        }
-
-        const form = document.getElementById('checkout-form');
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevenir o envio padrão do formulário
-
-            // Capturar os dados do cliente
-            const cpf = document.getElementById('cpf').value;
-            const telefone = document.getElementById('telefone').value;
-            const email = document.getElementById('email').value;
-
-            // Preencher o campo hidden com os dados do carrinho
-            const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-            document.getElementById('cart-data').value = `CPF: ${cpf}\nTelefone: ${telefone}\nEmail: ${email}\n\nProdutos:\n${cartData}`;
-
-            console.log("Enviando e-mail com os dados do cliente e do carrinho..."); // Log para verificar o envio
-            form.submit(); // Envia o formulário
-
-            // Abrir o link de pagamento após um pequeno atraso
-            let paymentLink;
-            if (cart.length === 1) {
-                paymentLink = `https://pag.ae/7-Vqr-LQm`;
-            } else if (cart.length === 2) {
-                paymentLink = `https://pag.ae/7-VqsmFB9`;
-            } else if (cart.length >= 3) {
-                paymentLink = `https://pag.ae/7-VqsJ411`;
-            }
-
-            setTimeout(() => {
-                window.open(paymentLink, '_blank');
-            }, 1000); // 1 segundo de atraso
+    function updateCart() {
+        const cartItems = document.getElementById('cart-items').querySelector('ul');
+        cartItems.innerHTML = ''; // Limpa a lista existente
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
+            cartItems.appendChild(li);
         });
-    </script>
+    }
+
+    const form = document.getElementById('checkout-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Previne o envio padrão do formulário
+
+        const cpf = document.getElementById('cpf').value;
+        const telefone = document.getElementById('telefone').value;
+        const email = document.getElementById('email').value;
+
+        const cartData = cart.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+        document.getElementById('cart-data').value = `CPF: ${cpf}\nTelefone: ${telefone}\nEmail: ${email}\n\nProdutos:\n${cartData}`;
+
+        form.submit(); // Envia o formulário
+    });
+
+    function changeImage(imageId, color, productName) {
+        const imageElement = document.getElementById(imageId);
+        imageElement.src = `imagens/${productName}-${color.toLowerCase()}.jpg`; // Certifique-se de que as imagens estão nomeadas corretamente
+    }
+</script>
+
 </body>
 </html>
