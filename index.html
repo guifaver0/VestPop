@@ -680,20 +680,17 @@ function processPayment() {
 function sendEmail(cartItems, customerData) {
     const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
 
-    const formData = {
-        Produtos: productsDetails,
-        CPF: customerData.cpf,
-        Telefone: customerData.telefone,
-        Email: customerData.email
-    };
+    // Criação do FormData para envio no formato correto
+    const formData = new FormData();
+    formData.append('Produtos', productsDetails);
+    formData.append('CPF', customerData.cpf);
+    formData.append('Telefone', customerData.telefone);
+    formData.append('Email', customerData.email);
 
-    fetch('https://formspree.io/f/mdknvyrp', {
+    // Fazendo a requisição POST com FormData
+    fetch('https://formspree.io/f/xanwzlee', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
+        body: formData
     })
     .then(response => {
         if (response.ok) {
@@ -707,6 +704,7 @@ function sendEmail(cartItems, customerData) {
         console.error('Erro:', error);
     });
 }
+
 
 
 
