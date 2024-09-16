@@ -618,14 +618,24 @@ function addToCart(product, price, size, color) {
 }
 
 function updateCart() {
-    const cartItems = document.getElementById('cart-items').querySelector('ul');
-    cartItems.innerHTML = '';
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
-        cartItems.appendChild(li);
-    });
+    const messageField = document.getElementById('message');
+    let cartDetails = cart.map(item => `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`).join('\n');
+    messageField.value = cartDetails;
 }
+
+document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+    // Validação básica
+    if (cart.length === 0) {
+        event.preventDefault();
+        alert("Seu carrinho está vazio!");
+    } else if (!document.getElementById('cpf').value || !document.getElementById('telefone').value || !document.getElementById('email').value) {
+        event.preventDefault();
+        alert("Por favor, preencha todos os campos!");
+    } else {
+        // Atualiza a mensagem do formulário com os produtos
+        updateCart();
+    }
+});
 
 function processPayment() {
     if (cart.length === 0) {
