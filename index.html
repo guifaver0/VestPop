@@ -618,9 +618,13 @@ function addToCart(product, price, size, color) {
 }
 
 function updateCart() {
-    const messageField = document.getElementById('message');
-    let cartDetails = cart.map(item => `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`).join('\n');
-    messageField.value = cartDetails;
+    const cartItems = document.getElementById('cart-items').querySelector('ul');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color}`;
+        cartItems.appendChild(li);
+    });
 }
 
 document.getElementById('purchaseForm').addEventListener('submit', function(event) {
