@@ -553,9 +553,6 @@
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" placeholder="Digite seu CPF" required>
         
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" placeholder="Digite seu telefone" required>
-        
         <label for="email">E-mail:</label>
         <input type="email" id="email" placeholder="Digite seu e-mail" required>
     </div>
@@ -649,10 +646,9 @@ function processPayment() {
 
     // Capturar os dados do cliente
     const cpf = document.getElementById('cpf').value;
-    const telefone = document.getElementById('telefone').value;
     const email = document.getElementById('email').value;
 
-    if (!cpf || !telefone || !email) {
+    if (!cpf || !email) {
         alert("Por favor, preencha todos os campos!");
         return;
     }
@@ -678,31 +674,11 @@ function processPayment() {
 }
 
 function sendEmail(cartItems, customerData) {
-    // Limite máximo de caracteres permitidos no Formspree (aproximadamente, pode variar)
-    const maxCharacters = 500; 
-    let productsDetails = "";
-    
-    cartItems.forEach(item => {
-        const productDetails = `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}\n`;
-        if ((productsDetails + productDetails).length > maxCharacters) {
-            // Envia o que já tem acumulado até o limite
-            sendFormspreeEmail(productsDetails, customerData);
-            productsDetails = ""; // Reseta o conteúdo para enviar a próxima parte
-        }
-        productsDetails += productDetails;
-    });
-    
-    // Envia o restante dos produtos acumulados
-    if (productsDetails) {
-        sendFormspreeEmail(productsDetails, customerData);
-    }
-}
+    const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
 
-function sendFormspreeEmail(productsDetails, customerData) {
     const formData = {
         Produtos: productsDetails,
         CPF: customerData.cpf,
-        Telefone: customerData.telefone,
         Email: customerData.email
     };
 
@@ -726,7 +702,6 @@ function sendFormspreeEmail(productsDetails, customerData) {
         console.error('Erro:', error);
     });
 }
-
 
 
 
