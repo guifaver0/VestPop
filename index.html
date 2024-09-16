@@ -266,6 +266,25 @@
     color: #666; /* Cor mais clara para a descrição */
 }
 
+.collection-header {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente a imagem e o título */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Espaçamento entre a imagem e o título */
+}
+
+.collection-image {
+    width: 50px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+#collection h2 {
+    font-size: 24px; /* Tamanho do título */
+    color: black; /* Cor do título */
+    margin: 0; /* Remove a margem padrão */
+}
+
+
 
     </style>
 </head>
@@ -339,7 +358,10 @@
     
 
     <section id="collection">
-        <h2>Coleção Lolla 2025</h2>
+        <div class="collection-header">
+            <img src="imagens/lollapalooza.jpg" alt="lollapalooza" class="collection-image">
+            <h2>Coleção Lolla 2025</h2>
+        </div>
         <div class="product">
             <div class="product-item">
                 <img id="tate-image" src="imagens/tateb.jpg" alt="tateb">
