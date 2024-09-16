@@ -678,13 +678,10 @@ function processPayment() {
 }
 
 function sendEmail(cartItems, customerData) {
-    // Mapeando os detalhes de todos os produtos no carrinho
-    const productsDetails = cartItems.map(item => {
-        return `Produto: ${item.product} \nTamanho: ${item.size} \nCor: ${item.color} \nPreço: R$ ${item.price}`;
-    }).join('\n\n'); // Separando cada item com uma linha em branco entre eles
+    const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
 
     const formData = {
-        Produtos: productsDetails, // Incluindo todos os detalhes do produto
+        Produtos: productsDetails,
         CPF: customerData.cpf,
         Telefone: customerData.telefone,
         Email: customerData.email
@@ -710,7 +707,6 @@ function sendEmail(cartItems, customerData) {
         console.error('Erro:', error);
     });
 }
-
 
 
 
