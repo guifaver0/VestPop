@@ -225,6 +225,18 @@
     font-style: italic; /* Aplica itálico aos parágrafos */
 }
 
+.security-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+}
+
+.security-icon {
+    width: 24px; /* Tamanho do ícone */
+    height: 24px; /* Tamanho do ícone */
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
 
     </style>
 </head>
@@ -246,6 +258,11 @@
         <a onclick="showSection('sobre')">Sobre a Loja</a>
     </nav>
 
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+
     <section id="about">
         <div id="novidades">
             <h2>Novidades</h2>
@@ -254,8 +271,23 @@
                 <img src="imagens/novidade2.jpg" alt="Novidade 2" class="slide">
                 <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide">
             </div>
+            
+            <h2> </h2>
+            <div class="security-item">
+                <i class="fas fa-credit-card security-icon"></i>
+                <span>Facilidade no Pagamento</span>
+            </div>
+            <div class="security-item">
+                <i class="fas fa-box security-icon"></i>
+                <span>Confiabilidade de Frete</span>
+            </div>
+            <div class="security-item">
+                <i class="fas fa-shield-alt security-icon"></i>
+                <span>Site seguro</span>
+            </div>
         </div>
-    </section>    
+    </section>
+      
 
     <script>
         let currentIndex = 0;
