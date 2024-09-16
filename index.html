@@ -665,19 +665,21 @@ function processPayment() {
 
 function sendEmail(cartItems, customerData) {
     const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-    
-    const formData = new FormData();
-    formData.append('Produtos', productsDetails);
-    formData.append('CPF', customerData.cpf);
-    formData.append('Telefone', customerData.telefone);
-    formData.append('Email', customerData.email);
+
+    const formData = {
+        Produtos: productsDetails,
+        CPF: customerData.cpf,
+        Telefone: customerData.telefone,
+        Email: customerData.email
+    };
 
     fetch('https://formspree.io/f/xanwzlee', {
         method: 'POST',
-        body: formData,
         headers: {
+            'Content-Type': 'application/json',
             'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify(formData)
     })
     .then(response => {
         if (response.ok) {
