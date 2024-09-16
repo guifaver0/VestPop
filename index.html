@@ -678,27 +678,31 @@ function processPayment() {
 }
 
 function sendEmail(cartItems, customerData) {
-    const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+    // Mapeando os detalhes de todos os produtos no carrinho
+    const productsDetails = cartItems.map(item => {
+        return `Produto: ${item.product} \nTamanho: ${item.size} \nCor: ${item.color} \nPreço: R$ ${item.price}`;
+    }).join('\n\n'); // Separando cada item com uma linha em branco entre eles
 
-    // Criação de um formulário virtual para envio
-    const formData = new FormData();
-    formData.append('Produtos', productsDetails);
-    formData.append('CPF', customerData.cpf);
-    formData.append('Telefone', customerData.telefone);
-    formData.append('Email', customerData.email);
+    const formData = {
+        Produtos: productsDetails, // Incluindo todos os detalhes do produto
+        CPF: customerData.cpf,
+        Telefone: customerData.telefone,
+        Email: customerData.email
+    };
 
-    // Fazendo a requisição POST com FormData
-    fetch('https://formspree.io/f/xanwzlee', {
+    fetch('https://formspree.io/f/mdknvyrp', {
         method: 'POST',
-        body: formData
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
     })
     .then(response => {
         if (response.ok) {
             alert('E-mail enviado com sucesso!');
         } else {
-            return response.json().then(data => {
-                alert('Erro ao enviar e-mail: ' + (data.error || 'Erro desconhecido.'));
-            });
+            alert('Erro ao enviar e-mail.');
         }
     })
     .catch(error => {
@@ -706,6 +710,9 @@ function sendEmail(cartItems, customerData) {
         console.error('Erro:', error);
     });
 }
+
+
+
 
 showSection('about');
     </script>
