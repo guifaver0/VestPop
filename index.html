@@ -666,18 +666,18 @@ function processPayment() {
 function sendEmail(cartItems, customerData) {
     const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
     
-    const emailData = {
-        to: 'vestpop@yahoo.com',
-        subject: 'Nova Compra',
-        body: `Produtos comprados:\n${productsDetails}\n\nDados do Cliente:\nCPF: ${customerData.cpf}\nTelefone: ${customerData.telefone}\nE-mail: ${customerData.email}`
-    };
+    const formData = new FormData();
+    formData.append('Produtos', productsDetails);
+    formData.append('CPF', customerData.cpf);
+    formData.append('Telefone', customerData.telefone);
+    formData.append('Email', customerData.email);
 
-    fetch('http://localhost:3000/send-email', { // Altere a URL conforme necessário
+    fetch('https://formspree.io/f/xanwzlee', {
         method: 'POST',
+        body: formData,
         headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(emailData)
+            'Accept': 'application/json'
+        }
     })
     .then(response => {
         if (response.ok) {
