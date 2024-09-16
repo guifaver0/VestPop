@@ -680,7 +680,7 @@ function processPayment() {
 function sendEmail(cartItems, customerData) {
     const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
 
-    // Criação do FormData para envio no formato correto
+    // Criação de um formulário virtual para envio
     const formData = new FormData();
     formData.append('Produtos', productsDetails);
     formData.append('CPF', customerData.cpf);
@@ -696,7 +696,9 @@ function sendEmail(cartItems, customerData) {
         if (response.ok) {
             alert('E-mail enviado com sucesso!');
         } else {
-            alert('Erro ao enviar e-mail.');
+            return response.json().then(data => {
+                alert('Erro ao enviar e-mail: ' + (data.error || 'Erro desconhecido.'));
+            });
         }
     })
     .catch(error => {
@@ -704,9 +706,6 @@ function sendEmail(cartItems, customerData) {
         console.error('Erro:', error);
     });
 }
-
-
-
 
 showSection('about');
     </script>
