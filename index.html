@@ -678,8 +678,27 @@ function processPayment() {
 }
 
 function sendEmail(cartItems, customerData) {
-    const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
+    // Limite máximo de caracteres permitidos no Formspree (aproximadamente, pode variar)
+    const maxCharacters = 500; 
+    let productsDetails = "";
+    
+    cartItems.forEach(item => {
+        const productDetails = `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}\n`;
+        if ((productsDetails + productDetails).length > maxCharacters) {
+            // Envia o que já tem acumulado até o limite
+            sendFormspreeEmail(productsDetails, customerData);
+            productsDetails = ""; // Reseta o conteúdo para enviar a próxima parte
+        }
+        productsDetails += productDetails;
+    });
+    
+    // Envia o restante dos produtos acumulados
+    if (productsDetails) {
+        sendFormspreeEmail(productsDetails, customerData);
+    }
+}
 
+function sendFormspreeEmail(productsDetails, customerData) {
     const formData = {
         Produtos: productsDetails,
         CPF: customerData.cpf,
@@ -707,6 +726,7 @@ function sendEmail(cartItems, customerData) {
         console.error('Erro:', error);
     });
 }
+
 
 
 
