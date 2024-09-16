@@ -195,6 +195,19 @@
             background-position: center; /* Centraliza a imagem */
             cursor: pointer; /* Indica que é clicável */
         }
+
+        .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+}
+
+.contact-icon {
+    width: 24px; /* Tamanho do ícone */
+    height: 24px; /* Tamanho do ícone */
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
     </style>
 </head>
 <body>
@@ -680,13 +693,21 @@
 
     <section id="contact">
         <h2>Contato</h2>
-        <p>Email: vestpop@yahoo.com
-            Instagram: @vestpopbr
-            Whatsapp: +55 (11) 97675-7846
-
-            Estamos sempre dispostos a oferecer qualidade, conforto e um ótimo atendimento para você!
-        </p>
+        <div class="contact-item">
+            <img src="imagens/email-icon.png" alt="Email" class="contact-icon">
+            <span>Email: vestpop@yahoo.com</span>
+        </div>
+        <div class="contact-item">
+            <img src="imagens/instagram-icon.png" alt="Instagram" class="contact-icon">
+            <span>Instagram: @vestpopbr</span>
+        </div>
+        <div class="contact-item">
+            <img src="imagens/whatsapp-icon.png" alt="Whatsapp" class="contact-icon">
+            <span>Whatsapp: +55 (11) 97675-7846</span>
+        </div>
+        <p>Estamos sempre dispostos a oferecer qualidade, conforto e um ótimo atendimento para você!</p>
     </section>
+    
 
     <section id="cart">
         <h2>Seu Carrinho</h2>
