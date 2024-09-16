@@ -675,7 +675,6 @@ function processPayment() {
 
 function sendEmail(cartItems, customerData) {
     const productsDetails = cartItems.map(item => `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
-    `${item.product} - Tamanho: ${item.size} - Cor: ${item.color} - Preço: R$ ${item.price}`).join('\n');
 
     const formData = {
         Produtos: productsDetails,
