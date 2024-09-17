@@ -517,6 +517,27 @@
             </div>
             <button onclick="addToCart('Wicked', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'camiseta')">Adicionar ao Carrinho</button>
         </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image">
+            <h3>Castle</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size8">Tamanho:</label>
+                <select id="size8">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color8">Cor:</label>
+                <select id="color8" onchange="changeImage('castle-image', this.value, 'castle')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'camiseta')">Adicionar ao Carrinho</button>
+        </div>
     </div>
 </section>
 
