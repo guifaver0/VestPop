@@ -5,88 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VESTPOP</title>
     <style>
-        #logo-container {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        #logo {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-            color: #ffffff;
-        }
-
-        #cart-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
-            color: #333;
         }
-
+    
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #4d8a92;
+            padding: 20px;
             color: white;
-            padding: 1em 0;
-            text-align: center;
-            position: relative;
         }
-
+    
+        #logo {
+            width: 50px; /* Ajuste o tamanho do logo */
+        }
+    
         nav {
-            background-color: #4d8a92;
-            overflow: hidden;
+            margin: 20px 0;
             display: flex;
             justify-content: center;
-            padding: 10px 0;
         }
-
+    
         nav a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            margin: 0 10px;
+            margin: 0 15px;
+            color: #333;
             text-decoration: none;
-            cursor: pointer;
-            border: 2px solid #ddd;
+            font-weight: bold;
+        }
+    
+        #cart {
+            background-color: #fff;
+            padding: 20px;
             border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
         }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        section {
-            padding: 2em;
-            margin: 1em 0;
-            display: none;
-        }
-
-        #collection .product {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        #collection .product-item {
+    
+        .product-item {
             background-color: white;
             padding: 1em;
             margin: 10px;
@@ -95,514 +53,38 @@
             width: 200px;
             text-align: center;
         }
-
-        #collection .product-item img {
+    
+        .product-item img {
             max-width: 100%;
             height: auto;
         }
-
-        #collection .product-item button {
+    
+        button {
             background-color: #4d8a92;
             color: white;
             border: none;
             padding: 10px;
+            border-radius: 4px;
             cursor: pointer;
             margin-top: 10px;
-            border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
-
-        #collection .product-item button:hover {
+    
+        button:hover {
             background-color: #333;
         }
-
-        /* Estilos para o Carrinho de Compras */
-        #cart {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 600px; /* Define uma largura máxima */
-            margin: 20px auto; /* Centraliza o carrinho na página */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
-        }
-
-        #cart h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #4d8a92; /* Cor da borda */
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus {
-            border-color: #4d8a92; /* Cor da borda ao focar */
-            outline: none; /* Remove a borda padrão */
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #4d8a92; /* Cor de fundo do botão */
-            color: white; /* Cor do texto do botão */
-            border: none; /* Remove borda padrão */
-            border-radius: 5px; /* Cantos arredondados */
-            font-size: 18px;
-            cursor: pointer; /* Indica que o botão é clicável */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-        }
-
-        button:hover {
-            background-color: #4d8a92; /* Cor do botão ao passar o mouse */
-            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        }
-
-        button:active {
-            transform: scale(0.95); /* Reduz o botão ao clicar */
-        }
-
+    
         .product-options {
             margin-top: 10px;
         }
-
+    
         .product-options select {
-            margin-top: 5px;
             padding: 5px;
             border-radius: 4px;
             border: 1px solid #ccc;
         }
-
-        #novidades {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-slider {
-    position: relative;
-    width: 80%; /* Ajuste conforme necessário */
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-    max-height: 400px; /* Ajuste a altura conforme necessário */
-}
-
-.slide.active {
-    display: block;
-}
-
-
-        .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Espaçamento entre os itens */
-}
-
-.contact-icon {
-    width: 24px; /* Tamanho do ícone */
-    height: 24px; /* Tamanho do ícone */
-    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-}
-
-#sobre p {
-    font-style: italic; /* Aplica itálico aos parágrafos */
-}
-
-/* Estilo para o título Novidades */
-#novidades h2 {
-    color: rgb(0, 0, 0); /* Cor azul para o título */
-    text-align: center; /* Centraliza o título */
-}
-
-/* Centraliza o container com os 3 itens */
-.security-container {
-    display: flex;
-    justify-content: center; /* Centraliza os itens na página */
-    gap: 30px; /* Espaçamento entre os itens */
-    margin: 20px 0;
-}
-
-.security-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 180px; /* Ajusta a largura máxima de cada item */
-}
-
-/* Reduzindo o tamanho dos ícones */
-.security-icon {
-    font-size: 30px; /* Diminui o tamanho dos ícones */
-    margin-bottom: 8px;
-}
-
-/* Reduzindo o tamanho dos títulos */
-.security-item span {
-    font-size: 16px; /* Diminui o tamanho dos títulos */
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Estilo para a descrição */
-.description {
-    font-size: 13px; /* Tamanho menor para a descrição */
-    color: #666; /* Cor mais clara para a descrição */
-}
-
-.collection-header {
-    display: flex;
-    align-items: center; /* Centraliza verticalmente a imagem e o título */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    gap: 15px; /* Espaçamento entre a imagem e o título */
-}
-
-.collection-image {
-    width: 50px; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-}
-
-#collection h2 {
-    font-size: 24px; /* Tamanho do título */
-    color: black; /* Cor do título */
-    margin: 0; /* Remove a margem padrão */
-}
-#movies .product {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        #movies .product-item {
-            background-color: white;
-            padding: 1em;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            text-align: center;
-        }
-
-        #movies .product-item img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        #movies .product-item button {
-            background-color: #4d8a92;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        #movies .product-item button:hover {
-            background-color: #333;
-        }
-
-        /* Estilos para o Carrinho de Compras */
-        #cart {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 600px; /* Define uma largura máxima */
-            margin: 20px auto; /* Centraliza o carrinho na página */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
-        }
-
-        #cart h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #4d8a92; /* Cor da borda */
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus {
-            border-color: #4d8a92; /* Cor da borda ao focar */
-            outline: none; /* Remove a borda padrão */
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #4d8a92; /* Cor de fundo do botão */
-            color: white; /* Cor do texto do botão */
-            border: none; /* Remove borda padrão */
-            border-radius: 5px; /* Cantos arredondados */
-            font-size: 18px;
-            cursor: pointer; /* Indica que o botão é clicável */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-        }
-
-        button:hover {
-            background-color: #4d8a92; /* Cor do botão ao passar o mouse */
-            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        }
-
-        button:active {
-            transform: scale(0.95); /* Reduz o botão ao clicar */
-        }
-
-        .product-options {
-            margin-top: 10px;
-        }
-
-        .product-options select {
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        #camiseta .product {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        #camiseta .product-item {
-            background-color: white;
-            padding: 1em;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            text-align: center;
-        }
-
-        #camiseta .product-item img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        #camiseta .product-item button {
-            background-color: #4d8a92;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        #camiseta .product-item button:hover {
-            background-color: #333;
-        }
-
-        /* Estilos para o Carrinho de Compras */
-        #cart {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 600px; /* Define uma largura máxima */
-            margin: 20px auto; /* Centraliza o carrinho na página */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
-        }
-
-        #cart h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #4d8a92; /* Cor da borda */
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus {
-            border-color: #4d8a92; /* Cor da borda ao focar */
-            outline: none; /* Remove a borda padrão */
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #4d8a92; /* Cor de fundo do botão */
-            color: white; /* Cor do texto do botão */
-            border: none; /* Remove borda padrão */
-            border-radius: 5px; /* Cantos arredondados */
-            font-size: 18px;
-            cursor: pointer; /* Indica que o botão é clicável */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-        }
-
-        button:hover {
-            background-color: #4d8a92; /* Cor do botão ao passar o mouse */
-            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        }
-
-        button:active {
-            transform: scale(0.95); /* Reduz o botão ao clicar */
-        }
-
-        .product-options {
-            margin-top: 10px;
-        }
-
-        .product-options select {
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        #corta .product {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        #corta .product-item {
-            background-color: white;
-            padding: 1em;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            text-align: center;
-        }
-
-        #corta .product-item img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        #corta .product-item button {
-            background-color: #4d8a92;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        #corta .product-item button:hover {
-            background-color: #333;
-        }
-
-        /* Estilos para o Carrinho de Compras */
-        #cart {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 600px; /* Define uma largura máxima */
-            margin: 20px auto; /* Centraliza o carrinho na página */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
-        }
-
-        #cart h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #4d8a92; /* Cor da borda */
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus {
-            border-color: #4d8a92; /* Cor da borda ao focar */
-            outline: none; /* Remove a borda padrão */
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #4d8a92; /* Cor de fundo do botão */
-            color: white; /* Cor do texto do botão */
-            border: none; /* Remove borda padrão */
-            border-radius: 5px; /* Cantos arredondados */
-            font-size: 18px;
-            cursor: pointer; /* Indica que o botão é clicável */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-        }
-
-        button:hover {
-            background-color: #4d8a92; /* Cor do botão ao passar o mouse */
-            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        }
-
-        button:active {
-            transform: scale(0.95); /* Reduz o botão ao clicar */
-        }
-
-        .product-options {
-            margin-top: 10px;
-        }
-
-        .product-options select {
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-
     </style>
+    
 </head>
 <body>
     <header>
