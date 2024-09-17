@@ -93,21 +93,70 @@
             border-radius: 5px;
             width: 200px;
             text-align: center;
-            transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de zoom */
+            position: relative;
+            transition: transform 0.3s ease;
         }
 
         .product-item:hover {
-            transform: scale(1.05); /* Aumenta levemente o tamanho do item ao passar o mouse */
+            transform: scale(1.05);
         }
 
         .product-item img {
             max-width: 100%;
             height: auto;
-            transition: transform 0.3s ease; /* Transição suave ao fazer zoom */
+            transition: transform 0.3s ease;
         }
 
         .product-item:hover img {
-            transform: scale(1.2); /* Aumenta o tamanho da imagem ao passar o mouse */
+            transform: scale(1.2);
+        }
+
+        /* Ícone da lupa */
+        .zoom-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Estilos para o modal de zoom */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zoom-modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .zoom-modal.active {
+            display: flex;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
         }
 
         .product-item button {
@@ -127,171 +176,6 @@
 
         .product-item button:active {
             transform: scale(0.95);
-        }
-
-        #cart {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 600px;
-            margin: 20px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #cart h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #4d8a92;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus {
-            border-color: #4d8a92;
-            outline: none;
-        }
-
-        .product-options {
-            margin-top: 10px;
-        }
-
-        .product-options select {
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        #novidades {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .image-slider {
-            position: relative;
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .slide {
-            display: none;
-            width: 100%;
-            max-height: 400px;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        #sobre p {
-            font-style: italic;
-        }
-
-        #novidades h2 {
-            color: rgb(0, 0, 0);
-            text-align: center;
-        }
-
-        .security-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-        }
-
-        .security-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 180px;
-        }
-
-        .security-icon {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .security-item span {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .description {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .collection-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .collection-image {
-            width: 50px;
-            height: auto;
-        }
-
-        #collection h2 {
-            font-size: 24px;
-            color: black;
-            margin: 0;
-        }
-
-        #movies {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .collection-header {
-            text-align: center;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .product-item {
-            margin: 10px;
-            border: 1px solid #ccc;
-            padding: 12px;
-            width: 200px;
-            text-align: center;
         }
     </style>
 </head>
