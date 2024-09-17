@@ -946,11 +946,17 @@ function generatePaymentLink(cart) {
     } else if (camisetaCount === 0 && cortaVentoCount === 1) {
         return 'https://pag.ae/7-Vqs-k1a'; // Link para 1 corta vento
     } else if (camisetaCount === 1 && cortaVentoCount === 1) {
-        return 'https://pag.ae/7-Vxyz123'; // Link para 1 camiseta + 1 corta vento
+        return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
     } else if (camisetaCount === 2 && cortaVentoCount === 1) {
-        return 'https://pag.ae/7-Vabc456'; // Link para 2 camisetas + 1 corta vento
-    }
-
+        return 'https://pag.ae/7-W8nDT4u'; // Link para 2 camisetas + 1 corta vento
+    } else if (camisetaCount === 2 && cortaVentoCount === 2) {
+        return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camiseta + 2 corta vento
+    } else if (camisetaCount === 1 && cortaVentoCount === 2) {
+        return 'https://pag.ae/7-W8osoNL'; // Link para 1 camiseta + 2 corta vento
+    } else if (camisetaCount === 3 && cortaVentoCount === 0) {
+        return 'https://pag.ae/7-VqsJ411'; // Link para 3 camisetas
+    } else if (camisetaCount === 4 && cortaVentoCount === 0) {
+        return 'https://pag.ae/7-W8p37w4'; // Link para 4 camisetas
 }
 
 function sendEmail(cartItems, customerData) {
