@@ -283,6 +283,21 @@
     color: black; /* Cor do título */
     margin: 0; /* Remove a margem padrão */
 }
+.product-item {
+    background-color: white; /* Cor de fundo branca para a moldura */
+    padding: 1em; /* Espaçamento interno */
+    margin: 10px; /* Espaçamento externo */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Cantos arredondados */
+    width: 200px; /* Largura fixa */
+    text-align: center; /* Centraliza o texto */
+}
+
+.product-image {
+    max-width: 100%; /* Limita a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 150px; /* Limita a altura máxima da imagem */
+}
 
 
 
@@ -356,32 +371,33 @@
         setInterval(showNextSlide, 4000); // Muda de imagem a cada 4 segundos
     </script>
 
-        <section id="movies">
-        <h2>Joker</h2>
-        </div>
-        <div class="product">
-            <div class="product-item" data-type="camiseta">
-                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb">
-                <h3>Tate Mcrae</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1" onchange="changeImage('tate-image', this.value, 'tate')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'camiseta')">Adicionar ao Carrinho</button>
+<section id="movies">
+    <h2>Vestcine</h2>
+    <div class="product">
+        <div class="product-item" data-type="camiseta">
+            <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image">
+            <h3>Tate Mcrae</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size2">Tamanho:</label>
+                <select id="size2">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color2">Cor:</label>
+                <select id="color2" onchange="changeImage('tate-image', this.value, 'tate')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
-        </section>
+            <button onclick="addToCart('Tate', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'camiseta')">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+</section>
+
 
     <section id="collection">
         <div class="collection-header">
