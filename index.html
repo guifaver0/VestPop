@@ -674,6 +674,21 @@
 
 <!-- VESTCINE -->
 
+<style>
+    #movies {
+        display: flex; /* ou use grid com a configuração de grid se preferir */
+        flex-wrap: wrap; /* Para quebrar para a próxima linha quando necessário */
+        gap: 20px; /* Espaçamento entre os produtos */
+    }
+
+    .product {
+        flex: 1 1 calc(25% - 20px); /* Ajuste a porcentagem conforme necessário */
+        box-sizing: border-box; /* Para incluir padding e borda na largura total */
+        border: 1px solid #ccc; /* Para visualização */
+        padding: 10px; /* Para espaço interno */
+    }
+</style>
+
 <section id="movies">
     <div class="collection-header">
         <img src="imagens/warner.jpg" alt="warner" class="collection-image">
@@ -776,6 +791,7 @@
         </div>
     </div>
 </section>
+
 
 
 <!-- VESTPALOOZA -->
