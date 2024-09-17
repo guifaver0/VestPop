@@ -93,11 +93,21 @@
             border-radius: 5px;
             width: 200px;
             text-align: center;
+            transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de zoom */
+        }
+
+        .product-item:hover {
+            transform: scale(1.05); /* Aumenta levemente o tamanho do item ao passar o mouse */
         }
 
         .product-item img {
             max-width: 100%;
             height: auto;
+            transition: transform 0.3s ease; /* Transição suave ao fazer zoom */
+        }
+
+        .product-item:hover img {
+            transform: scale(1.2); /* Aumenta o tamanho da imagem ao passar o mouse */
         }
 
         .product-item button {
@@ -259,32 +269,30 @@
             color: black;
             margin: 0;
         }
+
         #movies {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo da seção */
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.collection-header {
-    text-align: center; /* Centraliza o título e a imagem */
-}
+        .collection-header {
+            text-align: center;
+        }
 
-.product-list {
-    display: flex; /* Exibe os produtos lado a lado */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se não houver espaço */
-    justify-content: center; /* Centraliza os produtos na linha */
-}
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-.product-item {
-    margin: 10px; /* Adiciona espaço entre os itens */
-    border: 1px solid #ccc; /* Adiciona uma borda opcional aos produtos */
-    padding: 12px; /* Adiciona preenchimento interno aos produtos */
-    width: 200px; /* Define uma largura fixa para os produtos */
-    text-align: center; /* Centraliza o texto dentro dos produtos */
-}
-
-    
-
+        .product-item {
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            width: 200px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
