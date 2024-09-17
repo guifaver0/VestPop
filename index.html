@@ -601,6 +601,23 @@
             border: 1px solid #ccc;
         }
 
+        .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ajuste a distância entre os produtos conforme necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.product-item {
+    flex: 1 1 calc(25% - 20px); /* Ajuste a largura do item conforme necessário */
+    box-sizing: border-box; /* Para garantir que padding e borda sejam incluídos na largura */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda opcional */
+    border-radius: 5px; /* Bordas arredondadas opcional */
+    text-align: center; /* Centraliza o texto */
+}
+
+
 
     </style>
 </head>
