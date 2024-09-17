@@ -355,6 +355,34 @@
 
         setInterval(showNextSlide, 4000); // Muda de imagem a cada 4 segundos
     </script>
+
+<section id="movies">
+    <div class="collection-header">
+        <img src="imagens/lollapalooza.jpg" alt="lollapalooza" class="collection-image">
+        <h2>Coleção Joker</h2>
+    </div>
+    <div class="product">
+        <div class="product-item" data-type="camiseta">
+            <img id="tate-image" src="imagens/tateb.jpg" alt="tateb">
+            <h3>Joker</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size1">Tamanho:</label>
+                <select id="size1">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color1">Cor:</label>
+                <select id="color1" onchange="changeImage('tate-image', this.value, 'tate')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Joker', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'camiseta')">Adicionar ao Carrinho</button>
+        </div>
     
 
     <section id="collection">
