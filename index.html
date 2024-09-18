@@ -370,6 +370,12 @@
             color: white;
             position: relative;
         }
+        
+        .contact-icon {
+    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
     </style>
 </head>
 <body>
@@ -1323,28 +1329,31 @@
     <button onclick="processPayment()">Finalizar Compra</button>
 </section>
 
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-    <section id="sobre">
-        <h2>Sobre a Loja</h2>
-        <p>A VESTPOP oferece o que há de melhor em moda e acessórios.</p>
-        <p>Estamos sempre dispostos a oferecer qualidade, conforto e um ótimo atendimento ao cliente!</p>
-        <h2>Contato</h2>
-        <div class="contact-item">
-            <img src="imagens/email-icon.jpg" alt="Email" class="contact-icon">
-            <span>Email: vestpop@yahoo.com</span>
-        </div>
-        <div class="contact-item">
-            <img src="imagens/instagram-icon.jpg" alt="Instagram" class="contact-icon">
-            <span>Instagram: @vestpopbr</span>
-        </div>
-        <div class="contact-item">
-            <img src="imagens/whatsapp-icon.jpg" alt="Whatsapp" class="contact-icon">
-            <span>Whatsapp: +55 (11) 97675-7846</span>
-        </div>
-        <p>Quaisquer dúvidas, entre em contato conosco.</p>
-    </section>
+<section id="sobre">
+    <h2>Sobre a Loja</h2>
+    <p>A VESTPOP oferece o que há de melhor em moda e acessórios.</p>
+    <p>Estamos sempre dispostos a oferecer qualidade, conforto e um ótimo atendimento ao cliente!</p>
     
-
+    <h2>Contato</h2>
+    <div class="contact-item">
+        <i class="fas fa-envelope contact-icon"></i>
+        <span>Email: vestpop@yahoo.com</span>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-camera contact-icon"></i>
+        <span>Instagram: @vestpopbr</span>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-phone contact-icon"></i>
+        <span>Whatsapp: +55 (11) 97675-7846</span>
+    </div>
+    <p>Quaisquer dúvidas, entre em contato conosco.</p>
+</section>
+    
     <section id="cart">
         <h2>Seu Carrinho</h2>
         <div id="cart-items">
