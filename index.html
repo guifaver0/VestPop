@@ -440,6 +440,72 @@
             margin-right: 8px;
             /* Espaçamento entre o ícone e o texto */
         }
+
+        /* Estilização do select */
+        select {
+            appearance: none;
+            /* Remove o estilo padrão */
+            -webkit-appearance: none;
+            /* Para compatibilidade com Safari */
+            -moz-appearance: none;
+            /* Para compatibilidade com Firefox */
+            background-color: #f1f1f1;
+            /* Cor de fundo suave */
+            border: 2px solid #ccc;
+            /* Borda */
+            border-radius: 8px;
+            /* Bordas arredondadas */
+            padding: 10px;
+            /* Espaçamento interno */
+            width: 100%;
+            /* Largura completa */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            color: #333;
+            /* Cor do texto */
+            outline: none;
+            /* Remove o contorno ao clicar */
+            cursor: pointer;
+            /* Cursor para indicar interatividade */
+            transition: all 0.3s ease;
+            /* Transição suave ao interagir */
+        }
+
+        /* Estilização do select ao focar (quando clica) */
+        select:focus {
+            border-color: #007BFF;
+            /* Muda a cor da borda ao clicar */
+        }
+
+        /* Adiciona uma seta personalizada no select */
+        select::after {
+            content: '\25BC';
+            /* Código para a seta para baixo */
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 16px;
+            color: #007BFF;
+            /* Cor da seta */
+        }
+
+        /* Para o container que envolve o select */
+        .centered select {
+            max-width: 300px;
+            /* Define uma largura máxima */
+            margin: 0 auto;
+            /* Centraliza o select */
+        }
+
+        /* Para dispositivos móveis */
+        @media (max-width: 600px) {
+            select {
+                font-size: 14px;
+                /* Reduz o tamanho da fonte em telas menores */
+            }
+        }
     </style>
 </head>
 
