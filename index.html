@@ -293,6 +293,32 @@
             width: 200px;
             text-align: center;
         }
+        /* Estilo para os botões das coleções */
+.collections-list {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.collection-btn {
+    background-color: #4d8a92;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+.collection-btn:hover {
+    background-color: #333;
+}
+
+.collection-btn:active {
+    transform: scale(0.95);
+}
+
     </style>
 </head>
 <body>
@@ -1022,7 +1048,6 @@
                 </div>
                 <button onclick="addToCart('Produto 1', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar ao Carrinho</button>
             </div>
-            <!-- Repita para os outros produtos da Coleção 1 -->
         </div>
     </div>
 
@@ -1050,7 +1075,6 @@
                 </div>
                 <button onclick="addToCart('Produto 2', 69.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar ao Carrinho</button>
             </div>
-            <!-- Repita para os outros produtos da Coleção 2 -->
         </div>
     </div>
 
@@ -1078,7 +1102,6 @@
                 </div>
                 <button onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar ao Carrinho</button>
             </div>
-            <!-- Repita para os outros produtos da Coleção 3 -->
         </div>
     </div>
 </section>
