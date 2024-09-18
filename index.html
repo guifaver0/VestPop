@@ -293,7 +293,7 @@
             width: 200px;
             text-align: center;
         }
-.collection-products {
+        .collection-products {
     display: flex;
     flex-wrap: wrap; /* Permite que os produtos quebrem a linha se não houver espaço */
     justify-content: center; /* Centraliza os produtos horizontalmente */
@@ -305,24 +305,6 @@
     flex: 1 1 30%; /* Permite que os itens cresçam e se reduzam */
     max-width: 200px; /* Limita a largura máxima */
     text-align: center; /* Centraliza o texto dentro do item */
-}
-
-.product-item:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
-}
-
-.product-image {
-    width: 100%; /* Faz com que a imagem ocupe toda a largura do item */
-    height: auto; /* Mantém a proporção da imagem */
-    border-top-left-radius: 8px; /* Bordas arredondadas na parte superior */
-    border-top-right-radius: 8px; /* Bordas arredondadas na parte superior */
-}
-
-.artist-list {
-    display: flex; /* Exibir artistas em linha */
-    overflow-x: auto; /* Habilitar rolagem horizontal */
-    padding: 10px 0; /* Padding em cima e embaixo */
-    white-space: nowrap; /* Evitar quebra de linha nos itens */
 }
 
 .artist-toggle-btn {
@@ -338,14 +320,6 @@
     margin: 20px 0; /* Espaçamento superior e inferior */
 }
 
-.artist-toggle-btn:hover {
-    background-color: #333; /* Cor ao passar o mouse */
-}
-
-.artist-toggle-btn:active {
-    transform: scale(0.95); /* Efeito ao clicar */
-}
-
 .centered {
     display: flex; /* Flexbox para centralizar */
     justify-content: center; /* Centraliza horizontalmente */
@@ -357,25 +331,6 @@
     margin: 0 auto; /* Centraliza horizontalmente */
 }
 
-#tipoAcesso {
-    background-color: #f0f0f0; /* Cor de fundo suave */
-    border: 1px solid #ccc; /* Borda leve */
-    border-radius: 20px; /* Bordas arredondadas para um visual mais suave */
-    padding: 10px 15px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 300px; /* Limita a largura máxima */
-    transition: border-color 0.3s ease; /* Transição suave para mudança de borda */
-}
-
-#tipoAcesso:hover {
-    border-color: #4d8a92; /* Cor da borda ao passar o mouse */
-}
-
-.centered select {
-    display: block; /* Exibir como bloco para centralizar */
-    margin: 0 auto; /* Centraliza horizontalmente */
-}
 
 
     </style>
