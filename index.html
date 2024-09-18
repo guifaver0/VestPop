@@ -244,10 +244,21 @@
 
         .image-slider {
             position: relative;
-            width: 80%;
-            margin: 0 auto;
+            width: 100%;
+            /* A largura agora ocupa 100% da tela */
+            height: 400px;
+            /* Altura fixa para as imagens */
+            margin: 0;
             overflow: hidden;
         }
+
+        .image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* As imagens agora cobrem completamente a largura da tela */
+        }
+
 
         .slide {
             display: none;
