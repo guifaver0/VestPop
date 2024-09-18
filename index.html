@@ -990,27 +990,95 @@
     <div class="collection-header">
         <h2>Camisetas</h2>
     </div>
-    <div class="product">
-        <div class="product-item" data-type="camiseta">
-            <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image">
-            <h3>Tate Mcrae</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="size2">Tamanho:</label>
-                <select id="size2">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="color2">Cor:</label>
-                <select id="color2" onchange="changeImage('tate-image', this.value, 'tate')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
+
+    <!-- Lista de coleções -->
+    <div class="collections-list">
+        <button class="collection-btn" onclick="showCollection('colecao1')">Coleção 1</button>
+        <button class="collection-btn" onclick="showCollection('colecao2')">Coleção 2</button>
+        <button class="collection-btn" onclick="showCollection('colecao3')">Coleção 3</button>
+    </div>
+
+    <!-- Produtos da Coleção 1 -->
+    <div class="collection-products" id="colecao1">
+        <div class="product">
+            <div class="product-item">
+                <img id="product1-image" src="imagens/produto1.jpg" alt="Produto 1" class="product-image">
+                <h3>Produto 1</h3>
+                <p>R$ 59,99</p>
+                <div class="product-options">
+                    <label for="size1">Tamanho:</label>
+                    <select id="size1">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color1">Cor:</label>
+                    <select id="color1">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Produto 1', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar ao Carrinho</button>
             </div>
-            <button onclick="addToCart('Tate', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar ao Carrinho</button>
+            <!-- Repita para os outros produtos da Coleção 1 -->
+        </div>
+    </div>
+
+    <!-- Produtos da Coleção 2 -->
+    <div class="collection-products" id="colecao2" style="display: none;">
+        <div class="product">
+            <div class="product-item">
+                <img id="product2-image" src="imagens/produto2.jpg" alt="Produto 2" class="product-image">
+                <h3>Produto 2</h3>
+                <p>R$ 69,99</p>
+                <div class="product-options">
+                    <label for="size2">Tamanho:</label>
+                    <select id="size2">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color2">Cor:</label>
+                    <select id="color2">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Produto 2', 69.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Repita para os outros produtos da Coleção 2 -->
+        </div>
+    </div>
+
+    <!-- Produtos da Coleção 3 -->
+    <div class="collection-products" id="colecao3" style="display: none;">
+        <div class="product">
+            <div class="product-item">
+                <img id="product3-image" src="imagens/produto3.jpg" alt="Produto 3" class="product-image">
+                <h3>Produto 3</h3>
+                <p>R$ 79,99</p>
+                <div class="product-options">
+                    <label for="size3">Tamanho:</label>
+                    <select id="size3">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color3">Cor:</label>
+                    <select id="color3">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Repita para os outros produtos da Coleção 3 -->
         </div>
     </div>
 </section>
@@ -1150,14 +1218,24 @@
     </section>
 
     <script>
-        function showSection(sectionId) {
-            // Lógica para mostrar a seção correspondente
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none'; // Oculta todas as seções
+
+function showCollection(colecaoId) {
+    // Oculta todas as coleções
+    const collections = document.querySelectorAll('.collection-products');
+    collections.forEach(collection => collection.style.display = 'none');
+
+    // Mostra a coleção selecionada
+    document.getElementById(colecaoId).style.display = 'block';
+}
+
+function showSection(sectionId) {
+    // Lógica para mostrar a seção correspondente
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = 'none'; // Oculta todas as seções
             });
-            document.getElementById(sectionId).style.display = 'block'; // Mostra a seção clicada
-        }
+    document.getElementById(sectionId).style.display = 'block'; // Mostra a seção clicada
+    }
 
 function changeImage(imageId, color, productName) {
     const imageElement = document.getElementById(imageId);
