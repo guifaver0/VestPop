@@ -296,19 +296,15 @@
 .collection-products {
     display: flex;
     flex-wrap: wrap; /* Permite que os produtos quebrem a linha se não houver espaço */
-    justify-content: space-around; /* Espaço igual entre os itens */
+    justify-content: center; /* Centraliza os produtos horizontalmente */
     margin: 20px 0; /* Espaçamento superior e inferior */
 }
 
 .product-item {
-    margin: 15px; /* Espaçamento entre os produtos */
+    margin: 10px; /* Espaçamento entre os produtos */
     flex: 1 1 30%; /* Permite que os itens cresçam e se reduzam */
-    max-width: 220px; /* Limita a largura máxima */
+    max-width: 200px; /* Limita a largura máxima */
     text-align: center; /* Centraliza o texto dentro do item */
-    border: 1px solid #ddd; /* Borda ao redor do item */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
 .product-item:hover {
@@ -333,13 +329,13 @@
     background-color: #4d8a92; /* Cor de fundo */
     color: white; /* Cor do texto */
     border: none; /* Sem borda */
-    padding: 12px 24px; /* Espaçamento interno */
+    padding: 10px 20px; /* Espaçamento interno */
     cursor: pointer; /* Mão ao passar o mouse */
-    border-radius: 5px; /* Bordas arredondadas */
+    border-radius: 20px; /* Bordas arredondadas */
     font-size: 16px; /* Tamanho da fonte */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
     display: inline-block; /* Para permitir centralização */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 20px 0; /* Espaçamento superior e inferior */
 }
 
 .artist-toggle-btn:hover {
@@ -353,7 +349,14 @@
 .centered {
     display: flex; /* Flexbox para centralizar */
     justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
+
+.centered select {
+    display: block; /* Exibir como bloco para centralizar */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
 #tipoAcesso {
     background-color: #f0f0f0; /* Cor de fundo suave */
     border: 1px solid #ccc; /* Borda leve */
@@ -1129,7 +1132,7 @@
     <!-- COLEÇÃO ALANIS -->
     <div class="collection-products" id="Alanis Morissette" style="display: none;">
         <div class="product-item" data-type="camiseta">
-            <img id="lanis-image" src="imagens/lanisb.jpg" alt="lanisb">
+            <img id="lanis-image" src="imagens/lanisb.jpg" alt="lanisb" class="product-image">
             <h3>Alanis</h3>
             <p>R$ 59,99</p>
             <div class="product-options">
@@ -1150,7 +1153,7 @@
             <button onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">Adicionar ao Carrinho</button>
         </div>
         <div class="product-item" data-type="camiseta">
-            <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb">
+            <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb" class="product-image">
             <h3>Alanis Morissette</h3>
             <p>R$ 59,99</p>
             <div class="product-options">
