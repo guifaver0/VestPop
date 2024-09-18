@@ -1376,9 +1376,13 @@ function showCollection(colecaoId) {
 function showSection(sectionId) {
     // Lógica para mostrar a seção correspondente
     const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.display = 'none'; // Oculta todas as seções
-            });
+    // Inicializa a seção inicial
+sections.forEach((section, index) => {
+    section.style.display = index === 0 ? 'block' : 'none'; // Mostra apenas a primeira seção
+});
+
+// Adicione esta linha após a inicialização para garantir que "Início" seja exibido ao carregar
+showSlide(0); // Mostra o primeiro slide da imagem
     document.getElementById(sectionId).style.display = 'block'; // Mostra a seção clicada
     }
 
