@@ -1355,14 +1355,15 @@
     <script>
 
 function showSection(sectionId) {
-        document.querySelectorAll('section').forEach(section => {
-            section.style.display = 'none'; // Esconder todas as seções
-        });
-        document.getElementById(sectionId).style.display = 'block'; // Mostrar a seção selecionada
-    }
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = 'none'; // Esconder todas as seções
+    });
+    document.getElementById(sectionId).style.display = 'block'; // Mostrar a seção selecionada
+}
 
-    // Exibir a seção inicial
-    showSection('inicio');
+// Exibir a seção inicial
+showSection('inicio'); // Garante que a aba "Início" seja exibida ao carregar
 
 function showCollection(colecaoId) {
     // Oculta todas as coleções
@@ -1372,19 +1373,6 @@ function showCollection(colecaoId) {
     // Mostra a coleção selecionada
     document.getElementById(colecaoId).style.display = 'block';
 }
-
-function showSection(sectionId) {
-    // Lógica para mostrar a seção correspondente
-    const sections = document.querySelectorAll('section');
-    // Inicializa a seção inicial
-sections.forEach((section, index) => {
-    section.style.display = index === 0 ? 'block' : 'none'; // Mostra apenas a primeira seção
-});
-
-// Adicione esta linha após a inicialização para garantir que "Início" seja exibido ao carregar
-showSlide(0); // Mostra o primeiro slide da imagem
-    document.getElementById(sectionId).style.display = 'block'; // Mostra a seção clicada
-    }
 
 function changeImage(imageId, color, productName) {
     const imageElement = document.getElementById(imageId);
@@ -1417,32 +1405,8 @@ function toggleArtistList() {
     artistList.style.display = artistList.style.display === "none" ? "block" : "none";
 }
 
-function showCollection(artist) {
-    // Ocultar todas as coleções
-    var collections = document.querySelectorAll('.collection-products');
-    collections.forEach(function(collection) {
-        collection.style.display = 'none';
-    });
-
-    // Mostrar a coleção correspondente ao artista selecionado
-    if (artist) {
-        var selectedCollection = document.getElementById(artist);
-        if (selectedCollection) {
-            selectedCollection.style.display = 'block';
-        }
-    }
-}
-
 // Carrinho agora é um array que armazena objetos de produtos
 let cart = [];
-
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.display = 'none';
-    });
-    document.getElementById(sectionId).style.display = 'block';
-}
 
 function addToCart(name, price, size, color, type) {
     const product = {
@@ -1534,6 +1498,7 @@ function generatePaymentLink(cart) {
         return 'https://pag.ae/7-VqsJ411'; // Link para 3 camisetas
     } else if (camisetaCount === 4 && cortaVentoCount === 0) {
         return 'https://pag.ae/7-W8p37w4'; // Link para 4 camisetas
+    }
 }
 
 function sendEmail(cartItems, customerData) {
@@ -1566,8 +1531,6 @@ function sendEmail(cartItems, customerData) {
         console.error('Erro:', error);
     });
 }
-}
-
 showSection('about');
     </script>
 </body>
