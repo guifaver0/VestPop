@@ -245,10 +245,12 @@
         .image-slider {
             position: relative;
             width: 100%;
-            /* A largura agora ocupa 100% da tela */
-            height: 400px;
-            /* Altura fixa para as imagens */
-            margin: 0;
+            max-width: 1920px;
+            /* Define um limite máximo de largura */
+            height: 1080px;
+            /* Altura Full HD */
+            margin: 0 auto;
+            /* Centraliza a imagem no caso de telas maiores */
             overflow: hidden;
         }
 
@@ -256,9 +258,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* As imagens agora cobrem completamente a largura da tela */
         }
-
 
         .slide {
             display: none;
@@ -517,6 +517,26 @@
                 /* Reduz o tamanho da fonte em telas menores */
             }
         }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permite que os itens ocupem várias linhas, se necessário */
+            justify-content: space-between;
+            /* Distribui os itens uniformemente */
+            gap: 20px;
+            /* Espaço entre os produtos */
+        }
+
+        .product-item {
+            width: calc(33.33% - 20px);
+            /* Cada produto ocupará 1/3 da largura da tela, com espaço entre eles */
+            box-sizing: border-box;
+            /* Garante que padding e border não aumentem a largura total */
+            margin-bottom: 20px;
+            /* Espaço abaixo de cada item */
+        }
+        
     </style>
 </head>
 
@@ -1324,6 +1344,7 @@
         </div>
 
         <!-- COLEÇÃO ALANIS -->
+        <div class="collection-header">
         <div class="collection-products" id="Alanis Morissette" style="display: none;">
             <!-- Produto 1 -->
             <div class="product-item" data-type="camiseta">
