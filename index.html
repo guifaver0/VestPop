@@ -294,16 +294,23 @@
             text-align: center;
         }
         .collection-products {
-    display: flex; /* Para exibir produtos em linha */
-    overflow-x: auto; /* Habilitar rolagem horizontal */
-    padding: 10px 0; /* Um pouco de padding em cima e embaixo */
-    white-space: nowrap; /* Evitar quebra de linha nos itens */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os produtos quebrem a linha se não houver espaço */
+    justify-content: space-around; /* Espaço igual entre os itens */
 }
 
 .product-item {
-    flex: 0 0 auto; /* Para que os itens não encolham e mantenham seu tamanho */
-    margin-right: 20px; /* Espaço entre os itens */
+    margin: 10px; /* Espaçamento entre os produtos */
+    flex: 1 1 30%; /* Permite que os itens cresçam e se reduzam */
+    max-width: 200px; /* Limita a largura máxima */
+    text-align: center; /* Centraliza o texto dentro do item */
 }
+
+.product-image {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do item */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
 
 .artist-list {
     display: flex; /* Exibir artistas em linha */
@@ -1015,52 +1022,55 @@
         <!-- Botão centralizado -->
         <button class="collection-btn artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
 
-        <!-- Lista de artistas inicialmente escondida -->
-        <ul id="artist-list" class="artist-list" style="display: none;">
-            <li><button class="artist-btn" onclick="showCollection('Alanis Morissette')">Alanis Morissette</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Anitta')">Anitta</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Ariana Grande')">Ariana Grande</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Baco Exu do Blues')">Baco Exu do Blues</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Beyonce')">Beyonce</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Billie Eilish')">Billie Eilish</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Britney Spears')">Britney Spears</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Bruno Mars')">Bruno Mars</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Camila Cabello')">Camila Cabello</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Chappell Roan')">Chappell Roan</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Charli XCX')">Charli XCX</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Demi Lovato')">Demi Lovato</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Doja Cat')">Doja Cat</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Eminem')">Eminem</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Harry Styles')">Harry Styles</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Jão')">Jão</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Justin Bieber')">Justin Bieber</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Justin Timberlake')">Justin Timberlake</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Karol G')">Karol G</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Katy Perry')">Katy Perry</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Kayblack')">Kayblack</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Kesha')">Kesha</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Lady Gaga')">Lady Gaga</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Lana Del Rey')">Lana Del Rey</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Lisa')">Lisa</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Luisa Sonza')">Luisa Sonza</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Mariah Carey')">Mariah Carey</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Marina Sena')">Marina Sena</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Melanie Martinez')">Melanie Martinez</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Olivia Rodrigo')">Olivia Rodrigo</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Pabllo Vittar')">Pabllo Vittar</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Post Malone')">Post Malone</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Rihanna')">Rihanna</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Sabrina Carpenter')">Sabrina Carpenter</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Shawn Mendes')">Shawn Mendes</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Sia')">Sia</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Sza')">Sza</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Tasha & Tracie')">Tasha & Tracie</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Taylor Swift')">Taylor Swift</button></li>
-            <li><button class="artist-btn" onclick="showCollection('The Weeknd')">The Weeknd</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Tyla')">Tyla</button></li>
-            <li><button class="artist-btn" onclick="showCollection('Tyler, The Creator')">Tyler, The Creator</button></li>
-        </ul>
-    </div>
+        <!-- Lista de artistas como um select -->
+<div class="artist-select-container">
+    <label for="artist-select">Escolha um artista:</label>
+    <select id="artist-select" onchange="showCollection(this.value)">
+        <option value="" disabled selected>Selecione um artista</option>
+        <option value="Alanis Morissette">Alanis Morissette</option>
+        <option value="Anitta">Anitta</option>
+        <option value="Ariana Grande">Ariana Grande</option>
+        <option value="Baco Exu do Blues">Baco Exu do Blues</option>
+        <option value="Beyonce">Beyonce</option>
+        <option value="Billie Eilish">Billie Eilish</option>
+        <option value="Britney Spears">Britney Spears</option>
+        <option value="Bruno Mars">Bruno Mars</option>
+        <option value="Camila Cabello">Camila Cabello</option>
+        <option value="Chappell Roan">Chappell Roan</option>
+        <option value="Charli XCX">Charli XCX</option>
+        <option value="Demi Lovato">Demi Lovato</option>
+        <option value="Doja Cat">Doja Cat</option>
+        <option value="Eminem">Eminem</option>
+        <option value="Harry Styles">Harry Styles</option>
+        <option value="Jão">Jão</option>
+        <option value="Justin Bieber">Justin Bieber</option>
+        <option value="Justin Timberlake">Justin Timberlake</option>
+        <option value="Karol G">Karol G</option>
+        <option value="Katy Perry">Katy Perry</option>
+        <option value="Kayblack">Kayblack</option>
+        <option value="Kesha">Kesha</option>
+        <option value="Lady Gaga">Lady Gaga</option>
+        <option value="Lana Del Rey">Lana Del Rey</option>
+        <option value="Lisa">Lisa</option>
+        <option value="Luisa Sonza">Luisa Sonza</option>
+        <option value="Mariah Carey">Mariah Carey</option>
+        <option value="Marina Sena">Marina Sena</option>
+        <option value="Melanie Martinez">Melanie Martinez</option>
+        <option value="Olivia Rodrigo">Olivia Rodrigo</option>
+        <option value="Pabllo Vittar">Pabllo Vittar</option>
+        <option value="Post Malone">Post Malone</option>
+        <option value="Rihanna">Rihanna</option>
+        <option value="Sabrina Carpenter">Sabrina Carpenter</option>
+        <option value="Shawn Mendes">Shawn Mendes</option>
+        <option value="Sia">Sia</option>
+        <option value="Sza">Sza</option>
+        <option value="Tasha & Tracie">Tasha & Tracie</option>
+        <option value="Taylor Swift">Taylor Swift</option>
+        <option value="The Weeknd">The Weeknd</option>
+        <option value="Tyla">Tyla</option>
+        <option value="Tyler, The Creator">Tyler, The Creator</option>
+    </select>
+</div>
 
 <!-- COLEÇÃO ALANIS -->
 <div class="collection-products" id="Alanis Morissette" style="display: none;">
@@ -1320,6 +1330,23 @@ function changeImage(imageId, color, productName) {
     } else {
         imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
     }
+}
+
+// Função para exibir a coleção correspondente e atualizar o nome do botão
+function showCollection(artistName) {
+    if (artistName === "") return; // Não faz nada se o valor estiver vazio
+
+    // Ocultar todos os produtos
+    const collections = document.querySelectorAll('.collection-products');
+    collections.forEach(function(collection) {
+        collection.style.display = 'none';
+    });
+
+    // Exibir a coleção selecionada
+    document.getElementById(artistName).style.display = 'block';
+
+    // Atualizar o botão principal com o nome do artista, mantendo o formato original
+    document.querySelector('.collection-btn').textContent = artistName;
 }
 
 // Função para mostrar ou ocultar a lista de artistas
