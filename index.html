@@ -293,59 +293,23 @@
             width: 200px;
             text-align: center;
         }
-        .collections-container {
-    text-align: center;
-    margin: 20px 0;
+        .collection-products {
+    display: flex; /* Para exibir produtos em linha */
+    overflow-x: auto; /* Habilitar rolagem horizontal */
+    padding: 10px 0; /* Um pouco de padding em cima e embaixo */
+    white-space: nowrap; /* Evitar quebra de linha nos itens */
 }
 
-.artist-toggle-btn {
-    background-color: #4d8a92;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.artist-toggle-btn:hover {
-    background-color: #333;
-}
-
-.artist-toggle-btn:active {
-    transform: scale(0.95);
+.product-item {
+    flex: 0 0 auto; /* Para que os itens não encolham e mantenham seu tamanho */
+    margin-right: 20px; /* Espaço entre os itens */
 }
 
 .artist-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
-    display: inline-block; /* Para que a lista fique centralizada */
-}
-
-.artist-list li {
-    margin-bottom: 10px;
-}
-
-.artist-btn {
-    background-color: #4d8a92;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.artist-btn:hover {
-    background-color: #333;
-}
-
-.artist-btn:active {
-    transform: scale(0.95);
+    display: flex; /* Exibir artistas em linha */
+    overflow-x: auto; /* Habilitar rolagem horizontal */
+    padding: 10px 0; /* Padding em cima e embaixo */
+    white-space: nowrap; /* Evitar quebra de linha nos itens */
 }
 
 
@@ -1114,7 +1078,7 @@
             </select>
             <br>
             <label for="color14">Cor:</label>
-            <select id="color14 "onchange="changeImage('lanis-image', this.value, 'lanis')">
+            <select id="color14" onchange="changeImage('lanis-image', this.value, 'lanis')">
                 <option value="Preto">Preto</option>
                 <option value="Branco">Branco</option>
             </select>
