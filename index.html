@@ -518,23 +518,19 @@
             }
         }
 
-        .product-grid {
+        .product-list {
             display: flex;
             flex-wrap: wrap;
-            /* Permite que os itens ocupem várias linhas, se necessário */
             justify-content: space-between;
-            /* Distribui os itens uniformemente */
             gap: 20px;
             /* Espaço entre os produtos */
         }
 
         .product-item {
-            width: calc(33.33% - 20px);
-            /* Cada produto ocupará 1/3 da largura da tela, com espaço entre eles */
+            flex: 1 1 calc(25% - 20px);
+            /* Cada produto ocupa 25% da largura da tela */
             box-sizing: border-box;
-            /* Garante que padding e border não aumentem a largura total */
             margin-bottom: 20px;
-            /* Espaço abaixo de cada item */
         }
         
     </style>
@@ -1344,7 +1340,6 @@
         </div>
 
         <!-- COLEÇÃO ALANIS -->
-        <div class="collection-header">
         <div class="collection-products" id="Alanis Morissette" style="display: none;">
             <!-- Produto 1 -->
             <div class="product-item" data-type="camiseta">
