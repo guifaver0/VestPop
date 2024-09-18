@@ -1050,7 +1050,7 @@
     <div class="collections-container">
         <!-- Botão centralizado -->
         <button class="collection-btn artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
-    
+
         <!-- Lista de artistas inicialmente escondida -->
         <ul id="artist-list" class="artist-list" style="display: none;">
             <li><button class="artist-btn" onclick="showCollection('alanismorissette')">Alanis Morissette</button></li>
@@ -1100,7 +1100,7 @@
     
 
     <!-- Produtos da Coleção 1 -->
-    <div class="collection-products" id="colecao1">
+    <div class="collection-products" id="colecao1" style="display: none;">
         <div class="product">
             <div class="product-item">
                 <img id="product1-image" src="imagens/produto1.jpg" alt="Produto 1" class="product-image">
@@ -1346,15 +1346,28 @@ function changeImage(imageId, color, productName) {
 
 // Função para mostrar ou ocultar a lista de artistas
 function toggleArtistList() {
-        const artistList = document.getElementById('artist-list');
-        artistList.style.display = artistList.style.display === 'none' ? 'block' : 'none';
-    }
+    const artistList = document.getElementById('artist-list');
+    artistList.style.display = artistList.style.display === 'none' ? 'block' : 'none';
+}
 
-    // Função de exemplo para exibir a coleção correspondente
-    function showCollection(artist) {
-        alert('Exibindo coleção para: ' + artist);
-        // Aqui você pode adicionar sua lógica para exibir a coleção do artista
-    }
+// Função para exibir a coleção correspondente e ocultar a lista de artistas
+function showCollection(artist) {
+    // Ocultar todos os produtos
+    const collections = document.querySelectorAll('.collection-products');
+    collections.forEach(function(collection) {
+        collection.style.display = 'none';
+    });
+
+    // Exibir somente a coleção selecionada
+    const selectedCollection = document.getElementById('colecao1'); // Substituir conforme a coleção
+    selectedCollection.style.display = 'block';
+
+    // Ocultar a lista de artistas após a seleção
+    document.getElementById('artist-list').style.display = 'none';
+
+    // Adicionar o nome do artista ao botão principal (opcional)
+    document.querySelector('.collection-btn').textContent = artist.charAt(0).toUpperCase() + artist.slice(1);
+}
 
 // Carrinho agora é um array que armazena objetos de produtos
 let cart = [];
