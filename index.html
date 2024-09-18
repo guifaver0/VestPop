@@ -90,6 +90,7 @@
             flex-wrap: wrap;
         }
 
+        /* CSS existente para produtos */
         .product-item {
             background-color: white;
             padding: 1em;
@@ -102,6 +103,22 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
+
+        /* Media query para telas menores */
+        @media (max-width: 480px) {
+            .product-item {
+                width: calc(33% - 20px);
+                /* Três produtos por linha em telas pequenas */
+            }
+
+            /* Ajustar o ícone do carrinho */
+            #cart-icon {
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+            }
+        }
+
 
         .product-item:hover {
             transform: scale(1.05);
@@ -396,9 +413,9 @@
             margin-right: 8px;
             /* Espaçamento entre o ícone e o texto */
         }
-
     </style>
 </head>
+
 <body>
     <header>
         <div id="logo-container">
