@@ -1053,9 +1053,9 @@
 
         <!-- Lista de artistas inicialmente escondida -->
         <ul id="artist-list" class="artist-list" style="display: none;">
-            <li><button class="artist-btn" onclick="showCollection('alanismorissette')">Alanis Morissette</button></li>
-            <li><button class="artist-btn" onclick="showCollection('anitta')">Anitta</button></li>
-            <li><button class="artist-btn" onclick="showCollection('arianagrande')">Ariana Grande</button></li>
+            <li><button class="artist-btn" onclick="showCollection('Alanis Morissette')">Alanis Morissette</button></li>
+            <li><button class="artist-btn" onclick="showCollection('Anitta')">Anitta</button></li>
+            <li><button class="artist-btn" onclick="showCollection('Ariana Grande')">Ariana Grande</button></li>
             <li><button class="artist-btn" onclick="showCollection('bacoexudoblues')">Baco Exu do Blues</button></li>
             <li><button class="artist-btn" onclick="showCollection('beyonce')">Beyonce</button></li>
             <li><button class="artist-btn" onclick="showCollection('billieeilish')">Billie Eilish</button></li>
@@ -1097,86 +1097,79 @@
             <li><button class="artist-btn" onclick="showCollection('tylerthecreator')">Tyler, The Creator</button></li>
         </ul>
     </div>
-    
 
-    <!-- Produtos da Coleção 1 -->
-    <div class="collection-products" id="colecao1" style="display: none;">
-        <div class="product">
-            <div class="product-item">
-                <img id="product1-image" src="imagens/produto1.jpg" alt="Produto 1" class="product-image">
-                <h3>Produto 1</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size1">Tamanho:</label>
-                    <select id="size1">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1">Cor:</label>
-                    <select id="color1">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Produto 1', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar ao Carrinho</button>
+     <!-- Produtos da Coleção 1 (inicialmente escondidos) -->
+     <div class="collection-products" id="colecao1" style="display: none;">
+        <div class="product-item">
+            <img src="imagens/produto1.jpg" alt="Produto 1" class="product-image">
+            <h3>Produto 1</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size1">Tamanho:</label>
+                <select id="size1">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color1">Cor:</label>
+                <select id="color1">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button onclick="addToCart('Produto 1', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar ao Carrinho</button>
         </div>
     </div>
 
-    <!-- Produtos da Coleção 2 -->
+    <!-- Produtos da Coleção 2 (inicialmente escondidos) -->
     <div class="collection-products" id="colecao2" style="display: none;">
-        <div class="product">
-            <div class="product-item">
-                <img id="product2-image" src="imagens/produto2.jpg" alt="Produto 2" class="product-image">
-                <h3>Produto 2</h3>
-                <p>R$ 69,99</p>
-                <div class="product-options">
-                    <label for="size2">Tamanho:</label>
-                    <select id="size2">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color2">Cor:</label>
-                    <select id="color2">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Produto 2', 69.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar ao Carrinho</button>
+        <div class="product-item">
+            <img src="imagens/produto2.jpg" alt="Produto 2" class="product-image">
+            <h3>Produto 2</h3>
+            <p>R$ 69,99</p>
+            <div class="product-options">
+                <label for="size2">Tamanho:</label>
+                <select id="size2">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color2">Cor:</label>
+                <select id="color2">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button onclick="addToCart('Produto 2', 69.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar ao Carrinho</button>
         </div>
     </div>
 
-    <!-- Produtos da Coleção 3 -->
+    <!-- Produtos da Coleção 3 (inicialmente escondidos) -->
     <div class="collection-products" id="colecao3" style="display: none;">
-        <div class="product">
-            <div class="product-item">
-                <img id="product3-image" src="imagens/produto3.jpg" alt="Produto 3" class="product-image">
-                <h3>Produto 3</h3>
-                <p>R$ 79,99</p>
-                <div class="product-options">
-                    <label for="size3">Tamanho:</label>
-                    <select id="size3">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color3">Cor:</label>
-                    <select id="color3">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar ao Carrinho</button>
+        <div class="product-item">
+            <img src="imagens/produto3.jpg" alt="Produto 3" class="product-image">
+            <h3>Produto 3</h3>
+            <p>R$ 79,99</p>
+            <div class="product-options">
+                <label for="size3">Tamanho:</label>
+                <select id="size3">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color3">Cor:</label>
+                <select id="color3">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar ao Carrinho</button>
         </div>
     </div>
 </section>
@@ -1350,23 +1343,22 @@ function toggleArtistList() {
     artistList.style.display = artistList.style.display === 'none' ? 'block' : 'none';
 }
 
-// Função para exibir a coleção correspondente e ocultar a lista de artistas
-function showCollection(artist) {
+// Função para exibir a coleção correspondente e atualizar o nome do botão
+function showCollection(collectionId, artistName) {
     // Ocultar todos os produtos
     const collections = document.querySelectorAll('.collection-products');
     collections.forEach(function(collection) {
         collection.style.display = 'none';
     });
 
-    // Exibir somente a coleção selecionada
-    const selectedCollection = document.getElementById('colecao1'); // Substituir conforme a coleção
-    selectedCollection.style.display = 'block';
+    // Exibir a coleção selecionada
+    document.getElementById(collectionId).style.display = 'block';
 
     // Ocultar a lista de artistas após a seleção
     document.getElementById('artist-list').style.display = 'none';
 
-    // Adicionar o nome do artista ao botão principal (opcional)
-    document.querySelector('.collection-btn').textContent = artist.charAt(0).toUpperCase() + artist.slice(1);
+    // Atualizar o botão principal com o nome do artista, mantendo o formato original
+    document.querySelector('.collection-btn').textContent = artistName;
 }
 
 // Carrinho agora é um array que armazena objetos de produtos
