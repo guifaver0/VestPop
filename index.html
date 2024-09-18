@@ -25,9 +25,8 @@
         #logo-container {
             display: flex;
             align-items: center;
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            justify-content: center; /* Centraliza o logo */
+            margin-bottom: 10px; /* Espaço entre o logo e o título */
         }
 
         #logo {
@@ -53,6 +52,7 @@
             background-color: #4d8a92;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
             padding: 10px 0;
         }
 
@@ -61,7 +61,7 @@
             color: white;
             text-align: center;
             padding: 14px 20px;
-            margin: 0 10px;
+            margin: 5px; /* Espaçamento reduzido para telas pequenas */
             text-decoration: none;
             cursor: pointer;
             border: 2px solid #ddd;
@@ -91,24 +91,46 @@
             margin: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 200px;
+            width: calc(33% - 20px); /* Para telas maiores */
+            max-width: 200px;
             text-align: center;
-            transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de zoom */
+            transition: transform 0.3s ease;
         }
 
         .product-item:hover {
-            transform: scale(1.05); /* Aumenta levemente o tamanho do item ao passar o mouse */
+            transform: scale(1.05);
         }
 
         .product-item img {
             max-width: 100%;
             height: auto;
-            transition: transform 0.3s ease; /* Transição suave ao fazer zoom */
+            transition: transform 0.3s ease;
         }
 
         .product-item:hover img {
-            transform: scale(1.2); /* Aumenta o tamanho da imagem ao passar o mouse */
+            transform: scale(1.2);
         }
+
+        /* Adicionei as media queries para responsividade */
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px); /* Dois produtos por linha em telas médias */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: calc(100% - 20px); /* Um produto por linha em telas pequenas */
+            }
+
+            #cart-icon {
+                top: 10px; /* Ajustar a posição do ícone no mobile */
+                right: 10px; /* Ajustar a posição do ícone no mobile */
+                font-size: 20px; /* Reduzir o tamanho do ícone */
+            }
+        }
+
+        /* O restante do CSS permanece o mesmo */
 
         .product-item button {
             background-color: #4d8a92;
@@ -286,6 +308,14 @@
             justify-content: center;
         }
 
+        /* Atualização para os produtos na aba "Camisetas" */
+        .collection-products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
         .product-item {
             margin: 10px;
             border: 1px solid #ccc;
@@ -293,96 +323,62 @@
             width: 200px;
             text-align: center;
         }
-        
-        /* Atualização para os produtos na aba "Camisetas" */
-        .collection-products {
-            display: flex;
-            flex-wrap: wrap; /* Permite que os produtos quebrem a linha se não houver espaço */
-            justify-content: center; /* Centraliza os produtos horizontalmente */
-            margin: 20px 0; /* Espaçamento superior e inferior */
-        }
-
-        .product-item {
-            margin: 10px; /* Espaçamento entre os produtos */
-            flex: 1 1 30%; /* Permite que os itens cresçam e se reduzam */
-            max-width: 200px; /* Limita a largura máxima */
-            text-align: center; /* Centraliza o texto dentro do item */
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
-        }
-
-        .product-image {
-            width: 100%; /* Faz com que a imagem ocupe toda a largura do item */
-            height: auto; /* Mantém a proporção da imagem */
-            border-top-left-radius: 8px; /* Bordas arredondadas na parte superior */
-            border-top-right-radius: 8px; /* Bordas arredondadas na parte superior */
-        }
 
         .artist-list {
-            display: flex; /* Exibir artistas em linha */
-            overflow-x: auto; /* Habilitar rolagem horizontal */
-            padding: 10px 0; /* Padding em cima e embaixo */
-            white-space: nowrap; /* Evitar quebra de linha nos itens */
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            white-space: nowrap;
         }
 
         .artist-toggle-btn {
-            background-color: #4d8a92; /* Cor de fundo */
-            color: white; /* Cor do texto */
-            border: none; /* Sem borda */
-            padding: 10px 20px; /* Espaçamento interno */
-            cursor: pointer; /* Mão ao passar o mouse */
-            border-radius: 20px; /* Bordas arredondadas */
-            transition: background-color 0.3s; /* Efeito de transição suave */
+            background-color: #4d8a92;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s;
         }
 
         .artist-toggle-btn:hover {
-            background-color: #3c7c80; /* Cor de fundo ao passar o mouse */
+            background-color: #3c7c80;
         }
 
         .artist-item {
-            display: inline-block; /* Exibir artistas em linha */
-            margin-right: 20px; /* Espaçamento entre os itens */
-            text-align: center; /* Centralizar texto */
+            display: inline-block;
+            margin-right: 20px;
+            text-align: center;
         }
 
-        .artist-image {
-            width: 120px; /* Largura fixa para as imagens dos artistas */
-            height: auto; /* Altura automática para manter a proporção */
-            border-radius: 50%; /* Bordas arredondadas para as imagens */
+        .artist-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 5px;
         }
 
-        #tipoAcesso {
-    background-color: #f0f0f0; /* Cor de fundo suave */
-    border: 1px solid #ccc; /* Borda leve */
-    border-radius: 20px; /* Bordas arredondadas para um visual mais suave */
-    padding: 10px 15px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 300px; /* Limita a largura máxima */
-    transition: border-color 0.3s ease; /* Transição suave para mudança de borda */
-}
+        .artist-item h3 {
+            font-size: 16px;
+            margin: 0;
+        }
 
-#tipoAcesso:hover {
-    border-color: #4d8a92; /* Cor da borda ao passar o mouse */
-}
-
-.centered select {
-    display: block; /* Exibir como bloco para centralizar */
-    margin: 0 auto; /* Centraliza horizontalmente */
-}
-
-
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #4d8a92;
+            color: white;
+            position: relative;
+        }
     </style>
 </head>
 <body>
     <header>
         <div id="logo-container">
-            <img src="imagens/logo.jpg" alt="VestPop Logo" id="logo">
+            <img src="logo.png" alt="Logo VESTPOP" id="logo">
             <h1>VESTPOP</h1>
         </div>
-        <div id="cart-icon" onclick="showSection('cart')">🛒</div>
+        <div id="cart-icon">🛒</div>
     </header>
     
     <nav>
