@@ -1197,10 +1197,7 @@
         <!-- Lista de artistas como um select -->
         <div class="collections-container">
             <div class="centered">
-                <button class="artist-toggle-btn">Selecione um Artista</button>
-
-            </div>
-            <div id="artist-list" style="display: none;">
+                <!-- Transformando o botão em um select para exibir a lista de artistas -->
                 <select id="tipoAcesso" onchange="showCollection(this.value)">
                     <option value="" disabled selected>Selecione um artista</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
@@ -1271,31 +1268,9 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">Adicionar
-                    ao Carrinho</button>
-            </div>
-            <div class="product-item" data-type="camiseta">
-                <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb" class="product-image">
-                <h3>Alanis Morissette</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size13">Tamanho:</label>
-                    <select id="size13">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color13">Cor:</label>
-                    <select id="color13" onchange="changeImage('alanis-image', this.value, 'alanis')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">Adicionar
-                    ao Carrinho</button>
+                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">
+                    Adicionar ao Carrinho
+                </button>
             </div>
         </div>
 
@@ -1514,14 +1489,20 @@
         // Exibir a seção inicial
         showSection('about'); // Garante que a aba "Início" seja exibida ao carregar
 
-        function showCollection(colecaoId) {
+        function showCollection(artistName) {
+            if (!artistName) return; // Não faz nada se o valor estiver vazio
+
             // Oculta todas as coleções
             const collections = document.querySelectorAll('.collection-products');
             collections.forEach(collection => collection.style.display = 'none');
 
-            // Mostra a coleção selecionada
-            document.getElementById(colecaoId).style.display = 'block';
+            // Exibe a coleção selecionada
+            const selectedCollection = document.getElementById(artistName);
+            if (selectedCollection) {
+                selectedCollection.style.display = 'block';
+            }
         }
+
 
         function changeImage(imageId, color, productName) {
             const imageElement = document.getElementById(imageId);
