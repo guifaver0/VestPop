@@ -293,29 +293,58 @@
             width: 200px;
             text-align: center;
         }
-        /* Estilo para os botões das coleções */
-        .collections-list {
+        .collections-container {
     text-align: center;
     margin: 20px 0;
 }
 
-.collection-btn {
+.artist-toggle-btn {
     background-color: #4d8a92;
     color: white;
     border: none;
-    padding: 8px 16px; /* Diminui o espaçamento interno */
+    padding: 10px 20px;
     cursor: pointer;
-    margin: 8px; /* Diminui o espaçamento entre os botões */
     border-radius: 4px;
+    font-size: 16px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 14px; /* Diminui o tamanho da fonte */
 }
 
-.collection-btn:hover {
+.artist-toggle-btn:hover {
     background-color: #333;
 }
 
-.collection-btn:active {
+.artist-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.artist-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    display: inline-block; /* Para que a lista fique centralizada */
+}
+
+.artist-list li {
+    margin-bottom: 10px;
+}
+
+.artist-btn {
+    background-color: #4d8a92;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.artist-btn:hover {
+    background-color: #333;
+}
+
+.artist-btn:active {
     transform: scale(0.95);
 }
 
@@ -1018,56 +1047,55 @@
         <h2>Camisetas</h2>
     </div>
 
-    <!-- Lista de coleções -->
     <div class="collections-container">
-        <!-- Botão que mostra a lista de artistas -->
-        <button class="collection-btn" onclick="toggleArtistList()">Artistas</button>
+        <!-- Botão centralizado -->
+        <button class="collection-btn artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
     
-        <!-- Lista de artistas que será inicialmente escondida -->
-        <div id="artist-list" class="collections-list" style="display: none;">
-            <button class="collection-btn" onclick="showCollection('alanismorissette')">Alanis Morissette</button>
-            <button class="collection-btn" onclick="showCollection('anitta')">Anitta</button>
-            <button class="collection-btn" onclick="showCollection('arianagrande')">Ariana Grande</button>
-            <button class="collection-btn" onclick="showCollection('bacoexudoblues')">Baco Exu do Blues</button>
-            <button class="collection-btn" onclick="showCollection('beyonce')">Beyonce</button>
-            <button class="collection-btn" onclick="showCollection('billieeilish')">Billie Eilish</button>
-            <button class="collection-btn" onclick="showCollection('britneyspears')">Britney Spears</button>
-            <button class="collection-btn" onclick="showCollection('brunomars')">Bruno Mars</button>
-            <button class="collection-btn" onclick="showCollection('camilacabello')">Camila Cabello</button>
-            <button class="collection-btn" onclick="showCollection('chappellroan')">Chappell Roan</button>
-            <button class="collection-btn" onclick="showCollection('charlixcx')">Charli XCX</button>
-            <button class="collection-btn" onclick="showCollection('demilovato')">Demi Lovato</button>
-            <button class="collection-btn" onclick="showCollection('dojacat')">Doja Cat</button>
-            <button class="collection-btn" onclick="showCollection('eminem')">Eminem</button>
-            <button class="collection-btn" onclick="showCollection('harrystyles')">Harry Styles</button>
-            <button class="collection-btn" onclick="showCollection('jao')">Jão</button>
-            <button class="collection-btn" onclick="showCollection('justinbieber')">Justin Bieber</button>
-            <button class="collection-btn" onclick="showCollection('justintimberlake')">Justin Timberlake</button>
-            <button class="collection-btn" onclick="showCollection('karolg')">Karol G</button>
-            <button class="collection-btn" onclick="showCollection('katyperry')">Katy Perry</button>
-            <button class="collection-btn" onclick="showCollection('kayblack')">Kayblack</button>
-            <button class="collection-btn" onclick="showCollection('kesha')">Kesha</button>
-            <button class="collection-btn" onclick="showCollection('ladygaga')">Lady Gaga</button>
-            <button class="collection-btn" onclick="showCollection('lanadelrey')">Lana Del Rey</button>
-            <button class="collection-btn" onclick="showCollection('lisa')">Lisa</button>
-            <button class="collection-btn" onclick="showCollection('luisasonza')">Luisa Sonza</button>
-            <button class="collection-btn" onclick="showCollection('mariahcarey')">Mariah Carey</button>
-            <button class="collection-btn" onclick="showCollection('marinasena')">Marina Sena</button>
-            <button class="collection-btn" onclick="showCollection('melaniemartinez')">Melanie Martinez</button>
-            <button class="collection-btn" onclick="showCollection('oliviarodrigo')">Olivia Rodrigo</button>
-            <button class="collection-btn" onclick="showCollection('pabllovittar')">Pabllo Vittar</button>
-            <button class="collection-btn" onclick="showCollection('postmalone')">Post Malone</button>
-            <button class="collection-btn" onclick="showCollection('rihanna')">Rihanna</button>
-            <button class="collection-btn" onclick="showCollection('sabrinacarpenter')">Sabrina Carpenter</button>
-            <button class="collection-btn" onclick="showCollection('shawnmendes')">Shawn Mendes</button>
-            <button class="collection-btn" onclick="showCollection('sia')">Sia</button>
-            <button class="collection-btn" onclick="showCollection('sza')">Sza</button>
-            <button class="collection-btn" onclick="showCollection('tashaetracie')">Tasha & Tracie</button>
-            <button class="collection-btn" onclick="showCollection('taylorswift')">Taylor Swift</button>
-            <button class="collection-btn" onclick="showCollection('theweeknd')">The Weeknd</button>
-            <button class="collection-btn" onclick="showCollection('tyla')">Tyla</button>
-            <button class="collection-btn" onclick="showCollection('tylerthecreator')">Tyler, The Creator</button>
-        </div>
+        <!-- Lista de artistas inicialmente escondida -->
+        <ul id="artist-list" class="artist-list" style="display: none;">
+            <li><button class="artist-btn" onclick="showCollection('alanismorissette')">Alanis Morissette</button></li>
+            <li><button class="artist-btn" onclick="showCollection('anitta')">Anitta</button></li>
+            <li><button class="artist-btn" onclick="showCollection('arianagrande')">Ariana Grande</button></li>
+            <li><button class="artist-btn" onclick="showCollection('bacoexudoblues')">Baco Exu do Blues</button></li>
+            <li><button class="artist-btn" onclick="showCollection('beyonce')">Beyonce</button></li>
+            <li><button class="artist-btn" onclick="showCollection('billieeilish')">Billie Eilish</button></li>
+            <li><button class="artist-btn" onclick="showCollection('britneyspears')">Britney Spears</button></li>
+            <li><button class="artist-btn" onclick="showCollection('brunomars')">Bruno Mars</button></li>
+            <li><button class="artist-btn" onclick="showCollection('camilacabello')">Camila Cabello</button></li>
+            <li><button class="artist-btn" onclick="showCollection('chappellroan')">Chappell Roan</button></li>
+            <li><button class="artist-btn" onclick="showCollection('charlixcx')">Charli XCX</button></li>
+            <li><button class="artist-btn" onclick="showCollection('demilovato')">Demi Lovato</button></li>
+            <li><button class="artist-btn" onclick="showCollection('dojacat')">Doja Cat</button></li>
+            <li><button class="artist-btn" onclick="showCollection('eminem')">Eminem</button></li>
+            <li><button class="artist-btn" onclick="showCollection('harrystyles')">Harry Styles</button></li>
+            <li><button class="artist-btn" onclick="showCollection('jao')">Jão</button></li>
+            <li><button class="artist-btn" onclick="showCollection('justinbieber')">Justin Bieber</button></li>
+            <li><button class="artist-btn" onclick="showCollection('justintimberlake')">Justin Timberlake</button></li>
+            <li><button class="artist-btn" onclick="showCollection('karolg')">Karol G</button></li>
+            <li><button class="artist-btn" onclick="showCollection('katyperry')">Katy Perry</button></li>
+            <li><button class="artist-btn" onclick="showCollection('kayblack')">Kayblack</button></li>
+            <li><button class="artist-btn" onclick="showCollection('kesha')">Kesha</button></li>
+            <li><button class="artist-btn" onclick="showCollection('ladygaga')">Lady Gaga</button></li>
+            <li><button class="artist-btn" onclick="showCollection('lanadelrey')">Lana Del Rey</button></li>
+            <li><button class="artist-btn" onclick="showCollection('lisa')">Lisa</button></li>
+            <li><button class="artist-btn" onclick="showCollection('luisasonza')">Luisa Sonza</button></li>
+            <li><button class="artist-btn" onclick="showCollection('mariahcarey')">Mariah Carey</button></li>
+            <li><button class="artist-btn" onclick="showCollection('marinasena')">Marina Sena</button></li>
+            <li><button class="artist-btn" onclick="showCollection('melaniemartinez')">Melanie Martinez</button></li>
+            <li><button class="artist-btn" onclick="showCollection('oliviarodrigo')">Olivia Rodrigo</button></li>
+            <li><button class="artist-btn" onclick="showCollection('pabllovittar')">Pabllo Vittar</button></li>
+            <li><button class="artist-btn" onclick="showCollection('postmalone')">Post Malone</button></li>
+            <li><button class="artist-btn" onclick="showCollection('rihanna')">Rihanna</button></li>
+            <li><button class="artist-btn" onclick="showCollection('sabrinacarpenter')">Sabrina Carpenter</button></li>
+            <li><button class="artist-btn" onclick="showCollection('shawnmendes')">Shawn Mendes</button></li>
+            <li><button class="artist-btn" onclick="showCollection('sia')">Sia</button></li>
+            <li><button class="artist-btn" onclick="showCollection('sza')">Sza</button></li>
+            <li><button class="artist-btn" onclick="showCollection('tashaetracie')">Tasha & Tracie</button></li>
+            <li><button class="artist-btn" onclick="showCollection('taylorswift')">Taylor Swift</button></li>
+            <li><button class="artist-btn" onclick="showCollection('theweeknd')">The Weeknd</button></li>
+            <li><button class="artist-btn" onclick="showCollection('tyla')">Tyla</button></li>
+            <li><button class="artist-btn" onclick="showCollection('tylerthecreator')">Tyler, The Creator</button></li>
+        </ul>
     </div>
     
 
