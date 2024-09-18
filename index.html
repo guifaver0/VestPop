@@ -319,6 +319,32 @@
     white-space: nowrap; /* Evitar quebra de linha nos itens */
 }
 
+.artist-toggle-btn {
+    background-color: #4d8a92; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Mão ao passar o mouse */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    display: inline-block; /* Para permitir centralização */
+}
+
+.artist-toggle-btn:hover {
+    background-color: #333; /* Cor ao passar o mouse */
+}
+
+.artist-toggle-btn:active {
+    transform: scale(0.95); /* Efeito ao clicar */
+}
+
+.centered {
+    display: flex; /* Flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+
 
     </style>
 </head>
@@ -1021,9 +1047,10 @@
     <div class="collections-container">
 
         <!-- Lista de artistas como um select -->
-<div class="artist-select-container">
-    <select id="artist-select" onchange="showCollection(this.value)">
-        <option value="" disabled selected>Artistas</option>
+        <div class="collections-container">
+            <div class="centered">
+                <button class="artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
+            </div>
         <option value="Alanis Morissette">Alanis Morissette</option>
         <option value="Anitta">Anitta</option>
         <option value="Ariana Grande">Ariana Grande</option>
