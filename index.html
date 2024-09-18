@@ -378,17 +378,35 @@
 
         .artist-toggle-btn {
             background-color: #4d8a92;
+            /* Cor de fundo */
             color: white;
+            /* Cor do texto */
             border: none;
+            /* Sem borda */
             padding: 10px 20px;
+            /* Espaçamento interno */
             cursor: pointer;
-            border-radius: 20px;
-            transition: background-color 0.3s;
+            /* Muda o cursor para indicar que é clicável */
+            border-radius: 50px;
+            /* Bordas arredondadas */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Animações para transição */
         }
 
         .artist-toggle-btn:hover {
             background-color: #3c7c80;
+            /* Cor ao passar o mouse */
+            transform: scale(1.05);
+            /* Efeito de aumento ao passar o mouse */
         }
+
+        .artist-toggle-btn:active {
+            transform: scale(0.95);
+            /* Efeito de redução ao clicar */
+        }
+
 
         .artist-item {
             display: inline-block;
