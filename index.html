@@ -596,6 +596,17 @@
             border-radius: 4px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
+        .image-slider .slide {
+            transition: transform 0.3s ease;
+            /* Transição suave */
+        }
+
+        .image-slider .slide:hover {
+            transform: scale(1.05);
+            /* Leve zoom ao passar o mouse */
+        }
+        
     </style>
 </head>
 
@@ -630,7 +641,7 @@
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
                 <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" id="slide-novidade3">
             </div>
-        
+
 
             <h2></h2>
             <div class="security-container">
@@ -1666,20 +1677,22 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
 
-document.getElementById('slide-bannerjoker').onclick = function() {
-    showSection('movies'); // Envia para a aba Vestcine
-};
 
-document.getElementById('slide-bannerlolla').onclick = function() {
-    showSection('collection'); // Altera para a aba Vestpalooza
-};
+        // CLICAR BANNER > ABRE A ABA DESEJADA
 
-document.getElementById('slide-novidade3').onclick = function() {
-    showSection('camiseta'); // Altera para a aba Camisetas
-};
+        document.getElementById('slide-bannerjoker').onclick = function () {
+            showSection('movies'); // Envia para a aba Vestcine
+        };
 
-// Adicione mais eventos de clique conforme necessário para outros slides
+        document.getElementById('slide-bannerlolla').onclick = function () {
+            showSection('collection'); // Altera para a aba Vestpalooza
+        };
 
+        document.getElementById('slide-novidade3').onclick = function () {
+            showSection('camiseta'); // Altera para a aba Camisetas
+        };
+
+        // Adicione mais eventos de clique conforme necessário para outros slides
 
         function toggleArtistList() {
             const artistList = document.getElementById('artist-list');
