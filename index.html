@@ -608,6 +608,53 @@
             transform: scale(1.05);
             /* Leve zoom ao passar o mouse */
         }
+        #cart-items table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #cart-items th, #cart-items td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    #cart-items th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    #cart-items img {
+        border-radius: 5px;
+    }
+
+    #cart {
+        margin-top: 20px;
+    }
+
+    #cart label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    #cart input {
+        padding: 8px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    
     </style>
 </head>
 
@@ -1629,8 +1676,24 @@
     <section id="cart">
         <h2>Carrinho de Compras</h2>
         <div id="cart-items">
-            <ul></ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Imagem</th>
+                        <th>Tamanho</th>
+                        <th>Cor</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os itens serão inseridos aqui dinamicamente -->
+                </tbody>
+            </table>
         </div>
+    
+        <div>
         <div>
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" placeholder="Digite seu CPF" required>
@@ -1748,32 +1811,28 @@
         let cart = [];
 
         function addToCart(name, price, size, color, type, imageSrc) {
-            const product = {
-                name: name,
-                price: price,
-                size: size,
-                color: color,
-                type: type, // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
-                imageSrc: imageSrc // Caminho da imagem do produto
-            };
+        const item = { name, price, size, color, type, imageSrc };
+        cartItems.push(item);
+        updateCartDisplay();
+    }
 
-            cart.push(product); // Adiciona o produto ao carrinho
-            updateCartDisplay(); // Atualiza a exibição do carrinho
-        }
+    function updateCartDisplay() {
+        const cartItemsTableBody = document.querySelector("#cart-items tbody");
+        cartItemsTableBody.innerHTML = ""; // Limpa a tabela antes de atualizar
 
-        function updateCartDisplay() {
-            const cartItemsList = document.querySelector("#cart-items ul");
-            cartItemsList.innerHTML = ""; // Limpa a lista antes de atualizar
-
-            cart.forEach(item => {
-                const li = document.createElement("li");
-                li.innerHTML = `
-            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Exibe a imagem -->
-            <strong>${item.name}</strong> - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price.toFixed(2)}
-        `;
-                cartItemsList.appendChild(li);
-            });
-        }
+        cartItems.forEach(item => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${item.name}</td>
+                <td><img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"></td>
+                <td>${item.size}</td>
+                <td>${item.color}</td>
+                <td>${item.type}</td>
+                <td>R$ ${item.price.toFixed(2)}</td>
+            `;
+            cartItemsTableBody.appendChild(tr);
+        });
+    }
 
         function processPayment() {
             if (cart.length === 0) {
