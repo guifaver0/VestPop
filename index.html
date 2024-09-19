@@ -599,7 +599,8 @@
 
         .image-slider .slide {
             transition: transform 0.3s ease;
-            cursor: pointer; /* Indica que a imagem é clicável */
+            cursor: pointer;
+            /* Indica que a imagem é clicável */
             /* Transição suave */
         }
 
@@ -607,7 +608,6 @@
             transform: scale(1.05);
             /* Leve zoom ao passar o mouse */
         }
-        
     </style>
 </head>
 
@@ -706,7 +706,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Joker', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Joker', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('joker-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -729,7 +729,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Gaga', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Gaga', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('gaga-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -752,7 +752,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Couple', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Couple', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('couple-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -775,7 +775,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Deux', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Deux', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('deux-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
         </div>
@@ -805,7 +805,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Glinda', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Glinda', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('glinda-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -828,7 +828,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Green Pink', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Green Pink', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('greenpink-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -851,7 +851,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Wicked', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Wicked', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('wicked-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -874,7 +874,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
         </div>
@@ -911,7 +911,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('tate-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -934,7 +934,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('tatep-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -957,7 +957,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('think-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -980,7 +980,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('guts-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1003,7 +1003,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('or-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1026,7 +1026,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('oliviap-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1049,7 +1049,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Jão', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Jão', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('jao-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1072,7 +1072,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Cowboy', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Cowboy', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('jaoo-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1095,8 +1095,9 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size9').value, document.getElementById('color9').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size9').value, document.getElementById('color9').value, 'Camiseta', document.getElementById('jaop-image').src)">Adicionar
                     ao Carrinho</button>
+
             </div>
             <div class="product-item" data-type="camiseta">
                 <img id="shawn-image" src="imagens/shawnb.jpg" alt="shawnb">
@@ -1118,7 +1119,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value, 'Camiseta', document.getElementById('shawn-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1141,7 +1142,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('mendes-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1164,7 +1165,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta', document.getElementById('shp-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1187,7 +1188,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta', document.getElementById('alanis-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1210,7 +1211,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('lanis-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1233,7 +1234,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Red', 59.99, document.getElementById('size15').value, document.getElementById('color15').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Red', 59.99, document.getElementById('size15').value, document.getElementById('color15').value, 'Camiseta', document.getElementById('red-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1256,7 +1257,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Girl in Red', 59.99, document.getElementById('size16').value, document.getElementById('color16').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Girl in Red', 59.99, document.getElementById('size16').value, document.getElementById('color16').value, 'Camiseta', document.getElementById('girlinred-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1279,7 +1280,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Girl', 59.99, document.getElementById('size17').value, document.getElementById('color17').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Girl', 59.99, document.getElementById('size17').value, document.getElementById('color17').value, 'Camiseta', document.getElementById('girl-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1302,7 +1303,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Timberpalooza', 59.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Timberpalooza', 59.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Camiseta', document.getElementById('timber-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1325,7 +1326,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Timberlake', 59.99, document.getElementById('size19').value, document.getElementById('color19').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Timberlake', 59.99, document.getElementById('size19').value, document.getElementById('color19').value, 'Camiseta', document.getElementById('just-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1348,7 +1349,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Justin Timberlake', 59.99, document.getElementById('size20').value, document.getElementById('color20').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Justin Timberlake', 59.99, document.getElementById('size20').value, document.getElementById('color20').value, 'Camiseta', document.getElementById('jt-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <!-- Adicione mais produtos aqui -->
@@ -1439,7 +1440,7 @@
                         </select>
                     </div>
                     <button
-                        onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">
+                        onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('lanis-image').src)">
                         Adicionar ao Carrinho
                     </button>
                 </div>
@@ -1463,7 +1464,7 @@
                         </select>
                     </div>
                     <button
-                        onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">
+                        onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta', document.getElementById('alanis-image').src)">
                         Adicionar ao Carrinho
                     </button>
                 </div>
@@ -1743,6 +1744,15 @@
         }
 
         // Carrinho agora é um array que armazena objetos de produtos
+
+        let cartItems = [];
+
+        function addToCart(name, price, size, color, type, imageSrc) {
+            const item = { name, price, size, color, type, imageSrc };
+            cartItems.push(item);
+            updateCartDisplay();
+        }
+
         let cart = [];
 
         function addToCart(name, price, size, color, type) {
@@ -1759,14 +1769,19 @@
         }
 
         function updateCartDisplay() {
-            const cartItems = document.getElementById('cart-items').querySelector('ul');
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`;
-                cartItems.appendChild(li);
+            const cartItemsList = document.querySelector("#cart-items ul");
+            cartItemsList.innerHTML = ""; // Limpa a lista antes de atualizar
+
+            cartItems.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Tamanho da imagem -->
+            <strong>${item.name}</strong> - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price.toFixed(2)}
+        `;
+                cartItemsList.appendChild(li);
             });
         }
+
 
         function processPayment() {
             if (cart.length === 0) {
