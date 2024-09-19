@@ -628,7 +628,7 @@
             vertical-align: middle;
             /* Alinha a imagem ao texto */
         }
-
+        
     </style>
 </head>
 
@@ -1790,10 +1790,10 @@
                 const li = document.createElement("li");
                 li.innerHTML = `
             <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Exibe a imagem -->
-            <strong>${item.name}</strong>  
-            <strong>Tamanho:</strong> ${item.size}  
-            <strong>Cor:</strong> ${item.color}  
-            <strong>Tipo:</strong> ${item.type}  
+            <strong>${item.name}</strong> - 
+            <strong>Tamanho:</strong> ${item.size} - 
+            <strong>Cor:</strong> ${item.color} - 
+            <strong>Tipo:</strong> ${item.type} - 
             <strong>Preço:</strong> R$ ${item.price.toFixed(2)}
         `;
                 cartItemsList.appendChild(li);
