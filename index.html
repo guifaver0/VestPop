@@ -599,20 +599,15 @@
 
         .image-slider .slide {
             transition: transform 0.3s ease;
+            cursor: pointer; /* Indica que a imagem é clicável */
             /* Transição suave */
-            cursor: pointer;
-            /* Muda o cursor para indicar que é clicável */
         }
 
         .image-slider .slide:hover {
-            transform: scale(1.1);
-            /* Aumenta a imagem ao passar o mouse */
+            transform: scale(1.05);
+            /* Leve zoom ao passar o mouse */
         }
-
-        .image-slider .slide:active {
-            transform: scale(0.95);
-            /* Leve redução ao clicar */
-        }
+        
     </style>
 </head>
 
@@ -643,9 +638,9 @@
     <section id="about">
         <div id="novidades">
             <div class="image-slider">
-                <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" onclick="showSection('movies')">
-                <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" onclick="showSection('collection')">
-                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" onclick="showSection('camiseta')">
+                <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
+                <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
+                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" id="slide-novidade3">
             </div>
 
 
