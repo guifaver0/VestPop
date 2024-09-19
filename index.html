@@ -244,9 +244,20 @@
 
         .image-slider {
             position: relative;
-            width: 80%;
+            width: 100%;
+            max-width: 1920px;
+            /* Define um limite máximo de largura */
+            height: 1080px;
+            /* Altura Full HD */
             margin: 0 auto;
+            /* Centraliza a imagem no caso de telas maiores */
             overflow: hidden;
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .slide {
@@ -354,19 +365,14 @@
         }
 
         /* Atualização para os produtos na aba "Camisetas" */
-        .collection-products {
+        .collection-header {
+            text-align: center;
+        }
+
+        .product-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 20px 0;
-        }
-
-        .product-item {
-            margin: 10px;
-            border: 1px solid #ccc;
-            padding: 12px;
-            width: 200px;
-            text-align: center;
         }
 
         .artist-list {
@@ -440,6 +446,88 @@
             margin-right: 8px;
             /* Espaçamento entre o ícone e o texto */
         }
+
+        /* Estilização do select */
+        select {
+            appearance: none;
+            /* Remove o estilo padrão */
+            -webkit-appearance: none;
+            /* Para compatibilidade com Safari */
+            -moz-appearance: none;
+            /* Para compatibilidade com Firefox */
+            background-color: #f1f1f1;
+            /* Cor de fundo suave */
+            border: 2px solid #ccc;
+            /* Borda */
+            border-radius: 8px;
+            /* Bordas arredondadas */
+            padding: 10px;
+            /* Espaçamento interno */
+            width: 100%;
+            /* Largura completa */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            color: #333;
+            /* Cor do texto */
+            outline: none;
+            /* Remove o contorno ao clicar */
+            cursor: pointer;
+            /* Cursor para indicar interatividade */
+            transition: all 0.3s ease;
+            /* Transição suave ao interagir */
+        }
+
+        /* Estilização do select ao focar (quando clica) */
+        select:focus {
+            border-color: #007BFF;
+            /* Muda a cor da borda ao clicar */
+        }
+
+        /* Adiciona uma seta personalizada no select */
+        select::after {
+            content: '\25BC';
+            /* Código para a seta para baixo */
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 16px;
+            color: #007BFF;
+            /* Cor da seta */
+        }
+
+        /* Para o container que envolve o select */
+        .centered select {
+            max-width: 300px;
+            /* Define uma largura máxima */
+            margin: 0 auto;
+            /* Centraliza o select */
+        }
+
+        /* Para dispositivos móveis */
+        @media (max-width: 600px) {
+            select {
+                font-size: 14px;
+                /* Reduz o tamanho da fonte em telas menores */
+            }
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            /* Espaço entre os produtos */
+        }
+
+        .product-item {
+            flex: 1 1 calc(25% - 20px);
+            /* Cada produto ocupa 25% da largura da tela */
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        
     </style>
 </head>
 
@@ -1197,9 +1285,13 @@
         <!-- Lista de artistas como um select -->
         <div class="collections-container">
             <div class="centered">
+<<<<<<< HEAD
                 <button class="artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
             </div>
             <div id="artist-list" style="display: none;">
+=======
+                <!-- Transformando o botão em um select para exibir a lista de artistas -->
+>>>>>>> 25bffae65f9f59eb2ba03c40169756f3f30911d6
                 <select id="tipoAcesso" onchange="showCollection(this.value)">
                     <option value="" disabled selected>Selecione um artista</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
@@ -1250,6 +1342,7 @@
 
         <!-- COLEÇÃO ALANIS -->
         <div class="collection-products" id="Alanis Morissette" style="display: none;">
+            <!-- Produto 1 -->
             <div class="product-item" data-type="camiseta">
                 <img id="lanis-image" src="imagens/lanisb.jpg" alt="lanisb" class="product-image">
                 <h3>Alanis</h3>
@@ -1270,9 +1363,12 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">Adicionar
-                    ao Carrinho</button>
+                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">
+                    Adicionar ao Carrinho
+                </button>
             </div>
+
+            <!-- Produto 2 -->
             <div class="product-item" data-type="camiseta">
                 <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb" class="product-image">
                 <h3>Alanis Morissette</h3>
@@ -1293,10 +1389,12 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">Adicionar
-                    ao Carrinho</button>
+                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">
+                    Adicionar ao Carrinho
+                </button>
             </div>
         </div>
+
 
         <!-- Produtos da Coleção 2 (inicialmente escondidos) -->
         <div class="collection-products" id="colecao2" style="display: none;">
@@ -1513,14 +1611,20 @@
         // Exibir a seção inicial
         showSection('about'); // Garante que a aba "Início" seja exibida ao carregar
 
-        function showCollection(colecaoId) {
+        function showCollection(artistName) {
+            if (!artistName) return; // Não faz nada se o valor estiver vazio
+
             // Oculta todas as coleções
             const collections = document.querySelectorAll('.collection-products');
             collections.forEach(collection => collection.style.display = 'none');
 
-            // Mostra a coleção selecionada
-            document.getElementById(colecaoId).style.display = 'block';
+            // Exibe a coleção selecionada
+            const selectedCollection = document.getElementById(artistName);
+            if (selectedCollection) {
+                selectedCollection.style.display = 'block';
+            }
         }
+
 
         function changeImage(imageId, color, productName) {
             const imageElement = document.getElementById(imageId);
