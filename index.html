@@ -596,61 +596,6 @@
             border-radius: 4px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
-        /* Estilo da barra lateral */
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            /* Largura da barra lateral */
-            position: fixed;
-            /* Fixa na lateral da tela */
-            top: 0;
-            left: -250px;
-            /* Inicialmente oculta */
-            background-color: #4d8a92;
-            overflow-x: hidden;
-            /* Oculta conteúdo extra */
-            transition: 0.5s;
-            /* Transição suave ao abrir/fechar */
-            padding-top: 60px;
-            /* Espaço no topo */
-            z-index: 999;
-            /* Fixa acima de outros conteúdos */
-        }
-
-        .sidebar a {
-            padding: 10px 15px;
-            /* Espaçamento dos links */
-            text-decoration: none;
-            /* Remove sublinhado */
-            font-size: 18px;
-            /* Tamanho da fonte */
-            color: white;
-            /* Cor do texto */
-            display: block;
-            /* Faz os links ocuparem toda a largura */
-            transition: 0.3s;
-            /* Transição suave ao passar o mouse */
-        }
-
-        .sidebar a:hover {
-            background-color: #3c7c80;
-            /* Cor de fundo ao passar o mouse */
-        }
-
-        /* Estilo para abrir a barra lateral */
-        .sidebar.active {
-            left: 0;
-            /* Move a barra lateral para a esquerda */
-        }
-
-        /* Media query para esconder a barra lateral em telas grandes */
-        @media (min-width: 768px) {
-            .sidebar {
-                display: none;
-                /* Oculta a barra lateral */
-            }
-        }
     </style>
 </head>
 
@@ -663,17 +608,6 @@
                 <i class="fas fa-shopping-cart"></i>
             </div>
     </header>
-
-    <header>
-        <button onclick="toggleSidebar()">Menu</button>
-    </header>
-
-    <div id="sidebar" class="sidebar">
-        <a href="#" class="tab-link" onclick="showSection('vestpop')">VESTPOP</a>
-        <a href="#" class="tab-link" onclick="showSection('vestcine')">VESTCINE</a>
-        <a href="#" class="tab-link" onclick="showSection('camisetas')">Camisetas</a>
-        <a href="#" class="tab-link" onclick="showSection('corta-vento')">Corta Vento</a>
-    </div>
 
     <nav>
         <a onclick="showSection('about')">Início</a>
@@ -1786,37 +1720,6 @@
             var artistList = document.getElementById("artist-list");
             artistList.style.display = artistList.style.display === "none" ? "block" : "none";
         }
-
-        // Função barra lateral versão mobile
-
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active'); // Abre/fecha a barra lateral
-        }
-
-        function showSection(sectionId) {
-            // Aqui você pode ocultar todas as seções e exibir apenas a seção correspondente
-            const sections = document.querySelectorAll('main > section'); // Ajuste conforme necessário
-            sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.style.display = 'block'; // Exibe a seção correspondente
-                } else {
-                    section.style.display = 'none'; // Oculta outras seções
-                }
-            });
-
-            // Fecha a barra lateral após selecionar uma aba
-            toggleSidebar();
-        }
-
-        // Inicialize todas as seções como ocultas, exceto a primeira
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('main > section');
-            sections.forEach((section, index) => {
-                section.style.display = index === 0 ? 'block' : 'none'; // Exibe a primeira seção
-            });
-        });
-
 
         // Carrinho agora é um array que armazena objetos de produtos
         let cart = [];
