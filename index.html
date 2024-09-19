@@ -1745,43 +1745,35 @@
 
         // Carrinho agora é um array que armazena objetos de produtos
 
-        let cartItems = [];
-
-        function addToCart(name, price, size, color, type, imageSrc) {
-            const item = { name, price, size, color, type, imageSrc };
-            cartItems.push(item);
-            updateCartDisplay();
-        }
-
         let cart = [];
 
-        function addToCart(name, price, size, color, type) {
+        function addToCart(name, price, size, color, type, imageSrc) {
             const product = {
                 name: name,
                 price: price,
                 size: size,
                 color: color,
-                type: type // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
+                type: type, // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
+                imageSrc: imageSrc // Caminho da imagem do produto
             };
 
             cart.push(product); // Adiciona o produto ao carrinho
-            updateCartDisplay();
+            updateCartDisplay(); // Atualiza a exibição do carrinho
         }
 
         function updateCartDisplay() {
             const cartItemsList = document.querySelector("#cart-items ul");
             cartItemsList.innerHTML = ""; // Limpa a lista antes de atualizar
 
-            cartItems.forEach(item => {
+            cart.forEach(item => {
                 const li = document.createElement("li");
                 li.innerHTML = `
-            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Tamanho da imagem -->
+            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Exibe a imagem -->
             <strong>${item.name}</strong> - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price.toFixed(2)}
         `;
                 cartItemsList.appendChild(li);
             });
         }
-
 
         function processPayment() {
             if (cart.length === 0) {
@@ -1805,7 +1797,6 @@
 
             sendEmail(cpf, telefone, email); // Chama a função de envio de email
         }
-
 
         function generatePaymentLink(cart) {
             let camisetaCount = 0;
@@ -1831,7 +1822,7 @@
             } else if (camisetaCount === 2 && cortaVentoCount === 1) {
                 return 'https://pag.ae/7-W8nDT4u'; // Link para 2 camisetas + 1 corta vento
             } else if (camisetaCount === 2 && cortaVentoCount === 2) {
-                return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camiseta + 2 corta vento
+                return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camisetas + 2 corta vento
             } else if (camisetaCount === 1 && cortaVentoCount === 2) {
                 return 'https://pag.ae/7-W8osoNL'; // Link para 1 camiseta + 2 corta vento
             } else if (camisetaCount === 3 && cortaVentoCount === 0) {
@@ -1865,6 +1856,7 @@
                     console.error("Erro ao enviar email:", error);
                 });
         }
+
 
         showSection('about');
     </script>
