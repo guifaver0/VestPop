@@ -1723,6 +1723,7 @@
 
         // Carrinho agora é um array que armazena objetos de produtos
         let cart = [];
+        
 
         function addToCart(name, price, size, color, type) {
             const product = {
@@ -1817,36 +1818,37 @@
             }
         }
 
-        function sendEmail(cartItems, customerData) {
-            const productsDetails = cartItems.map(item => `${item.name} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price}`).join('\n');
+        function sendEmail() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const cpf = document.getElementById('cpf').value;
+        const phone = document.getElementById('phone').value;
 
-            const formData = {
-                Produtos: productsDetails,
-                CPF: customerData.cpf,
-                Telefone: customerData.telefone,
-                Email: customerData.email
-            };
+        // Coleta os produtos do carrinho
+        const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('\n');
 
-            fetch('https://formspree.io/f/mdknvyrp', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert('E-mail enviado com sucesso!');
-                    } else {
-                        alert('Erro ao enviar e-mail.');
-                    }
-                })
-                .catch(error => {
-                    alert('Erro na comunicação com o servidor.');
-                    console.error('Erro:', error);
-                });
-        }
+        const message = `
+            Nome: ${name}\n
+            E-mail: ${email}\n
+            CPF: ${cpf}\n
+            Telefone: ${phone}\n
+            Produtos no Carrinho:\n
+            ${cartDetails}
+        `;
+
+        emailjs.send("service_b9odh4h", "template_357o4zs", {
+            from_name: name,
+            from_email: email,
+            message: message
+        })
+        .then((response) => {
+            alert('Email enviado com sucesso!');
+            console.log(response.status, response.text);
+        }, (error) => {
+            alert('Erro ao enviar email. Tente novamente.');
+            console.error(error);
+        });
+    }
         showSection('about');
     </script>
 </body>
