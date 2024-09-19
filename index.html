@@ -608,53 +608,6 @@
             transform: scale(1.05);
             /* Leve zoom ao passar o mouse */
         }
-        #cart-items table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    #cart-items th, #cart-items td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: center;
-    }
-
-    #cart-items th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-    }
-
-    #cart-items img {
-        border-radius: 5px;
-    }
-
-    #cart {
-        margin-top: 20px;
-    }
-
-    #cart label {
-        display: block;
-        margin: 10px 0 5px;
-    }
-
-    #cart input {
-        padding: 8px;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
-    
     </style>
 </head>
 
@@ -1676,24 +1629,8 @@
     <section id="cart">
         <h2>Carrinho de Compras</h2>
         <div id="cart-items">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Imagem</th>
-                        <th>Tamanho</th>
-                        <th>Cor</th>
-                        <th>Tipo</th>
-                        <th>Preço</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Os itens serão inseridos aqui dinamicamente -->
-                </tbody>
-            </table>
+            <ul></ul>
         </div>
-    
-        <div>
         <div>
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" placeholder="Digite seu CPF" required>
@@ -1810,111 +1747,115 @@
 
         let cart = [];
 
-        function addToCart(name, price, size, color, type, imageSrc) {
-        const item = { name, price, size, color, type, imageSrc };
-        cartItems.push(item);
-        updateCartDisplay();
+function addToCart(name, price, size, color, type, imageSrc) {
+    const product = {
+        name: name,
+        price: price,
+        size: size,
+        color: color,
+        type: type, // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
+        imageSrc: imageSrc // Caminho da imagem do produto
+    };
+
+    cart.push(product); // Adiciona o produto ao carrinho
+    updateCartDisplay(); // Atualiza a exibição do carrinho
+}
+
+function updateCartDisplay() {
+    const cartItemsList = document.querySelector("#cart-items ul");
+    cartItemsList.innerHTML = ""; // Limpa a lista antes de atualizar
+
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Exibe a imagem -->
+            <strong>${item.name}</strong> - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price.toFixed(2)}
+        `;
+        cartItemsList.appendChild(li);
+    });
+}
+
+function processPayment() {
+    if (cart.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
     }
 
-    function updateCartDisplay() {
-        const cartItemsTableBody = document.querySelector("#cart-items tbody");
-        cartItemsTableBody.innerHTML = ""; // Limpa a tabela antes de atualizar
+    const cpf = document.getElementById('cpf').value;
+    const telefone = document.getElementById('telefone').value;
+    const email = document.getElementById('email').value;
 
-        cartItems.forEach(item => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${item.name}</td>
-                <td><img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"></td>
-                <td>${item.size}</td>
-                <td>${item.color}</td>
-                <td>${item.type}</td>
-                <td>R$ ${item.price.toFixed(2)}</td>
-            `;
-            cartItemsTableBody.appendChild(tr);
-        });
+    if (!cpf || !telefone || !email) {
+        alert("Por favor, preencha todos os campos!");
+        return;
     }
 
-        function processPayment() {
-            if (cart.length === 0) {
-                alert("Seu carrinho está vazio!");
-                return;
-            }
+    let paymentLink = generatePaymentLink(cart);
 
-            const cpf = document.getElementById('cpf').value;
-            const telefone = document.getElementById('telefone').value;
-            const email = document.getElementById('email').value;
+    // Simular a geração de um link de pagamento
+    window.open(paymentLink, '_blank');
 
-            if (!cpf || !telefone || !email) {
-                alert("Por favor, preencha todos os campos!");
-                return;
-            }
+    sendEmail(cpf, telefone, email); // Chama a função de envio de email
+}
 
-            let paymentLink = generatePaymentLink(cart);
+function generatePaymentLink(cart) {
+    let camisetaCount = 0;
+    let cortaVentoCount = 0;
 
-            // Simular a geração de um link de pagamento
-            window.open(paymentLink, '_blank');
-
-            sendEmail(cpf, telefone, email); // Chama a função de envio de email
+    cart.forEach(item => {
+        if (item.type === 'Camiseta') {
+            camisetaCount++;
+        } else if (item.type === 'Corta Vento') {
+            cortaVentoCount++;
         }
+    });
 
-        function generatePaymentLink(cart) {
-            let camisetaCount = 0;
-            let cortaVentoCount = 0;
+    // Lógica para gerar o link de pagamento de acordo com a combinação de produtos
+    if (camisetaCount === 1 && cortaVentoCount === 0) {
+        return 'https://pag.ae/7-Vqr-LQm'; // Link para 1 camiseta
+    } else if (camisetaCount === 2 && cortaVentoCount === 0) {
+        return 'https://pag.ae/7-VqsmFB9'; // Link para 2 camisetas
+    } else if (camisetaCount === 0 && cortaVentoCount === 1) {
+        return 'https://pag.ae/7-Vqs-k1a'; // Link para 1 corta vento
+    } else if (camisetaCount === 1 && cortaVentoCount === 1) {
+        return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
+    } else if (camisetaCount === 2 && cortaVentoCount === 1) {
+        return 'https://pag.ae/7-W8nDT4u'; // Link para 2 camisetas + 1 corta vento
+    } else if (camisetaCount === 2 && cortaVentoCount === 2) {
+        return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camisetas + 2 corta vento
+    } else if (camisetaCount === 1 && cortaVentoCount === 2) {
+        return 'https://pag.ae/7-W8osoNL'; // Link para 1 camiseta + 2 corta vento
+    } else if (camisetaCount === 3 && cortaVentoCount === 0) {
+        return 'https://pag.ae/7-VqsJ411'; // Link para 3 camisetas
+    } else if (camisetaCount === 4 && cortaVentoCount === 0) {
+        return 'https://pag.ae/7-W8p37w4'; // Link para 4 camisetas
+    }
+}
 
-            cart.forEach(item => {
-                if (item.type === 'Camiseta') {
-                    camisetaCount++;
-                } else if (item.type === 'Corta Vento') {
-                    cortaVentoCount++;
-                }
-            });
+function sendEmail(cpf, telefone, email) {
+    const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>');
 
-            // Lógica para gerar o link de pagamento de acordo com a combinação de produtos
-            if (camisetaCount === 1 && cortaVentoCount === 0) {
-                return 'https://pag.ae/7-Vqr-LQm'; // Link para 1 camiseta
-            } else if (camisetaCount === 2 && cortaVentoCount === 0) {
-                return 'https://pag.ae/7-VqsmFB9'; // Link para 2 camisetas
-            } else if (camisetaCount === 0 && cortaVentoCount === 1) {
-                return 'https://pag.ae/7-Vqs-k1a'; // Link para 1 corta vento
-            } else if (camisetaCount === 1 && cortaVentoCount === 1) {
-                return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
-            } else if (camisetaCount === 2 && cortaVentoCount === 1) {
-                return 'https://pag.ae/7-W8nDT4u'; // Link para 2 camisetas + 1 corta vento
-            } else if (camisetaCount === 2 && cortaVentoCount === 2) {
-                return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camisetas + 2 corta vento
-            } else if (camisetaCount === 1 && cortaVentoCount === 2) {
-                return 'https://pag.ae/7-W8osoNL'; // Link para 1 camiseta + 2 corta vento
-            } else if (camisetaCount === 3 && cortaVentoCount === 0) {
-                return 'https://pag.ae/7-VqsJ411'; // Link para 3 camisetas
-            } else if (camisetaCount === 4 && cortaVentoCount === 0) {
-                return 'https://pag.ae/7-W8p37w4'; // Link para 4 camisetas
-            }
-        }
-
-        function sendEmail(cpf, telefone, email) {
-            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>');
-
-            const message = `
+    const message = `
         <ul>
             <li><strong>Produtos no Carrinho:</strong></li>
             <li>${cartDetails}</li>
         </ul>
     `;
 
-            emailjs.send("service_b9odh4h", "template_357o4zs", {
-                cpf: cpf,
-                telefone: telefone,
-                from_email: email,
-                mensagem: message // Aqui está sua mensagem formatada
-            })
-                .then((response) => {
-                    alert('Email enviado com sucesso!');
-                    console.log("Resposta do EmailJS:", response);
-                }, (error) => {
-                    alert('Erro ao enviar email. Tente novamente.');
-                    console.error("Erro ao enviar email:", error);
-                });
-        }
+    emailjs.send("service_b9odh4h", "template_357o4zs", {
+        cpf: cpf,
+        telefone: telefone,
+        from_email: email,
+        mensagem: message // Aqui está sua mensagem formatada
+    })
+    .then((response) => {
+        alert('Email enviado com sucesso!');
+        console.log("Resposta do EmailJS:", response);
+    }, (error) => {
+        alert('Erro ao enviar email. Tente novamente.');
+        console.error("Erro ao enviar email:", error);
+    });
+}
 
 
         showSection('about');
