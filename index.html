@@ -1610,7 +1610,6 @@
         </div>
     </section>
 
-
     </section>
 
     <section id="cart">
@@ -1792,9 +1791,6 @@
 
     const message = `
         <ul>
-            <li><strong>CPF:</strong> ${cpf}</li>
-            <li><strong>Telefone:</strong> ${telefone}</li>
-            <li><strong>E-mail:</strong> ${email}</li>
             <li><strong>Produtos no Carrinho:</strong></li>
             <li>${cartDetails}</li>
         </ul>
@@ -1804,7 +1800,7 @@
         cpf: cpf,
         telefone: telefone,
         from_email: email,
-        mensagem: message
+        mensagem: message // Aqui está sua mensagem formatada
     })
     .then((response) => {
         alert('Email enviado com sucesso!');
@@ -1814,7 +1810,6 @@
         console.error("Erro ao enviar email:", error);
     });
 }
-
 
         showSection('about');
     </script>
