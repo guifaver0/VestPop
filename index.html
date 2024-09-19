@@ -246,24 +246,22 @@
             position: relative;
             width: 100%;
             max-width: 1920px;
-            /* Define um limite máximo de largura */
-            height: 1080px;
-            /* Altura Full HD */
+            height: auto;
+            /* Ajustado para responsividade */
             margin: 0 auto;
-            /* Centraliza a imagem no caso de telas maiores */
             overflow: hidden;
         }
 
         .image-slider img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            /* Para manter a proporção da imagem */
             object-fit: cover;
         }
 
         .slide {
             display: none;
             width: 100%;
-            max-height: 400px;
         }
 
         .slide.active {
@@ -293,41 +291,55 @@
 
         .security-container {
             display: flex;
-            /* Para organizar os itens em linha */
             justify-content: space-around;
-            /* Para espaçar uniformemente os itens */
-            margin-top: 20px;
-            /* Espaçamento acima da seção */
+            margin-top: 10px;
+            /* Ajustado para aproximar os itens de segurança */
             padding: 10px;
-            /* Espaçamento interno da seção */
         }
 
         .security-item {
             text-align: center;
-            /* Centraliza o texto em cada item */
             max-width: 200px;
-            /* Limita a largura dos itens para evitar que fiquem muito grandes */
         }
 
         .security-icon {
             font-size: 18px;
-            /* Tamanho do ícone */
             margin-bottom: 5px;
-            /* Espaçamento abaixo do ícone */
         }
 
         .security-item span {
             font-size: 14px;
-            /* Tamanho do texto do título */
             font-weight: bold;
-            /* Para dar mais destaque ao título */
         }
 
         .security-item .description {
             font-size: 12px;
-            /* Tamanho do texto da descrição */
             color: #666;
-            /* Cor do texto da descrição */
+        }
+
+        /* Ajuste para os slides na versão mobile */
+        @media (max-width: 768px) {
+            .image-slider {
+                height: auto;
+                /* Para manter a proporção em telas menores */
+            }
+
+            .slide img {
+                width: 100%;
+                height: auto;
+            }
+
+            .security-container {
+                flex-direction: column;
+                /* Empilhar itens de segurança em telas menores */
+                align-items: center;
+            }
+
+            .security-item {
+                max-width: 100%;
+                margin-bottom: 15px;
+                /* Espaçamento entre os itens de segurança */
+            }
         }
 
         .collection-header {
@@ -527,7 +539,6 @@
             box-sizing: border-box;
             margin-bottom: 20px;
         }
-        
     </style>
 </head>
 
@@ -563,7 +574,7 @@
                 <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide">
             </div>
 
-            <h2> </h2>
+            <h2></h2>
             <div class="security-container">
                 <div class="security-item">
                     <i class="fas fa-credit-card security-icon"></i>
@@ -583,8 +594,6 @@
             </div>
         </div>
     </section>
-
-
 
     <script>
         let currentIndex = 0;
