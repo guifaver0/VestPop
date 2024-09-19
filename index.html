@@ -651,7 +651,6 @@
                 /* Oculta a barra lateral */
             }
         }
-
     </style>
 </head>
 
@@ -665,12 +664,16 @@
             </div>
     </header>
 
+    <header>
+        <button onclick="toggleSidebar()">Menu</button>
+    </header>
+
     <div id="sidebar" class="sidebar">
         <a href="#" class="tab-link" onclick="showSection('vestpop')">VESTPOP</a>
         <a href="#" class="tab-link" onclick="showSection('vestcine')">VESTCINE</a>
         <a href="#" class="tab-link" onclick="showSection('camisetas')">Camisetas</a>
         <a href="#" class="tab-link" onclick="showSection('corta-vento')">Corta Vento</a>
-    </div>    
+    </div>
 
     <nav>
         <a onclick="showSection('about')">Início</a>
@@ -1788,20 +1791,32 @@
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
+            sidebar.classList.toggle('active'); // Abre/fecha a barra lateral
         }
 
-        document.addEventListener('click', function (event) {
-            const sidebar = document.getElementById('sidebar');
-            const target = event.target;
+        function showSection(sectionId) {
+            // Aqui você pode ocultar todas as seções e exibir apenas a seção correspondente
+            const sections = document.querySelectorAll('main > section'); // Ajuste conforme necessário
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block'; // Exibe a seção correspondente
+                } else {
+                    section.style.display = 'none'; // Oculta outras seções
+                }
+            });
 
-            if (!sidebar.contains(target) && target.classList.contains('tab-link')) {
-                sidebar.classList.remove('active'); // Fecha a barra ao clicar em um link
-            }
+            // Fecha a barra lateral após selecionar uma aba
+            toggleSidebar();
+        }
+
+        // Inicialize todas as seções como ocultas, exceto a primeira
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach((section, index) => {
+                section.style.display = index === 0 ? 'block' : 'none'; // Exibe a primeira seção
+            });
         });
 
-        // Chame essa função para abrir/fechar a barra lateral
-        toggleSidebar();
 
         // Carrinho agora é um array que armazena objetos de produtos
         let cart = [];
