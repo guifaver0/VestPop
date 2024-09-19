@@ -1788,8 +1788,7 @@
         }
 
         function sendEmail(cpf, telefone, email) {
-            // Coleta os produtos do carrinho
-            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>'); // Usar <br> para nova linha no HTML
+            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>');
 
             const message = `
         <ul>
@@ -1802,10 +1801,10 @@
     `;
 
             emailjs.send("service_b9odh4h", "template_356o4zs", {
-                cpf: cpf, // Enviando CPF
-                telefone: telefone, // Enviando Telefone
-                from_email: email, // Enviando Email
-                mensagem: message // Enviando os detalhes do carrinho
+                cpf: cpf,
+                telefone: telefone,
+                from_email: email,
+                mensagem: message
             })
                 .then((response) => {
                     alert('Email enviado com sucesso!');
@@ -1815,6 +1814,7 @@
                     console.error("Erro ao enviar email:", error);
                 });
         }
+
 
         showSection('about');
     </script>
