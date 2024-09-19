@@ -1787,32 +1787,33 @@
         }
 
         function sendEmail(cpf, telefone, email) {
-            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('\n');
+            // Coleta os produtos do carrinho
+            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>'); // Usar <br> para nova linha no HTML
 
             const message = `
-        CPF: ${cpf}\n
-        Telefone: ${telefone}\n
-        E-mail: ${email}\n
-        Produtos no Carrinho:\n
-        ${cartDetails}
+        <ul>
+            <li><strong>CPF:</strong> ${cpf}</li>
+            <li><strong>Telefone:</strong> ${telefone}</li>
+            <li><strong>E-mail:</strong> ${email}</li>
+            <li><strong>Produtos no Carrinho:</strong></li>
+            <li>${cartDetails}</li>
+        </ul>
     `;
 
             emailjs.send("service_b9odh4h", "template_356o4zs", {
-                from_name: email, // Pode enviar o e-mail do cliente como o nome
-                from_email: email,
-                cpf: cpf, // Adicionando CPF
-                telefone: telefone, // Adicionando Telefone
-                message: message
+                cpf: cpf, // Enviando CPF
+                telefone: telefone, // Enviando Telefone
+                from_email: email, // Enviando Email
+                mensagem: message // Enviando os detalhes do carrinho
             })
                 .then((response) => {
                     alert('Email enviado com sucesso!');
-                    console.log(response.status, response.text);
+                    console.log("Resposta do EmailJS:", response);
                 }, (error) => {
                     alert('Erro ao enviar email. Tente novamente.');
-                    console.error(error);
+                    console.error("Erro ao enviar email:", error);
                 });
         }
-
 
         showSection('about');
     </script>
