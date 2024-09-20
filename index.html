@@ -527,7 +527,6 @@
             box-sizing: border-box;
             margin-bottom: 20px;
         }
-        
     </style>
 </head>
 
@@ -1747,36 +1746,30 @@
             }
         }
 
-        function sendEmail(cartItems, customerData) {
-            const productsDetails = cartItems.map(item => `${item.name} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price}`).join('\n');
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+            (function() {
+                emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
+    })();
 
-            const formData = {
-                Produtos: productsDetails,
-                CPF: customerData.cpf,
-                Telefone: customerData.telefone,
-                Email: customerData.email
-            };
+            function sendEmail(cartItems, customerData) {
+        const productsDetails = cartItems.map(item => `${item.name} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price}`).join('\n');
 
-            fetch('https://formspree.io/f/mdknvyrp', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert('E-mail enviado com sucesso!');
-                    } else {
-                        alert('Erro ao enviar e-mail.');
-                    }
-                })
-                .catch(error => {
-                    alert('Erro na comunicação com o servidor.');
-                    console.error('Erro:', error);
-                });
-        }
+        const templateParams = {
+            Produtos: productsDetails,
+            CPF: customerData.cpf,
+            Telefone: customerData.telefone,
+            Email: customerData.email
+        };
+
+        emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
+            .then(function(response) {
+                alert('E-mail enviado com sucesso!');
+            }, function(error) {
+                alert('Erro ao enviar e-mail.');
+                console.error('Erro:', error);
+            });
+    }
         showSection('about');
     </script>
 </body>
