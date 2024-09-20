@@ -628,7 +628,6 @@
             vertical-align: middle;
             /* Alinha a imagem ao texto */
         }
-        
     </style>
 </head>
 
@@ -1673,7 +1672,7 @@
         <h2>Sobre a Loja</h2>
         <p>A VESTPOP oferece o que há de melhor em moda e acessórios.</p>
         <p>Estamos sempre dispostos a oferecer qualidade, conforto e um ótimo atendimento ao cliente!</p>
-    
+
         <h2>Contato</h2>
         <div class="contact-item">
             <i class="fas fa-envelope contact-icon"></i>
@@ -1689,21 +1688,21 @@
         </div>
         <p>Quaisquer dúvidas, entre em contato conosco.</p>
     </section>
-    
+
     <section id="cart">
         <h2>Seu Carrinho</h2>
         <div id="cart-items">
             <ul></ul>
         </div>
     </section>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
         // Inicializar EmailJS
         (function () {
             emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
         })();
-    
+
         // Função para alternar entre as abas
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
@@ -1712,23 +1711,23 @@
             });
             document.getElementById(sectionId).style.display = 'block'; // Exibe a seção selecionada
         }
-    
+
         // Exibir a aba inicial
         showSection('about');
-    
+
         // Funções para alternar banners
         document.getElementById('slide-bannerjoker').onclick = function () {
             showSection('movies'); // Altera para a aba Vestcine
         };
-    
+
         document.getElementById('slide-bannerlolla').onclick = function () {
             showSection('collection'); // Altera para a aba Vestpalooza
         };
-    
+
         document.getElementById('slide-novidade3').onclick = function () {
             showSection('camiseta'); // Altera para a aba Camisetas
         };
-    
+
         // Função para alterar imagem do produto com base na cor
         function changeImage(imageId, color, productName) {
             const imageElement = document.getElementById(imageId);
@@ -1738,10 +1737,10 @@
                 imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
             }
         }
-    
+
         // Funções do carrinho de compras
         let cart = [];
-    
+
         function addToCart(name, price, size, color, type, imageSrc) {
             const product = {
                 name: name,
@@ -1754,11 +1753,11 @@
             cart.push(product); // Adiciona ao carrinho
             updateCartDisplay(); // Atualiza o carrinho
         }
-    
+
         function updateCartDisplay() {
             const cartItemsList = document.querySelector("#cart-items ul");
             cartItemsList.innerHTML = ""; // Limpa a lista
-    
+
             cart.forEach(item => {
                 const li = document.createElement("li");
                 li.innerHTML = `
@@ -1772,35 +1771,35 @@
                 cartItemsList.appendChild(li);
             });
         }
-    
+
         // Função de pagamento
         function processPayment() {
             if (cart.length === 0) {
                 alert("Seu carrinho está vazio!");
                 return;
             }
-    
+
             const cpf = document.getElementById('cpf').value;
             const telefone = document.getElementById('telefone').value;
             const email = document.getElementById('email').value;
-    
+
             if (!cpf || !telefone || !email) {
                 alert("Por favor, preencha todos os campos!");
                 return;
             }
-    
+
             let paymentLink = generatePaymentLink(cart);
             window.open(paymentLink, '_blank'); // Abre o link de pagamento
-    
+
             // Chama a função de envio de e-mail
             sendEmail(cart, { cpf, telefone, email });
         }
-    
+
         // Gerar link de pagamento com base no conteúdo do carrinho
         function generatePaymentLink(cart) {
             let camisetaCount = 0;
             let cortaVentoCount = 0;
-    
+
             cart.forEach(item => {
                 if (item.type === 'Camiseta') {
                     camisetaCount++;
@@ -1808,7 +1807,7 @@
                     cortaVentoCount++;
                 }
             });
-    
+
             // Retorna o link com base na combinação de produtos
             if (camisetaCount === 1 && cortaVentoCount === 0) {
                 return 'https://pag.ae/7-Vqr-LQm'; // Link para 1 camiseta
@@ -1820,28 +1819,47 @@
                 return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
             } // Continue adicionando outras combinações...
         }
-    
+
         // Função para enviar o e-mail com detalhes do carrinho
-        function sendEmail(cartItems, customerData) {
-            const productsDetails = cartItems.map(item => `${item.name} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price}`).join('\n');
-    
+        function sendEmail(cpf, telefone, email) {
+            // Monta a string com os detalhes dos produtos no carrinho
+            const cartDetails = cart.map(item => `
+        <li>
+            <strong>${item.name}</strong> - 
+            Tamanho: ${item.size} - 
+            Cor: ${item.color} - 
+            Tipo: ${item.type} - 
+            Preço: R$ ${item.price.toFixed(2)}
+        </li>
+    `).join(''); // Converte o array em uma string HTML
+
+            // Verifica se o carrinho está vazio
+            if (cart.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            // Monta os parâmetros do template
             const templateParams = {
-                Produtos: productsDetails,
-                CPF: customerData.cpf,
-                Telefone: customerData.telefone,
-                Email: customerData.email
+                cpf: cpf,
+                telefone: telefone,
+                from_email: email,
+                mensagem: `<ul>${cartDetails}</ul>` // Passa a lista de produtos como HTML
             };
-    
+
+            // Envia o e-mail
             emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
-                .then(function (response) {
-                    alert('E-mail enviado com sucesso!');
-                }, function (error) {
-                    alert('Erro ao enviar e-mail.');
-                    console.error('Erro:', error);
+                .then((response) => {
+                    alert('Email enviado com sucesso!');
+                    console.log("Resposta do EmailJS:", response);
+                }, (error) => {
+                    alert('Erro ao enviar email. Tente novamente.');
+                    console.error("Erro ao enviar email:", error);
                 });
         }
-    
+
         showSection('about'); // Exibir a seção inicial
     </script>
 </body>
+
 </html>
