@@ -1698,6 +1698,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
+
+        function toggleArtistList() {
+            const artistList = document.getElementById("artist-list");
+            artistList.style.display = artistList.style.display === "none" ? "block" : "none";
+        }
+
+        function showCollection(artist) {
+            const collections = document.querySelectorAll('.collection-products');
+            collections.forEach(collection => {
+                collection.style.display = 'none';
+            });
+
+            const artistCollection = document.getElementById(artist);
+            if (artistCollection) {
+                artistCollection.style.display = 'block';
+            }
+        }
         // Inicializar EmailJS
         (function () {
             emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
