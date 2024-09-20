@@ -544,8 +544,6 @@
             box-sizing: border-box;
             margin-bottom: 20px;
         }
-<<<<<<< HEAD
-=======
 
         button {
             background: linear-gradient(135deg, #4d8a92, #0d7377);
@@ -631,7 +629,6 @@
             /* Alinha a imagem ao texto */
         }
         
->>>>>>> 2694e9227eeb7f8d3c525ae02de1e3b627a2ee29
     </style>
 </head>
 
@@ -1676,7 +1673,7 @@
         <h2>Sobre a Loja</h2>
         <p>A VESTPOP oferece o que há de melhor em moda e acessórios.</p>
         <p>Estamos sempre dispostos a oferecer qualidade, conforto e um ótimo atendimento ao cliente!</p>
-
+    
         <h2>Contato</h2>
         <div class="contact-item">
             <i class="fas fa-envelope contact-icon"></i>
@@ -1692,72 +1689,47 @@
         </div>
         <p>Quaisquer dúvidas, entre em contato conosco.</p>
     </section>
-
+    
     <section id="cart">
         <h2>Seu Carrinho</h2>
         <div id="cart-items">
             <ul></ul>
         </div>
     </section>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
-
-
-        // CLICAR BANNER > ABRE A ABA DESEJADA
-
-        document.getElementById('slide-bannerjoker').onclick = function () {
-            showSection('movies'); // Envia para a aba Vestcine
-        };
-
-        document.getElementById('slide-bannerlolla').onclick = function () {
-            showSection('collection'); // Altera para a aba Vestpalooza
-        };
-
-        document.getElementById('slide-novidade3').onclick = function () {
-            showSection('camiseta'); // Altera para a aba Camisetas
-        };
-
-        // Adicione mais eventos de clique conforme necessário para outros slides
-
-        function toggleArtistList() {
-            const artistList = document.getElementById('artist-list');
-            if (artistList.style.display === 'none' || artistList.style.display === '') {
-                artistList.style.display = 'block';
-            } else {
-                artistList.style.display = 'none';
-            }
-        }
-
+        // Inicializar EmailJS
         (function () {
-            emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID
+            emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
         })();
-
+    
+        // Função para alternar entre as abas
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
-                section.style.display = 'none'; // Esconder todas as seções
+                section.style.display = 'none'; // Esconde todas as seções
             });
-            document.getElementById(sectionId).style.display = 'block'; // Mostrar a seção selecionada
+            document.getElementById(sectionId).style.display = 'block'; // Exibe a seção selecionada
         }
-
-        // Exibir a seção inicial
-        showSection('about'); // Garante que a aba "Início" seja exibida ao carregar
-
-        function showCollection(artistName) {
-            if (!artistName) return; // Não faz nada se o valor estiver vazio
-
-            // Oculta todas as coleções
-            const collections = document.querySelectorAll('.collection-products');
-            collections.forEach(collection => collection.style.display = 'none');
-
-            // Exibe a coleção selecionada
-            const selectedCollection = document.getElementById(artistName);
-            if (selectedCollection) {
-                selectedCollection.style.display = 'block';
-            }
-        }
-
+    
+        // Exibir a aba inicial
+        showSection('about');
+    
+        // Funções para alternar banners
+        document.getElementById('slide-bannerjoker').onclick = function () {
+            showSection('movies'); // Altera para a aba Vestcine
+        };
+    
+        document.getElementById('slide-bannerlolla').onclick = function () {
+            showSection('collection'); // Altera para a aba Vestpalooza
+        };
+    
+        document.getElementById('slide-novidade3').onclick = function () {
+            showSection('camiseta'); // Altera para a aba Camisetas
+        };
+    
+        // Função para alterar imagem do produto com base na cor
         function changeImage(imageId, color, productName) {
             const imageElement = document.getElementById(imageId);
             if (color === 'Branco') {
@@ -1766,70 +1738,69 @@
                 imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
             }
         }
-
-        // Carrinho agora é um array que armazena objetos de produtos
-
+    
+        // Funções do carrinho de compras
         let cart = [];
-
+    
         function addToCart(name, price, size, color, type, imageSrc) {
             const product = {
                 name: name,
                 price: price,
                 size: size,
                 color: color,
-                type: type, // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
-                imageSrc: imageSrc // Caminho da imagem do produto
+                type: type, // Tipo de produto (Camiseta ou Corta Vento)
+                imageSrc: imageSrc
             };
-
-            cart.push(product); // Adiciona o produto ao carrinho
-            updateCartDisplay(); // Atualiza a exibição do carrinho
+            cart.push(product); // Adiciona ao carrinho
+            updateCartDisplay(); // Atualiza o carrinho
         }
-
+    
         function updateCartDisplay() {
             const cartItemsList = document.querySelector("#cart-items ul");
-            cartItemsList.innerHTML = ""; // Limpa a lista antes de atualizar
-
+            cartItemsList.innerHTML = ""; // Limpa a lista
+    
             cart.forEach(item => {
                 const li = document.createElement("li");
                 li.innerHTML = `
-            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Exibe a imagem -->
-            <strong>${item.name}</strong> | 
-            <strong>Tamanho:</strong> ${item.size} | 
-            <strong>Cor:</strong> ${item.color} | 
-            <strong>Tipo:</strong> ${item.type} | 
-            <strong>Preço:</strong> R$ ${item.price.toFixed(2)}
-        `;
+                    <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> 
+                    <strong>${item.name}</strong> | 
+                    <strong>Tamanho:</strong> ${item.size} | 
+                    <strong>Cor:</strong> ${item.color} | 
+                    <strong>Tipo:</strong> ${item.type} | 
+                    <strong>Preço:</strong> R$ ${item.price.toFixed(2)}
+                `;
                 cartItemsList.appendChild(li);
             });
         }
-
+    
+        // Função de pagamento
         function processPayment() {
             if (cart.length === 0) {
                 alert("Seu carrinho está vazio!");
                 return;
             }
-
+    
             const cpf = document.getElementById('cpf').value;
             const telefone = document.getElementById('telefone').value;
             const email = document.getElementById('email').value;
-
+    
             if (!cpf || !telefone || !email) {
                 alert("Por favor, preencha todos os campos!");
                 return;
             }
-
+    
             let paymentLink = generatePaymentLink(cart);
-
-            // Simular a geração de um link de pagamento
-            window.open(paymentLink, '_blank');
-
-            sendEmail(cpf, telefone, email); // Chama a função de envio de email
+            window.open(paymentLink, '_blank'); // Abre o link de pagamento
+    
+            // Chama a função de envio de e-mail
+            sendEmail(cart, { cpf, telefone, email });
         }
-
+    
+        // Gerar link de pagamento com base no conteúdo do carrinho
         function generatePaymentLink(cart) {
             let camisetaCount = 0;
             let cortaVentoCount = 0;
-
+    
             cart.forEach(item => {
                 if (item.type === 'Camiseta') {
                     camisetaCount++;
@@ -1837,8 +1808,8 @@
                     cortaVentoCount++;
                 }
             });
-
-            // Lógica para gerar o link de pagamento de acordo com a combinação de produtos
+    
+            // Retorna o link com base na combinação de produtos
             if (camisetaCount === 1 && cortaVentoCount === 0) {
                 return 'https://pag.ae/7-Vqr-LQm'; // Link para 1 camiseta
             } else if (camisetaCount === 2 && cortaVentoCount === 0) {
@@ -1847,74 +1818,30 @@
                 return 'https://pag.ae/7-Vqs-k1a'; // Link para 1 corta vento
             } else if (camisetaCount === 1 && cortaVentoCount === 1) {
                 return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
-            } else if (camisetaCount === 2 && cortaVentoCount === 1) {
-                return 'https://pag.ae/7-W8nDT4u'; // Link para 2 camisetas + 1 corta vento
-            } else if (camisetaCount === 2 && cortaVentoCount === 2) {
-                return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camisetas + 2 corta vento
-            } else if (camisetaCount === 1 && cortaVentoCount === 2) {
-                return 'https://pag.ae/7-W8osoNL'; // Link para 1 camiseta + 2 corta vento
-            } else if (camisetaCount === 3 && cortaVentoCount === 0) {
-                return 'https://pag.ae/7-VqsJ411'; // Link para 3 camisetas
-            } else if (camisetaCount === 4 && cortaVentoCount === 0) {
-                return 'https://pag.ae/7-W8p37w4'; // Link para 4 camisetas
-            }
+            } // Continue adicionando outras combinações...
         }
-
-<<<<<<< HEAD
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-            (function() {
-                emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
-    })();
-
-            function sendEmail(cartItems, customerData) {
-        const productsDetails = cartItems.map(item => `${item.name} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price}`).join('\n');
-
-        const templateParams = {
-            Produtos: productsDetails,
-            CPF: customerData.cpf,
-            Telefone: customerData.telefone,
-            Email: customerData.email
-        };
-
-        emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
-            .then(function(response) {
-                alert('E-mail enviado com sucesso!');
-            }, function(error) {
-                alert('Erro ao enviar e-mail.');
-                console.error('Erro:', error);
-            });
-    }
-=======
-        function sendEmail(cpf, telefone, email) {
-            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>');
-
-            const message = `
-        <ul>
-            <li><strong>Produtos no Carrinho:</strong></li>
-            <li>${cartDetails}</li>
-        </ul>
-    `;
-
-            emailjs.send("service_b9odh4h", "template_357o4zs", {
-                cpf: cpf,
-                telefone: telefone,
-                from_email: email,
-                mensagem: message // Aqui está sua mensagem formatada
-            })
-                .then((response) => {
-                    alert('Email enviado com sucesso!');
-                    console.log("Resposta do EmailJS:", response);
-                }, (error) => {
-                    alert('Erro ao enviar email. Tente novamente.');
-                    console.error("Erro ao enviar email:", error);
+    
+        // Função para enviar o e-mail com detalhes do carrinho
+        function sendEmail(cartItems, customerData) {
+            const productsDetails = cartItems.map(item => `${item.name} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type} - Preço: R$ ${item.price}`).join('\n');
+    
+            const templateParams = {
+                Produtos: productsDetails,
+                CPF: customerData.cpf,
+                Telefone: customerData.telefone,
+                Email: customerData.email
+            };
+    
+            emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
+                .then(function (response) {
+                    alert('E-mail enviado com sucesso!');
+                }, function (error) {
+                    alert('Erro ao enviar e-mail.');
+                    console.error('Erro:', error);
                 });
         }
-
-
->>>>>>> 2694e9227eeb7f8d3c525ae02de1e3b627a2ee29
-        showSection('about');
+    
+        showSection('about'); // Exibir a seção inicial
     </script>
 </body>
-
 </html>
