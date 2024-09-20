@@ -1792,7 +1792,7 @@
             window.open(paymentLink, '_blank'); // Abre o link de pagamento
 
             // Chama a função de envio de e-mail
-            sendEmail(cart, { cpf, telefone, email });
+            sendEmail(cpf, telefone, email);
         }
 
         // Gerar link de pagamento com base no conteúdo do carrinho
