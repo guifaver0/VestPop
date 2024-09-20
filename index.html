@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VESTPOP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -153,8 +154,8 @@
 
         @media (max-width: 480px) {
             .product-item {
-                width: calc(100% - 20px);
-                /* Um produto por linha em telas pequenas */
+                width: calc(50% - 20px);
+                /* Dois produto por linha em telas pequenas */
             }
 
             #cart-icon {
@@ -164,6 +165,10 @@
                 /* Ajustar a posição do ícone no mobile */
                 font-size: 20px;
                 /* Reduzir o tamanho do ícone */
+                transform: scale(1.1);
+                /* Leve aumento ao passar o mouse */
+                color: #ffffff;
+                /* Cor de destaque ao interagir */
             }
         }
 
@@ -246,24 +251,22 @@
             position: relative;
             width: 100%;
             max-width: 1920px;
-            /* Define um limite máximo de largura */
-            height: 1080px;
-            /* Altura Full HD */
+            height: auto;
+            /* Ajustado para responsividade */
             margin: 0 auto;
-            /* Centraliza a imagem no caso de telas maiores */
             overflow: hidden;
         }
 
         .image-slider img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            /* Para manter a proporção da imagem */
             object-fit: cover;
         }
 
         .slide {
             display: none;
             width: 100%;
-            max-height: 400px;
         }
 
         .slide.active {
@@ -293,41 +296,55 @@
 
         .security-container {
             display: flex;
-            /* Para organizar os itens em linha */
             justify-content: space-around;
-            /* Para espaçar uniformemente os itens */
-            margin-top: 20px;
-            /* Espaçamento acima da seção */
+            margin-top: 10px;
+            /* Ajustado para aproximar os itens de segurança */
             padding: 10px;
-            /* Espaçamento interno da seção */
         }
 
         .security-item {
             text-align: center;
-            /* Centraliza o texto em cada item */
             max-width: 200px;
-            /* Limita a largura dos itens para evitar que fiquem muito grandes */
         }
 
         .security-icon {
             font-size: 18px;
-            /* Tamanho do ícone */
             margin-bottom: 5px;
-            /* Espaçamento abaixo do ícone */
         }
 
         .security-item span {
             font-size: 14px;
-            /* Tamanho do texto do título */
             font-weight: bold;
-            /* Para dar mais destaque ao título */
         }
 
         .security-item .description {
             font-size: 12px;
-            /* Tamanho do texto da descrição */
             color: #666;
-            /* Cor do texto da descrição */
+        }
+
+        /* Ajuste para os slides na versão mobile */
+        @media (max-width: 768px) {
+            .image-slider {
+                height: auto;
+                /* Para manter a proporção em telas menores */
+            }
+
+            .slide img {
+                width: 100%;
+                height: auto;
+            }
+
+            .security-container {
+                flex-direction: column;
+                /* Empilhar itens de segurança em telas menores */
+                align-items: center;
+            }
+
+            .security-item {
+                max-width: 100%;
+                margin-bottom: 15px;
+                /* Espaçamento entre os itens de segurança */
+            }
         }
 
         .collection-header {
@@ -527,6 +544,94 @@
             box-sizing: border-box;
             margin-bottom: 20px;
         }
+<<<<<<< HEAD
+=======
+
+        button {
+            background: linear-gradient(135deg, #4d8a92, #0d7377);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #3c7c80, #086969);
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Centraliza os produtos */
+            gap: 10px;
+            /* Reduz o espaço entre os produtos */
+        }
+
+        .product-item {
+            flex: 1 1 calc(30% - 10px);
+            /* Cada produto ocupa cerca de 30% da largura */
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .product-item button {
+            background-color: #4d8a92;
+            color: white;
+            border: none;
+            padding: 8px;
+            /* Reduz o padding para diminuir o tamanho do botão */
+            font-size: 14px;
+            /* Tamanho da fonte menor */
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .image-slider .slide {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            /* Indica que a imagem é clicável */
+            /* Transição suave */
+        }
+
+        .image-slider .slide:hover {
+            transform: scale(1.05);
+            /* Leve zoom ao passar o mouse */
+        }
+
+        #cart-items ul li {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #cart-items strong {
+            color: #333;
+            /* Cor do destaque */
+            font-weight: bold;
+            font-size: 14px;
+            /* Aumenta um pouco o tamanho */
+        }
+
+        #cart-items li img {
+            margin-right: 10px;
+            vertical-align: middle;
+            /* Alinha a imagem ao texto */
+        }
+        
+>>>>>>> 2694e9227eeb7f8d3c525ae02de1e3b627a2ee29
     </style>
 </head>
 
@@ -535,8 +640,9 @@
         <div id="logo-container">
             <img src="imagens/logo.jpg" alt="VestPop Logo" id="logo">
             <h1>VESTPOP</h1>
-        </div>
-        <div id="cart-icon" onclick="showSection('cart')">🛒</div>
+            <div id="cart-icon" onclick="showSection('cart')">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
     </header>
 
     <nav>
@@ -555,14 +661,14 @@
 
     <section id="about">
         <div id="novidades">
-            <h2>Novidades</h2>
             <div class="image-slider">
-                <img src="imagens/novidade1.jpg" alt="Novidade 1" class="slide active">
-                <img src="imagens/novidade2.jpg" alt="Novidade 2" class="slide">
-                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide">
+                <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
+                <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
+                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" id="slide-novidade3">
             </div>
 
-            <h2> </h2>
+
+            <h2></h2>
             <div class="security-container">
                 <div class="security-item">
                     <i class="fas fa-credit-card security-icon"></i>
@@ -582,8 +688,6 @@
             </div>
         </div>
     </section>
-
-
 
     <script>
         let currentIndex = 0;
@@ -626,7 +730,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Joker', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Joker', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('joker-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -649,7 +753,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Gaga', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Gaga', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('gaga-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -672,7 +776,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Couple', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Couple', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('couple-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -695,7 +799,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Deux', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Deux', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('deux-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
         </div>
@@ -725,7 +829,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Glinda', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Glinda', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('glinda-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -748,7 +852,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Green Pink', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Green Pink', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('greenpink-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -771,7 +875,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Wicked', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Wicked', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('wicked-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -794,7 +898,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
         </div>
@@ -810,7 +914,7 @@
             <img src="imagens/lollapalooza.jpg" alt="lollapalooza" class="collection-image">
             <h2>Coleção Lolla 2025</h2>
         </div>
-        <div class="product">
+        <div class="product-list">
             <div class="product-item" data-type="camiseta">
                 <img id="tate-image" src="imagens/tateb.jpg" alt="tateb">
                 <h3>Tate Mcrae</h3>
@@ -831,7 +935,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('tate-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -854,7 +958,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('tatep-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -877,7 +981,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('think-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -900,7 +1004,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('guts-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -923,7 +1027,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('or-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -946,7 +1050,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('oliviap-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -969,7 +1073,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Jão', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Jão', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('jao-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -992,7 +1096,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Cowboy', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Cowboy', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('jaoo-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1015,8 +1119,9 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size9').value, document.getElementById('color9').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Jãopalooza', 59.99, document.getElementById('size9').value, document.getElementById('color9').value, 'Camiseta', document.getElementById('jaop-image').src)">Adicionar
                     ao Carrinho</button>
+
             </div>
             <div class="product-item" data-type="camiseta">
                 <img id="shawn-image" src="imagens/shawnb.jpg" alt="shawnb">
@@ -1038,7 +1143,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value, 'Camiseta', document.getElementById('shawn-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1061,7 +1166,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('mendes-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1084,7 +1189,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta', document.getElementById('shp-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1107,7 +1212,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta', document.getElementById('alanis-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1130,7 +1235,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('lanis-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1153,7 +1258,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Red', 59.99, document.getElementById('size15').value, document.getElementById('color15').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Red', 59.99, document.getElementById('size15').value, document.getElementById('color15').value, 'Camiseta', document.getElementById('red-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1176,7 +1281,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Girl in Red', 59.99, document.getElementById('size16').value, document.getElementById('color16').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Girl in Red', 59.99, document.getElementById('size16').value, document.getElementById('color16').value, 'Camiseta', document.getElementById('girlinred-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1199,7 +1304,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Girl', 59.99, document.getElementById('size17').value, document.getElementById('color17').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Girl', 59.99, document.getElementById('size17').value, document.getElementById('color17').value, 'Camiseta', document.getElementById('girl-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1222,7 +1327,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Timberpalooza', 59.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Timberpalooza', 59.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Camiseta', document.getElementById('timber-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1245,7 +1350,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Timberlake', 59.99, document.getElementById('size19').value, document.getElementById('color19').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Timberlake', 59.99, document.getElementById('size19').value, document.getElementById('color19').value, 'Camiseta', document.getElementById('just-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
@@ -1268,7 +1373,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Justin Timberlake', 59.99, document.getElementById('size20').value, document.getElementById('color20').value, 'Camiseta')">Adicionar
+                    onclick="addToCart('Justin Timberlake', 59.99, document.getElementById('size20').value, document.getElementById('color20').value, 'Camiseta', document.getElementById('jt-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <!-- Adicione mais produtos aqui -->
@@ -1284,7 +1389,9 @@
         <!-- Lista de artistas como um select -->
         <div class="collections-container">
             <div class="centered">
-                <!-- Transformando o botão em um select para exibir a lista de artistas -->
+                <button class="artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
+            </div>
+            <div id="artist-list" style="display: none;">
                 <select id="tipoAcesso" onchange="showCollection(this.value)">
                     <option value="" disabled selected>Selecione um artista</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
@@ -1335,113 +1442,115 @@
 
         <!-- COLEÇÃO ALANIS -->
         <div class="collection-products" id="Alanis Morissette" style="display: none;">
-            <!-- Produto 1 -->
-            <div class="product-item" data-type="camiseta">
-                <img id="lanis-image" src="imagens/lanisb.jpg" alt="lanisb" class="product-image">
-                <h3>Alanis</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size14">Tamanho:</label>
-                    <select id="size14">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color14">Cor:</label>
-                    <select id="color14" onchange="changeImage('lanis-image', this.value, 'lanis')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
+            <div class="product-list"> <!-- Adicionando a div product-list -->
+
+                <div class="product-item" data-type="camiseta">
+                    <img id="lanis-image" src="imagens/lanisb.jpg" alt="lanisb" class="product-image">
+                    <h3>Alanis</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size14">Tamanho:</label>
+                        <select id="size14">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color14">Cor:</label>
+                        <select id="color14" onchange="changeImage('lanis-image', this.value, 'lanis')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('lanis-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
-                <button
-                    onclick="addToCart('Alanis', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta')">
-                    Adicionar ao Carrinho
-                </button>
+                <div class="product-item" data-type="camiseta">
+                    <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb" class="product-image">
+                    <h3>Alanis Morissette</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size13">Tamanho:</label>
+                        <select id="size13">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color13">Cor:</label>
+                        <select id="color13" onchange="changeImage('alanis-image', this.value, 'alanis')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta', document.getElementById('alanis-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
 
-            <!-- Produto 2 -->
-            <div class="product-item" data-type="camiseta">
-                <img id="alanis-image" src="imagens/alanisb.jpg" alt="alanisb" class="product-image">
-                <h3>Alanis Morissette</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size13">Tamanho:</label>
-                    <select id="size13">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color13">Cor:</label>
-                    <select id="color13" onchange="changeImage('alanis-image', this.value, 'alanis')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Alanis Morissette', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta')">
-                    Adicionar ao Carrinho
-                </button>
-            </div>
-        </div>
+            <!-- COLEÇÃO ANITTA -->
+            <div class="collection-products" id="colecao2" style="display: none;">
+                <div class="product-list"> <!-- Adicionando a div product-list -->
 
-
-        <!-- Produtos da Coleção 2 (inicialmente escondidos) -->
-        <div class="collection-products" id="colecao2" style="display: none;">
-            <div class="product-item">
-                <img src="imagens/produto2.jpg" alt="Produto 2" class="product-image">
-                <h3>Produto 2</h3>
-                <p>R$ 69,99</p>
-                <div class="product-options">
-                    <label for="size2">Tamanho:</label>
-                    <select id="size2">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color2">Cor:</label>
-                    <select id="color2">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
+                    <div class="product-item">
+                        <img src="imagens/produto2.jpg" alt="Produto 2" class="product-image">
+                        <h3>Produto 2</h3>
+                        <p>R$ 69,99</p>
+                        <div class="product-options">
+                            <label for="size2">Tamanho:</label>
+                            <select id="size2">
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                            </select>
+                            <br>
+                            <label for="color2">Cor:</label>
+                            <select id="color2">
+                                <option value="Preto">Preto</option>
+                                <option value="Branco">Branco</option>
+                            </select>
+                        </div>
+                        <button
+                            onclick="addToCart('Produto 2', 69.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar
+                            ao Carrinho</button>
+                    </div>
                 </div>
-                <button
-                    onclick="addToCart('Produto 2', 69.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta')">Adicionar
-                    ao Carrinho</button>
-            </div>
-        </div>
 
-        <!-- Produtos da Coleção 3 (inicialmente escondidos) -->
-        <div class="collection-products" id="colecao3" style="display: none;">
-            <div class="product-item">
-                <img src="imagens/produto3.jpg" alt="Produto 3" class="product-image">
-                <h3>Produto 3</h3>
-                <p>R$ 79,99</p>
-                <div class="product-options">
-                    <label for="size3">Tamanho:</label>
-                    <select id="size3">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color3">Cor:</label>
-                    <select id="color3">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar
-                    ao Carrinho</button>
-            </div>
-        </div>
+                <!-- COLEÇÃO ARIANA GRANDE -->
+                <div class="collection-products" id="colecao3" style="display: none;">
+                    <div class="product-list"> <!-- Adicionando a div product-list -->
+
+                        <div class="product-item">
+                            <img src="imagens/produto3.jpg" alt="Produto 3" class="product-image">
+                            <h3>Produto 3</h3>
+                            <p>R$ 79,99</p>
+                            <div class="product-options">
+                                <label for="size3">Tamanho:</label>
+                                <select id="size3">
+                                    <option value="P">P</option>
+                                    <option value="M">M</option>
+                                    <option value="G">G</option>
+                                    <option value="GG">GG</option>
+                                </select>
+                                <br>
+                                <label for="color3">Cor:</label>
+                                <select id="color3">
+                                    <option value="Preto">Preto</option>
+                                    <option value="Branco">Branco</option>
+                                </select>
+                            </div>
+                            <button
+                                onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta')">Adicionar
+                                ao Carrinho</button>
+                        </div>
+                    </div>
     </section>
 
     <!-- CORTA VENTO -->
@@ -1450,7 +1559,7 @@
         <div class="collection-header">
             <h2>Corta Vento</h2>
         </div>
-        <div class="product">
+        <div class="product-list">
             <div class="product-item" data-type="cortaVento">
                 <img id="cortaanitta-image" src="imagens/cortaanitta.jpg" alt="cortaanitta" class="product-image">
                 <h3>Anitta</h3>
@@ -1465,7 +1574,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Anitta', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento')">Adicionar
+                    onclick="addToCart('Anitta', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento', document.getElementById('cortaanitta-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="cortaVento">
@@ -1482,7 +1591,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Ariana Grande', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento')">Adicionar
+                    onclick="addToCart('Ariana Grande', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento', document.getElementById('cortaariana-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="cortaVento">
@@ -1499,7 +1608,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Beyonce', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento')">Adicionar
+                    onclick="addToCart('Beyonce', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento', document.getElementById('cortabeyonce-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="cortaVento">
@@ -1516,7 +1625,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Billie Eilish', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento')">Adicionar
+                    onclick="addToCart('Billie Eilish', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento', document.getElementById('cortabillie-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="cortaVento">
@@ -1533,7 +1642,7 @@
                     </select>
                 </div>
                 <button
-                    onclick="addToCart('Britney Spears', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento')">Adicionar
+                    onclick="addToCart('Britney Spears', 149.99, document.getElementById('size2').value, 'Preto', 'Corta Vento', document.getElementById('cortabritney-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
         </div>
@@ -1591,7 +1700,38 @@
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
+
+
+        // CLICAR BANNER > ABRE A ABA DESEJADA
+
+        document.getElementById('slide-bannerjoker').onclick = function () {
+            showSection('movies'); // Envia para a aba Vestcine
+        };
+
+        document.getElementById('slide-bannerlolla').onclick = function () {
+            showSection('collection'); // Altera para a aba Vestpalooza
+        };
+
+        document.getElementById('slide-novidade3').onclick = function () {
+            showSection('camiseta'); // Altera para a aba Camisetas
+        };
+
+        // Adicione mais eventos de clique conforme necessário para outros slides
+
+        function toggleArtistList() {
+            const artistList = document.getElementById('artist-list');
+            if (artistList.style.display === 'none' || artistList.style.display === '') {
+                artistList.style.display = 'block';
+            } else {
+                artistList.style.display = 'none';
+            }
+        }
+
+        (function () {
+            emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID
+        })();
 
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
@@ -1618,7 +1758,6 @@
             }
         }
 
-
         function changeImage(imageId, color, productName) {
             const imageElement = document.getElementById(imageId);
             if (color === 'Branco') {
@@ -1628,66 +1767,41 @@
             }
         }
 
-        // Função para exibir a coleção correspondente e atualizar o nome do botão
-        function showCollection(artistName) {
-            if (artistName === "") return; // Não faz nada se o valor estiver vazio
-
-            // Ocultar todos os produtos
-            const collections = document.querySelectorAll('.collection-products');
-            collections.forEach(function (collection) {
-                collection.style.display = 'none';
-            });
-
-            // Exibir a coleção selecionada
-            document.getElementById(artistName).style.display = 'block';
-
-            // Atualizar o botão principal com o nome do artista, mantendo o formato original
-            document.querySelector('.collection-btn').textContent = artistName;
-        }
-
-        function toggleArtistList() {
-            var artistList = document.getElementById("artist-list");
-            artistList.style.display = artistList.style.display === "none" ? "block" : "none";
-        }
-
         // Carrinho agora é um array que armazena objetos de produtos
+
         let cart = [];
 
-        function addToCart(name, price, size, color, type) {
+        function addToCart(name, price, size, color, type, imageSrc) {
             const product = {
                 name: name,
                 price: price,
                 size: size,
                 color: color,
-                type: type // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
+                type: type, // Tipo de produto adicionado ao carrinho (camiseta ou corta vento)
+                imageSrc: imageSrc // Caminho da imagem do produto
             };
 
             cart.push(product); // Adiciona o produto ao carrinho
-            updateCartDisplay();
-            checkCartForLinks();
+            updateCartDisplay(); // Atualiza a exibição do carrinho
         }
 
         function updateCartDisplay() {
-            const cartItems = document.getElementById('cart-items').querySelector('ul');
-            cartItems.innerHTML = '';
+            const cartItemsList = document.querySelector("#cart-items ul");
+            cartItemsList.innerHTML = ""; // Limpa a lista antes de atualizar
+
             cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`;
-                cartItems.appendChild(li);
+                const li = document.createElement("li");
+                li.innerHTML = `
+            <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> <!-- Exibe a imagem -->
+            <strong>${item.name}</strong> | 
+            <strong>Tamanho:</strong> ${item.size} | 
+            <strong>Cor:</strong> ${item.color} | 
+            <strong>Tipo:</strong> ${item.type} | 
+            <strong>Preço:</strong> R$ ${item.price.toFixed(2)}
+        `;
+                cartItemsList.appendChild(li);
             });
         }
-
-        document.getElementById('purchaseForm').addEventListener('submit', function (event) {
-            if (cart.length === 0) {
-                event.preventDefault();
-                alert("Seu carrinho está vazio!");
-            } else if (!document.getElementById('cpf').value || !document.getElementById('telefone').value || !document.getElementById('email').value) {
-                event.preventDefault();
-                alert("Por favor, preencha todos os campos!");
-            } else {
-                updateCartDisplay();
-            }
-        });
 
         function processPayment() {
             if (cart.length === 0) {
@@ -1709,7 +1823,7 @@
             // Simular a geração de um link de pagamento
             window.open(paymentLink, '_blank');
 
-            sendEmail(cart, { cpf, telefone, email });
+            sendEmail(cpf, telefone, email); // Chama a função de envio de email
         }
 
         function generatePaymentLink(cart) {
@@ -1736,7 +1850,7 @@
             } else if (camisetaCount === 2 && cortaVentoCount === 1) {
                 return 'https://pag.ae/7-W8nDT4u'; // Link para 2 camisetas + 1 corta vento
             } else if (camisetaCount === 2 && cortaVentoCount === 2) {
-                return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camiseta + 2 corta vento
+                return 'https://pag.ae/7-W8o1Ub5'; // Link para 2 camisetas + 2 corta vento
             } else if (camisetaCount === 1 && cortaVentoCount === 2) {
                 return 'https://pag.ae/7-W8osoNL'; // Link para 1 camiseta + 2 corta vento
             } else if (camisetaCount === 3 && cortaVentoCount === 0) {
@@ -1746,6 +1860,7 @@
             }
         }
 
+<<<<<<< HEAD
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script type="text/javascript">
             (function() {
@@ -1770,6 +1885,34 @@
                 console.error('Erro:', error);
             });
     }
+=======
+        function sendEmail(cpf, telefone, email) {
+            const cartDetails = cart.map(item => `${item.name} - R$ ${item.price} - Tamanho: ${item.size} - Cor: ${item.color} - Tipo: ${item.type}`).join('<br>');
+
+            const message = `
+        <ul>
+            <li><strong>Produtos no Carrinho:</strong></li>
+            <li>${cartDetails}</li>
+        </ul>
+    `;
+
+            emailjs.send("service_b9odh4h", "template_357o4zs", {
+                cpf: cpf,
+                telefone: telefone,
+                from_email: email,
+                mensagem: message // Aqui está sua mensagem formatada
+            })
+                .then((response) => {
+                    alert('Email enviado com sucesso!');
+                    console.log("Resposta do EmailJS:", response);
+                }, (error) => {
+                    alert('Erro ao enviar email. Tente novamente.');
+                    console.error("Erro ao enviar email:", error);
+                });
+        }
+
+
+>>>>>>> 2694e9227eeb7f8d3c525ae02de1e3b627a2ee29
         showSection('about');
     </script>
 </body>
