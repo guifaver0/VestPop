@@ -1841,10 +1841,13 @@
 
             // Monta os parâmetros do template
             const templateParams = {
-                cpf: String(cpf), // Certifique-se de que está passando como string
-                telefone: String(telefone), // Certifique-se de que está passando como string
-                from_email: String(email), // Certifique-se de que está passando como string
-                mensagem: `<ul>${cartDetails}</ul>` // Passa a lista de produtos como HTML
+                cpf: String(cpf),
+                telefone: String(telefone),
+                from_email: String(email),
+                mensagem: `
+            <p>Produtos no Carrinho:</p>
+            <ul>${cartDetails}</ul>
+        `
             };
 
             // Envia o e-mail
