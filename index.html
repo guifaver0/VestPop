@@ -1567,6 +1567,24 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortaanitta-image" src="imagens/cortaanitta.jpg" alt="cortaanitta" class="product-image">
+            <h3>Anitta</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size18">Tamanho:</label>
+                <select id="size18">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Anitta', 149.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Corta Vento', document.getElementById('cortaanitta-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
     </div>
 </div>
 
@@ -1736,7 +1754,7 @@
         <!-- Produto Beyoncé 1 -->
         <div class="product-item">
             <img id="cortabeyonce-image" src="imagens/cortabeyonce.jpg" alt="cortabeyonce" class="product-image">
-            <h3>Beyonce1</h3>
+            <h3>Beyonce</h3>
             <p>R$ 149,99</p>
             <div class="product-options">
                 <label for="size18">Tamanho:</label>
