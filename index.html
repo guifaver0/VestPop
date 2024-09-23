@@ -1488,63 +1488,165 @@
         </div>
     </div>
 
-    <!-- COLEÇÃO ANITTA -->
-    <div class="collection-products" id="Anitta" style="display: none;">
-        <div class="product-list"> 
-            <div class="product-item">
-                <img id="anitta1-image" src="imagens/anitta1b.jpg" alt="anitta1b" class="product-image">
-                <h3>Anitta</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size2">Tamanho:</label>
-                    <select id="size2">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color2">Cor:</label>
-                    <select id="color2">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Anitta', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('anitta1-image').src)">
-                    Adicionar ao Carrinho
-                </button>
+ <!-- COLEÇÃO ANITTA -->
+<div class="collection-products" id="Anitta" style="display: none;">
+    <div class="product-list"> 
+        <!-- Produto Anitta 1 -->
+        <div class="product-item">
+            <img id="anitta1-image" src="imagens/anitta1b.jpg" alt="anitta1b" class="product-image">
+            <h3>Anitta 1</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size2">Tamanho:</label>
+                <select id="size2">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color2">Cor:</label>
+                <select id="color2" onchange="changeImage('anitta1-image', this.value, 'anitta1')"></select>
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button onclick="addToCart('Anitta 1', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('anitta1-image').src)">
+                Adicionar ao Carrinho
+            </button>
         </div>
-    </div>
 
-    <!-- COLEÇÃO ARIANA GRANDE -->
-    <div class="collection-products" id="Ariana Grande" style="display: none;">
-        <div class="product-list">
-            <div class="product-item">
-                <img src="imagens/produto3.jpg" alt="Produto 3" class="product-image">
-                <h3>Produto 3</h3>
-                <p>R$ 59,99</p>
-                <div class="product-options">
-                    <label for="size3">Tamanho:</label>
-                    <select id="size3">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color3">Cor:</label>
-                    <select id="color3">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button onclick="addToCart('Produto 3', 79.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('jt-image').src)">
-                    Adicionar ao Carrinho
-                </button>
+        <!-- Produto Anitta 2 -->
+        <div class="product-item">
+            <img id="anitta2-image" src="imagens/anitta2b.jpg" alt="anitta2b" class="product-image">
+            <h3>Anitta 2</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size5">Tamanho:</label>
+                <select id="size5">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color5">Cor:</label>
+                <select id="color5" onchange="changeImage('anitta2-image', this.value, 'anitta2')"></select>
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button onclick="addToCart('Anitta 2', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('anitta2-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Anitta 3 -->
+        <div class="product-item">
+            <img id="anitta3-image" src="imagens/anitta3b.jpg" alt="anitta3b" class="product-image">
+            <h3>Anitta 3</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size8">Tamanho:</label>
+                <select id="size8">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color8">Cor:</label>
+                <select id="color8" onchange="changeImage('anitta3-image', this.value, 'anitta3')"></select>
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Anitta 3', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('anitta3-image').src)">
+                Adicionar ao Carrinho
+            </button>
         </div>
     </div>
+</div>
+
+<!-- COLEÇÃO ARIANA GRANDE -->
+<div class="collection-products" id="Ariana Grande" style="display: none;">
+    <div class="product-list">
+        <!-- Produto Ariana 1 -->
+        <div class="product-item">
+            <img id="ariana1-image" src="imagens/ariana1b.jpg" alt="ariana1b" class="product-image">
+            <h3>Ariana Grande 1</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size9">Tamanho:</label>
+                <select id="size9">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color9">Cor:</label>
+                <select id="color9" onchange="changeImage('ariana1-image', this.value, 'ariana1')"></select>
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Ariana Grande 1', 59.99, document.getElementById('size9').value, document.getElementById('color9').value, 'Camiseta', document.getElementById('ariana1-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Ariana 2 -->
+        <div class="product-item">
+            <img id="ariana2-image" src="imagens/ariana2b.jpg" alt="ariana2b" class="product-image">
+            <h3>Ariana Grande 2</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size10">Tamanho:</label>
+                <select id="size10">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color10">Cor:</label>
+                <select id="color10" onchange="changeImage('ariana2-image', this.value, 'ariana2')"></select>
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Ariana Grande 2', 59.99, document.getElementById('size10').value, document.getElementById('color10').value, 'Camiseta', document.getElementById('ariana2-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Ariana 3 -->
+        <div class="product-item">
+            <img id="ariana3-image" src="imagens/ariana3b.jpg" alt="ariana3b" class="product-image">
+            <h3>Ariana Grande 3</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size11">Tamanho:</label>
+                <select id="size11">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color11">Cor:</label>
+                <select id="color11" onchange="changeImage('ariana3-image', this.value, 'ariana3')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Ariana Grande 3', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('ariana3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+</div>
 
     <!-- Outras coleções aqui -->
 </section>
