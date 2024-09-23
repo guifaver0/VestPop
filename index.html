@@ -1735,9 +1735,9 @@
     <div class="product-list">
         <!-- Produto Beyoncé 1 -->
         <div class="product-item">
-            <img id="beyonce1-image" src="imagens/beyonce1b.jpg" alt="beyonce1b" class="product-image">
-            <h3>Beyoncé 1</h3>
-            <p>R$ 59,99</p>
+            <img id="cortabeyonce-image" src="imagens/cortabeyonce.jpg" alt="cortabeyonce" class="product-image">
+            <h3>Beyonce1</h3>
+            <p>R$ 149,99</p>
             <div class="product-options">
                 <label for="size18">Tamanho:</label>
                 <select id="size18">
@@ -1747,63 +1747,8 @@
                     <option value="GG">GG</option>
                 </select>
                 <br>
-                <label for="color18">Cor:</label>
-                <select id="color18" onchange="changeImage('beyonce1-image', this.value, 'beyonce1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
             </div>
-            <button onclick="addToCart('Beyoncé 1', 59.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Camiseta', document.getElementById('beyonce1-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
-
-        <!-- Produto Beyoncé 2 -->
-        <div class="product-item">
-            <img id="beyonce2-image" src="imagens/beyonce2b.jpg" alt="beyonce2b" class="product-image">
-            <h3>Beyoncé 2</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="size19">Tamanho:</label>
-                <select id="size19">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="color19">Cor:</label>
-                <select id="color19" onchange="changeImage('beyonce2-image', this.value, 'beyonce2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button onclick="addToCart('Beyoncé 2', 59.99, document.getElementById('size19').value, document.getElementById('color19').value, 'Camiseta', document.getElementById('beyonce2-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
-
-        <!-- Produto Beyoncé 3 -->
-        <div class="product-item">
-            <img id="beyonce3-image" src="imagens/beyonce3b.jpg" alt="beyonce3b" class="product-image">
-            <h3>Beyoncé 3</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="size20">Tamanho:</label>
-                <select id="size20">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="color20">Cor:</label>
-                <select id="color20" onchange="changeImage('beyonce3-image', this.value, 'beyonce3')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button onclick="addToCart('Beyoncé 3', 59.99, document.getElementById('size20').value, document.getElementById('color20').value, 'Camiseta', document.getElementById('beyonce3-image').src)">
+            <button onclick="addToCart('Beyonce', 149.99, document.getElementById('size18').value, document.getElementById('color18').value, 'Corta Vento', document.getElementById('cortabeyonce-image').src)">
                 Adicionar ao Carrinho
             </button>
         </div>
