@@ -2859,6 +2859,24 @@
             </button>
         </div>
         <div class="product-item">
+            <img id="cortajao-image" src="imagens/cortajao.jpg" alt="cortajao" class="product-image">
+            <h3>Jão</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size28">Tamanho:</label>
+                <select id="size28">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Jão', 149.99, document.getElementById('size28').value, '', 'Corta Vento', document.getElementById('cortajao-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item">
             <img id="cortaanti-image" src="imagens/cortaanti.jpg" alt="cortaanti" class="product-image">
             <h3>Anti Herói</h3>
             <p>R$ 149,99</p>
