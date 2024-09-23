@@ -3459,6 +3459,24 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortalana-image" src="imagens/cortalana.jpg" alt="cortalana" class="product-image">
+            <h3>Lana Del Rey</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size35">Tamanho:</label>
+                <select id="size35">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Lana Del Rey', 149.99, document.getElementById('size35').value, '', 'Corta Vento', document.getElementById('cortalana-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
@@ -3542,7 +3560,7 @@
     </div>
 </div>
 
-<!-- COLEÇÃO LUIZA -->
+<!-- COLEÇÃO LUISA -->
 <div class="collection-products" id="Luisa Sonza" style="display: none;">
     <div class="product-list">
         <!-- Produto Luísa 1 -->
@@ -3644,6 +3662,42 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortaluis-image" src="imagens/cortaluis.jpg" alt="cortaluis" class="product-image">
+            <h3>Luísa Sonza</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size36">Tamanho:</label>
+                <select id="size36">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Luísa Sonza', 149.99, document.getElementById('size36').value, '', 'Corta Vento', document.getElementById('cortaluis-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item">
+            <img id="cortaescandalo-image" src="imagens/cortaescandalo.jpg" alt="cortaescandalo" class="product-image">
+            <h3>Escândalo</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size37">Tamanho:</label>
+                <select id="size37">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Escândalo', 149.99, document.getElementById('size37').value, '', 'Corta Vento', document.getElementById('cortaescandalo-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
@@ -3963,10 +4017,28 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortaolivia-image" src="imagens/cortaolivia.jpg" alt="cortaolivia" class="product-image">
+            <h3>Olivia Rodrigo</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size38">Tamanho:</label>
+                <select id="size38">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Olivia Rodrigo', 149.99, document.getElementById('size38').value, '', 'Corta Vento', document.getElementById('cortaolivia-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
-<!-- COLEÇÃO PABBLO -->
+<!-- COLEÇÃO PABlLO -->
 <div class="collection-products" id="Pabllo Vittar" style="display: none;">
     <div class="product-list">
         <!-- Produto Pabllo 1 -->
@@ -4131,78 +4203,23 @@
     <div class="product-list">
         <!-- Produto Rihanna 1 -->
         <div class="product-item">
-            <img id="rihanna1-image" src="imagens/rihanna1b.jpg" alt="rihanna1b" class="product-image">
-            <h3>Rihanna 1</h3>
-            <p>R$ 59,99</p>
+            <img id="cortarihanna-image" src="imagens/cortarihanna.jpg" alt="cortarihanna" class="product-image">
+            <h3>Rihanna</h3>
+            <p>R$ 149,99</p>
             <div class="product-options">
-                <label for="size1">Tamanho:</label>
-                <select id="size1">
+                <label for="size39">Tamanho:</label>
+                <select id="size39">
                     <option value="P">P</option>
                     <option value="M">M</option>
                     <option value="G">G</option>
                     <option value="GG">GG</option>
                 </select>
                 <br>
-                <label for="color1">Cor:</label>
-                <select id="color1" onchange="changeImage('rihanna1-image', this.value, 'rihanna1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
             </div>
-            <button onclick="addToCart('Rihanna 1', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('rihanna1-image').src)">
+            <button onclick="addToCart('Rihanna', 149.99, document.getElementById('size39').value, '', 'Corta Vento', document.getElementById('cortarihanna-image').src)">
                 Adicionar ao Carrinho
             </button>
-        </div>
-
-        <!-- Produto Rihanna 2 -->
-        <div class="product-item">
-            <img id="rihanna2-image" src="imagens/rihanna2b.jpg" alt="rihanna2b" class="product-image">
-            <h3>Rihanna 2</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="size2">Tamanho:</label>
-                <select id="size2">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="color2">Cor:</label>
-                <select id="color2" onchange="changeImage('rihanna2-image', this.value, 'rihanna2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button onclick="addToCart('Rihanna 2', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('rihanna2-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
-
-        <!-- Produto Rihanna 3 -->
-        <div class="product-item">
-            <img id="rihanna3-image" src="imagens/rihanna3b.jpg" alt="rihanna3b" class="product-image">
-            <h3>Rihanna 3</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="size3">Tamanho:</label>
-                <select id="size3">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="color3">Cor:</label>
-                <select id="color3" onchange="changeImage('rihanna3-image', this.value, 'rihanna3')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button onclick="addToCart('Rihanna 3', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('rihanna3-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+        </div>        
     </div>
 </div>
 
@@ -4308,6 +4325,42 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortasabrina-image" src="imagens/cortasabrina.jpg" alt="cortasabrina" class="product-image">
+            <h3>Sabrina Carpenter</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size40">Tamanho:</label>
+                <select id="size40">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Sabrina Carpenter', 149.99, document.getElementById('size40').value, '', 'Corta Vento', document.getElementById('cortasabrina-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item">
+            <img id="cortashort-image" src="imagens/cortashort.jpg" alt="cortashort" class="product-image">
+            <h3>Shorts</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size41">Tamanho:</label>
+                <select id="size41">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Shorts', 149.99, document.getElementById('size41').value, '', 'Corta Vento', document.getElementById('cortashort-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
@@ -4388,6 +4441,24 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortashawn-image" src="imagens/cortashawn.jpg" alt="cortashawn" class="product-image">
+            <h3>Shawn Mendes</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size42">Tamanho:</label>
+                <select id="size42">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Shawn Mendes', 149.99, document.getElementById('size42').value, '', 'Corta Vento', document.getElementById('cortashawn-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
@@ -4548,6 +4619,24 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortasza-image" src="imagens/cortasza.jpg" alt="cortasza" class="product-image">
+            <h3>SZA</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size43">Tamanho:</label>
+                <select id="size43">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('SZA', 149.99, document.getElementById('size43').value, '', 'Corta Vento', document.getElementById('cortasza-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
@@ -4628,6 +4717,24 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortatasha-image" src="imagens/cortatasha.jpg" alt="cortatasha" class="product-image">
+            <h3>Tasha</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size44">Tamanho:</label>
+                <select id="size44">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Tasha', 149.99, document.getElementById('size44').value, '', 'Corta Vento', document.getElementById('cortatasha-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
@@ -4705,6 +4812,24 @@
                 </select>
             </div>
             <button onclick="addToCart('The Weeknd', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('the3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item">
+            <img id="cortathe-image" src="imagens/cortathe.jpg" alt="cortathe" class="product-image">
+            <h3>The Weeknd</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size45">Tamanho:</label>
+                <select id="size45">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('The Weeknd', 149.99, document.getElementById('size45').value, '', 'Corta Vento', document.getElementById('cortathe-image').src)">
                 Adicionar ao Carrinho
             </button>
         </div>
@@ -4788,6 +4913,24 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item">
+            <img id="cortataylor-image" src="imagens/cortataylor.jpg" alt="cortataylor" class="product-image">
+            <h3>Taylor Swift</h3>
+            <p>R$ 149,99</p>
+            <div class="product-options">
+                <label for="size46">Tamanho:</label>
+                <select id="size46">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+            </div>
+            <button onclick="addToCart('Taylor Swift', 149.99, document.getElementById('size46').value, '', 'Corta Vento', document.getElementById('cortataylor-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>        
     </div>
 </div>
 
