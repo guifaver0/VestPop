@@ -1841,7 +1841,7 @@
         <!-- Produto Britney 1 -->
         <div class="product-item">
             <img id="britney1-image" src="imagens/britney1b.jpg" alt="britney1b" class="product-image">
-            <h3>Britney Spears 1</h3>
+            <h3>2000</h3>
             <p>R$ 59,99</p>
             <div class="product-options">
                 <label for="size24">Tamanho:</label>
@@ -1858,7 +1858,7 @@
                     <option value="Branco">Branco</option>
                 </select>
             </div>
-            <button onclick="addToCart('Britney Spears 1', 59.99, document.getElementById('size24').value, document.getElementById('color24').value, 'Camiseta', document.getElementById('britney1-image').src)">
+            <button onclick="addToCart('2000', 59.99, document.getElementById('size24').value, document.getElementById('color24').value, 'Camiseta', document.getElementById('britney1-image').src)">
                 Adicionar ao Carrinho
             </button>
         </div>
@@ -1866,7 +1866,7 @@
         <!-- Produto Britney 2 -->
         <div class="product-item">
             <img id="britney2-image" src="imagens/britney2b.jpg" alt="britney2b" class="product-image">
-            <h3>Britney Spears 2</h3>
+            <h3>Love Brit</h3>
             <p>R$ 59,99</p>
             <div class="product-options">
                 <label for="size25">Tamanho:</label>
@@ -1883,7 +1883,7 @@
                     <option value="Branco">Branco</option>
                 </select>
             </div>
-            <button onclick="addToCart('Britney Spears 2', 59.99, document.getElementById('size25').value, document.getElementById('color25').value, 'Camiseta', document.getElementById('britney2-image').src)">
+            <button onclick="addToCart('Love Brit', 59.99, document.getElementById('size25').value, document.getElementById('color25').value, 'Camiseta', document.getElementById('britney2-image').src)">
                 Adicionar ao Carrinho
             </button>
         </div>
@@ -1891,7 +1891,7 @@
         <!-- Produto Britney 3 -->
         <div class="product-item">
             <img id="britney3-image" src="imagens/britney3b.jpg" alt="britney3b" class="product-image">
-            <h3>Britney Spears 3</h3>
+            <h3>Britney Spears</h3>
             <p>R$ 59,99</p>
             <div class="product-options">
                 <label for="size26">Tamanho:</label>
@@ -1908,7 +1908,32 @@
                     <option value="Branco">Branco</option>
                 </select>
             </div>
-            <button onclick="addToCart('Britney Spears 3', 59.99, document.getElementById('size26').value, document.getElementById('color26').value, 'Camiseta', document.getElementById('britney3-image').src)">
+            <button onclick="addToCart('Britney Spears', 59.99, document.getElementById('size26').value, document.getElementById('color26').value, 'Camiseta', document.getElementById('britney3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Britney 4 -->
+        <div class="product-item">
+            <img id="britney4-image" src="imagens/britney4b.jpg" alt="britney4b" class="product-image">
+            <h3>It's Britney</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size26">Tamanho:</label>
+                <select id="size26">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color26">Cor:</label>
+                <select id="color26" onchange="changeImage('britney4-image', this.value, 'britney4')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Its Britney', 59.99, document.getElementById('size26').value, document.getElementById('color26').value, 'Camiseta', document.getElementById('britney4-image').src)">
                 Adicionar ao Carrinho
             </button>
         </div>
