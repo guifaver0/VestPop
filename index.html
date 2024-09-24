@@ -755,7 +755,7 @@
                 /* Distância do topo */
                 left: 10px;
                 /* Distância da esquerda */
-                background-color: #333;
+                background-color: #1c8583;
                 /* Cor de fundo */
                 color: white;
                 /* Cor do texto */
@@ -778,6 +778,8 @@
     </style>
 </head>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <body>
     <header>
         <div id="logo-container">
@@ -786,8 +788,9 @@
             <div id="cart-icon" onclick="showSection('cart')">
                 <i class="fas fa-shopping-cart"></i>
             </div>
-            <div class="mobile-menu-button" onclick="toggleSidebar()">&#9776;</div> <!-- Botão de menu -->
-        </div>
+            <div class="mobile-menu-button" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i> <!-- Usando Font Awesome para o ícone -->
+            </div>
     </header>
 
     <div class="sidebar">
