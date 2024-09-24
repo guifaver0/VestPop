@@ -693,121 +693,9 @@
             cursor: pointer;
         }
 
-        /* Adicionando estilo para a barra lateral */
-        #sidebar {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            /* Começa fora da tela */
-            width: 250px;
-            height: 100%;
-            background-color: #4d8a92;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            padding-top: 60px;
-            /* Espaço para o botão */
-        }
-
-        #sidebar a {
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            display: block;
-        }
-
-        #sidebar a:hover {
-            background-color: #333;
-        }
-
-        #menu-btn {
-            font-size: 24px;
-            background: none;
-            border: none;
-            color: white;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            z-index: 1001;
-            /* Fica acima da barra lateral */
-        }
-
-        /* Para quando a barra lateral está visível */
-        #sidebar.show {
-            left: 0;
-        }
+        
     </style>
 </head>
-
-<body>
-    <header>
-        <div id="logo-container">
-            <img id="logo" src="logo.png" alt="Logo">
-            <h1>VESTPOP</h1>
-        </div>
-        <button id="menu-btn"><i class="fas fa-bars"></i></button>
-    </header>
-
-    <nav id="sidebar">
-        <a href="#about">Início</a>
-        <a href="#collection">VESTPALOOZA</a>
-        <a href="#movies">VESTCINE</a>
-        <a href="#camiseta">Buscar Coleção</a>
-        <a href="#corta">Corta Vento</a>
-        <a href="#medida">Medidas</a>
-        <a href="#sobre">Sobre a Loja</a>
-    </nav>
-
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head>
-
-
-    <section id="about">
-        <div id="novidades">
-            <div class="image-slider">
-                <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
-                <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
-                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" id="slide-novidade3">
-            </div>
-
-
-            <h2></h2>
-            <div class="security-container">
-                <div class="security-item">
-                    <i class="fas fa-credit-card security-icon"></i>
-                    <span>Facilidade no Pagamento</span>
-                    <p class="description">Pix, débito e pacelamento em até 3x no cartão de crédito.</p>
-                </div>
-                <div class="security-item">
-                    <i class="fas fa-box security-icon"></i>
-                    <span>Confiabilidade de Frete</span>
-                    <p class="description">Entrega rápida e segura para todo o Brasil.</p>
-                </div>
-                <div class="security-item">
-                    <i class="fas fa-shield-alt security-icon"></i>
-                    <span>Site seguro</span>
-                    <p class="description">Proteção total dos seus dados e compras.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 VESTPOP. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        // JavaScript para abrir e fechar a barra lateral
-        const menuBtn = document.getElementById('menu-btn');
-        const sidebar = document.getElementById('sidebar');
-
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('show');
-        });
-    </script>
-</body>
 
 <body>
     <header>
@@ -828,6 +716,10 @@
         <a onclick="showSection('medida')">Medidas</a>
         <a onclick="showSection('sobre')">Sobre a Loja</a>
     </nav>
+
+    <footer>
+        <p>© 2024 VESTPOP. Todos os direitos reservados.</p>
+    </footer>
 
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -1008,8 +900,7 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image"
-                    onclick="openZoomModal('glinda-image')">
+                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image" onclick="openZoomModal('glinda-image')">
                 <h3>Glinda</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1032,8 +923,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image"
-                    onclick="openZoomModal('greenpink-image')">
+                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image" onclick="openZoomModal('greenpink-image')">
                 <h3>Green Pink</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1056,8 +946,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image"
-                    onclick="openZoomModal('wicked-image')">
+                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image" onclick="openZoomModal('wicked-image')">
                 <h3>Wicked</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1080,8 +969,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image"
-                    onclick="openZoomModal('castle-image')">
+                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image" onclick="openZoomModal('castle-image')">
                 <h3>Castle</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1103,7 +991,7 @@
                     onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
-        </div>
+        </div>        
     </section>
 
     <!-- Modal de Zoom -->
@@ -1122,8 +1010,7 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image"
-                    onclick="openZoomModal('tate-image')">
+                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image" onclick="openZoomModal('tate-image')">
                 <h3>Tate Mcrae</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1146,8 +1033,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb" class="product-image"
-                    onclick="openZoomModal('tatep-image')">
+                <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb" class="product-image" onclick="openZoomModal('tatep-image')">
                 <h3>Tatepalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1170,8 +1056,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb" class="product-image"
-                    onclick="openZoomModal('think-image')">
+                <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb" class="product-image" onclick="openZoomModal('think-image')">
                 <h3>Think Later</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1194,8 +1079,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb" class="product-image"
-                    onclick="openZoomModal('guts-image')">
+                <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb" class="product-image" onclick="openZoomModal('guts-image')">
                 <h3>Guts</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1218,8 +1102,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="or-image" src="imagens/orb.jpg" alt="orb" class="product-image"
-                    onclick="openZoomModal('or-image')">
+                <img id="or-image" src="imagens/orb.jpg" alt="orb" class="product-image" onclick="openZoomModal('or-image')">
                 <h3>O.R</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1242,8 +1125,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb" class="product-image"
-                    onclick="openZoomModal('oliviap-image')">
+                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb" class="product-image" onclick="openZoomModal('oliviap-image')">
                 <h3>Oliviapalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
