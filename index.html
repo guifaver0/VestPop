@@ -778,7 +778,7 @@
     <section id="movies">
         <div class="collection-header">
             <img src="imagens/warner.jpg" alt="warner" class="collection-image">
-            <span class="zoom-icon" onclick="zoomImage('product-image')">&#128269;</span>
+            <div class="zoom-icon" onclick="openZoomModal('product-image')">
             <h2>Coleção Joker</h2>
         </div>
         <div class="product-list">
@@ -931,10 +931,6 @@
                 <button
                     onclick="addToCart('Green Pink', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('greenpink-image').src)">Adicionar
                     ao Carrinho</button>
-                    <div id="zoom-modal" class="zoom-modal">
-                        <span class="close" onclick="closeZoom()">&times;</span>
-                        <img class="zoom-content" id="zoomed-image">
-                    </div>
             </div>
             <div class="product-item" data-type="camiseta">
                 <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image">
@@ -985,12 +981,6 @@
                     ao Carrinho</button>
             </div>
         </div>
-
-        <div id="zoom-modal" class="zoom-modal">
-            <span class="close" onclick="closeZoom()">&times;</span>
-            <img class="zoom-content" id="zoomed-image">
-        </div>
-
     </section>
 
     <!-- VESTPALOOZA -->
