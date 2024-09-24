@@ -894,8 +894,7 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image"
-                    onclick="openZoomModal('glinda-image')">
+                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image" onclick="openZoomModal('glinda-image')">
                 <h3>Glinda</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -918,8 +917,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image"
-                    onclick="openZoomModal('greenpink-image')">
+                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image" onclick="openZoomModal('greenpink-image')">
                 <h3>Green Pink</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -942,8 +940,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image"
-                    onclick="openZoomModal('wicked-image')">
+                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image" onclick="openZoomModal('wicked-image')">
                 <h3>Wicked</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -966,8 +963,7 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image"
-                    onclick="openZoomModal('castle-image')">
+                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image" onclick="openZoomModal('castle-image')">
                 <h3>Castle</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -989,7 +985,7 @@
                     onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
-        </div>
+        </div>        
     </section>
 
     <!-- Modal de Zoom -->
@@ -1471,6 +1467,13 @@
             <!-- Adicione mais produtos aqui -->
         </div>
     </section>
+
+    <!-- Modal de Zoom -->
+    <div id="zoomModal" class="modal" onclick="this.style.display='none'">
+        <span class="close" onclick="document.getElementById('zoomModal').style.display='none'">&times;</span>
+        <img class="modal-content" id="zoomedImage">
+        <div id="caption"></div>
+    </div>
 
     <!-- CAMISETAS -->
     <section id="camiseta">
