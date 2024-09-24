@@ -628,6 +628,27 @@
             vertical-align: middle;
             /* Alinha a imagem ao texto */
         }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-icon {
+            margin-right: 8px;
+        }
+        
     </style>
 </head>
 
@@ -6092,19 +6113,26 @@
 
         <h2>Contato</h2>
         <div class="contact-item">
-            <i class="fas fa-envelope contact-icon"></i>
-            <span>Email: vestpop@yahoo.com</span>
+            <a href="mailto:vestpop@yahoo.com" class="contact-button">
+                <i class="fas fa-envelope contact-icon"></i>
+                Email: vestpop@yahoo.com
+            </a>
         </div>
         <div class="contact-item">
-            <i class="fas fa-camera contact-icon"></i>
-            <span>Instagram: @vestpopbr</span>
+            <a href="https://www.instagram.com/vestpopbr" target="_blank" class="contact-button">
+                <i class="fas fa-camera contact-icon"></i>
+                Instagram: @vestpopbr
+            </a>
         </div>
         <div class="contact-item">
-            <i class="fas fa-phone contact-icon"></i>
-            <span>Whatsapp: +55 (5) 97675-7846</span>
+            <a href="https://wa.me/5511976757846" target="_blank" class="contact-button">
+                <i class="fas fa-phone contact-icon"></i>
+                Whatsapp: +55 (11) 97675-7846
+            </a>
         </div>
         <p>Quaisquer dúvidas, entre em contato conosco.</p>
     </section>
+
 
     <section id="cart">
         <h2>Seu Carrinho</h2>
