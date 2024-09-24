@@ -772,34 +772,15 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            background-color: transparent;
-            /* Certifique-se de que o fundo está transparente */
+            /* Centralizar os botões */
+            flex-wrap: wrap;
+            /* Permite quebra de linha */
         }
 
         .tab-button {
-            background-color: #333;
-            /* Ajuste essa cor para ficar igual ao fundo do site */
-            color: white;
-            /* Cor do texto */
-            border: none;
-            /* Remove qualquer borda indesejada */
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            margin: 5px;
+            /* Adicionar espaço entre os botões */
         }
-
-        .tab-button:hover {
-            background-color: #575757;
-            /* Cor ao passar o mouse, se quiser um efeito hover */
-        }
-
-        .tab-button:focus {
-            outline: none;
-            /* Remove a linha de foco que pode estar aparecendo */
-        }
-
 
         @media (max-width: 768px) {
             .button-container {
@@ -855,8 +836,7 @@
             <div class="image-slider">
                 <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
-                <img src="imagens/bannercollection.jpg" alt="bannercollection" class="slide"
-                    id="slide-bannercollection">
+                <img src="imagens/bannercollection.jpg" alt="bannercollection" class="slide" id="slide-bannercollection">
             </div>
 
             <div class="image-slider-mobile">
