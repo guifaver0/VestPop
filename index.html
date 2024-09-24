@@ -597,16 +597,26 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .image-slider .slide {
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            /* Indica que a imagem é clicável */
-            /* Transição suave */
+        .image-slider {
+            display: block;
+            /* Mostrar slider desktop */
         }
 
-        .image-slider .slide:hover {
-            transform: scale(1.05);
-            /* Leve zoom ao passar o mouse */
+        .image-slider-mobile {
+            display: none;
+            /* Ocultar slider mobile por padrão */
+        }
+
+        @media (max-width: 768px) {
+            .image-slider {
+                display: none;
+                /* Ocultar slider desktop na versão mobile */
+            }
+
+            .image-slider-mobile {
+                display: block;
+                /* Mostrar slider mobile na versão mobile */
+            }
         }
 
         #cart-items ul li {
@@ -796,7 +806,7 @@
         <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
     </div>
-    
+
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
@@ -817,8 +827,17 @@
             <div class="image-slider">
                 <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
-                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" id="slide-novidade3">
+                <img src="imagens/bannercollection.jpg" alt="bannercollection" class="slide"
+                    id="slide-bannercollection">
             </div>
+
+            <div class="image-slider-mobile">
+                <img src="imagens/banner1mobile.jpg" alt="banner1mobile" class="slide-mobile active"
+                    id="slide-banner1mobile">
+                <img src="imagens/banner2mobile.jpg" alt="banner2mobile" class="slide-mobile" id="slide-banner2mobile">
+                <img src="imagens/banner3mobile.jpg" alt="banner3mobile" class="slide-mobile" id="slide-banner3mobile">
+            </div>
+
             <h2></h2>
             <div class="security-container">
                 <div class="security-item">
@@ -842,20 +861,23 @@
 
     <script>
         let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
+        const slidesDesktop = document.querySelectorAll('.slide');
+        const slidesMobile = document.querySelectorAll('.slide-mobile');
 
         function showNextSlide() {
-            slides[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].classList.add('active');
-        }
+            // Lógica para os slides desktop
+            slidesDesktop[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slidesDesktop.length;
+            slidesDesktop[currentIndex].classList.add('active');
 
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('open');
+            // Lógica para os slides mobile
+            const mobileIndex = currentIndex; // Use o mesmo índice para mobile se desejar
+            slidesMobile[mobileIndex].classList.remove('active');
+            slidesMobile[mobileIndex === slidesMobile.length - 1 ? 0 : mobileIndex + 1].classList.add('active');
         }
 
         setInterval(showNextSlide, 4000); // Muda de imagem a cada 4 segundos
+
     </script>
 </body>
 
