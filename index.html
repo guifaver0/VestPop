@@ -693,7 +693,31 @@
             cursor: pointer;
         }
 
-        
+        /* Estilo padrão para a barra lateral - oculta por padrão */
+        .sidebar {
+            display: none;
+            /* Oculta a barra lateral */
+        }
+
+        /* Estilo para os botões */
+        .button-container {
+            display: flex;
+            /* Exibe os botões em linha */
+        }
+
+        /* Estilos para a versão mobile */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: block;
+                /* Mostra a barra lateral */
+                /* Adicione outros estilos conforme necessário */
+            }
+
+            .button-container {
+                display: none;
+                /* Oculta os botões */
+            }
+        }
     </style>
 </head>
 
@@ -706,6 +730,21 @@
                 <i class="fas fa-shopping-cart"></i>
             </div>
     </header>
+
+    <div class="sidebar">
+        <!-- Conteúdo da barra lateral -->
+    </div>
+    <div class="button-container">
+        <button class="tab-button">Início</button>
+        <button class="tab-button">Vestcine</button>
+        <button class="tab-button">Vestpalooza</button>
+        <button class="tab-button">Buscar Coleção</button>
+        <button class="tab-button">Corta Vento</button>
+        <button class="tab-button">Medidas</button>
+        <button class="tab-button">Sobre a Loja</button>
+        <!-- Outros botões -->
+    </div>
+    
 
     <nav>
         <a onclick="showSection('about')">Início</a>
@@ -900,7 +939,8 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image" onclick="openZoomModal('glinda-image')">
+                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image"
+                    onclick="openZoomModal('glinda-image')">
                 <h3>Glinda</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -923,7 +963,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image" onclick="openZoomModal('greenpink-image')">
+                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image"
+                    onclick="openZoomModal('greenpink-image')">
                 <h3>Green Pink</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -946,7 +987,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image" onclick="openZoomModal('wicked-image')">
+                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image"
+                    onclick="openZoomModal('wicked-image')">
                 <h3>Wicked</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -969,7 +1011,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image" onclick="openZoomModal('castle-image')">
+                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image"
+                    onclick="openZoomModal('castle-image')">
                 <h3>Castle</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -991,7 +1034,7 @@
                     onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
-        </div>        
+        </div>
     </section>
 
     <!-- Modal de Zoom -->
@@ -1010,7 +1053,8 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image" onclick="openZoomModal('tate-image')">
+                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image"
+                    onclick="openZoomModal('tate-image')">
                 <h3>Tate Mcrae</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1033,7 +1077,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb" class="product-image" onclick="openZoomModal('tatep-image')">
+                <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb" class="product-image"
+                    onclick="openZoomModal('tatep-image')">
                 <h3>Tatepalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1056,7 +1101,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb" class="product-image" onclick="openZoomModal('think-image')">
+                <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb" class="product-image"
+                    onclick="openZoomModal('think-image')">
                 <h3>Think Later</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1079,7 +1125,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb" class="product-image" onclick="openZoomModal('guts-image')">
+                <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb" class="product-image"
+                    onclick="openZoomModal('guts-image')">
                 <h3>Guts</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1102,7 +1149,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="or-image" src="imagens/orb.jpg" alt="orb" class="product-image" onclick="openZoomModal('or-image')">
+                <img id="or-image" src="imagens/orb.jpg" alt="orb" class="product-image"
+                    onclick="openZoomModal('or-image')">
                 <h3>O.R</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1125,7 +1173,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb" class="product-image" onclick="openZoomModal('oliviap-image')">
+                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb" class="product-image"
+                    onclick="openZoomModal('oliviap-image')">
                 <h3>Oliviapalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
