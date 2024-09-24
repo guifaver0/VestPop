@@ -4110,6 +4110,75 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb">
+            <h3>Guts</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size4">Tamanho:</label>
+                <select id="size4">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color4">Cor:</label>
+                <select id="color4" onchange="changeImage('guts-image', this.value, 'guts')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Guts', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('guts-image').src)">Adicionar
+                ao Carrinho</button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="or-image" src="imagens/orb.jpg" alt="orb">
+            <h3>O.R</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size5">Tamanho:</label>
+                <select id="size5">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color5">Cor:</label>
+                <select id="color5" onchange="changeImage('or-image', this.value, 'or')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('O.R', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('or-image').src)">Adicionar
+                ao Carrinho</button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb">
+            <h3>Oliviapalooza</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size6">Tamanho:</label>
+                <select id="size6">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color6">Cor:</label>
+                <select id="color6" onchange="changeImage('oliviap-image', this.value, 'oliviap')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Oliviapalooza', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('oliviap-image').src)">Adicionar
+                ao Carrinho</button>
+        </div>
         <div class="product-item">
             <img id="cortaolivia-image" src="imagens/cortaolivia.jpg" alt="cortaolivia" class="product-image">
             <h3>Olivia Rodrigo</h3>
