@@ -696,17 +696,11 @@
         .sidebar {
             position: fixed;
             left: -250px;
-            /* Ocultar inicialmente */
             top: 0;
-            /* Alinhado ao topo */
             width: 250px;
-            /* Largura da barra lateral */
             height: 100%;
-            /* Altura total */
             background-color: gray;
-            /* Cor de fundo */
             transition: left 0.3s ease;
-            /* Transição suave para abrir/fechar */
             z-index: 999;
             /* Para garantir que fique acima de outros elementos */
         }
@@ -802,6 +796,9 @@
         <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
     </div>
+
+    <div class="mobile-menu-button" onclick="toggleSidebar()">☰</div> <!-- Botão de menu -->
+
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
