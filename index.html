@@ -693,20 +693,61 @@
             cursor: pointer;
         }
 
-        /* Estilo padrão para a barra lateral - oculta por padrão */
+        /* Estilo para a barra lateral */
         .sidebar {
-            display: none;
-            /* Oculta a barra lateral */
+            position: fixed;
+            /* Para fixar a barra lateral */
+            top: 0;
+            left: -250px;
+            /* Começa fora da tela */
+            width: 250px;
+            /* Largura da barra lateral */
+            height: 100%;
+            /* Altura total */
+            background-color: #333;
+            /* Cor de fundo da barra lateral */
+            color: white;
+            /* Cor do texto */
+            transition: left 0.3s;
+            /* Transição suave */
+            padding: 15px;
+            /* Espaçamento interno */
+            z-index: 1000;
+            /* Para ficar acima de outros elementos */
         }
 
-        /* Estilo para os botões */
-        .button-container {
-            display: flex;
-            /* Exibe os botões em linha */
-            flex-wrap: wrap;
-            /* Permite que os botões quebrem para a próxima linha se necessário */
-            justify-content: center;
-            /* Centraliza os botões horizontalmente */
+        /* Estilo para mostrar a barra lateral quando ativa */
+        .sidebar.active {
+            left: 0;
+            /* Move a barra lateral para dentro da tela */
+        }
+
+        /* Estilo para os links da barra lateral */
+        .sidebar a {
+            display: block;
+            /* Exibir os links como blocos */
+            color: white;
+            /* Cor do texto */
+            text-decoration: none;
+            /* Remove o sublinhado */
+            padding: 10px;
+            /* Espaçamento interno */
+            transition: background 0.3s;
+            /* Transição suave para o fundo */
+        }
+
+        /* Efeito ao passar o mouse sobre os links */
+        .sidebar a:hover {
+            background-color: #555;
+            /* Cor de fundo ao passar o mouse */
+        }
+
+        /* Estilo para o botão do menu */
+        .menu-toggle {
+            display: none;
+            /* Oculta por padrão */
+            cursor: pointer;
+            /* Muda o cursor para indicar que é clicável */
         }
 
         /* Estilos para a versão mobile */
@@ -714,12 +755,16 @@
             .sidebar {
                 display: block;
                 /* Mostra a barra lateral */
-                /* Adicione outros estilos conforme necessário */
             }
 
             .button-container {
                 display: none;
                 /* Oculta os botões na versão mobile */
+            }
+
+            .menu-toggle {
+                display: block;
+                /* Mostra o botão do menu na versão mobile */
             }
         }
     </style>
@@ -733,27 +778,30 @@
             <div id="cart-icon" onclick="showSection('cart')">
                 <i class="fas fa-shopping-cart"></i>
             </div>
+            <div class="menu-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i> <!-- Ícone de menu -->
+            </div>
         </div>
     </header>
 
-    <div class="sidebar">
-        <a href="#about">Início</a>
-        <a href="#collection">VESTPALOOZA</a>
-        <a href="#movies">VESTCINE</a>
-        <a href="#camiseta">Buscar Coleção</a>
-        <a href="#corta">Corta Vento</a>
-        <a href="#medida">Medidas</a>
-        <a href="#sobre">Sobre a Loja</a>
+    <div class="sidebar" id="sidebar">
+        <a href="#about" onclick="showSection('about')">Início</a>
+        <a href="#collection" onclick="showSection('collection')">VESTPALOOZA</a>
+        <a href="#movies" onclick="showSection('movies')">VESTCINE</a>
+        <a href="#camiseta" onclick="showSection('camiseta')">Buscar Coleção</a>
+        <a href="#corta" onclick="showSection('corta')">Corta Vento</a>
+        <a href="#medida" onclick="showSection('medida')">Medidas</a>
+        <a href="#sobre" onclick="showSection('sobre')">Sobre a Loja</a>
     </div>
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
         <button class="tab-button" onclick="showSection('movies')">Vestcine</button>
         <button class="tab-button" onclick="showSection('collection')">Vestpalooza</button>
-        <button class="tab-button" onclick="showSection('camiseta')">Buscar Coleção</button>
+        <button class="tab-button" onclick="showSection('search')">Buscar Coleção</button>
         <button class="tab-button" onclick="showSection('corta')">Corta Vento</button>
-        <button class="tab-button" onclick="showSection('medida')">Medidas</button>
-        <button class="tab-button" onclick="showSection('sobre')">Sobre a Loja</button>
+        <button class="tab-button" onclick="showSection('measures')">Medidas</button>
+        <button class="tab-button" onclick="showSection('about')">Sobre a Loja</button>
     </div>
 
     <footer>
@@ -796,6 +844,11 @@
             slides[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % slides.length;
             slides[currentIndex].classList.add('active');
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
         }
 
         setInterval(showNextSlide, 4000); // Muda de imagem a cada 4 segundos
