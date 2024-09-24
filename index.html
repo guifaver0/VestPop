@@ -692,7 +692,6 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
     </style>
 </head>
 
@@ -775,8 +774,8 @@
             <!-- Produto 1 -->
             <div class="product-item" data-type="camiseta">
                 <div class="image-container">
-                    <img id="joker-image" src="imagens/jokerb.jpg" alt="jokerb" class="product-image">
-                    <div class="zoom-icon" onclick="openZoomModal('joker-image')"></div>
+                    <img id="joker-image" src="imagens/jokerb.jpg" alt="jokerb" class="product-image"
+                        onclick="openZoomModal('joker-image')">
                 </div>
                 <h3>Joker</h3>
                 <p>R$ 59,99</p>
@@ -799,10 +798,11 @@
                     onclick="addToCart('Joker', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('joker-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
+
             <div class="product-item" data-type="camiseta">
                 <div class="image-container">
-                    <img id="gaga-image" src="imagens/gagab.jpg" alt="gagab" class="product-image">
-                    <div class="zoom-icon" onclick="openZoomModal('gaga-image')"></div>
+                    <img id="gaga-image" src="imagens/gagab.jpg" alt="gagab" class="product-image"
+                        onclick="openZoomModal('gaga-image')">
                 </div>
                 <h3>Gaga</h3>
                 <p>R$ 59,99</p>
@@ -825,10 +825,11 @@
                     onclick="addToCart('Gaga', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('gaga-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
+
             <div class="product-item" data-type="camiseta">
                 <div class="image-container">
-                    <img id="couple-image" src="imagens/coupleb.jpg" alt="coupleb" class="product-image">
-                    <div class="zoom-icon" onclick="openZoomModal('couple-image')"></div>
+                    <img id="couple-image" src="imagens/coupleb.jpg" alt="coupleb" class="product-image"
+                        onclick="openZoomModal('couple-image')">
                 </div>
                 <h3>Couple</h3>
                 <p>R$ 59,99</p>
@@ -851,10 +852,11 @@
                     onclick="addToCart('Couple', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('couple-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
+
             <div class="product-item" data-type="camiseta">
                 <div class="image-container">
-                    <img id="deux-image" src="imagens/deuxb.jpg" alt="deuxb" class="product-image">
-                    <div class="zoom-icon" onclick="openZoomModal('deux-image')"></div>
+                    <img id="deux-image" src="imagens/deuxb.jpg" alt="deuxb" class="product-image"
+                        onclick="openZoomModal('deux-image')">
                 </div>
                 <h3>Deux</h3>
                 <p>R$ 59,99</p>
@@ -877,6 +879,13 @@
                     onclick="addToCart('Deux', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('deux-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
+        </div>
+
+        <!-- Modal para ampliar a imagem -->
+        <div id="zoomModal" class="modal" onclick="this.style.display='none'">
+            <span class="close" onclick="document.getElementById('zoomModal').style.display='none'">&times;</span>
+            <img class="modal-content" id="zoomedImage">
+            <div id="caption"></div>
         </div>
 
         <div class="collection-header">
