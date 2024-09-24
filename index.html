@@ -693,80 +693,58 @@
             cursor: pointer;
         }
 
-        /* Estilo para a barra lateral */
         .sidebar {
             position: fixed;
-            /* Para fixar a barra lateral */
             top: 0;
             left: -250px;
-            /* Começa fora da tela */
+            /* Iniciar fora da tela */
             width: 250px;
-            /* Largura da barra lateral */
             height: 100%;
-            /* Altura total */
-            background-color: #333;
-            /* Cor de fundo da barra lateral */
-            color: white;
-            /* Cor do texto */
-            transition: left 0.3s;
-            /* Transição suave */
-            padding: 15px;
-            /* Espaçamento interno */
+            background-color: #f0f0f0;
+            /* Cor de fundo */
+            transition: left 0.3s ease;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             z-index: 1000;
-            /* Para ficar acima de outros elementos */
+            /* Colocar acima do conteúdo */
         }
 
-        /* Estilo para mostrar a barra lateral quando ativa */
-        .sidebar.active {
-            left: 0;
-            /* Move a barra lateral para dentro da tela */
-        }
-
-        /* Estilo para os links da barra lateral */
         .sidebar a {
             display: block;
-            /* Exibir os links como blocos */
-            color: white;
-            /* Cor do texto */
+            padding: 15px;
             text-decoration: none;
-            /* Remove o sublinhado */
-            padding: 10px;
-            /* Espaçamento interno */
-            transition: background 0.3s;
-            /* Transição suave para o fundo */
+            color: black;
         }
 
-        /* Efeito ao passar o mouse sobre os links */
-        .sidebar a:hover {
-            background-color: #555;
-            /* Cor de fundo ao passar o mouse */
+        .sidebar.open {
+            left: 0;
+            /* Mover para a esquerda quando aberto */
         }
 
-        /* Estilo para o botão do menu */
-        .menu-toggle {
+        .mobile-menu-button {
             display: none;
-            /* Oculta por padrão */
-            cursor: pointer;
-            /* Muda o cursor para indicar que é clicável */
+            /* Ocultar botão de menu por padrão */
         }
 
-        /* Estilos para a versão mobile */
+        /* Centralizar botões na versão desktop */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Centralizar os botões */
+        }
+
         @media (max-width: 768px) {
-            .sidebar {
+            .mobile-menu-button {
                 display: block;
-                /* Mostra a barra lateral */
+                /* Mostrar botão de menu na versão mobile */
             }
 
             .button-container {
                 display: none;
-                /* Oculta os botões na versão mobile */
-            }
-
-            .menu-toggle {
-                display: block;
-                /* Mostra o botão do menu na versão mobile */
+                /* Ocultar botões na versão mobile */
             }
         }
+        
     </style>
 </head>
 
@@ -778,13 +756,11 @@
             <div id="cart-icon" onclick="showSection('cart')">
                 <i class="fas fa-shopping-cart"></i>
             </div>
-            <div class="menu-toggle" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i> <!-- Ícone de menu -->
-            </div>
+            <div class="mobile-menu-button" onclick="toggleSidebar()">&#9776;</div> <!-- Botão de menu -->
         </div>
     </header>
 
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar">
         <a href="#about" onclick="showSection('about')">Início</a>
         <a href="#collection" onclick="showSection('collection')">VESTPALOOZA</a>
         <a href="#movies" onclick="showSection('movies')">VESTCINE</a>
@@ -793,6 +769,7 @@
         <a href="#medida" onclick="showSection('medida')">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre')">Sobre a Loja</a>
     </div>
+
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
@@ -6470,6 +6447,11 @@
         modal.style.display = "block";
         modalImg.src = img.src;
         captionText.innerHTML = img.alt;
+    }
+
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('open');
     }
 
 
