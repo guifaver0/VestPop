@@ -4603,6 +4603,75 @@
                 Adicionar ao Carrinho
             </button>
         </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="shawn-image" src="imagens/shawnb.jpg" alt="shawnb">
+            <h3>Shawn</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size10">Tamanho:</label>
+                <select id="size10">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color10">Cor:</label>
+                <select id="color10" onchange="changeImage('shawn-image', this.value, 'shawn')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Shawn', 59.99, document.getElementById('size10').value, document.getElementById('color10').value, 'Camiseta', document.getElementById('shawn-image').src)">Adicionar
+                ao Carrinho</button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="mendes-image" src="imagens/mendesb.jpg" alt="mendesb">
+            <h3>Shawn Mendes</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size11">Tamanho:</label>
+                <select id="size11">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color11">Cor:</label>
+                <select id="color11" onchange="changeImage('mendes-image', this.value, 'mendes')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('mendes-image').src)">Adicionar
+                ao Carrinho</button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="shp-image" src="imagens/shpb.jpg" alt="shpb">
+            <h3>Shawnpalooza</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size12">Tamanho:</label>
+                <select id="size12">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color12">Cor:</label>
+                <select id="color12 " onchange="changeImage('shp-image', this.value, 'shp')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Shawnpalooza', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta', document.getElementById('shp-image').src)">Adicionar
+                ao Carrinho</button>
+        </div>
         <div class="product-item">
             <img id="cortashawn-image" src="imagens/cortashawn.jpg" alt="cortashawn" class="product-image">
             <h3>Shawn Mendes</h3>
