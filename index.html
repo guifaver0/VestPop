@@ -4813,6 +4813,32 @@
                     </button>
                 </div>
 
+                <!-- Shawn Mendes -->
+                <div class="product-item">
+                    <img id="shp-image" src="imagens/shpb.jpg" alt="shpb" class="product-image">
+                    <h3>Shawn Mendes</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size5">Tamanho:</label>
+                        <select id="size5">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color5">Cor:</label>
+                        <select id="color5" onchange="changeImage('shp-image', this.value, 'shp')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Shawn Mendes', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('shp-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
                 <div class="product-item">
                     <img id="cortashawn-image" src="imagens/cortashawn.jpg" alt="cortashawn" class="product-image">
                     <h3>Shawn Mendes</h3>
