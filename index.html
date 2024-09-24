@@ -719,8 +719,9 @@
         <a onclick="showSection('about')">Início</a>
         <a onclick="showSection('collection')">Vestpalooza</a>
         <a onclick="showSection('movies')">Vestcine</a>
-        <a onclick="showSection('camiseta')">Por Artista</a>
+        <a onclick="showSection('camiseta')">Buscar Coleções</a>
         <a onclick="showSection('corta')">Corta Vento</a>
+        <a onclick="showSection('medidas')">Medidas</a>
         <a onclick="showSection('sobre')">Sobre a Loja</a>
     </nav>
 
@@ -980,6 +981,12 @@
                     ao Carrinho</button>
             </div>
         </div>
+        
+        <div id="zoom-modal" class="zoom-modal">
+            <span class="close" onclick="closeZoom()">&times;</span>
+            <img class="zoom-content" id="zoomed-image">
+        </div>
+
     </section>
 
     <!-- VESTPALOOZA -->
