@@ -804,9 +804,10 @@
             <div class="mobile-menu-button" onclick="toggleSidebar()">
                 <i class="fas fa-bars"></i> <!-- Usando Font Awesome para o ícone -->
             </div>
+        </div>
     </header>
 
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <a href="#about" onclick="showSection('about'); toggleSidebar();">Início</a>
         <a href="#collection" onclick="showSection('collection'); toggleSidebar();">VESTPALOOZA</a>
         <a href="#movies" onclick="showSection('movies'); toggleSidebar();">VESTCINE</a>
@@ -815,7 +816,6 @@
         <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
     </div>
-
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
@@ -836,15 +836,16 @@
             <div class="image-slider">
                 <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
-                <img src="imagens/bannercollection.jpg" alt="bannercollection" class="slide"
-                    id="slide-bannercollection">
+                <img src="imagens/bannercollection.jpg" alt="bannercollection" class="slide" id="slide-bannercollection">
             </div>
 
             <div class="image-slider-mobile">
                 <img src="imagens/bannerjokermobile.jpg" alt="bannerjokermobile" class="slide-mobile active"
                     id="slide-bannerjokermobile">
-                <img src="imagens/bannerlollamobile.jpg" alt="bannerlollamobile" class="slide-mobile" id="slide-bannerlollamobile">
-                <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile" id="slide-bannercollectionmobile">
+                <img src="imagens/bannerlollamobile.jpg" alt="bannerlollamobile" class="slide-mobile"
+                    id="slide-bannerlollamobile">
+                <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile"
+                    id="slide-bannercollectionmobile">
             </div>
 
             <h2></h2>
@@ -869,6 +870,12 @@
     </section>
 
     <script>
+        // Função para alternar a barra lateral
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
         let currentIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
@@ -891,10 +898,52 @@
 
         // Mudar de slide a cada 4 segundos
         setInterval(nextSlide, 4000);
-
-
     </script>
+
+    <style>
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .mobile-menu-button {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .button-container {
+                display: none;
+            }
+        }
+    </style>
 </body>
+
 
 
 <!-- VESTCINE -->
