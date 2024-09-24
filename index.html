@@ -28,9 +28,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Centraliza o logo */
             margin-bottom: 10px;
-            /* Espaço entre o logo e o título */
         }
 
         #logo {
@@ -57,7 +55,6 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            /* Permite que os itens quebrem linha em telas pequenas */
             padding: 10px 0;
         }
 
@@ -67,11 +64,11 @@
             text-align: center;
             padding: 14px 20px;
             margin: 5px;
-            /* Espaçamento reduzido para telas pequenas */
             text-decoration: none;
             cursor: pointer;
             border: 2px solid #ddd;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
@@ -91,7 +88,6 @@
             flex-wrap: wrap;
         }
 
-        /* CSS existente para produtos */
         .product-item {
             background-color: white;
             padding: 1em;
@@ -99,36 +95,10 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             width: calc(33% - 20px);
-            /* Três produtos por linha em telas maiores */
             max-width: 200px;
-            /* Limita a largura máxima */
             text-align: center;
             transition: transform 0.3s ease;
         }
-
-        /* Media query para garantir três produtos em telas pequenas */
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(33% - 20px);
-                /* Três produtos por linha */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha em telas pequenas */
-            }
-        }
-
-
-        /* Ajustar o ícone do carrinho */
-        #cart-icon {
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-        }
-
 
         .product-item:hover {
             transform: scale(1.05);
@@ -143,36 +113,6 @@
         .product-item:hover img {
             transform: scale(1.2);
         }
-
-        /* Adicionei as media queries para responsividade */
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha em telas médias */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produto por linha em telas pequenas */
-            }
-
-            #cart-icon {
-                top: 10px;
-                /* Ajustar a posição do ícone no mobile */
-                right: 10px;
-                /* Ajustar a posição do ícone no mobile */
-                font-size: 20px;
-                /* Reduzir o tamanho do ícone */
-                transform: scale(1.1);
-                /* Leve aumento ao passar o mouse */
-                color: #ffffff;
-                /* Cor de destaque ao interagir */
-            }
-        }
-
-        /* O restante do CSS permanece o mesmo */
 
         .product-item button {
             background-color: #4d8a92;
@@ -250,9 +190,7 @@
         .image-slider {
             position: relative;
             width: 100%;
-            max-width: 1920px;
             height: auto;
-            /* Ajustado para responsividade */
             margin: 0 auto;
             overflow: hidden;
         }
@@ -260,7 +198,6 @@
         .image-slider img {
             width: 100%;
             height: auto;
-            /* Para manter a proporção da imagem */
             object-fit: cover;
         }
 
@@ -298,7 +235,6 @@
             display: flex;
             justify-content: space-around;
             margin-top: 10px;
-            /* Ajustado para aproximar os itens de segurança */
             padding: 10px;
         }
 
@@ -322,133 +258,6 @@
             color: #666;
         }
 
-        /* Ajuste para os slides na versão mobile */
-        @media (max-width: 768px) {
-            .image-slider {
-                height: auto;
-                /* Para manter a proporção em telas menores */
-            }
-
-            .slide img {
-                width: 100%;
-                height: auto;
-            }
-
-            .security-container {
-                flex-direction: column;
-                /* Empilhar itens de segurança em telas menores */
-                align-items: center;
-            }
-
-            .security-item {
-                max-width: 100%;
-                margin-bottom: 15px;
-                /* Espaçamento entre os itens de segurança */
-            }
-        }
-
-        .collection-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .collection-image {
-            width: 50px;
-            height: auto;
-        }
-
-        #collection h2 {
-            font-size: 24px;
-            color: black;
-            margin: 0;
-        }
-
-        #movies {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .collection-header {
-            text-align: center;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        /* Atualização para os produtos na aba "Camisetas" */
-        .collection-header {
-            text-align: center;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .artist-list {
-            display: flex;
-            overflow-x: auto;
-            padding: 10px 0;
-            white-space: nowrap;
-        }
-
-        .artist-toggle-btn {
-            background-color: #4d8a92;
-            /* Cor de fundo */
-            color: white;
-            /* Cor do texto */
-            border: none;
-            /* Sem borda */
-            padding: 10px 20px;
-            /* Espaçamento interno */
-            cursor: pointer;
-            /* Muda o cursor para indicar que é clicável */
-            border-radius: 50px;
-            /* Bordas arredondadas */
-            font-size: 16px;
-            /* Tamanho da fonte */
-            transition: background-color 0.3s, transform 0.3s;
-            /* Animações para transição */
-        }
-
-        .artist-toggle-btn:hover {
-            background-color: #3c7c80;
-            /* Cor ao passar o mouse */
-            transform: scale(1.05);
-            /* Efeito de aumento ao passar o mouse */
-        }
-
-        .artist-toggle-btn:active {
-            transform: scale(0.95);
-            /* Efeito de redução ao clicar */
-        }
-
-
-        .artist-item {
-            display: inline-block;
-            margin-right: 20px;
-            text-align: center;
-        }
-
-        .artist-item img {
-            width: 100px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 5px;
-        }
-
-        .artist-item h3 {
-            font-size: 16px;
-            margin: 0;
-        }
-
         footer {
             text-align: center;
             padding: 1em 0;
@@ -459,142 +268,99 @@
 
         .contact-icon {
             font-size: 24px;
-            /* Ajuste o tamanho conforme necessário */
             margin-right: 8px;
-            /* Espaçamento entre o ícone e o texto */
         }
 
-        /* Estilização do select */
         select {
             appearance: none;
-            /* Remove o estilo padrão */
             -webkit-appearance: none;
-            /* Para compatibilidade com Safari */
             -moz-appearance: none;
-            /* Para compatibilidade com Firefox */
             background-color: #f1f1f1;
-            /* Cor de fundo suave */
             border: 2px solid #ccc;
-            /* Borda */
             border-radius: 8px;
-            /* Bordas arredondadas */
             padding: 10px;
-            /* Espaçamento interno */
             width: 100%;
-            /* Largura completa */
             font-size: 16px;
-            /* Tamanho da fonte */
             color: #333;
-            /* Cor do texto */
             outline: none;
-            /* Remove o contorno ao clicar */
             cursor: pointer;
-            /* Cursor para indicar interatividade */
             transition: all 0.3s ease;
-            /* Transição suave ao interagir */
         }
 
-        /* Estilização do select ao focar (quando clica) */
         select:focus {
             border-color: #007BFF;
-            /* Muda a cor da borda ao clicar */
-        }
-
-        /* Adiciona uma seta personalizada no select */
-        select::after {
-            content: '\25BC';
-            /* Código para a seta para baixo */
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            font-size: 16px;
-            color: #007BFF;
-            /* Cor da seta */
         }
 
         /* Para o container que envolve o select */
         .centered select {
             max-width: 300px;
-            /* Define uma largura máxima */
             margin: 0 auto;
-            /* Centraliza o select */
         }
 
         /* Para dispositivos móveis */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* Dois produtos por linha em telas médias */
+            }
+
+            #cart-icon {
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+                transform: scale(1.1);
+                color: #ffffff;
+            }
+
+            .security-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .security-item {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .image-slider {
+                height: auto;
+                /* Manter a proporção em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: calc(100% - 20px);
+                /* Um produto por linha em telas pequenas */
+            }
+
+            #cart-icon {
+                font-size: 20px;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                /* Ajuste do padding em telas menores */
+            }
+
+            input[type="text"],
+            input[type="email"] {
+                font-size: 14px;
+                /* Reduz o tamanho da fonte em telas menores */
+            }
+
             select {
                 font-size: 14px;
                 /* Reduz o tamanho da fonte em telas menores */
             }
         }
 
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            /* Espaço entre os produtos */
-        }
-
-        .product-item {
-            flex: 1 1 calc(25% - 20px);
-            /* Cada produto ocupa 25% da largura da tela */
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        button {
-            background: linear-gradient(135deg, #4d8a92, #0d7377);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        button:hover {
-            background: linear-gradient(135deg, #3c7c80, #086969);
-            transform: scale(1.05);
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            /* Centraliza os produtos */
-            gap: 10px;
-            /* Reduz o espaço entre os produtos */
-        }
-
-        .product-item {
-            flex: 1 1 calc(30% - 10px);
-            /* Cada produto ocupa cerca de 30% da largura */
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        .product-item button {
-            background-color: #4d8a92;
-            color: white;
-            border: none;
-            padding: 8px;
-            /* Reduz o padding para diminuir o tamanho do botão */
-            font-size: 14px;
-            /* Tamanho da fonte menor */
-            cursor: pointer;
+        .product-details {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
             margin-top: 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .image-slider .slide {
@@ -894,7 +660,8 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image" onclick="openZoomModal('glinda-image')">
+                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image"
+                    onclick="openZoomModal('glinda-image')">
                 <h3>Glinda</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -917,7 +684,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image" onclick="openZoomModal('greenpink-image')">
+                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image"
+                    onclick="openZoomModal('greenpink-image')">
                 <h3>Green Pink</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -940,7 +708,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image" onclick="openZoomModal('wicked-image')">
+                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image"
+                    onclick="openZoomModal('wicked-image')">
                 <h3>Wicked</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -963,7 +732,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image" onclick="openZoomModal('castle-image')">
+                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image"
+                    onclick="openZoomModal('castle-image')">
                 <h3>Castle</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -985,7 +755,7 @@
                     onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
-        </div>        
+        </div>
     </section>
 
     <!-- Modal de Zoom -->
@@ -1004,7 +774,8 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image" onclick="openZoomModal('tate-image')">
+                <img id="tate-image" src="imagens/tateb.jpg" alt="tateb" class="product-image"
+                    onclick="openZoomModal('tate-image')">
                 <h3>Tate Mcrae</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1027,7 +798,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb" class="product-image" onclick="openZoomModal('tatep-image')">
+                <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb" class="product-image"
+                    onclick="openZoomModal('tatep-image')">
                 <h3>Tatepalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1050,7 +822,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb" class="product-image" onclick="openZoomModal('think-image')">
+                <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb" class="product-image"
+                    onclick="openZoomModal('think-image')">
                 <h3>Think Later</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1073,7 +846,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb" class="product-image" onclick="openZoomModal('guts-image')">
+                <img id="guts-image" src="imagens/gutsb.jpg" alt="gutsb" class="product-image"
+                    onclick="openZoomModal('guts-image')">
                 <h3>Guts</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1096,7 +870,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="or-image" src="imagens/orb.jpg" alt="orb" class="product-image" onclick="openZoomModal('or-image')">
+                <img id="or-image" src="imagens/orb.jpg" alt="orb" class="product-image"
+                    onclick="openZoomModal('or-image')">
                 <h3>O.R</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1119,7 +894,8 @@
                     ao Carrinho</button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb" class="product-image" onclick="openZoomModal('oliviap-image')">
+                <img id="oliviap-image" src="imagens/oliviapb.jpg" alt="oliviapb" class="product-image"
+                    onclick="openZoomModal('oliviap-image')">
                 <h3>Oliviapalooza</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
