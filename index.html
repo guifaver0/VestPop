@@ -2677,6 +2677,82 @@
             </div>
         </div>
 
+        <!-- COLEÇÃO GIRL IN RED -->
+        <div class="collection-products" id="Girl In Red" style="display: none;">
+            <div class="product-list">
+                <!-- Produto GIRL -->
+                <div class="product-item" data-type="camiseta">
+                    <img id="red-image" src="imagens/redb.jpg" alt="redb">
+                    <h3>Red</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size15">Tamanho:</label>
+                        <select id="size15">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color15">Cor:</label>
+                        <select id="color15" onchange="changeImage('red-image', this.value, 'red')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Red', 59.99, document.getElementById('size15').value, document.getElementById('color15').value, 'Camiseta', document.getElementById('red-image').src)">Adicionar
+                        ao Carrinho</button>
+                </div>
+                <div class="product-item" data-type="camiseta">
+                    <img id="girlinred-image" src="imagens/girlinredb.jpg" alt="girlinredb">
+                    <h3>Girl in Red</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size16">Tamanho:</label>
+                        <select id="size16">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color16">Cor:</label>
+                        <select id="color16" onchange="changeImage('girlinred-image', this.value, 'girlinred')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Girl in Red', 59.99, document.getElementById('size16').value, document.getElementById('color16').value, 'Camiseta', document.getElementById('girlinred-image').src)">Adicionar
+                        ao Carrinho</button>
+                </div>
+                <div class="product-item" data-type="camiseta">
+                    <img id="girl-image" src="imagens/girlb.jpg" alt="girlb">
+                    <h3>Girl</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size17">Tamanho:</label>
+                        <select id="size17">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color17">Cor:</label>
+                        <select id="color17" onchange="changeImage('girl-image', this.value, 'girl')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Girl', 59.99, document.getElementById('size17').value, document.getElementById('color17').value, 'Camiseta', document.getElementById('girl-image').src)">Adicionar
+                        ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
         <!-- COLEÇÃO HARRY -->
         <div class="collection-products" id="Harry Styles" style="display: none;">
             <div class="product-list">
