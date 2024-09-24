@@ -695,18 +695,19 @@
 
         .sidebar {
             position: fixed;
-            top: 0;
+            /* Para fixar a barra na tela */
             left: -250px;
-            /* Iniciar fora da tela */
+            /* Ocultar inicialmente */
+            top: 0;
+            /* Alinhado ao topo */
             width: 250px;
+            /* Largura da barra lateral */
             height: 100%;
-            background-color: #4d8a92;
+            /* Altura total */
+            background-color: gray;
             /* Cor de fundo */
             transition: left 0.3s ease;
-            padding: 10px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            /* Colocar acima do conteúdo */
+            /* Transição suave para abrir/fechar */
         }
 
         .sidebar a {
@@ -718,7 +719,28 @@
 
         .sidebar.open {
             left: 0;
-            /* Mover para a esquerda quando aberto */
+            /* Mostrar a barra */
+        }
+
+        .toggle-button {
+            position: absolute;
+            /* Para posicioná-lo fora do fluxo normal */
+            top: 10px;
+            /* Distância do topo */
+            left: 10px;
+            /* Distância da esquerda */
+            background-color: #333;
+            /* Cor de fundo do botão */
+            color: white;
+            /* Cor do texto */
+            border: none;
+            /* Sem borda */
+            padding: 10px;
+            /* Espaçamento interno */
+            cursor: pointer;
+            /* Cursor de mão ao passar o mouse */
+            z-index: 1000;
+            /* Para garantir que fique acima de outros elementos */
         }
 
         .mobile-menu-button {
@@ -744,7 +766,6 @@
                 /* Ocultar botões na versão mobile */
             }
         }
-
     </style>
 </head>
 
@@ -761,6 +782,7 @@
     </header>
 
     <div class="sidebar">
+        <button class="toggle-button" onclick="toggleSidebar()">☰</button>
         <a href="#about" onclick="showSection('about'); toggleSidebar();">Início</a>
         <a href="#collection" onclick="showSection('collection'); toggleSidebar();">VESTPALOOZA</a>
         <a href="#movies" onclick="showSection('movies'); toggleSidebar();">VESTCINE</a>
@@ -768,8 +790,7 @@
         <a href="#corta" onclick="showSection('corta'); toggleSidebar();">Corta Vento</a>
         <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
-    </div>    
-
+    </div>
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
@@ -6451,9 +6472,8 @@
 
     function toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
-        sidebar.classList.toggle('open');
+        sidebar.classList.toggle('open'); // Adiciona ou remove a classe 'open'
     }
-
 
     function toggleArtistList() {
         const artistList = document.getElementById("artist-list");
