@@ -654,65 +654,33 @@
             display: inline-block;
         }
 
-        /* Estilo para o ícone de lupa */
-        .zoom-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            /* Ajuste a largura da lupa */
-            height: 30px;
-            /* Ajuste a altura da lupa */
-            border: 5px solid black;
-            /* Borda preta para o círculo da lupa */
-            border-radius: 50%;
-            /* Para criar um círculo */
-            background-color: transparent;
-            box-shadow: inset 0 0 0 3px black;
-            /* Para criar o efeito de corpo da lupa */
-            cursor: pointer;
-        }
-
-        .zoom-icon:after {
-            content: '';
-            position: absolute;
-            top: 12px;
-            /* Ajuste a posição da haste */
-            left: 20px;
-            /* Ajuste a posição da haste */
-            width: 5px;
-            /* Largura da haste */
-            height: 12px;
-            /* Altura da haste */
-            background-color: black;
-            /* Cor da haste */
-            transform: rotate(45deg);
-            /* Gira a haste para parecer uma lupa */
-        }
-
-        /* Efeito de hover */
-        .zoom-icon:hover {
-            transform: scale(1.1);
-            /* Efeito de zoom ao passar o mouse */
-        }
-
-        /* Estilo para o modal de zoom */
+        /* Estilo do modal */
         .modal {
             display: none;
+            /* Oculto por padrão */
             position: fixed;
+            /* Fixo */
             z-index: 1;
+            /* Fica na frente */
             left: 0;
             top: 0;
             width: 100%;
+            /* Largura total */
             height: 100%;
+            /* Altura total */
             overflow: auto;
+            /* Adiciona rolagem se necessário */
             background-color: rgba(0, 0, 0, 0.9);
+            /* Fundo escuro */
         }
 
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 80%;
+            width: 80%;
+            /* Largura da imagem */
+            max-width: 700px;
+            /* Largura máxima */
         }
 
         .close {
@@ -724,7 +692,7 @@
             font-weight: bold;
             cursor: pointer;
         }
-
+        
     </style>
 </head>
 
@@ -917,7 +885,8 @@
         </div>
         <div class="product-list">
             <div class="product-item" data-type="camiseta">
-                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image">
+                <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image"
+                    onclick="openZoomModal('glinda-image')">
                 <h3>Glinda</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -938,10 +907,10 @@
                 <button
                     onclick="addToCart('Glinda', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('glinda-image').src)">Adicionar
                     ao Carrinho</button>
-                <div class="zoom-icon" onclick="openZoomModal('glinda-image')"></div>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image">
+                <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image"
+                    onclick="openZoomModal('greenpink-image')">
                 <h3>Green Pink</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -962,10 +931,10 @@
                 <button
                     onclick="addToCart('Green Pink', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('greenpink-image').src)">Adicionar
                     ao Carrinho</button>
-                <div class="zoom-icon" onclick="openZoomModal('greenpink-image')"></div>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image">
+                <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image"
+                    onclick="openZoomModal('wicked-image')">
                 <h3>Wicked</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -986,10 +955,10 @@
                 <button
                     onclick="addToCart('Wicked', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('wicked-image').src)">Adicionar
                     ao Carrinho</button>
-                <div class="zoom-icon" onclick="openZoomModal('wicked-image')"></div>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image">
+                <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image"
+                    onclick="openZoomModal('castle-image')">
                 <h3>Castle</h3>
                 <p>R$ 59,99</p>
                 <div class="product-options">
@@ -1010,15 +979,15 @@
                 <button
                     onclick="addToCart('Castle', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('castle-image').src)">Adicionar
                     ao Carrinho</button>
-                <div class="zoom-icon" onclick="openZoomModal('castle-image')"></div>
             </div>
         </div>
     </section>
 
     <!-- Modal de Zoom -->
-    <div id="zoomModal" class="modal">
-        <span class="close" onclick="closeZoomModal()">&times;</span>
+    <div id="zoomModal" class="modal" onclick="this.style.display='none'">
+        <span class="close" onclick="document.getElementById('zoomModal').style.display='none'">&times;</span>
         <img class="modal-content" id="zoomedImage">
+        <div id="caption"></div>
     </div>
 
     <!-- VESTPALOOZA -->
@@ -6387,15 +6356,13 @@
 
         function openZoomModal(imageId) {
             var modal = document.getElementById("zoomModal");
-            var modalImg = document.getElementById("zoomedImage");
             var img = document.getElementById(imageId);
+            var modalImg = document.getElementById("zoomedImage");
+            var captionText = document.getElementById("caption");
+
             modal.style.display = "block";
             modalImg.src = img.src;
-        }
-
-        function closeZoomModal() {
-            var modal = document.getElementById("zoomModal");
-            modal.style.display = "none";
+            captionText.innerHTML = img.alt;
         }
 
 
