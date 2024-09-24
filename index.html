@@ -794,7 +794,7 @@
             /* Centraliza o texto no rodapé */
             padding: 10px 0;
             /* Ajusta o espaçamento no rodapé */
-            background-color: #333;
+            background-color: #1c8583;
             /* Cor de fundo do rodapé (ajuste conforme necessário) */
             color: #fff;
             /* Cor do texto */
@@ -805,6 +805,49 @@
             /* Diminui o tamanho do texto */
             margin: 0;
             /* Remove as margens do parágrafo para um alinhamento mais compacto */
+        }
+
+        /* Estilos para a seção de medidas */
+        .table-container {
+            margin: 20px 0;
+        }
+
+        .medida-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .medida-table th,
+        .medida-table td {
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        .medida-table thead th {
+            background-color: #1c8583;
+            color: white;
+            font-size: 18px;
+        }
+
+        .medida-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .medida-table tbody tr:hover {
+            background-color: #dff1f0;
+        }
+
+        h3 {
+            color: #1c8583;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -6552,81 +6595,79 @@
 </section>
 
 <!-- Seção Medidas -->
-<section id="medida" class="hidden">
-    <h2>Tabelas de Medidas</h2>
+<section id="medida">
+    <h2>Tabela de Medidas</h2>
+    
+    <div class="table-container">
+        <h3>Camisetas</h3>
+        <table class="medida-table">
+            <thead>
+                <tr>
+                    <th>Tamanho</th>
+                    <th>Altura</th>
+                    <th>Largura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P</td>
+                    <td>69cm</td>
+                    <td>49cm</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>72cm</td>
+                    <td>51cm</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>75cm</td>
+                    <td>53cm</td>
+                </tr>
+                <tr>
+                    <td>GG</td>
+                    <td>78cm</td>
+                    <td>55cm</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <!-- Tabela de Medidas para Camisetas -->
-    <h3>Camisetas</h3>
-    <table border="1" cellspacing="0" cellpadding="5">
-        <thead>
-            <tr>
-                <th>Tamanho</th>
-                <th>Altura</th>
-                <th>Largura</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>P</td>
-                <td>69cm</td>
-                <td>49cm</td>
-            </tr>
-            <tr>
-                <td>M</td>
-                <td>72cm</td>
-                <td>51cm</td>
-            </tr>
-            <tr>
-                <td>G</td>
-                <td>75cm</td>
-                <td>53cm</td>
-            </tr>
-            <tr>
-                <td>GG</td>
-                <td>78cm</td>
-                <td>55cm</td>
-            </tr>
-        </tbody>
-    </table>
+        <h3>Corta Vento</h3>
+        <table class="medida-table">
+            <thead>
+                <tr>
+                    <th>Tamanho</th>
+                    <th>Altura</th>
+                    <th>Largura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P</td>
+                    <td>60cm</td>
+                    <td>51cm</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>64cm</td>
+                    <td>53cm</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>70cm</td>
+                    <td>57cm</td>
+                </tr>
+                <tr>
+                    <td>GG</td>
+                    <td>73cm</td>
+                    <td>62cm</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <!-- Tabela de Medidas para Corta Vento -->
-    <h3>Corta Vento</h3>
-    <table border="1" cellspacing="0" cellpadding="5">
-        <thead>
-            <tr>
-                <th>Tamanho</th>
-                <th>Altura</th>
-                <th>Largura</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>P</td>
-                <td>60cm</td>
-                <td>51cm</td>
-            </tr>
-            <tr>
-                <td>M</td>
-                <td>64cm</td>
-                <td>53cm</td>
-            </tr>
-            <tr>
-                <td>G</td>
-                <td>70cm</td>
-                <td>57cm</td>
-            </tr>
-            <tr>
-                <td>GG</td>
-                <td>73cm</td>
-                <td>62cm</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- Observação -->
-    <p style="font-size: 12px; margin-top: 10px;">As medidas podem variar 2cm para mais ou menos.</p>
+    <p class="note">*As medidas podem variar 2cm para mais ou para menos.</p>
 </section>
-
 
 
 <section id="cart">
