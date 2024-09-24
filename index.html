@@ -4466,7 +4466,7 @@
         <!-- Produto Sabrina 4 -->
         <div class="product-item">
             <img id="sabrina4-image" src="imagens/sabrina4b.jpg" alt="sabrina4b" class="product-image">
-            <h3>Taste</h3>
+            <h3>Please</h3>
             <p>R$ 59,99</p>
             <div class="product-options">
                 <label for="size4">Tamanho:</label>
@@ -4483,10 +4483,59 @@
                     <option value="Branco">Branco</option>
                 </select>
             </div>
-            <button onclick="addToCart('Taste', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('sabrina4-image').src)">
+            <button onclick="addToCart('Please', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('sabrina4-image').src)">
                 Adicionar ao Carrinho
             </button>
         </div>
+
+        <div class="product-item">
+            <img id="sabrina5-image" src="imagens/sabrina5b.jpg" alt="sabrina5b" class="product-image">
+            <h3>Jesus Was a Carpenter</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size5">Tamanho:</label>
+                <select id="size5">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color5">Cor:</label>
+                <select id="color5" onchange="changeImage('sabrina5-image', this.value, 'sabrina5')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Jesus Was a Carpenter', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('sabrina5-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <div class="product-item">
+            <img id="sabrina6-image" src="imagens/sabrina6b.jpg" alt="sabrina6b" class="product-image">
+            <h3>Taste</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size6">Tamanho:</label>
+                <select id="size6">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color6">Cor:</label>
+                <select id="color6" onchange="changeImage('sabrina6-image', this.value, 'sabrina6')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Taste', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('sabrina6-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
         <div class="product-item">
             <img id="cortasabrina-image" src="imagens/cortasabrina.jpg" alt="cortasabrina" class="product-image">
             <h3>Sabrina Carpenter</h3>
