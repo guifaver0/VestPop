@@ -1194,7 +1194,6 @@
     </div>
 </section>
 
-<!-- Modal de Zoom -->
 <div id="zoomModal" class="modal" onclick="this.style.display='none'">
     <span class="close" onclick="document.getElementById('zoomModal').style.display='none'">&times;</span>
     <img class="modal-content" id="zoomedImage">
@@ -1680,7 +1679,6 @@
     </div>
 </section>
 
-<!-- Modal de Zoom -->
 <div id="zoomModal" class="modal" onclick="this.style.display='none'">
     <span class="close" onclick="document.getElementById('zoomModal').style.display='none'">&times;</span>
     <img class="modal-content" id="zoomedImage">
@@ -6571,15 +6569,26 @@
 <script>
 
     function openZoomModal(imageId) {
-        var modal = document.getElementById("zoomModal");
-        var img = document.getElementById(imageId);
-        var modalImg = document.getElementById("zoomedImage");
-        var captionText = document.getElementById("caption");
+        // Obtém o elemento da imagem que foi clicada
+        const image = document.getElementById(imageId);
 
-        modal.style.display = "block";
-        modalImg.src = img.src;
-        captionText.innerHTML = img.alt;
+        // Exibe o modal
+        const modal = document.getElementById('zoomModal');
+        modal.style.display = 'block';
+
+        // Define a imagem ampliada no modal
+        const modalImg = document.getElementById('zoomedImage');
+        modalImg.src = image.src; // Usar a mesma imagem clicada
+
+        // Adiciona uma legenda se necessário (opcional)
+        const captionText = document.getElementById('caption');
+        captionText.innerHTML = image.alt;
     }
+
+    // Fecha o modal ao clicar fora da imagem
+    document.getElementById('zoomModal').addEventListener('click', function () {
+        this.style.display = 'none';
+    });
 
     function toggleArtistList() {
         const artistList = document.getElementById("artist-list");
