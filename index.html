@@ -6874,6 +6874,19 @@
             showSection('camiseta'); // Altera para a aba Camisetas
         };
 
+        // Funções para alternar banners
+        document.getElementById('slide-bannerjokermobile').onclick = function () {
+            showSection('movies'); // Altera para a aba Vestcine
+        };
+
+        document.getElementById('slide-bannerlollamobile').onclick = function () {
+            showSection('collection'); // Altera para a aba Vestpalooza
+        };
+
+        document.getElementById('slide-bannercollectionmobile').onclick = function () {
+            showSection('camiseta'); // Altera para a aba Camisetas
+        };
+
         // Função para alterar imagem do produto com base na cor
         function changeImage(imageId, color, productName) {
             const imageElement = document.getElementById(imageId);
