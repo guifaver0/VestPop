@@ -6902,7 +6902,11 @@
 
         function toggleArtistList() {
             const artistList = document.getElementById("artist-list");
-            artistList.style.display = artistList.style.display === "none" ? "block" : "none";
+            if (artistList.style.display === "none" || artistList.style.display === "") {
+                artistList.style.display = "block"; // Mostra a lista
+            } else {
+                artistList.style.display = "none"; // Esconde a lista
+            }
         }
 
         function showCollection(artist) {
