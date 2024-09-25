@@ -153,7 +153,7 @@
         }
 
         .product-item:hover img {
-            transform: scale(1.9); 
+            transform: scale(1.9);
             /* Aumenta o tamanho da imagem em 30% quando o mouse passa sobre o item */
         }
 
@@ -418,6 +418,21 @@
             white-space: nowrap;
         }
 
+        /* Container principal para centralizar o botão */
+        .collections-container {
+            display: flex;
+            flex-direction: column;
+            /* Muda para coluna para centralizar o conteúdo verticalmente */
+            align-items: center;
+            /* Centraliza horizontalmente */
+            justify-content: center;
+            /* Centraliza verticalmente */
+            height: 100vh;
+            /* Ocupa toda a altura da tela */
+            margin: 0;
+            /* Remove margens externas */
+        }
+
         .artist-toggle-btn {
             background-color: #4d8a92;
             /* Cor de fundo */
@@ -448,7 +463,6 @@
             transform: scale(0.95);
             /* Efeito de redução ao clicar */
         }
-
 
         .artist-item {
             display: inline-block;
