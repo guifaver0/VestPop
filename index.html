@@ -825,7 +825,7 @@
             text-align: center;
             margin-top: 10px;
         }
-
+        
     </style>
 </head>
 
@@ -837,35 +837,7 @@
             <div id="cart-icon" onclick="showSection('cart')">
                 <i class="fas fa-shopping-cart"></i>
             </div>
-            <div class="mobile-menu-button" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i> <!-- Usando Font Awesome para o ícone -->
-            </div>
-        </div>
     </header>
-
-    <div class="sidebar" id="sidebar">
-        <a href="#about" onclick="showSection('about'); toggleSidebar();">Início</a>
-        <a href="#collection" onclick="showSection('collection'); toggleSidebar();">VESTPALOOZA</a>
-        <a href="#movies" onclick="showSection('movies'); toggleSidebar();">VESTCINE</a>
-        <a href="#camiseta" onclick="showSection('camiseta'); toggleSidebar();">Buscar Coleção</a>
-        <a href="#corta" onclick="showSection('corta'); toggleSidebar();">Corta Vento</a>
-        <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
-        <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
-    </div>
-
-    <div class="button-container">
-        <button class="tab-button" onclick="showSection('about')">Início</button>
-        <button class="tab-button" onclick="showSection('movies')">Vestcine</button>
-        <button class="tab-button" onclick="showSection('collection')">Vestpalooza</button>
-        <button class="tab-button" onclick="showSection('camiseta')">Buscar Coleção</button>
-        <button class="tab-button" onclick="showSection('corta')">Corta Vento</button>
-        <button class="tab-button" onclick="showSection('medida')">Medidas</button>
-        <button class="tab-button" onclick="showSection('sobre')">Sobre a Loja</button>
-    </div>
-
-    <footer>
-        <p>© 2024 VESTPOP. Todos os direitos reservados.</p>
-    </footer>
 
     <section id="about">
         <div id="novidades">
@@ -883,6 +855,19 @@
                     id="slide-bannerlollamobile">
                 <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile"
                     id="slide-bannercollectionmobile">
+            </div>
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+
+    <section id="about">
+        <div id="novidades">
+            <div class="image-slider">
+                <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
+                <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
+                <img src="imagens/novidade3.jpg" alt="Novidade 3" class="slide" id="slide-novidade3">
             </div>
 
 
