@@ -418,33 +418,24 @@
             white-space: nowrap;
         }
 
-        /* Container principal para centralizar o botão */
-        .collections-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            /* Muda para flex-start para mover os itens para cima */
-            height: 100vh;
-            margin: 0;
-            padding-top: 20px;
-            /* Adicione um padding superior, se necessário, para espaço */
-        }
-
-
         .artist-toggle-btn {
             background-color: #4d8a92;
+            /* Cor de fundo */
             color: white;
+            /* Cor do texto */
             border: none;
+            /* Sem borda */
             padding: 10px 20px;
+            /* Espaçamento interno */
             cursor: pointer;
+            /* Muda o cursor para indicar que é clicável */
             border-radius: 50px;
+            /* Bordas arredondadas */
             font-size: 16px;
+            /* Tamanho da fonte */
             transition: background-color 0.3s, transform 0.3s;
-            margin-top: -20px;
-            /* Adicione um margin-top negativo para mover o botão para cima */
+            /* Animações para transição */
         }
-
 
         .artist-toggle-btn:hover {
             background-color: #3c7c80;
@@ -457,6 +448,7 @@
             transform: scale(0.95);
             /* Efeito de redução ao clicar */
         }
+
 
         .artist-item {
             display: inline-block;
@@ -980,9 +972,9 @@
 
     <div class="sidebar" id="sidebar">
         <a href="#about" onclick="showSection('about'); toggleSidebar();">Início</a>
+        <a href="#collection" onclick="showSection('collection'); toggleSidebar();">VESTPALOOZA</a>
+        <a href="#movies" onclick="showSection('movies'); toggleSidebar();">VESTCINE</a>
         <a href="#camiseta" onclick="showSection('camiseta'); toggleSidebar();">Buscar Coleção</a>
-        <a href="#collection" onclick="showSection('collection'); toggleSidebar();">Vestpalooza</a>
-        <a href="#movies" onclick="showSection('movies'); toggleSidebar();">Vestcine</a>
         <a href="#corta" onclick="showSection('corta'); toggleSidebar();">Corta Vento</a>
         <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
@@ -990,9 +982,9 @@
 
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
-        <button class="tab-button" onclick="showSection('camiseta')">Buscar Coleção</button>
         <button class="tab-button" onclick="showSection('movies')">Vestcine</button>
         <button class="tab-button" onclick="showSection('collection')">Vestpalooza</button>
+        <button class="tab-button" onclick="showSection('camiseta')">Buscar Coleção</button>
         <button class="tab-button" onclick="showSection('corta')">Corta Vento</button>
         <button class="tab-button" onclick="showSection('medida')">Medidas</button>
         <button class="tab-button" onclick="showSection('sobre')">Sobre a Loja</button>
@@ -1937,6 +1929,7 @@
     <!-- CAMISETAS -->
     <section id="camiseta">
         <div class="collection-header">
+            <h2>Camisetas</h2>
         </div>
 
         <!-- Lista de artistas como um select -->
@@ -1946,7 +1939,7 @@
             </div>
             <div id="artist-list" style="display: none;">
                 <select id="tipoAcesso" onchange="showCollection(this.value)">
-                    <option value="" disabled selected>Selecione aqui</option>
+                    <option value="" disabled selected>Selecione um artista</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
                     <option value="Anitta">Anitta</option>
                     <option value="Ariana Grande">Ariana Grande</option>
@@ -6902,11 +6895,7 @@
 
         function toggleArtistList() {
             const artistList = document.getElementById("artist-list");
-            if (artistList.style.display === "none" || artistList.style.display === "") {
-                artistList.style.display = "block"; // Mostra a lista
-            } else {
-                artistList.style.display = "none"; // Esconde a lista
-            }
+            artistList.style.display = artistList.style.display === "none" ? "block" : "none";
         }
 
         function showCollection(artist) {
