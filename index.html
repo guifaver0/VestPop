@@ -648,6 +648,184 @@
         .contact-icon {
             margin-right: 8px;
         }
+
+        /* Estilo do modal */
+        .modal {
+            display: none;
+            /* Oculto por padrão */
+            position: fixed;
+            /* Fixo */
+            z-index: 1;
+            /* Fica na frente */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Largura total */
+            height: 100%;
+            /* Altura total */
+            overflow: auto;
+            /* Adiciona rolagem se necessário */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Fundo escuro */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            /* Largura da imagem */
+            max-width: 700px;
+            /* Largura máxima */
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            /* Ocultar inicialmente */
+            top: 0;
+            /* Alinhado ao topo */
+            width: 250px;
+            /* Largura da barra lateral */
+            height: 100%;
+            /* Altura total */
+            background-color: gray;
+            /* Cor de fundo */
+            transition: left 0.3s ease;
+            /* Transição suave para abrir/fechar */
+            z-index: 999;
+            /* Para garantir que fique acima de outros elementos */
+        }
+
+        .sidebar a {
+            display: block;
+            /* Cada link ocupa uma linha */
+            padding: 15px;
+            /* Espaçamento */
+            text-decoration: none;
+            /* Sem sublinhado */
+            color: black;
+            /* Cor do texto */
+        }
+
+        .sidebar.open {
+            left: 0;
+            /* Mostrar a barra lateral */
+        }
+
+        .mobile-menu-button {
+            display: block;
+            /* Mostrar botão de menu na versão mobile */
+            position: absolute;
+            /* Para o posicionamento */
+            top: 10px;
+            /* Distância do topo */
+            left: 10px;
+            /* Distância da esquerda */
+            background-color: #1c8583;
+            /* Cor de fundo */
+            color: white;
+            /* Cor do texto */
+            border: none;
+            /* Sem borda */
+            padding: 10px;
+            /* Espaçamento interno */
+            cursor: pointer;
+            /* Cursor de mão ao passar o mouse */
+            z-index: 1000;
+            /* Para garantir que fique acima de outros elementos */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Centralizar os botões */
+            flex-wrap: wrap;
+            /* Permite quebra de linha */
+        }
+
+        .tab-button {
+            margin: 5px;
+            /* Adicionar espaço entre os botões */
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                display: none;
+                /* Ocultar botões na versão mobile */
+            }
+        }
+
+        footer {
+            text-align: center;
+            /* Centraliza o texto no rodapé */
+            padding: 10px 0;
+            /* Ajusta o espaçamento no rodapé */
+            background-color: #3c4343;
+            /* Cor de fundo do rodapé (ajuste conforme necessário) */
+            color: #fff;
+            /* Cor do texto */
+        }
+
+        footer p {
+            font-size: 12px;
+            /* Diminui o tamanho do texto */
+            margin: 0;
+            /* Remove as margens do parágrafo para um alinhamento mais compacto */
+        }
+
+        /* Estilos para a seção de medidas */
+        .table-container {
+            margin: 20px 0;
+        }
+
+        .medida-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .medida-table th,
+        .medida-table td {
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        .medida-table thead th {
+            background-color: #3c7c80;
+            color: white;
+            font-size: 18px;
+        }
+
+        .medida-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .medida-table tbody tr:hover {
+            background-color: #dff1f0;
+        }
+
+        h3 {
+            color: #1c8583;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
     </style>
 </head>
 
@@ -6280,7 +6458,7 @@
             <ul></ul>
         </div>
     </section>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
