@@ -5726,8 +5726,9 @@
         <!-- COLEÇÃO TATE MCRAE -->
         <div class="collection-products" id="Tate Mcrae" style="display: none;">
             <div class="product-list">
+                <!-- Produto Tate Mcrae -->
                 <div class="product-item" data-type="camiseta">
-                    <img id="tate-image" src="imagens/tateb.jpg" alt="tateb">
+                    <img id="tate1-image" src="imagens/tate1b.jpg" alt="tate1b" class="product-image">
                     <h3>Tate Mcrae</h3>
                     <p>R$ 59,99</p>
                     <div class="product-options">
@@ -5740,17 +5741,20 @@
                         </select>
                         <br>
                         <label for="color1">Cor:</label>
-                        <select id="color1" onchange="changeImage('tate-image', this.value, 'tate')">
+                        <select id="color1" onchange="changeImage('tate1-image', this.value, 'tate1')">
                             <option value="Preto">Preto</option>
                             <option value="Branco">Branco</option>
                         </select>
                     </div>
                     <button
-                        onclick="addToCart('Tate', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('tate-image').src)">Adicionar
-                        ao Carrinho</button>
+                        onclick="addToCart('Tate Mcrae', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('tate1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
+
+                <!-- Produto Tatepalooza -->
                 <div class="product-item" data-type="camiseta">
-                    <img id="tatep-image" src="imagens/tatepb.jpg" alt="tatepb">
+                    <img id="tate2-image" src="imagens/tate2b.jpg" alt="tate2b" class="product-image">
                     <h3>Tatepalooza</h3>
                     <p>R$ 59,99</p>
                     <div class="product-options">
@@ -5763,17 +5767,20 @@
                         </select>
                         <br>
                         <label for="color2">Cor:</label>
-                        <select id="color2" onchange="changeImage('tatep-image', this.value, 'tatep')">
+                        <select id="color2" onchange="changeImage('tate2-image', this.value, 'tate2')">
                             <option value="Preto">Preto</option>
                             <option value="Branco">Branco</option>
                         </select>
                     </div>
                     <button
-                        onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('tatep-image').src)">Adicionar
-                        ao Carrinho</button>
+                        onclick="addToCart('Tatepalooza', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('tate2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
+
+                <!-- Produto Think Later -->
                 <div class="product-item" data-type="camiseta">
-                    <img id="think-image" src="imagens/thinkb.jpg" alt="thinkb">
+                    <img id="tate3-image" src="imagens/tate3b.jpg" alt="tate3b" class="product-image">
                     <h3>Think Later</h3>
                     <p>R$ 59,99</p>
                     <div class="product-options">
@@ -5786,14 +5793,15 @@
                         </select>
                         <br>
                         <label for="color3">Cor:</label>
-                        <select id="color3" onchange="changeImage('think-image', this.value, 'think')">
+                        <select id="color3" onchange="changeImage('tate3-image', this.value, 'tate3')">
                             <option value="Preto">Preto</option>
                             <option value="Branco">Branco</option>
                         </select>
                     </div>
                     <button
-                        onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('think-image').src)">Adicionar
-                        ao Carrinho</button>
+                        onclick="addToCart('Think Later', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('tate3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
             </div>
         </div>
