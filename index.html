@@ -422,35 +422,29 @@
         .collections-container {
             display: flex;
             flex-direction: column;
-            /* Muda para coluna para centralizar o conteúdo verticalmente */
             align-items: center;
-            /* Centraliza horizontalmente */
-            justify-content: center;
-            /* Centraliza verticalmente */
+            justify-content: flex-start;
+            /* Muda para flex-start para mover os itens para cima */
             height: 100vh;
-            /* Ocupa toda a altura da tela */
             margin: 0;
-            /* Remove margens externas */
+            padding-top: 20px;
+            /* Adicione um padding superior, se necessário, para espaço */
         }
+
 
         .artist-toggle-btn {
             background-color: #4d8a92;
-            /* Cor de fundo */
             color: white;
-            /* Cor do texto */
             border: none;
-            /* Sem borda */
             padding: 10px 20px;
-            /* Espaçamento interno */
             cursor: pointer;
-            /* Muda o cursor para indicar que é clicável */
             border-radius: 50px;
-            /* Bordas arredondadas */
             font-size: 16px;
-            /* Tamanho da fonte */
             transition: background-color 0.3s, transform 0.3s;
-            /* Animações para transição */
+            margin-top: -20px;
+            /* Adicione um margin-top negativo para mover o botão para cima */
         }
+
 
         .artist-toggle-btn:hover {
             background-color: #3c7c80;
@@ -1943,66 +1937,63 @@
     <!-- CAMISETAS -->
     <section id="camiseta">
         <div class="collection-header">
-            <h2>Camisetas</h2>
+            <h2></h2>
         </div>
 
-        <!-- Botão de Artistas no lugar do título -->
+        <!-- Lista de artistas como um select -->
         <div class="collections-container">
             <div class="centered">
                 <button class="artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
             </div>
-        </div>
-
-        <!-- Lista de artistas como um select -->
-        <div id="artist-list" style="display: none;">
-            <select id="tipoAcesso" onchange="showCollection(this.value)">
-                <option value="" disabled selected>Selecione um artista</option>
-                <option value="Alanis Morissette">Alanis Morissette</option>
-                <option value="Anitta">Anitta</option>
-                <option value="Ariana Grande">Ariana Grande</option>
-                <option value="Baco Exu do Blues">Baco Exu do Blues</option>
-                <option value="Beyonce">Beyonce</option>
-                <option value="Billie Eilish">Billie Eilish</option>
-                <option value="Britney Spears">Britney Spears</option>
-                <option value="Bruno Mars">Bruno Mars</option>
-                <option value="Camila Cabello">Camila Cabello</option>
-                <option value="Chappell Roan">Chappell Roan</option>
-                <option value="Charli XCX">Charli XCX</option>
-                <option value="Demi Lovato">Demi Lovato</option>
-                <option value="Doja Cat">Doja Cat</option>
-                <option value="Eminem">Eminem</option>
-                <option value="Girl In Red">Girl In Red</option>
-                <option value="Harry Styles">Harry Styles</option>
-                <option value="Jão">Jão</option>
-                <option value="Justin Bieber">Justin Bieber</option>
-                <option value="Justin Timberlake">Justin Timberlake</option>
-                <option value="Karol G">Karol G</option>
-                <option value="Katy Perry">Katy Perry</option>
-                <option value="Kayblack">Kayblack</option>
-                <option value="Kesha">Kesha</option>
-                <option value="Lady Gaga">Lady Gaga</option>
-                <option value="Lana Del Rey">Lana Del Rey</option>
-                <option value="Lisa">Lisa</option>
-                <option value="Luisa Sonza">Luisa Sonza</option>
-                <option value="Mariah Carey">Mariah Carey</option>
-                <option value="Marina Sena">Marina Sena</option>
-                <option value="Melanie Martinez">Melanie Martinez</option>
-                <option value="Olivia Rodrigo">Olivia Rodrigo</option>
-                <option value="Pabllo Vittar">Pabllo Vittar</option>
-                <option value="Post Malone">Post Malone</option>
-                <option value="Rihanna">Rihanna</option>
-                <option value="Sabrina Carpenter">Sabrina Carpenter</option>
-                <option value="Shawn Mendes">Shawn Mendes</option>
-                <option value="Sia">Sia</option>
-                <option value="Sza">Sza</option>
-                <option value="Tasha & Tracie">Tasha & Tracie</option>
-                <option value="Tate Mcrae">Tate Mcrae</option>
-                <option value="Taylor Swift">Taylor Swift</option>
-                <option value="The Weeknd">The Weeknd</option>
-                <option value="Tyla">Tyla</option>
-                <option value="Tyler, The Creator">Tyler, The Creator</option>
-            </select>
-        </div>
+            <div id="artist-list" style="display: none;">
+                <select id="tipoAcesso" onchange="showCollection(this.value)">
+                    <option value="" disabled selected>Selecione um artista</option>
+                    <option value="Alanis Morissette">Alanis Morissette</option>
+                    <option value="Anitta">Anitta</option>
+                    <option value="Ariana Grande">Ariana Grande</option>
+                    <option value="Baco Exu do Blues">Baco Exu do Blues</option>
+                    <option value="Beyonce">Beyonce</option>
+                    <option value="Billie Eilish">Billie Eilish</option>
+                    <option value="Britney Spears">Britney Spears</option>
+                    <option value="Bruno Mars">Bruno Mars</option>
+                    <option value="Camila Cabello">Camila Cabello</option>
+                    <option value="Chappell Roan">Chappell Roan</option>
+                    <option value="Charli XCX">Charli XCX</option>
+                    <option value="Demi Lovato">Demi Lovato</option>
+                    <option value="Doja Cat">Doja Cat</option>
+                    <option value="Eminem">Eminem</option>
+                    <option value="Girl In Red">Girl In Red</option>
+                    <option value="Harry Styles">Harry Styles</option>
+                    <option value="Jão">Jão</option>
+                    <option value="Justin Bieber">Justin Bieber</option>
+                    <option value="Justin Timberlake">Justin Timberlake</option>
+                    <option value="Karol G">Karol G</option>
+                    <option value="Katy Perry">Katy Perry</option>
+                    <option value="Kayblack">Kayblack</option>
+                    <option value="Kesha">Kesha</option>
+                    <option value="Lady Gaga">Lady Gaga</option>
+                    <option value="Lana Del Rey">Lana Del Rey</option>
+                    <option value="Lisa">Lisa</option>
+                    <option value="Luisa Sonza">Luisa Sonza</option>
+                    <option value="Mariah Carey">Mariah Carey</option>
+                    <option value="Marina Sena">Marina Sena</option>
+                    <option value="Melanie Martinez">Melanie Martinez</option>
+                    <option value="Olivia Rodrigo">Olivia Rodrigo</option>
+                    <option value="Pabllo Vittar">Pabllo Vittar</option>
+                    <option value="Post Malone">Post Malone</option>
+                    <option value="Rihanna">Rihanna</option>
+                    <option value="Sabrina Carpenter">Sabrina Carpenter</option>
+                    <option value="Shawn Mendes">Shawn Mendes</option>
+                    <option value="Sia">Sia</option>
+                    <option value="Sza">Sza</option>
+                    <option value="Tasha & Tracie">Tasha & Tracie</option>
+                    <option value="Tate Mcrae">Tate Mcrae</option>
+                    <option value="Taylor Swift">Taylor Swift</option>
+                    <option value="The Weeknd">The Weeknd</option>
+                    <option value="Tyla">Tyla</option>
+                    <option value="Tyler, The Creator">Tyler, The Creator</option>
+                </select>
+            </div>
         </div>
 
         <!-- COLEÇÃO ALANIS -->
