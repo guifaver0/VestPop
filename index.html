@@ -539,16 +539,30 @@
         .product-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            /* Espaço entre os produtos */
+            justify-content: center;
+            /* Centraliza os produtos */
+            gap: 10px;
+            /* Reduz o espaço entre os produtos */
         }
 
         .product-item {
-            flex: 1 1 calc(28% - 20px);
-            /* Cada produto ocupa 25% da largura da tela */
+            flex: 1 1 calc(30% - 10px);
+            /* Cada produto ocupa cerca de 30% da largura */
             box-sizing: border-box;
             margin-bottom: 20px;
+            text-align: center;
+            /* Centraliza o texto dentro do item do produto */
+        }
+
+        .product-item img {
+            width: 100%;
+            /* Ajusta a largura da imagem para 100% do container */
+            height: auto;
+            /* Mantém a proporção da imagem */
+            max-height: 250px;
+            /* Ajusta a altura máxima da imagem (ajuste conforme necessário) */
+            object-fit: contain;
+            /* Garante que a imagem se ajuste bem ao container */
         }
 
         button {
@@ -582,13 +596,6 @@
             /* Reduz o espaço entre os produtos */
         }
 
-        .product-item {
-            flex: 1 1 calc(30% - 10px);
-            /* Cada produto ocupa cerca de 30% da largura */
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
         .product-item button {
             background-color: #4d8a92;
             color: white;
@@ -602,6 +609,45 @@
             border-radius: 4px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
+        .security-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            /* Ajustado para aproximar os itens de segurança */
+            padding: 10px;
+        }
+
+        .security-item {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .security-icon {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .security-item span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .security-item .description {
+            font-size: 10px;
+            /* Aumenta o tamanho da fonte para 10px */
+            color: #666;
+        }
+
+        .description {
+            font-size: 1.2em;
+            /* Aumenta o tamanho da fonte para 1.2 vezes o tamanho padrão */
+            line-height: 1.5;
+            /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+            margin-top: 5px;
+            /* Adiciona um espaço acima da descrição */
+        }
+
 
         .image-slider .slide {
             transition: transform 0.3s ease;
