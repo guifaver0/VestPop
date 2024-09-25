@@ -1016,6 +1016,30 @@
             showDesktopSlides();
         }
 
+        let currentMobileIndex = 0;
+        const mobileSlides = document.querySelectorAll('.slide-mobile');
+        const totalMobileSlides = mobileSlides.length;
+
+        // Função para mostrar o slide móvel atual
+        function showMobileSlide(index) {
+            mobileSlides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        // Função para mudar de slide móvel
+        function nextMobileSlide() {
+            currentMobileIndex = (currentMobileIndex + 1) % totalMobileSlides;
+            showMobileSlide(currentMobileIndex);
+        }
+
+        // Mostrar o primeiro slide móvel
+        showMobileSlide(currentMobileIndex);
+
+        // Mudar de slide móvel a cada 4 segundos
+        setInterval(nextMobileSlide, 4000);
+
+
     </script>
 
     <style>
@@ -1066,6 +1090,21 @@
             /* Ocultar ambas as seções inicialmente */
         }
 
+        .image-slider-mobile img {
+            width: 100%;
+            /* Faz com que a imagem ocupe 100% da largura do contêiner */
+            height: auto;
+            /* Mantém a proporção da imagem */
+            display: none;
+            /* Esconde as imagens por padrão */
+        }
+
+        .image-slider-mobile img.active {
+            display: block;
+            /* Exibe a imagem ativa */
+        }
+
+
         @media (max-width: 768px) {
             .image-slider-mobile {
                 display: block;
@@ -1079,7 +1118,6 @@
                 /* Mostrar banners desktop */
             }
         }
-        
     </style>
 </body>
 
