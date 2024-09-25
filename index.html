@@ -94,16 +94,23 @@
         /* CSS existente para produtos */
         .product-item {
             background-color: white;
+            /* Define a cor de fundo do item do produto como branca */
             padding: 1em;
+            /* Adiciona um espaçamento interno de 1 em ao redor do conteúdo */
             margin: 10px;
+            /* Adiciona uma margem de 10 pixels ao redor de cada item */
             border: 1px solid #ccc;
+            /* Adiciona uma borda cinza clara ao redor do item */
             border-radius: 5px;
+            /* Arredonda os cantos do item */
             width: calc(33% - 20px);
-            /* Três produtos por linha em telas maiores */
+            /* Define a largura como 33% do contêiner, subtraindo 20 pixels para margens */
             max-width: 200px;
-            /* Limita a largura máxima */
+            /* Limita a largura máxima do item a 200 pixels */
             text-align: center;
+            /* Centraliza o texto dentro do item */
             transition: transform 0.3s ease;
+            /* Adiciona uma transição suave para transformações (por exemplo, ao passar o mouse) */
         }
 
         /* Media query para garantir três produtos em telas pequenas */
@@ -136,12 +143,18 @@
 
         .product-item img {
             max-width: 100%;
+            /* Garante que a imagem não exceda a largura do item do produto */
             height: auto;
+            /* Mantém a proporção da imagem */
             transition: transform 0.3s ease;
+            /* Adiciona uma transição suave para transformações da imagem */
+            max-height: 150px;
+            /* Aumenta a altura máxima da imagem (ajuste conforme necessário) */
         }
 
         .product-item:hover img {
-            transform: scale(1.2);
+            transform: scale(1.3);
+            /* Aumenta o tamanho da imagem em 30% quando o mouse passa sobre o item */
         }
 
         /* Adicionei as media queries para responsividade */
@@ -7064,7 +7077,7 @@
             // Envia o e-mail
             emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
                 .then((response) => {
-                   // alert('Email enviado com sucesso!');//
+                    // alert('Email enviado com sucesso!');//
                     console.log("Resposta do EmailJS:", response);
                 }, (error) => {
                     //alert('Erro ao enviar email. Tente novamente.');//
