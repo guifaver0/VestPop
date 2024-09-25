@@ -880,6 +880,14 @@
                 <img src="imagens/bannercam.jpg" alt="bannercam" class="slide" id="slide-bannercam">
             </div>
 
+            <div class="image-slider-mobile">
+                <img src="imagens/bannerjokermobile.jpg" alt="bannerjokermobile" class="slide-mobile active"
+                    id="slide-bannerjokermobile">
+                <img src="imagens/bannerlollamobile.jpg" alt="bannerlollamobile" class="slide-mobile"
+                    id="slide-bannerlollamobile">
+                <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile"
+                    id="slide-bannercollectionmobile">
+            </div>
 
             <h2></h2>
             <div class="security-container">
@@ -903,17 +911,79 @@
     </section>
 
     <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function showNextSlide() {
-            slides[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].classList.add('active');
+        // Função para alternar a barra lateral
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
         }
 
-        setInterval(showNextSlide, 4000); // Muda de imagem a cada 4 segundos
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        // Função para mostrar o slide atual
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        // Função para mudar de slide
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Mostrar o primeiro slide
+        showSlide(currentIndex);
+
+        // Mudar de slide a cada 4 segundos
+        setInterval(nextSlide, 4000);
     </script>
+
+    <style>
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .mobile-menu-button {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .button-container {
+                display: none;
+            }
+        }
+    </style>
+</body>
 
 <style>
     .sidebar {
