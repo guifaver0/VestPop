@@ -882,27 +882,30 @@
             color: #1c8583;
         }
 
-        .note {
-            font-size: 12px;
-            color: #777;
-            text-align: center;
-            margin-top: 10px;
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permite que os produtos se movam para a linha seguinte se necessário */
+            justify-content: space-around;
+            /* Distribui os produtos igualmente */
+        }
+
+        .product-item {
+            width: 30%;
+            /* Ajuste a largura conforme necessário */
+            margin: 10px;
+            /* Espaçamento entre os produtos */
+            position: relative;
+            /* Para o posicionamento relativo de filhos */
         }
 
         .product-image {
+            width: 100%;
+            /* A imagem ocupa 100% da largura do contêiner */
+            height: auto;
+            /* Mantém a proporção da imagem */
             cursor: pointer;
-            /* Altera o cursor para indicar que é clicável */
-            transition: transform 0.2s;
-            /* Transição suave ao aplicar o zoom */
-        }
-
-        .zoomed {
-            transform: scale(2);
-            /* Aumenta a imagem para o dobro do tamanho */
-            z-index: 999;
-            /* Garante que a imagem ampliada fique acima de outros elementos */
-            position: relative;
-            /* Necessário para que o z-index funcione */
+            /* Indica que a imagem pode ser clicada */
         }
     </style>
 </head>
@@ -6852,22 +6855,30 @@
     <script>
 
         const productImages = document.querySelectorAll('.product-image');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const captionText = document.getElementById('caption');
+        const closeButton = document.getElementsByClassName('close')[0];
 
         productImages.forEach(image => {
             image.addEventListener('click', () => {
-                // Remove a classe zoomed de todas as imagens
-                productImages.forEach(img => img.classList.remove('zoomed'));
-
-                // Adiciona a classe zoomed na imagem clicada
-                image.classList.add('zoomed');
-
-                // Remove o zoom ao clicar novamente na imagem
-                image.addEventListener('click', () => {
-                    image.classList.remove('zoomed');
-                }, { once: true });
+                modal.style.display = "block"; // Exibe o modal
+                modalImage.src = image.src; // Define a imagem do modal como a imagem clicada
+                captionText.innerHTML = image.alt; // Define o texto da legenda
             });
         });
 
+        // Fecha o modal quando o usuário clica no botão de fechar
+        closeButton.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        // Fecha o modal quando o usuário clica fora da imagem
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
 
         function toggleArtistList() {
             const artistList = document.getElementById("artist-list");
