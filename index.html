@@ -888,6 +888,22 @@
             text-align: center;
             margin-top: 10px;
         }
+
+        .product-image {
+            cursor: pointer;
+            /* Altera o cursor para indicar que é clicável */
+            transition: transform 0.2s;
+            /* Transição suave ao aplicar o zoom */
+        }
+
+        .zoomed {
+            transform: scale(2);
+            /* Aumenta a imagem para o dobro do tamanho */
+            z-index: 999;
+            /* Garante que a imagem ampliada fique acima de outros elementos */
+            position: relative;
+            /* Necessário para que o z-index funcione */
+        }
     </style>
 </head>
 
@@ -1140,6 +1156,13 @@
         }
     </style>
 </body>
+
+<div class="product-container">
+    <img src="imagens/jokerb.jpg" alt="jokerb" class="product-image">
+    <img src="imagens/gagab.jpg" alt="gagab" class="product-image">
+    <img src="imagens/coupleb.jpg" alt="coupleb" class="product-image">
+    <!-- Adicione mais produtos conforme necessário -->
+</div>
 
 <style>
     .sidebar {
@@ -6827,6 +6850,24 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
+
+        const productImages = document.querySelectorAll('.product-image');
+
+        productImages.forEach(image => {
+            image.addEventListener('click', () => {
+                // Remove a classe zoomed de todas as imagens
+                productImages.forEach(img => img.classList.remove('zoomed'));
+
+                // Adiciona a classe zoomed na imagem clicada
+                image.classList.add('zoomed');
+
+                // Remove o zoom ao clicar novamente na imagem
+                image.addEventListener('click', () => {
+                    image.classList.remove('zoomed');
+                }, { once: true });
+            });
+        });
+
 
         function toggleArtistList() {
             const artistList = document.getElementById("artist-list");
