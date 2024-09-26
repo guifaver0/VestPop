@@ -1968,12 +1968,13 @@
         </div>
 
         <!-- Lista de artistas como um select -->
-        <div class="collections-container">
+        <div class="collections-container" style="text-align: center;">
             <div class="centered">
-                <button class="artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
+                <button class="artist-toggle-btn" onclick="toggleArtistList()"
+                    style="margin: 20px auto;">Artistas</button>
             </div>
             <div id="artist-list" style="display: none;">
-                <select id="tipoAcesso" onchange="showCollection(this.value)">
+                <select id="tipoAcesso" onchange="showCollection(this.value)" style="margin: 20px auto;">
                     <option value="" disabled selected>Selecione um artista</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
                     <option value="Anitta">Anitta</option>
@@ -2025,13 +2026,14 @@
 
         <!-- Mensagem introdutória -->
         <div id="intro-message" class="intro-message"
-            style="margin: 20px; padding: 10px; background: linear-gradient(135deg, #1c8583, #6dcdc5); color: white; border-radius: 8px;">
+            style="text-align: center; margin: 20px auto; padding: 10px; background: linear-gradient(135deg, #1c8583, #6dcdc5); color: white; border-radius: 8px; max-width: 600px;">
             <p>Selecione um artista para explorar nossas camisetas exclusivas!</p>
         </div>
 
         <!-- Imagem abaixo da mensagem introdutória -->
-        <div id="intro-image" class="intro-image" style="margin-bottom: 20px;">
-            <img src="imagens/bannercol.jpg" alt="bannercol" style="max-width: 100%; height: auto;">
+        <div id="intro-image" class="intro-image" style="text-align: center; margin-bottom: 20px;">
+            <img src="imagens/bannercol.jpg" alt="bannercol"
+                style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
         </div>
 
         <!-- COLEÇÃO ALANIS -->
