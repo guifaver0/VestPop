@@ -218,7 +218,7 @@
             color: #ffffff;
             /* Cor de destaque ao interagir */
         }
-    
+
 
         /* O restante do CSS permanece o mesmo */
 
@@ -7065,6 +7065,19 @@
 
             // Chama a função de envio de e-mail
             sendEmail(cpf, telefone, email);
+
+            // Limpar o formulário
+            document.getElementById('cpf').value = '';
+            document.getElementById('telefone').value = '';
+            document.getElementById('email').value = '';
+
+            // Exibir mensagem de confirmação
+            const confirmationMessage = document.createElement('div');
+            confirmationMessage.innerHTML = "Ao finalizar seu pagamento, enviaremos um e-mail em até 2h com a confirmação do pedido e prazo de entrega. <span role='img' aria-label='coração azul'>💙</span>";
+            confirmationMessage.style.marginTop = '20px';
+            confirmationMessage.style.fontSize = '1em';
+            confirmationMessage.style.color = '#333'; // Cor da mensagem
+            document.getElementById('cart').appendChild(confirmationMessage);
         }
 
         // Gerar link de pagamento com base no conteúdo do carrinho
