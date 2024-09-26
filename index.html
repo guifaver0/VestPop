@@ -6240,18 +6240,6 @@
         <!-- Outras coleções aqui -->
     </section>
 
-    <script>
-        function showCollection(artist) {
-            // Oculta a mensagem e a imagem
-            document.getElementById('intro-message').style.display = 'none';
-            document.getElementById('intro-image').style.display = 'none';
-
-            // Adicione aqui o código para exibir a coleção correspondente ao artista selecionado
-            console.log("Coleção selecionada para: " + artist);
-        }
-    </script>
-
-
     <!-- CORTA VENTO -->
 
     <section id="corta">
@@ -6968,6 +6956,10 @@
         }
 
         function showCollection(artist) {
+            // Oculta a mensagem e a imagem
+            document.getElementById('intro-message').style.display = 'none';
+            document.getElementById('intro-image').style.display = 'none';
+
             const collections = document.querySelectorAll('.collection-products');
             collections.forEach(collection => {
                 collection.style.display = 'none';
@@ -6978,6 +6970,7 @@
                 artistCollection.style.display = 'block';
             }
         }
+
         // Inicializar EmailJS
         (function () {
             emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
