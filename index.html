@@ -87,111 +87,55 @@
 
         .product {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            justify-content: center;
+            /* Centraliza os itens */
             gap: 20px;
-            /* Espaço entre os produtos */
+            /* Espaçamento entre os produtos */
+            flex-wrap: wrap;
+            /* Permite que os itens sejam distribuídos em várias linhas */
+            padding: 20px;
         }
 
-        /* Estilização moderna para os itens do produto */
         .product-item {
-            background-color: white;
-            padding: 1.5em;
-            margin: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            width: calc(33% - 30px);
-            max-width: 220px;
+            background-color: #f8f9fa;
+            /* Cor de fundo leve e neutra */
+            padding: 20px;
+            /* Espaçamento interno maior */
+            margin: 10px;
+            border-radius: 15px;
+            /* Cantos mais arredondados para um visual moderno */
+            width: calc(33% - 20px);
+            max-width: 280px;
+            /* Um pouco mais largo para dar mais espaço às informações */
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra leve para destacar os produtos */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            /* Sombra suave */
+            /* Efeitos de transição suaves */
+            position: relative;
+            /* Necessário para alinhar o botão de adicionar ao carrinho */
         }
 
         .product-item:hover {
             transform: scale(1.05);
-            /* Leve aumento ao passar o mouse */
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-            /* Sombra mais intensa no hover */
-        }
-
-        /* Estilização das imagens */
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-            max-height: 180px;
-            /* Tamanho padrão para imagens */
-            border-radius: 5px;
-            /* Bordas arredondadas */
-        }
-
-        .product-item:hover img {
-            transform: scale(1.2);
-            /* Ampliar imagem ao passar o mouse */
-        }
-
-        /* Media queries para telas menores */
-
-        /* Versão Tablet - até 768px */
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha */
-            }
-        }
-
-        /* Versão Mobile - até 480px */
-        @media (max-width: 480px) {
-            .product-item {
-                width: calc(100% - 20px);
-                /* Um produto por linha */
-            }
-
-            .product-item img {
-                max-height: 250px;
-                /* Imagem maior na versão mobile */
-            }
-        }
-
-        /* Ajustar o ícone do carrinho */
-        #cart-icon {
-            top: 10px;
-            right: 10px;
-            font-size: 22px;
-            /* Tamanho ajustado do ícone */
-            color: #1c8583;
-            /* Cor do ícone em harmonia com o tema do site */
-        }
-
-        .product-item:hover {
-            transform: scale(1.05);
+            /* Aumenta levemente o tamanho do produto ao passar o mouse */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Sombra mais intensa ao passar o mouse */
         }
 
         .product-item img {
             max-width: 100%;
             height: auto;
+            max-height: 200px;
+            /* Ajuste para imagens maiores */
+            border-radius: 10px;
+            /* Arredonda levemente as bordas das imagens */
             transition: transform 0.3s ease;
-            max-height: 150px;
         }
 
         .product-item:hover img {
-            transform: scale(1.9);
-        }
-
-        /* Adicionei as media queries para responsividade */
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha em telas médias */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha em telas pequenas */
-            }
+            transform: scale(1.1);
+            /* Zoom mais suave ao passar o mouse sobre a imagem */
         }
 
         .product-title {
@@ -7192,5 +7136,4 @@
         showSection('about'); // Exibir a seção inicial
     </script>
 </body>
-
 </html>
