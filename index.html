@@ -6967,6 +6967,65 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
 
+        // Inicializando a função para desktop
+        let currentSlideDesktop = 0;
+        const slidesDesktop = document.querySelectorAll('.image-slider .slide'); // Coleta os slides da versão desktop
+        const totalSlidesDesktop = slidesDesktop.length;
+
+        // Inicializando a função para mobile
+        let currentSlideMobile = 0;
+        const slidesMobile = document.querySelectorAll('.image-slider-mobile .slide-mobile'); // Coleta os slides da versão mobile
+        const totalSlidesMobile = slidesMobile.length;
+
+        // Função para mover os slides na versão desktop
+        function moveSlideDesktop(direction) {
+            slidesDesktop[currentSlideDesktop].classList.remove('active'); // Remove a classe ativa do slide atual
+            currentSlideDesktop += direction; // Atualiza o slide atual
+
+            // Verifica os limites
+            if (currentSlideDesktop >= totalSlidesDesktop) {
+                currentSlideDesktop = 0; // Volta ao primeiro slide
+            } else if (currentSlideDesktop < 0) {
+                currentSlideDesktop = totalSlidesDesktop - 1; // Vai para o último slide
+            }
+
+            slidesDesktop[currentSlideDesktop].classList.add('active'); // Adiciona a classe ativa ao próximo slide
+        }
+
+        // Função para mover os slides na versão mobile
+        function moveSlideMobile(direction) {
+            slidesMobile[currentSlideMobile].classList.remove('active'); // Remove a classe ativa do slide atual
+            currentSlideMobile += direction; // Atualiza o slide atual
+
+            // Verifica os limites
+            if (currentSlideMobile >= totalSlidesMobile) {
+                currentSlideMobile = 0; // Volta ao primeiro slide
+            } else if (currentSlideMobile < 0) {
+                currentSlideMobile = totalSlidesMobile - 1; // Vai para o último slide
+            }
+
+            slidesMobile[currentSlideMobile].classList.add('active'); // Adiciona a classe ativa ao próximo slide
+        }
+
+        // Chamada de evento para garantir que o JavaScript seja executado quando o documento estiver pronto
+        document.addEventListener('DOMContentLoaded', function () {
+            // Atribuindo os eventos de clique aos botões
+            document.querySelector('.image-slider .prev').addEventListener('click', function () {
+                moveSlideDesktop(-1);
+            });
+            document.querySelector('.image-slider .next').addEventListener('click', function () {
+                moveSlideDesktop(1);
+            });
+
+            document.querySelector('.image-slider-mobile .prev').addEventListener('click', function () {
+                moveSlideMobile(-1);
+            });
+            document.querySelector('.image-slider-mobile .next').addEventListener('click', function () {
+                moveSlideMobile(1);
+            });
+        });
+
+
         function toggleArtistList() {
             const artistList = document.getElementById("artist-list");
             artistList.style.display = artistList.style.display === "none" ? "block" : "none";
