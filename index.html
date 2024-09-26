@@ -89,97 +89,31 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
-            /* Espaço entre os produtos */
         }
 
-        /* Estilização moderna para os itens do produto */
+        /* CSS existente para produtos */
         .product-item {
             background-color: white;
-            padding: 1.5em;
-            margin: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            width: calc(33% - 30px);
-            max-width: 220px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            /* Sombra suave */
-        }
-
-        .product-item:hover {
-            transform: scale(1.05);
-            /* Leve aumento ao passar o mouse */
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-            /* Sombra mais intensa no hover */
-        }
-
-        /* Estilização das imagens */
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-            max-height: 180px;
-            /* Tamanho padrão para imagens */
+            /* Define a cor de fundo do item do produto como branca */
+            padding: 1em;
+            /* Adiciona um espaçamento interno de 1 em ao redor do conteúdo */
+            margin: 10px;
+            /* Adiciona uma margem de 10 pixels ao redor de cada item */
+            border: 1px solid #ccc;
+            /* Adiciona uma borda cinza clara ao redor do item */
             border-radius: 5px;
-            /* Bordas arredondadas */
-        }
-
-        .product-item:hover img {
-            transform: scale(1.2);
-            /* Ampliar imagem ao passar o mouse */
-        }
-
-        /* Media queries para telas menores */
-
-        /* Versão Tablet - até 768px */
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha */
-            }
-        }
-
-        /* Versão Mobile - até 480px */
-        @media (max-width: 480px) {
-            .product-item {
-                width: calc(100% - 20px);
-                /* Um produto por linha */
-            }
-
-            .product-item img {
-                max-height: 250px;
-                /* Imagem maior na versão mobile */
-            }
-        }
-
-        /* Ajustar o ícone do carrinho */
-        #cart-icon {
-            top: 10px;
-            right: 10px;
-            font-size: 22px;
-            /* Tamanho ajustado do ícone */
-            color: #1c8583;
-            /* Cor do ícone em harmonia com o tema do site */
-        }
-
-        .product-item:hover {
-            transform: scale(1.05);
-        }
-
-        .product-item img {
-            max-width: 100%;
-            height: auto;
+            /* Arredonda os cantos do item */
+            width: calc(33% - 20px);
+            /* Define a largura como 33% do contêiner, subtraindo 20 pixels para margens */
+            max-width: 200px;
+            /* Limita a largura máxima do item a 200 pixels */
+            text-align: center;
+            /* Centraliza o texto dentro do item */
             transition: transform 0.3s ease;
-            max-height: 150px;
+            /* Adiciona uma transição suave para transformações (por exemplo, ao passar o mouse) */
         }
 
-        .product-item:hover img {
-            transform: scale(1.9);
-        }
-
-        /* Adicionei as media queries para responsividade */
+        /* Media query para garantir três produtos em telas pequenas */
         @media (max-width: 768px) {
             .product-item {
                 width: calc(50% - 20px);
@@ -189,10 +123,54 @@
 
         @media (max-width: 480px) {
             .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha em telas pequenas */
+                width: calc(100% - 20px);
+                /* Um produto por linha em telas pequenas */
             }
         }
+
+        /* Ajustar o ícone do carrinho */
+        #cart-icon {
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            /* Aumenta o tamanho do item ao passar o mouse */
+        }
+
+        .product-item img {
+            max-width: 100%;
+            /* Garante que a imagem não exceda a largura do item do produto */
+            height: auto;
+            /* Mantém a proporção da imagem */
+            transition: transform 0.3s ease;
+            /* Adiciona uma transição suave para transformações da imagem */
+            max-height: 250px;
+            /* Aumenta a altura máxima da imagem (ajuste conforme necessário) */
+        }
+
+        .product-item:hover img {
+            transform: scale(1.2);
+            /* Aumenta o tamanho da imagem em 20% quando o mouse passa sobre o item */
+        }
+
+        /* Media query para responsividade */
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* Dois produtos por linha em telas médias */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: calc(100% - 20px);
+                /* Um produto por linha em telas pequenas */
+            }
+        }
+
 
         .product-title {
             font-size: 1.2em;
