@@ -7076,7 +7076,10 @@
             confirmationMessage.innerHTML = "Ao finalizar seu pagamento, enviaremos um e-mail em até 2h com a confirmação do pedido e prazo de entrega. <span role='img' aria-label='coração azul'>💙</span>";
             confirmationMessage.style.marginTop = '20px';
             confirmationMessage.style.fontSize = '1em';
-            confirmationMessage.style.color = '#333'; // Cor da mensagem
+            confirmationMessage.style.color = '#fff'; // Cor do texto
+            confirmationMessage.style.backgroundColor = '#1c8583'; // Cor de fundo do site
+            confirmationMessage.style.padding = '10px'; // Adiciona espaçamento interno
+            confirmationMessage.style.borderRadius = '5px'; // Borda arredondada
             document.getElementById('cart').appendChild(confirmationMessage);
         }
 
