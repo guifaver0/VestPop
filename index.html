@@ -89,36 +89,109 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            gap: 20px;
+            /* Espaço entre os produtos */
         }
 
-        /* CSS existente para produtos */
+        /* Estilização moderna para os itens do produto */
         .product-item {
             background-color: white;
             padding: 1.5em;
             margin: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 10px;
             width: calc(33% - 30px);
             max-width: 220px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
         }
 
         .product-item:hover {
             transform: scale(1.05);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            /* Leve aumento ao passar o mouse */
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            /* Sombra mais intensa no hover */
+        }
+
+        /* Estilização das imagens */
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            max-height: 180px;
+            /* Tamanho padrão para imagens */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+        }
+
+        .product-item:hover img {
+            transform: scale(1.2);
+            /* Ampliar imagem ao passar o mouse */
+        }
+
+        /* Media queries para telas menores */
+
+        /* Versão Tablet - até 768px */
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* Dois produtos por linha */
+            }
+        }
+
+        /* Versão Mobile - até 480px */
+        @media (max-width: 480px) {
+            .product-item {
+                width: calc(100% - 20px);
+                /* Um produto por linha */
+            }
+
+            .product-item img {
+                max-height: 250px;
+                /* Imagem maior na versão mobile */
+            }
+        }
+
+        /* Ajustar o ícone do carrinho */
+        #cart-icon {
+            top: 10px;
+            right: 10px;
+            font-size: 22px;
+            /* Tamanho ajustado do ícone */
+            color: #1c8583;
+            /* Cor do ícone em harmonia com o tema do site */
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
         }
 
         .product-item img {
             max-width: 100%;
             height: auto;
             transition: transform 0.3s ease;
-            max-height: 180px;
+            max-height: 150px;
         }
 
         .product-item:hover img {
-            transform: scale(1.2);
+            transform: scale(1.9);
+        }
+
+        /* Adicionei as media queries para responsividade */
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* Dois produtos por linha em telas médias */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* Dois produtos por linha em telas pequenas */
+            }
         }
 
         .product-title {
@@ -173,51 +246,19 @@
             /* Cor mais escura ao passar o mouse */
         }
 
+        /* Responsividade */
         @media (max-width: 768px) {
             .product-item {
                 width: calc(50% - 20px);
+                /* Dois produtos por linha */
             }
         }
 
         @media (max-width: 480px) {
             .product-item {
                 width: calc(100% - 20px);
+                /* Um produto por linha em telas muito pequenas */
             }
-
-            .product-item img {
-                max-height: 600px;
-                /* Aumenta a imagem na versão mobile */
-            }
-        }
-
-        /* Estilo para os selects de tamanho e cor */
-        .select-container {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        select {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: white;
-            font-size: 16px;
-            width: 100px;
-            margin: 0 5px;
-            text-align: center;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        select:focus {
-            border-color: #1c8583;
-            box-shadow: 0 0 5px rgba(28, 133, 131, 0.8);
-        }
-
-        .select-container label {
-            font-size: 14px;
-            margin-right: 10px;
         }
 
 
@@ -232,6 +273,7 @@
             /* Leve aumento ao passar o mouse */
             color: #ffffff;
             /* Cor de destaque ao interagir */
+        }
         }
 
         /* O restante do CSS permanece o mesmo */
