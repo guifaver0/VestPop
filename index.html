@@ -111,14 +111,12 @@
             /* Centraliza o texto dentro do item */
             transition: transform 0.3s ease;
             /* Adiciona uma transição suave para transformações (por exemplo, ao passar o mouse) */
-            min-width: 200px;
         }
 
         /* Media query para garantir três produtos em telas pequenas */
         @media (max-width: 768px) {
             .product-item {
                 width: calc(33% - 20px);
-                min-width: 200px;
                 /* Três produtos por linha */
             }
         }
@@ -126,7 +124,6 @@
         @media (max-width: 480px) {
             .product-item {
                 width: calc(50% - 20px);
-                min-width: 200px;
                 /* Dois produtos por linha em telas pequenas */
             }
         }
@@ -145,7 +142,6 @@
         }
 
         .product-item img {
-            min-width: 200px;
             max-width: 100%;
             /* Garante que a imagem não exceda a largura do item do produto */
             height: auto;
@@ -787,8 +783,7 @@
             /* Largura da barra lateral */
             height: 100%;
             /* Altura total */
-            background-color: #1c8583;
-            /* Cor principal do site */
+            background-color: gray;
             /* Cor de fundo */
             transition: left 0.3s ease;
             /* Transição suave para abrir/fechar */
@@ -809,9 +804,8 @@
 
         .sidebar.open {
             left: 0;
-            transition: left 0.3s ease-in-out;
+            /* Mostrar a barra lateral */
         }
-
 
         .mobile-menu-button {
             display: block;
@@ -904,7 +898,7 @@
             /* Centraliza o texto no rodapé */
             padding: 10px 0;
             /* Ajusta o espaçamento no rodapé */
-            background-color: #1c8583;
+            background-color: #3c4343;
             /* Cor de fundo do rodapé (ajuste conforme necessário) */
             color: #fff;
             /* Cor do texto */
@@ -959,48 +953,6 @@
             text-align: center;
             margin-top: 10px;
         }
-
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            width: 100%;
-            flex-shrink: 0;
-        }
-
-        .prev,
-        .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
-        }
-
-        .prev:hover,
-        .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
     </style>
 </head>
 
@@ -1049,25 +1001,19 @@
 
     <section id="about">
         <div id="novidades">
-            <!-- Desktop Slider -->
             <div class="image-slider">
-                <button class="prev" onclick="moveSlideDesktop(-1)">&#10094;</button>
                 <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
                 <img src="imagens/bannercam.jpg" alt="bannercam" class="slide" id="slide-bannercam">
-                <button class="next" onclick="moveSlideDesktop(1)">&#10095;</button>
             </div>
 
-            <!-- Mobile Slider -->
             <div class="image-slider-mobile">
-                <button class="prev" onclick="moveSlideMobile(-1)">&#10094;</button>
                 <img src="imagens/bannerjokermobile.jpg" alt="bannerjokermobile" class="slide-mobile active"
                     id="slide-bannerjokermobile">
                 <img src="imagens/bannerlollamobile.jpg" alt="bannerlollamobile" class="slide-mobile"
                     id="slide-bannerlollamobile">
                 <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile"
                     id="slide-bannercollectionmobile">
-                <button class="next" onclick="moveSlideMobile(1)">&#10095;</button>
             </div>
 
             <h2></h2>
@@ -1075,7 +1021,7 @@
                 <div class="security-item">
                     <i class="fas fa-credit-card security-icon"></i>
                     <span>Facilidade no Pagamento</span>
-                    <p class="description">Pix, débito e parcelamento em até 3x no cartão de crédito.</p>
+                    <p class="description">Pix, débito e pacelamento em até 3x no cartão de crédito.</p>
                 </div>
                 <div class="security-item">
                     <i class="fas fa-box security-icon"></i>
@@ -1092,13 +1038,6 @@
     </section>
 
     <script>
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
         // Função para alternar a barra lateral
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
@@ -6966,65 +6905,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-
-        // Inicializando a função para desktop
-        let currentSlideDesktop = 0;
-        const slidesDesktop = document.querySelectorAll('.image-slider .slide'); // Coleta os slides da versão desktop
-        const totalSlidesDesktop = slidesDesktop.length;
-
-        // Inicializando a função para mobile
-        let currentSlideMobile = 0;
-        const slidesMobile = document.querySelectorAll('.image-slider-mobile .slide-mobile'); // Coleta os slides da versão mobile
-        const totalSlidesMobile = slidesMobile.length;
-
-        // Função para mover os slides na versão desktop
-        function moveSlideDesktop(direction) {
-            slidesDesktop[currentSlideDesktop].classList.remove('active'); // Remove a classe ativa do slide atual
-            currentSlideDesktop += direction; // Atualiza o slide atual
-
-            // Verifica os limites
-            if (currentSlideDesktop >= totalSlidesDesktop) {
-                currentSlideDesktop = 0; // Volta ao primeiro slide
-            } else if (currentSlideDesktop < 0) {
-                currentSlideDesktop = totalSlidesDesktop - 1; // Vai para o último slide
-            }
-
-            slidesDesktop[currentSlideDesktop].classList.add('active'); // Adiciona a classe ativa ao próximo slide
-        }
-
-        // Função para mover os slides na versão mobile
-        function moveSlideMobile(direction) {
-            slidesMobile[currentSlideMobile].classList.remove('active'); // Remove a classe ativa do slide atual
-            currentSlideMobile += direction; // Atualiza o slide atual
-
-            // Verifica os limites
-            if (currentSlideMobile >= totalSlidesMobile) {
-                currentSlideMobile = 0; // Volta ao primeiro slide
-            } else if (currentSlideMobile < 0) {
-                currentSlideMobile = totalSlidesMobile - 1; // Vai para o último slide
-            }
-
-            slidesMobile[currentSlideMobile].classList.add('active'); // Adiciona a classe ativa ao próximo slide
-        }
-
-        // Chamada de evento para garantir que o JavaScript seja executado quando o documento estiver pronto
-        document.addEventListener('DOMContentLoaded', function () {
-            // Atribuindo os eventos de clique aos botões
-            document.querySelector('.image-slider .prev').addEventListener('click', function () {
-                moveSlideDesktop(-1);
-            });
-            document.querySelector('.image-slider .next').addEventListener('click', function () {
-                moveSlideDesktop(1);
-            });
-
-            document.querySelector('.image-slider-mobile .prev').addEventListener('click', function () {
-                moveSlideMobile(-1);
-            });
-            document.querySelector('.image-slider-mobile .next').addEventListener('click', function () {
-                moveSlideMobile(1);
-            });
-        });
-
 
         function toggleArtistList() {
             const artistList = document.getElementById("artist-list");
