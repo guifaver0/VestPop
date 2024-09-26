@@ -2023,13 +2023,18 @@
         <!-- Mensagem introdutória -->
         <div id="intro-message" class="intro-message"
             style="text-align: center; margin: 20px auto; padding: 10px; background: linear-gradient(135deg, #1c8583, #6dcdc5); color: white; border-radius: 8px; max-width: 600px; font-family: 'Cursive';">
-            <p>Selecione um artista para explorar nossas camisetas exclusivas!</p>
+            <p>Selecione um artista acima para explorar nossas camisetas exclusivas!</p>
         </div>
 
         <!-- Imagem abaixo da mensagem introdutória -->
         <div id="intro-image" class="intro-image" style="text-align: center; margin-bottom: 20px;">
-            <img src="imagens/bannercol.jpg" alt="bannercol"
-                style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+            <picture>
+                <!-- Imagem para dispositivos mobile -->
+                <source media="(max-width: 767px)" srcset="imagens/bannercol-mobile.jpg">
+                <!-- Imagem para dispositivos desktop -->
+                <img src="imagens/bannercol.jpg" alt="bannercol"
+                    style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+            </picture>
         </div>
 
         <!-- COLEÇÃO ALANIS -->
