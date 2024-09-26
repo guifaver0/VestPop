@@ -87,102 +87,137 @@
 
         .product {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            /* Centraliza os itens */
+            gap: 20px;
+            /* Espaçamento entre os produtos */
             flex-wrap: wrap;
+            /* Permite que os itens sejam distribuídos em várias linhas */
+            padding: 20px;
         }
 
-        /* CSS existente para produtos */
         .product-item {
-            background-color: white;
-            /* Define a cor de fundo do item do produto como branca */
-            padding: 1em;
-            /* Adiciona um espaçamento interno de 1 em ao redor do conteúdo */
+            background-color: #f8f9fa;
+            /* Cor de fundo leve e neutra */
+            padding: 20px;
+            /* Espaçamento interno maior */
             margin: 10px;
-            /* Adiciona uma margem de 10 pixels ao redor de cada item */
-            border: 1px solid #ccc;
-            /* Adiciona uma borda cinza clara ao redor do item */
-            border-radius: 5px;
-            /* Arredonda os cantos do item */
+            border-radius: 15px;
+            /* Cantos mais arredondados para um visual moderno */
             width: calc(33% - 20px);
-            /* Define a largura como 33% do contêiner, subtraindo 20 pixels para margens */
-            max-width: 200px;
-            /* Limita a largura máxima do item a 200 pixels */
+            max-width: 280px;
+            /* Um pouco mais largo para dar mais espaço às informações */
             text-align: center;
-            /* Centraliza o texto dentro do item */
-            transition: transform 0.3s ease;
-            /* Adiciona uma transição suave para transformações (por exemplo, ao passar o mouse) */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra leve para destacar os produtos */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Efeitos de transição suaves */
+            position: relative;
+            /* Necessário para alinhar o botão de adicionar ao carrinho */
         }
-
-        /* Media query para garantir três produtos em telas pequenas */
-        @media (max-width: 768px) {
-            .product-item {
-                width: calc(33% - 20px);
-                /* Três produtos por linha */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-item {
-                width: calc(50% - 20px);
-                /* Dois produtos por linha em telas pequenas */
-            }
-        }
-
-
-        /* Ajustar o ícone do carrinho */
-        #cart-icon {
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-        }
-
 
         .product-item:hover {
             transform: scale(1.05);
+            /* Aumenta levemente o tamanho do produto ao passar o mouse */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Sombra mais intensa ao passar o mouse */
         }
 
         .product-item img {
             max-width: 100%;
-            /* Garante que a imagem não exceda a largura do item do produto */
             height: auto;
-            /* Mantém a proporção da imagem */
+            max-height: 200px;
+            /* Ajuste para imagens maiores */
+            border-radius: 10px;
+            /* Arredonda levemente as bordas das imagens */
             transition: transform 0.3s ease;
-            /* Adiciona uma transição suave para transformações da imagem */
-            max-height: 150px;
-            /* Aumenta a altura máxima da imagem (ajuste conforme necessário) */
         }
 
         .product-item:hover img {
-            transform: scale(1.9);
-            /* Aumenta o tamanho da imagem em 30% quando o mouse passa sobre o item */
+            transform: scale(1.1);
+            /* Zoom mais suave ao passar o mouse sobre a imagem */
         }
 
-        /* Adicionei as media queries para responsividade */
+        .product-title {
+            font-size: 1.2em;
+            /* Tamanho de fonte maior para o título */
+            font-weight: bold;
+            /* Negrito no título */
+            margin: 10px 0;
+            /* Espaçamento entre a imagem e o título */
+            color: #333;
+            /* Cor mais escura para destacar o título */
+        }
+
+        .product-price {
+            font-size: 1.1em;
+            /* Tamanho de fonte para o preço */
+            color: #1c8583;
+            /* Cor principal do site */
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 0.9em;
+            color: #666;
+            /* Cor cinza para a descrição */
+            margin-bottom: 15px;
+            line-height: 1.4;
+            /* Aumenta o espaçamento entre linhas */
+        }
+
+        /* Botão de adicionar ao carrinho */
+        .product-item .add-to-cart {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #1c8583;
+            /* Cor principal do site */
+            color: white;
+            border-radius: 30px;
+            text-transform: uppercase;
+            /* Deixa o texto em maiúsculas */
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Centraliza o botão na parte inferior do produto */
+        }
+
+        .product-item .add-to-cart:hover {
+            background-color: #146b63;
+            /* Cor mais escura ao passar o mouse */
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
             .product-item {
                 width: calc(50% - 20px);
-                /* Dois produtos por linha em telas médias */
+                /* Dois produtos por linha */
             }
         }
 
         @media (max-width: 480px) {
             .product-item {
-                width: calc(50% - 20px);
-                /* Dois produto por linha em telas pequenas */
+                width: calc(100% - 20px);
+                /* Um produto por linha em telas muito pequenas */
             }
+        }
 
-            #cart-icon {
-                top: 10px;
-                /* Ajustar a posição do ícone no mobile */
-                right: 10px;
-                /* Ajustar a posição do ícone no mobile */
-                font-size: 20px;
-                /* Reduzir o tamanho do ícone */
-                transform: scale(1.1);
-                /* Leve aumento ao passar o mouse */
-                color: #ffffff;
-                /* Cor de destaque ao interagir */
-            }
+
+        #cart-icon {
+            top: 10px;
+            /* Ajustar a posição do ícone no mobile */
+            right: 10px;
+            /* Ajustar a posição do ícone no mobile */
+            font-size: 20px;
+            /* Reduzir o tamanho do ícone */
+            transform: scale(1.1);
+            /* Leve aumento ao passar o mouse */
+            color: #ffffff;
+            /* Cor de destaque ao interagir */
+        }
         }
 
         /* O restante do CSS permanece o mesmo */
