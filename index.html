@@ -959,6 +959,48 @@
             text-align: center;
             margin-top: 10px;
         }
+
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
 
@@ -1007,19 +1049,25 @@
 
     <section id="about">
         <div id="novidades">
+            <!-- Desktop Slider -->
             <div class="image-slider">
+                <button class="prev" onclick="moveSlideDesktop(-1)">&#10094;</button>
                 <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
                 <img src="imagens/bannercam.jpg" alt="bannercam" class="slide" id="slide-bannercam">
+                <button class="next" onclick="moveSlideDesktop(1)">&#10095;</button>
             </div>
 
+            <!-- Mobile Slider -->
             <div class="image-slider-mobile">
+                <button class="prev" onclick="moveSlideMobile(-1)">&#10094;</button>
                 <img src="imagens/bannerjokermobile.jpg" alt="bannerjokermobile" class="slide-mobile active"
                     id="slide-bannerjokermobile">
                 <img src="imagens/bannerlollamobile.jpg" alt="bannerlollamobile" class="slide-mobile"
                     id="slide-bannerlollamobile">
                 <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile"
                     id="slide-bannercollectionmobile">
+                <button class="next" onclick="moveSlideMobile(1)">&#10095;</button>
             </div>
 
             <h2></h2>
@@ -1027,7 +1075,7 @@
                 <div class="security-item">
                     <i class="fas fa-credit-card security-icon"></i>
                     <span>Facilidade no Pagamento</span>
-                    <p class="description">Pix, débito e pacelamento em até 3x no cartão de crédito.</p>
+                    <p class="description">Pix, débito e parcelamento em até 3x no cartão de crédito.</p>
                 </div>
                 <div class="security-item">
                     <i class="fas fa-box security-icon"></i>
