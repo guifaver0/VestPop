@@ -87,55 +87,38 @@
 
         .product {
             display: flex;
-            justify-content: center;
-            /* Centraliza os itens */
-            gap: 20px;
-            /* Espaçamento entre os produtos */
+            justify-content: space-around;
             flex-wrap: wrap;
-            /* Permite que os itens sejam distribuídos em várias linhas */
-            padding: 20px;
         }
 
+        /* CSS existente para produtos */
         .product-item {
-            background-color: #f8f9fa;
-            /* Cor de fundo leve e neutra */
-            padding: 20px;
-            /* Espaçamento interno maior */
-            margin: 10px;
-            border-radius: 15px;
-            /* Cantos mais arredondados para um visual moderno */
-            width: calc(33% - 20px);
-            max-width: 280px;
-            /* Um pouco mais largo para dar mais espaço às informações */
+            background-color: white;
+            padding: 1.5em;
+            margin: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: calc(33% - 30px);
+            max-width: 220px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Sombra leve para destacar os produtos */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* Efeitos de transição suaves */
-            position: relative;
-            /* Necessário para alinhar o botão de adicionar ao carrinho */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .product-item:hover {
             transform: scale(1.05);
-            /* Aumenta levemente o tamanho do produto ao passar o mouse */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Sombra mais intensa ao passar o mouse */
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .product-item img {
             max-width: 100%;
             height: auto;
-            max-height: 200px;
-            /* Ajuste para imagens maiores */
-            border-radius: 10px;
-            /* Arredonda levemente as bordas das imagens */
             transition: transform 0.3s ease;
+            max-height: 180px;
         }
 
         .product-item:hover img {
-            transform: scale(1.1);
-            /* Zoom mais suave ao passar o mouse sobre a imagem */
+            transform: scale(1.2);
         }
 
         .product-title {
@@ -190,19 +173,51 @@
             /* Cor mais escura ao passar o mouse */
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             .product-item {
                 width: calc(50% - 20px);
-                /* Dois produtos por linha */
             }
         }
 
         @media (max-width: 480px) {
             .product-item {
                 width: calc(100% - 20px);
-                /* Um produto por linha em telas muito pequenas */
             }
+
+            .product-item img {
+                max-height: 250px;
+                /* Aumenta a imagem na versão mobile */
+            }
+        }
+
+        /* Estilo para os selects de tamanho e cor */
+        .select-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            font-size: 16px;
+            width: 100px;
+            margin: 0 5px;
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        select:focus {
+            border-color: #1c8583;
+            box-shadow: 0 0 5px rgba(28, 133, 131, 0.8);
+        }
+
+        .select-container label {
+            font-size: 14px;
+            margin-right: 10px;
         }
 
 
@@ -217,7 +232,6 @@
             /* Leve aumento ao passar o mouse */
             color: #ffffff;
             /* Cor de destaque ao interagir */
-        }
         }
 
         /* O restante do CSS permanece o mesmo */
