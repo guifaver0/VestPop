@@ -305,26 +305,44 @@
             margin: 20px 0;
         }
 
-        .image-slider {
-            position: relative;
+        .image-slider img,
+        .image-slider-mobile img {
             width: 100%;
-            max-width: 1920px;
+            /* A largura ocupa 100% do contêiner */
             height: auto;
-            /* Ajustado para responsividade */
-            margin: 0 auto;
-            overflow: hidden;
+            /* A altura se ajusta proporcionalmente */
+            max-width: 1920px;
+            /* Limita a largura máxima para Full HD */
+            max-height: 1080px;
+            /* Limita a altura máxima para Full HD */
         }
 
-        .image-slider img {
-            width: 100%;
-            height: auto;
-            /* Para manter a proporção da imagem */
-            object-fit: cover;
+        .image-slider {
+            display: flex;
+            /* Flexbox para alinhar as imagens */
+            overflow: hidden;
+            /* Oculta as imagens que saem do contêiner */
+            position: relative;
+            /* Para permitir posicionamento absoluto em slides */
         }
 
         .slide {
-            display: none;
-            width: 100%;
+            flex: 0 0 auto;
+            /* Impede que as imagens sejam redimensionadas */
+            transition: opacity 0.5s ease;
+            /* Transição suave ao mudar de imagem */
+        }
+
+        .active {
+            opacity: 1;
+            /* Imagem ativa visível */
+        }
+
+        .slide:not(.active) {
+            opacity: 0;
+            /* Imagem não ativa invisível */
+        }
+
         }
 
         .slide.active {
@@ -388,9 +406,13 @@
 
         /* Ajuste para os slides na versão mobile */
         @media (max-width: 768px) {
-            .image-slider {
+
+            .image-slider img,
+            .image-slider-mobile img {
+                width: 100%;
+                /* Manter a largura em 100% para dispositivos menores */
                 height: auto;
-                /* Para manter a proporção em telas menores */
+                /* Ajusta altura automaticamente */
             }
 
             .slide img {
