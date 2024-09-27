@@ -194,9 +194,7 @@
         @media (max-width: 768px) {
             .product-item {
                 width: 100%;
-                /* Um produto por linha */
-                margin: 10px 0;
-                /* Ajuste a margem se necessário */
+                /* Um produto por linha em telas médias */
             }
         }
 
@@ -206,8 +204,6 @@
                 /* Um produto por linha em telas muito pequenas */
             }
         }
-
-
 
         #cart-icon {
             top: 10px;
@@ -593,16 +589,14 @@
             justify-content: center;
             /* Centraliza os produtos */
             gap: 10px;
-            /* Espaço entre os produtos */
+            /* Reduz o espaço entre os produtos */
         }
 
         .product-item {
             flex: 1 1 calc(30% - 10px);
             /* Cada produto ocupa cerca de 30% da largura */
             box-sizing: border-box;
-            /* Inclui padding e border no cálculo de largura */
             margin-bottom: 20px;
-            /* Espaçamento abaixo de cada item */
             text-align: center;
             /* Centraliza o texto dentro do item do produto */
         }
@@ -613,11 +607,10 @@
             height: auto;
             /* Mantém a proporção da imagem */
             max-height: 250px;
-            /* Ajusta a altura máxima da imagem */
+            /* Ajusta a altura máxima da imagem (ajuste conforme necessário) */
             object-fit: contain;
             /* Garante que a imagem se ajuste bem ao container */
         }
-
 
         button {
             background: linear-gradient(135deg, #4d8a92, #0d7377);
