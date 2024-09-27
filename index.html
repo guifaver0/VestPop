@@ -190,14 +190,16 @@
             /* Cor mais escura ao passar o mouse */
         }
 
+        /* Responsividade */
         @media (max-width: 768px) {
+            .product-list {
+                display: block;
+                /* Força a lista a ser um bloco */
+            }
 
-            .image-slider img,
-            .image-slider-mobile img {
+            .product-item {
                 width: 100%;
-                /* Manter a largura em 100% para dispositivos menores */
-                height: auto;
-                /* Ajusta altura automaticamente */
+                /* Um produto por linha em telas médias */
             }
         }
 
@@ -303,44 +305,26 @@
             margin: 20px 0;
         }
 
-        .image-slider img,
-        .image-slider-mobile img {
+        .image-slider {
+            position: relative;
             width: 100%;
-            /* A largura ocupa 100% do contêiner */
-            height: auto;
-            /* A altura se ajusta proporcionalmente */
             max-width: 1920px;
-            /* Limita a largura máxima para Full HD */
-            max-height: 1080px;
-            /* Limita a altura máxima para Full HD */
+            height: auto;
+            /* Ajustado para responsividade */
+            margin: 0 auto;
+            overflow: hidden;
         }
 
-        .image-slider {
-            display: flex;
-            /* Flexbox para alinhar as imagens */
-            overflow: hidden;
-            /* Oculta as imagens que saem do contêiner */
-            position: relative;
-            /* Para permitir posicionamento absoluto em slides */
+        .image-slider img {
+            width: 100%;
+            height: auto;
+            /* Para manter a proporção da imagem */
+            object-fit: cover;
         }
 
         .slide {
-            flex: 0 0 auto;
-            /* Impede que as imagens sejam redimensionadas */
-            transition: opacity 0.5s ease;
-            /* Transição suave ao mudar de imagem */
-        }
-
-        .active {
-            opacity: 1;
-            /* Imagem ativa visível */
-        }
-
-        .slide:not(.active) {
-            opacity: 0;
-            /* Imagem não ativa invisível */
-        }
-
+            display: none;
+            width: 100%;
         }
 
         .slide.active {
@@ -404,13 +388,9 @@
 
         /* Ajuste para os slides na versão mobile */
         @media (max-width: 768px) {
-
-            .image-slider img,
-            .image-slider-mobile img {
-                width: 100%;
-                /* Manter a largura em 100% para dispositivos menores */
+            .image-slider {
                 height: auto;
-                /* Ajusta altura automaticamente */
+                /* Para manter a proporção em telas menores */
             }
 
             .slide img {
@@ -458,22 +438,29 @@
         .product-list {
             display: flex;
             flex-wrap: wrap;
+            /* Permite que os itens se movam para a próxima linha */
             justify-content: center;
-            /* Centraliza os produtos */
-            gap: 10px;
-            /* Reduz o espaço entre os produtos */
+            /* Centraliza os itens */
+            gap: 20px;
+            /* Espaçamento entre os produtos */
+            padding: 20px;
+            /* Espaçamento interno */
         }
 
-        /* Adicione esta regra para a versão mobile */
-        @media (max-width: 600px) {
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .product-list {
+                display: block;
+                /* Alterado para block para empilhar os produtos */
+            }
+
             .product-item {
-                flex: 1 1 100%;
-                /* Faz com que cada produto ocupe 100% da largura */
-                max-width: 100%;
-                /* Garante que não ultrapasse a largura do contêiner */
+                width: 100%;
+                /* Um produto por linha em telas médias */
+                margin-bottom: 40px;
+                /* Espaçamento inferior entre os itens */
             }
         }
-
 
         @media (max-width: 480px) {
             .product-list {
