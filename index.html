@@ -677,9 +677,34 @@
         }
 
         .tab-button {
-            margin: 5px;
-            /* Adicionar espaço entre os botões */
+            background-color: #1c8583;
+            /* Cor de fundo padrão */
+            color: white;
+            /* Cor do texto */
+            padding: 10px 15px;
+            /* Espaçamento */
+            border: none;
+            /* Sem borda */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Cursor de pointer ao passar o mouse */
+            transition: background-color 0.3s ease;
+            /* Transição suave para a cor de fundo */
         }
+
+        .tab-button:hover {
+            background-color: #146b63;
+            /* Cor de fundo ao passar o mouse */
+        }
+
+        .tab-button.active {
+            background-color: #0f6c61;
+            /* Cor de fundo para o botão ativo */
+            color: white;
+            /* Cor do texto ativo */
+        }
+
 
         @media (max-width: 768px) {
             .button-container {
@@ -791,6 +816,51 @@
             text-align: center;
             margin-top: 10px;
         }
+
+        .button-container {
+            display: flex;
+            /* Exibe os botões em linha */
+            justify-content: center;
+            /* Centraliza os botões horizontalmente */
+            margin: 20px 0;
+            /* Margem acima e abaixo dos botões */
+        }
+
+        .tab-button {
+            background-color: #1c8583;
+            /* Cor de fundo dos botões */
+            color: white;
+            /* Cor do texto */
+            padding: 12px 20px;
+            /* Espaçamento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Muda o cursor ao passar o mouse */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Transição suave para a cor de fundo e transformação */
+            margin: 0 10px;
+            /* Espaçamento entre os botões */
+        }
+
+        .tab-button:hover {
+            background-color: #146b63;
+            /* Cor de fundo ao passar o mouse */
+            transform: scale(1.05);
+            /* Leve aumento no tamanho ao passar o mouse */
+        }
+
+        .tab-button:active {
+            background-color: #0f6c61;
+            /* Cor de fundo ao pressionar */
+            transform: scale(0.95);
+            /* Leve diminuição no tamanho ao pressionar */
+        }
+        
     </style>
 </head>
 
@@ -7072,7 +7142,7 @@
         };
 
         document.getElementById('slide-bannercollectionmobile').onclick = function () {
-            showSection('camiseta'); // Altera para a aba Camisetas
+            showSection('movies'); // Altera para a aba Camisetas
         };
 
         // Função para alterar imagem do produto com base na cor
