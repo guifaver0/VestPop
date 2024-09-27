@@ -1961,8 +1961,8 @@
         </div>
     </section>
 
-     <!-- CAMISETAS -->
-     <section id="camiseta">
+    <!-- CAMISETAS -->
+    <section id="camiseta">
         <!-- Lista de artistas como um select -->
         <div class="collections-container" style="text-align: center;">
             <div class="centered">
@@ -2025,9 +2025,13 @@
 
         <!-- Mensagem introdutória -->
         <div id="intro-message" class="intro-message"
-            style="text-align: center; margin: 12px auto; padding: 8px; background: linear-gradient(135deg, #3a626d, #d9d9d9); color: white; border-radius: 8px; max-width: 600px; font-family: 'Cursive';">
+            style="text-align: center; margin: 12px auto; padding: 8px; background: linear-gradient(135deg, #3a626d, #d9d9d9); color: white; border-radius: 8px; max-width: 600px; font-family: 'Roboto', sans-serif;">
             <p>Selecione um artista acima para explorar nossas camisetas exclusivas!</p>
         </div>
+
+        <!-- Adicione o link para o Google Fonts no <head> do seu HTML -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 
         <!-- Imagem abaixo da mensagem introdutória -->
         <div id="intro-image" class="intro-image" style="text-align: center; margin-bottom: 20px;">
@@ -2742,87 +2746,87 @@
         </div>
 
         <!-- COLEÇÃO BTS -->
-<div class="collection-products" id="BTS" style="display: none;">
-    <div class="product-list">
-        <!-- Produto BTS 1 -->
-        <div class="product-item">
-            <img id="bts1-image" src="imagens/bts1b.jpg" alt="bts1b" class="product-image">
-            <h3>BTS</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeBTS1">Tamanho:</label>
-                <select id="sizeBTS1">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorBTS1">Cor:</label>
-                <select id="colorBTS1" onchange="changeImage('bts1-image', this.value, 'bts1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button
-                onclick="addToCart('BTS', 59.99, document.getElementById('sizeBTS1').value, document.getElementById('colorBTS1').value, 'Camiseta', document.getElementById('bts1-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+        <div class="collection-products" id="BTS" style="display: none;">
+            <div class="product-list">
+                <!-- Produto BTS 1 -->
+                <div class="product-item">
+                    <img id="bts1-image" src="imagens/bts1b.jpg" alt="bts1b" class="product-image">
+                    <h3>BTS</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeBTS1">Tamanho:</label>
+                        <select id="sizeBTS1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorBTS1">Cor:</label>
+                        <select id="colorBTS1" onchange="changeImage('bts1-image', this.value, 'bts1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('BTS', 59.99, document.getElementById('sizeBTS1').value, document.getElementById('colorBTS1').value, 'Camiseta', document.getElementById('bts1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
-        <!-- Produto BTS 2 -->
-        <div class="product-item">
-            <img id="bts2-image" src="imagens/bts2b.jpg" alt="bts2b" class="product-image">
-            <h3>Butter</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeBTS2">Tamanho:</label>
-                <select id="sizeBTS2">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorBTS2">Cor:</label>
-                <select id="colorBTS2" onchange="changeImage('bts2-image', this.value, 'bts2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button
-                onclick="addToCart('Butter', 59.99, document.getElementById('sizeBTS2').value, document.getElementById('colorBTS2').value, 'Camiseta', document.getElementById('bts2-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+                <!-- Produto BTS 2 -->
+                <div class="product-item">
+                    <img id="bts2-image" src="imagens/bts2b.jpg" alt="bts2b" class="product-image">
+                    <h3>Butter</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeBTS2">Tamanho:</label>
+                        <select id="sizeBTS2">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorBTS2">Cor:</label>
+                        <select id="colorBTS2" onchange="changeImage('bts2-image', this.value, 'bts2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Butter', 59.99, document.getElementById('sizeBTS2').value, document.getElementById('colorBTS2').value, 'Camiseta', document.getElementById('bts2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
-        <!-- Produto BTS 3 -->
-        <div class="product-item">
-            <img id="bts3-image" src="imagens/bts3b.jpg" alt="bts3b" class="product-image">
-            <h3>Dynamite</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeBTS3">Tamanho:</label>
-                <select id="sizeBTS3">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorBTS3">Cor:</label>
-                <select id="colorBTS3" onchange="changeImage('bts3-image', this.value, 'bts3')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
+                <!-- Produto BTS 3 -->
+                <div class="product-item">
+                    <img id="bts3-image" src="imagens/bts3b.jpg" alt="bts3b" class="product-image">
+                    <h3>Dynamite</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeBTS3">Tamanho:</label>
+                        <select id="sizeBTS3">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorBTS3">Cor:</label>
+                        <select id="colorBTS3" onchange="changeImage('bts3-image', this.value, 'bts3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Dynamite', 59.99, document.getElementById('sizeBTS3').value, document.getElementById('colorBTS3').value, 'Camiseta', document.getElementById('bts3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
-            <button
-                onclick="addToCart('Dynamite', 59.99, document.getElementById('sizeBTS3').value, document.getElementById('colorBTS3').value, 'Camiseta', document.getElementById('bts3-image').src)">
-                Adicionar ao Carrinho
-            </button>
         </div>
-    </div>
-</div>
 
         <!-- COLEÇÃO CAMILA CABELLO -->
         <div class="collection-products" id="Camila Cabello" style="display: none;">
@@ -3319,87 +3323,87 @@
         </div>
 
         <!-- COLEÇÃO DUA -->
-<div class="collection-products" id="Dua Lipa" style="display: none;">
-    <div class="product-list">
-        <!-- Produto Dua 1 -->
-        <div class="product-item">
-            <img id="dua1-image" src="imagens/dua1b.jpg" alt="dua1b" class="product-image">
-            <h3>Radical Optimism</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeDua1">Tamanho:</label>
-                <select id="sizeDua1">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorDua1">Cor:</label>
-                <select id="colorDua1" onchange="changeImage('dua1-image', this.value, 'dua1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button
-                onclick="addToCart('Radical Optimism', 59.99, document.getElementById('sizeDua1').value, document.getElementById('colorDua1').value, 'Camiseta', document.getElementById('dua1-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+        <div class="collection-products" id="Dua Lipa" style="display: none;">
+            <div class="product-list">
+                <!-- Produto Dua 1 -->
+                <div class="product-item">
+                    <img id="dua1-image" src="imagens/dua1b.jpg" alt="dua1b" class="product-image">
+                    <h3>Radical Optimism</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeDua1">Tamanho:</label>
+                        <select id="sizeDua1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorDua1">Cor:</label>
+                        <select id="colorDua1" onchange="changeImage('dua1-image', this.value, 'dua1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Radical Optimism', 59.99, document.getElementById('sizeDua1').value, document.getElementById('colorDua1').value, 'Camiseta', document.getElementById('dua1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
-        <!-- Produto Dua 2 -->
-        <div class="product-item">
-            <img id="dua2-image" src="imagens/dua2b.jpg" alt="dua2b" class="product-image">
-            <h3>Dua Lipa</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeDua2">Tamanho:</label>
-                <select id="sizeDua2">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorDua2">Cor:</label>
-                <select id="colorDua2" onchange="changeImage('dua2-image', this.value, 'dua2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button
-                onclick="addToCart('Dua Lipa', 59.99, document.getElementById('sizeDua2').value, document.getElementById('colorDua2').value, 'Camiseta', document.getElementById('dua2-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+                <!-- Produto Dua 2 -->
+                <div class="product-item">
+                    <img id="dua2-image" src="imagens/dua2b.jpg" alt="dua2b" class="product-image">
+                    <h3>Dua Lipa</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeDua2">Tamanho:</label>
+                        <select id="sizeDua2">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorDua2">Cor:</label>
+                        <select id="colorDua2" onchange="changeImage('dua2-image', this.value, 'dua2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Dua Lipa', 59.99, document.getElementById('sizeDua2').value, document.getElementById('colorDua2').value, 'Camiseta', document.getElementById('dua2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
-        <!-- Produto Dua 3 -->
-        <div class="product-item">
-            <img id="dua3-image" src="imagens/dua3b.jpg" alt="dua3b" class="product-image">
-            <h3>Training</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeDua3">Tamanho:</label>
-                <select id="sizeDua3">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorDua3">Cor:</label>
-                <select id="colorDua3" onchange="changeImage('dua3-image', this.value, 'dua3')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
+                <!-- Produto Dua 3 -->
+                <div class="product-item">
+                    <img id="dua3-image" src="imagens/dua3b.jpg" alt="dua3b" class="product-image">
+                    <h3>Training</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeDua3">Tamanho:</label>
+                        <select id="sizeDua3">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorDua3">Cor:</label>
+                        <select id="colorDua3" onchange="changeImage('dua3-image', this.value, 'dua3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Training', 59.99, document.getElementById('sizeDua3').value, document.getElementById('colorDua3').value, 'Camiseta', document.getElementById('dua3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
-            <button
-                onclick="addToCart('Training', 59.99, document.getElementById('sizeDua3').value, document.getElementById('colorDua3').value, 'Camiseta', document.getElementById('dua3-image').src)">
-                Adicionar ao Carrinho
-            </button>
         </div>
-    </div>
-</div>
 
         <!-- COLEÇÃO EMINEM -->
         <div class="collection-products" id="Eminem" style="display: none;">
@@ -4746,87 +4750,87 @@
         </div>
 
         <!-- COLEÇÃO MADISON -->
-<div class="collection-products" id="Madison Beer" style="display: none;">
-    <div class="product-list">
-        <!-- Produto Madison 1 -->
-        <div class="product-item">
-            <img id="madison1-image" src="imagens/madison1b.jpg" alt="madison1b" class="product-image">
-            <h3>15 Minutes</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeMadison1">Tamanho:</label>
-                <select id="sizeMadison1">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorMadison1">Cor:</label>
-                <select id="colorMadison1" onchange="changeImage('madison1-image', this.value, 'madison1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button
-                onclick="addToCart('15 Minutes', 59.99, document.getElementById('sizeMadison1').value, document.getElementById('colorMadison1').value, 'Camiseta', document.getElementById('madison1-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+        <div class="collection-products" id="Madison Beer" style="display: none;">
+            <div class="product-list">
+                <!-- Produto Madison 1 -->
+                <div class="product-item">
+                    <img id="madison1-image" src="imagens/madison1b.jpg" alt="madison1b" class="product-image">
+                    <h3>15 Minutes</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeMadison1">Tamanho:</label>
+                        <select id="sizeMadison1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorMadison1">Cor:</label>
+                        <select id="colorMadison1" onchange="changeImage('madison1-image', this.value, 'madison1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('15 Minutes', 59.99, document.getElementById('sizeMadison1').value, document.getElementById('colorMadison1').value, 'Camiseta', document.getElementById('madison1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
-        <!-- Produto Madison 2 -->
-        <div class="product-item">
-            <img id="madison2-image" src="imagens/madison2b.jpg" alt="madison2b" class="product-image">
-            <h3>Silence</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeMadison2">Tamanho:</label>
-                <select id="sizeMadison2">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorMadison2">Cor:</label>
-                <select id="colorMadison2" onchange="changeImage('madison2-image', this.value, 'madison2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-            </div>
-            <button
-                onclick="addToCart('Silence', 59.99, document.getElementById('sizeMadison2').value, document.getElementById('colorMadison2').value, 'Camiseta', document.getElementById('madison2-image').src)">
-                Adicionar ao Carrinho
-            </button>
-        </div>
+                <!-- Produto Madison 2 -->
+                <div class="product-item">
+                    <img id="madison2-image" src="imagens/madison2b.jpg" alt="madison2b" class="product-image">
+                    <h3>Silence</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeMadison2">Tamanho:</label>
+                        <select id="sizeMadison2">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorMadison2">Cor:</label>
+                        <select id="colorMadison2" onchange="changeImage('madison2-image', this.value, 'madison2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Silence', 59.99, document.getElementById('sizeMadison2').value, document.getElementById('colorMadison2').value, 'Camiseta', document.getElementById('madison2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
-        <!-- Produto Madison 3 -->
-        <div class="product-item">
-            <img id="madison3-image" src="imagens/madison3b.jpg" alt="madison3b" class="product-image">
-            <h3>Madison Beer</h3>
-            <p>R$ 59,99</p>
-            <div class="product-options">
-                <label for="sizeMadison3">Tamanho:</label>
-                <select id="sizeMadison3">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <br>
-                <label for="colorMadison3">Cor:</label>
-                <select id="colorMadison3" onchange="changeImage('madison3-image', this.value, 'madison3')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
+                <!-- Produto Madison 3 -->
+                <div class="product-item">
+                    <img id="madison3-image" src="imagens/madison3b.jpg" alt="madison3b" class="product-image">
+                    <h3>Madison Beer</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="sizeMadison3">Tamanho:</label>
+                        <select id="sizeMadison3">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="colorMadison3">Cor:</label>
+                        <select id="colorMadison3" onchange="changeImage('madison3-image', this.value, 'madison3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Madison Beer', 59.99, document.getElementById('sizeMadison3').value, document.getElementById('colorMadison3').value, 'Camiseta', document.getElementById('madison3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
-            <button
-                onclick="addToCart('Madison Beer', 59.99, document.getElementById('sizeMadison3').value, document.getElementById('colorMadison3').value, 'Camiseta', document.getElementById('madison3-image').src)">
-                Adicionar ao Carrinho
-            </button>
         </div>
-    </div>
-</div>
 
         <!-- COLEÇÃO MARIAH -->
         <div class="collection-products" id="Mariah Carey" style="display: none;">
