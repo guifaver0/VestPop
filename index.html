@@ -1961,14 +1961,13 @@
         </div>
     </section>
 
-    <!-- CAMISETAS -->
-    <section id="camiseta">
+     <!-- CAMISETAS -->
+     <section id="camiseta">
         <!-- Lista de artistas como um select -->
         <div class="collections-container" style="text-align: center;">
             <div class="centered">
-                <button class="artist-toggle-btn" onclick="toggleArtistList()" style="margin: 20px auto;">
-                    Artistas
-                </button>
+                <button class="artist-toggle-btn" onclick="toggleArtistList()"
+                    style="margin: 20px auto;">Artistas</button>
             </div>
             <div id="artist-list" style="display: none;  text-align: center;">
                 <select id="tipoAcesso" onchange="showCollection(this.value)" style="margin: 20px auto;">
@@ -2024,6 +2023,12 @@
             </div>
         </div>
 
+        <!-- Mensagem introdutória -->
+        <div id="intro-message" class="intro-message"
+            style="text-align: center; margin: 12px auto; padding: 8px; background: linear-gradient(135deg, #1c8583, #6dcdc5); color: white; border-radius: 8px; max-width: 600px; font-family: 'Cursive';">
+            <p>Selecione um artista acima para explorar nossas camisetas exclusivas!</p>
+        </div>
+        
         <!-- Imagem abaixo da mensagem introdutória -->
         <div id="intro-image" class="intro-image" style="text-align: center; margin-bottom: 20px;">
             <picture>
@@ -2737,87 +2742,87 @@
         </div>
 
         <!-- COLEÇÃO BTS -->
-        <div class="collection-products" id="BTS" style="display: none;">
-            <div class="product-list">
-                <!-- Produto BTS 1 -->
-                <div class="product-item">
-                    <img id="bts1-image" src="imagens/bts1.jpg" alt="bts1" class="product-image">
-                    <h3>BTS Dynamite</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeBTS1">Tamanho:</label>
-                        <select id="sizeBTS1">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorBTS1">Cor:</label>
-                        <select id="colorBTS1" onchange="changeImage('bts1-image', this.value, 'bts1')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('BTS Dynamite', 59.99, document.getElementById('sizeBTS1').value, document.getElementById('colorBTS1').value, 'Camiseta', document.getElementById('bts1-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
-                <!-- Produto BTS 2 -->
-                <div class="product-item">
-                    <img id="bts2-image" src="imagens/bts2.jpg" alt="bts2" class="product-image">
-                    <h3>BTS Butter</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeBTS2">Tamanho:</label>
-                        <select id="sizeBTS2">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorBTS2">Cor:</label>
-                        <select id="colorBTS2" onchange="changeImage('bts2-image', this.value, 'bts2')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('BTS Butter', 59.99, document.getElementById('sizeBTS2').value, document.getElementById('colorBTS2').value, 'Camiseta', document.getElementById('bts2-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
-                <!-- Produto BTS 3 -->
-                <div class="product-item">
-                    <img id="bts3-image" src="imagens/bts3.jpg" alt="bts3" class="product-image">
-                    <h3>BTS Permission to Dance</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeBTS3">Tamanho:</label>
-                        <select id="sizeBTS3">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorBTS3">Cor:</label>
-                        <select id="colorBTS3" onchange="changeImage('bts3-image', this.value, 'bts3')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('BTS Permission to Dance', 59.99, document.getElementById('sizeBTS3').value, document.getElementById('colorBTS3').value, 'Camiseta', document.getElementById('bts3-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+<div class="collection-products" id="BTS" style="display: none;">
+    <div class="product-list">
+        <!-- Produto BTS 1 -->
+        <div class="product-item">
+            <img id="bts1-image" src="imagens/bts1.jpg" alt="bts1" class="product-image">
+            <h3>BTS Dynamite</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeBTS1">Tamanho:</label>
+                <select id="sizeBTS1">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorBTS1">Cor:</label>
+                <select id="colorBTS1" onchange="changeImage('bts1-image', this.value, 'bts1')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button
+                onclick="addToCart('BTS Dynamite', 59.99, document.getElementById('sizeBTS1').value, document.getElementById('colorBTS1').value, 'Camiseta', document.getElementById('bts1-image').src)">
+                Adicionar ao Carrinho
+            </button>
         </div>
+
+        <!-- Produto BTS 2 -->
+        <div class="product-item">
+            <img id="bts2-image" src="imagens/bts2.jpg" alt="bts2" class="product-image">
+            <h3>BTS Butter</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeBTS2">Tamanho:</label>
+                <select id="sizeBTS2">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorBTS2">Cor:</label>
+                <select id="colorBTS2" onchange="changeImage('bts2-image', this.value, 'bts2')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('BTS Butter', 59.99, document.getElementById('sizeBTS2').value, document.getElementById('colorBTS2').value, 'Camiseta', document.getElementById('bts2-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto BTS 3 -->
+        <div class="product-item">
+            <img id="bts3-image" src="imagens/bts3.jpg" alt="bts3" class="product-image">
+            <h3>BTS Permission to Dance</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeBTS3">Tamanho:</label>
+                <select id="sizeBTS3">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorBTS3">Cor:</label>
+                <select id="colorBTS3" onchange="changeImage('bts3-image', this.value, 'bts3')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('BTS Permission to Dance', 59.99, document.getElementById('sizeBTS3').value, document.getElementById('colorBTS3').value, 'Camiseta', document.getElementById('bts3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+</div>
 
         <!-- COLEÇÃO CAMILA CABELLO -->
         <div class="collection-products" id="Camila Cabello" style="display: none;">
@@ -3314,87 +3319,87 @@
         </div>
 
         <!-- COLEÇÃO DUA -->
-        <div class="collection-products" id="Dua Lipa" style="display: none;">
-            <div class="product-list">
-                <!-- Produto Dua 1 -->
-                <div class="product-item">
-                    <img id="dua1-image" src="imagens/dua1.jpg" alt="dua1" class="product-image">
-                    <h3>Dua Lipa</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeDua1">Tamanho:</label>
-                        <select id="sizeDua1">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorDua1">Cor:</label>
-                        <select id="colorDua1" onchange="changeImage('dua1-image', this.value, 'dua1')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('Dua Lipa', 59.99, document.getElementById('sizeDua1').value, document.getElementById('colorDua1').value, 'Camiseta', document.getElementById('dua1-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
-                <!-- Produto Dua 2 -->
-                <div class="product-item">
-                    <img id="dua2-image" src="imagens/dua2.jpg" alt="dua2" class="product-image">
-                    <h3>Future Nostalgia</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeDua2">Tamanho:</label>
-                        <select id="sizeDua2">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorDua2">Cor:</label>
-                        <select id="colorDua2" onchange="changeImage('dua2-image', this.value, 'dua2')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('Future Nostalgia', 59.99, document.getElementById('sizeDua2').value, document.getElementById('colorDua2').value, 'Camiseta', document.getElementById('dua2-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
-                <!-- Produto Dua 3 -->
-                <div class="product-item">
-                    <img id="dua3-image" src="imagens/dua3.jpg" alt="dua3" class="product-image">
-                    <h3>Levitating</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeDua3">Tamanho:</label>
-                        <select id="sizeDua3">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorDua3">Cor:</label>
-                        <select id="colorDua3" onchange="changeImage('dua3-image', this.value, 'dua3')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('Levitating', 59.99, document.getElementById('sizeDua3').value, document.getElementById('colorDua3').value, 'Camiseta', document.getElementById('dua3-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+<div class="collection-products" id="Dua Lipa" style="display: none;">
+    <div class="product-list">
+        <!-- Produto Dua 1 -->
+        <div class="product-item">
+            <img id="dua1-image" src="imagens/dua1.jpg" alt="dua1" class="product-image">
+            <h3>Dua Lipa</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeDua1">Tamanho:</label>
+                <select id="sizeDua1">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorDua1">Cor:</label>
+                <select id="colorDua1" onchange="changeImage('dua1-image', this.value, 'dua1')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button
+                onclick="addToCart('Dua Lipa', 59.99, document.getElementById('sizeDua1').value, document.getElementById('colorDua1').value, 'Camiseta', document.getElementById('dua1-image').src)">
+                Adicionar ao Carrinho
+            </button>
         </div>
+
+        <!-- Produto Dua 2 -->
+        <div class="product-item">
+            <img id="dua2-image" src="imagens/dua2.jpg" alt="dua2" class="product-image">
+            <h3>Future Nostalgia</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeDua2">Tamanho:</label>
+                <select id="sizeDua2">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorDua2">Cor:</label>
+                <select id="colorDua2" onchange="changeImage('dua2-image', this.value, 'dua2')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Future Nostalgia', 59.99, document.getElementById('sizeDua2').value, document.getElementById('colorDua2').value, 'Camiseta', document.getElementById('dua2-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Dua 3 -->
+        <div class="product-item">
+            <img id="dua3-image" src="imagens/dua3.jpg" alt="dua3" class="product-image">
+            <h3>Levitating</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeDua3">Tamanho:</label>
+                <select id="sizeDua3">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorDua3">Cor:</label>
+                <select id="colorDua3" onchange="changeImage('dua3-image', this.value, 'dua3')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Levitating', 59.99, document.getElementById('sizeDua3').value, document.getElementById('colorDua3').value, 'Camiseta', document.getElementById('dua3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+</div>
 
         <!-- COLEÇÃO EMINEM -->
         <div class="collection-products" id="Eminem" style="display: none;">
@@ -4741,87 +4746,87 @@
         </div>
 
         <!-- COLEÇÃO MADISON -->
-        <div class="collection-products" id="Madison Beer" style="display: none;">
-            <div class="product-list">
-                <!-- Produto Madison 1 -->
-                <div class="product-item">
-                    <img id="madison1-image" src="imagens/madison1.jpg" alt="madison1" class="product-image">
-                    <h3>Madison</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeMadison1">Tamanho:</label>
-                        <select id="sizeMadison1">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorMadison1">Cor:</label>
-                        <select id="colorMadison1" onchange="changeImage('madison1-image', this.value, 'madison1')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('Madison', 59.99, document.getElementById('sizeMadison1').value, document.getElementById('colorMadison1').value, 'Camiseta', document.getElementById('madison1-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
-                <!-- Produto Madison 2 -->
-                <div class="product-item">
-                    <img id="madison2-image" src="imagens/madison2.jpg" alt="madison2" class="product-image">
-                    <h3>Madison 2</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeMadison2">Tamanho:</label>
-                        <select id="sizeMadison2">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorMadison2">Cor:</label>
-                        <select id="colorMadison2" onchange="changeImage('madison2-image', this.value, 'madison2')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('Madison 2', 59.99, document.getElementById('sizeMadison2').value, document.getElementById('colorMadison2').value, 'Camiseta', document.getElementById('madison2-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
-                <!-- Produto Madison 3 -->
-                <div class="product-item">
-                    <img id="madison3-image" src="imagens/madison3.jpg" alt="madison3" class="product-image">
-                    <h3>Madison 3</h3>
-                    <p>R$ 59,99</p>
-                    <div class="product-options">
-                        <label for="sizeMadison3">Tamanho:</label>
-                        <select id="sizeMadison3">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="colorMadison3">Cor:</label>
-                        <select id="colorMadison3" onchange="changeImage('madison3-image', this.value, 'madison3')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('Madison 3', 59.99, document.getElementById('sizeMadison3').value, document.getElementById('colorMadison3').value, 'Camiseta', document.getElementById('madison3-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+<div class="collection-products" id="Madison Beer" style="display: none;">
+    <div class="product-list">
+        <!-- Produto Madison 1 -->
+        <div class="product-item">
+            <img id="madison1-image" src="imagens/madison1.jpg" alt="madison1" class="product-image">
+            <h3>Madison</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeMadison1">Tamanho:</label>
+                <select id="sizeMadison1">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorMadison1">Cor:</label>
+                <select id="colorMadison1" onchange="changeImage('madison1-image', this.value, 'madison1')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
             </div>
+            <button
+                onclick="addToCart('Madison', 59.99, document.getElementById('sizeMadison1').value, document.getElementById('colorMadison1').value, 'Camiseta', document.getElementById('madison1-image').src)">
+                Adicionar ao Carrinho
+            </button>
         </div>
+
+        <!-- Produto Madison 2 -->
+        <div class="product-item">
+            <img id="madison2-image" src="imagens/madison2.jpg" alt="madison2" class="product-image">
+            <h3>Madison 2</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeMadison2">Tamanho:</label>
+                <select id="sizeMadison2">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorMadison2">Cor:</label>
+                <select id="colorMadison2" onchange="changeImage('madison2-image', this.value, 'madison2')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Madison 2', 59.99, document.getElementById('sizeMadison2').value, document.getElementById('colorMadison2').value, 'Camiseta', document.getElementById('madison2-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Madison 3 -->
+        <div class="product-item">
+            <img id="madison3-image" src="imagens/madison3.jpg" alt="madison3" class="product-image">
+            <h3>Madison 3</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="sizeMadison3">Tamanho:</label>
+                <select id="sizeMadison3">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="colorMadison3">Cor:</label>
+                <select id="colorMadison3" onchange="changeImage('madison3-image', this.value, 'madison3')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Madison 3', 59.99, document.getElementById('sizeMadison3').value, document.getElementById('colorMadison3').value, 'Camiseta', document.getElementById('madison3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+</div>
 
         <!-- COLEÇÃO MARIAH -->
         <div class="collection-products" id="Mariah Carey" style="display: none;">
@@ -7201,228 +7206,220 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
 
-        <script>
-            function toggleArtistList() {
-        var artistList = document.getElementById("artist-list");
-            if (artistList.style.display === "none") {
-                artistList.style.display = "block";  // Mostra o select
-        } else {
-                artistList.style.display = "none";  // Oculta o select
+        function toggleArtistList() {
+            const artistList = document.getElementById("artist-list");
+            artistList.style.display = artistList.style.display === "none" ? "block" : "none";
         }
-    }
-    </script>
 
+        function showCollection(artist) {
+            // Oculta a mensagem e a imagem
+            document.getElementById('intro-message').style.display = 'none';
+            document.getElementById('intro-image').style.display = 'none';
 
-    function showCollection(artist) {
-    // Oculta a mensagem e a imagem
-    document.getElementById('intro-message').style.display = 'none';
-    document.getElementById('intro-image').style.display = 'none';
+            const collections = document.querySelectorAll('.collection-products');
+            collections.forEach(collection => {
+                collection.style.display = 'none';
+            });
 
-    const collections = document.querySelectorAll('.collection-products');
-    collections.forEach(collection => {
-    collection.style.display = 'none';
-    });
+            const artistCollection = document.getElementById(artist);
+            if (artistCollection) {
+                artistCollection.style.display = 'block';
+            }
+        }
 
-    const artistCollection = document.getElementById(artist);
-    if (artistCollection) {
-    artistCollection.style.display = 'block';
-    }
-    }
+        // Inicializar EmailJS
+        (function () {
+            emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
+        })();
 
-    // Inicializar EmailJS
-    (function () {
-    emailjs.init("BGMsotaJil2DgrClJ"); // Substitua pelo seu User ID do EmailJS
-    })();
+        // Função para alternar entre as abas
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Esconde todas as seções
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Exibe a seção selecionada
+        }
 
-    // Função para alternar entre as abas
-    function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-    section.style.display = 'none'; // Esconde todas as seções
-    });
-    document.getElementById(sectionId).style.display = 'block'; // Exibe a seção selecionada
-    }
+        // Exibir a aba inicial
+        showSection('about');
 
-    // Exibir a aba inicial
-    showSection('about');
+        // Funções para alternar banners
+        document.getElementById('slide-bannerjoker').onclick = function () {
+            showSection('movies'); // Altera para a aba Vestcine
+        };
 
-    // Funções para alternar banners
-    document.getElementById('slide-bannerjoker').onclick = function () {
-    showSection('movies'); // Altera para a aba Vestcine
-    };
+        document.getElementById('slide-bannerlolla').onclick = function () {
+            showSection('collection'); // Altera para a aba Vestpalooza
+        };
 
-    document.getElementById('slide-bannerlolla').onclick = function () {
-    showSection('collection'); // Altera para a aba Vestpalooza
-    };
+        document.getElementById('slide-bannercam').onclick = function () {
+            showSection('camiseta'); // Altera para a aba Camisetas
+        };
 
-    document.getElementById('slide-bannercam').onclick = function () {
-    showSection('camiseta'); // Altera para a aba Camisetas
-    };
+        // Funções para alternar banners
+        document.getElementById('slide-bannerjokermobile').onclick = function () {
+            showSection('movies'); // Altera para a aba Vestcine
+        };
 
-    // Funções para alternar banners
-    document.getElementById('slide-bannerjokermobile').onclick = function () {
-    showSection('movies'); // Altera para a aba Vestcine
-    };
+        document.getElementById('slide-bannerlollamobile').onclick = function () {
+            showSection('collection'); // Altera para a aba Vestpalooza
+        };
 
-    document.getElementById('slide-bannerlollamobile').onclick = function () {
-    showSection('collection'); // Altera para a aba Vestpalooza
-    };
+        document.getElementById('slide-bannercollectionmobile').onclick = function () {
+            showSection('camiseta'); // Altera para a aba Camisetas
+        };
 
-    document.getElementById('slide-bannercollectionmobile').onclick = function () {
-    showSection('camiseta'); // Altera para a aba Camisetas
-    };
+        // Função para alterar imagem do produto com base na cor
+        function changeImage(imageId, color, productName) {
+            const imageElement = document.getElementById(imageId);
+            if (color === 'Branco') {
+                imageElement.src = `imagens/${productName}w.jpg`; // Caminho da imagem branca
+            } else {
+                imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
+            }
+        }
 
-    // Função para alterar imagem do produto com base na cor
-    function changeImage(imageId, color, productName) {
-    const imageElement = document.getElementById(imageId);
-    if (color === 'Branco') {
-    imageElement.src = `imagens/${productName}w.jpg`; // Caminho da imagem branca
-    } else {
-    imageElement.src = `imagens/${productName}b.jpg`; // Caminho da imagem original
-    }
-    }
+        // Funções do carrinho de compras
+        let cart = [];
 
-    // Funções do carrinho de compras
-    let cart = [];
+        function addToCart(name, price, size, color, type, imageSrc) {
+            const product = {
+                name: name,
+                price: price,
+                size: size,
+                color: color,
+                type: type, // Tipo de produto (Camiseta ou Corta Vento)
+                imageSrc: imageSrc
+            };
+            cart.push(product); // Adiciona ao carrinho
+            updateCartDisplay(); // Atualiza o carrinho
+        }
 
-    function addToCart(name, price, size, color, type, imageSrc) {
-    const product = {
-    name: name,
-    price: price,
-    size: size,
-    color: color,
-    type: type, // Tipo de produto (Camiseta ou Corta Vento)
-    imageSrc: imageSrc
-    };
-    cart.push(product); // Adiciona ao carrinho
-    updateCartDisplay(); // Atualiza o carrinho
-    }
+        function updateCartDisplay() {
+            const cartItemsList = document.querySelector("#cart-items ul");
+            cartItemsList.innerHTML = ""; // Limpa a lista
 
-    function updateCartDisplay() {
-    const cartItemsList = document.querySelector("#cart-items ul");
-    cartItemsList.innerHTML = ""; // Limpa a lista
+            cart.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;"> 
+                    <strong>${item.name}</strong> | 
+                    <strong>Tamanho:</strong> ${item.size} | 
+                    <strong>Cor:</strong> ${item.color} | 
+                    <strong>Tipo:</strong> ${item.type} | 
+                    <strong>Preço:</strong> R$ ${item.price.toFixed(2)}
+                `;
+                cartItemsList.appendChild(li);
+            });
+        }
 
-    cart.forEach(item => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-    <img src="${item.imageSrc}" alt="${item.name}" style="width: 50px; height: 50px;">
-    <strong>${item.name}</strong> |
-    <strong>Tamanho:</strong> ${item.size} |
-    <strong>Cor:</strong> ${item.color} |
-    <strong>Tipo:</strong> ${item.type} |
-    <strong>Preço:</strong> R$ ${item.price.toFixed(2)}
-    `;
-    cartItemsList.appendChild(li);
-    });
-    }
+        // Função de pagamento
+        function processPayment() {
+            if (cart.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
 
-    // Função de pagamento
-    function processPayment() {
-    if (cart.length === 0) {
-    alert("Seu carrinho está vazio!");
-    return;
-    }
+            const cpf = document.getElementById('cpf').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
 
-    const cpf = document.getElementById('cpf').value;
-    const telefone = document.getElementById('telefone').value;
-    const email = document.getElementById('email').value;
+            if (!cpf || !telefone || !email) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
 
-    if (!cpf || !telefone || !email) {
-    alert("Por favor, preencha todos os campos!");
-    return;
-    }
+            let paymentLink = generatePaymentLink(cart);
+            window.open(paymentLink, '_blank'); // Abre o link de pagamento
 
-    let paymentLink = generatePaymentLink(cart);
-    window.open(paymentLink, '_blank'); // Abre o link de pagamento
+            // Chama a função de envio de e-mail
+            sendEmail(cpf, telefone, email);
 
-    // Chama a função de envio de e-mail
-    sendEmail(cpf, telefone, email);
+            // Limpar o formulário
+            document.getElementById('cpf').value = '';
+            document.getElementById('telefone').value = '';
+            document.getElementById('email').value = '';
 
-    // Limpar o formulário
-    document.getElementById('cpf').value = '';
-    document.getElementById('telefone').value = '';
-    document.getElementById('email').value = '';
+            // Exibir mensagem de confirmação
+            const confirmationMessage = document.createElement('div');
+            confirmationMessage.innerHTML = "Ao finalizar seu pagamento, enviaremos um e-mail em até 2h com a confirmação do pedido e prazo de entrega.";
+            confirmationMessage.style.marginTop = '20px';
+            confirmationMessage.style.fontSize = '1em';
+            confirmationMessage.style.color = '#fff'; // Cor do texto
+            confirmationMessage.style.backgroundColor = '#1c8583'; // Cor de fundo do site
+            confirmationMessage.style.padding = '10px'; // Adiciona espaçamento interno
+            confirmationMessage.style.borderRadius = '5px'; // Borda arredondada
+            document.getElementById('cart').appendChild(confirmationMessage);
+        }
 
-    // Exibir mensagem de confirmação
-    const confirmationMessage = document.createElement('div');
-    confirmationMessage.innerHTML = "Ao finalizar seu pagamento, enviaremos um e-mail em até 2h com a confirmação do
-    pedido e prazo de entrega.";
-    confirmationMessage.style.marginTop = '20px';
-    confirmationMessage.style.fontSize = '1em';
-    confirmationMessage.style.color = '#fff'; // Cor do texto
-    confirmationMessage.style.backgroundColor = '#1c8583'; // Cor de fundo do site
-    confirmationMessage.style.padding = '10px'; // Adiciona espaçamento interno
-    confirmationMessage.style.borderRadius = '5px'; // Borda arredondada
-    document.getElementById('cart').appendChild(confirmationMessage);
-    }
+        // Gerar link de pagamento com base no conteúdo do carrinho
+        function generatePaymentLink(cart) {
+            let camisetaCount = 0;
+            let cortaVentoCount = 0;
 
-    // Gerar link de pagamento com base no conteúdo do carrinho
-    function generatePaymentLink(cart) {
-    let camisetaCount = 0;
-    let cortaVentoCount = 0;
+            cart.forEach(item => {
+                if (item.type === 'Camiseta') {
+                    camisetaCount++;
+                } else if (item.type === 'Corta Vento') {
+                    cortaVentoCount++;
+                }
+            });
 
-    cart.forEach(item => {
-    if (item.type === 'Camiseta') {
-    camisetaCount++;
-    } else if (item.type === 'Corta Vento') {
-    cortaVentoCount++;
-    }
-    });
+            // Retorna o link com base na combinação de produtos
+            if (camisetaCount === 1 && cortaVentoCount === 0) {
+                return 'https://pag.ae/7-Vqr-LQm'; // Link para 1 camiseta
+            } else if (camisetaCount === 2 && cortaVentoCount === 0) {
+                return 'https://pag.ae/7-VqsmFB9'; // Link para 2 camisetas
+            } else if (camisetaCount === 0 && cortaVentoCount === 1) {
+                return 'https://pag.ae/7-Vqs-k1a'; // Link para 1 corta vento
+            } else if (camisetaCount === 1 && cortaVentoCount === 1) {
+                return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
+            } // Continue adicionando outras combinações...
+        }
 
-    // Retorna o link com base na combinação de produtos
-    if (camisetaCount === 1 && cortaVentoCount === 0) {
-    return 'https://pag.ae/7-Vqr-LQm'; // Link para 1 camiseta
-    } else if (camisetaCount === 2 && cortaVentoCount === 0) {
-    return 'https://pag.ae/7-VqsmFB9'; // Link para 2 camisetas
-    } else if (camisetaCount === 0 && cortaVentoCount === 1) {
-    return 'https://pag.ae/7-Vqs-k1a'; // Link para 1 corta vento
-    } else if (camisetaCount === 1 && cortaVentoCount === 1) {
-    return 'https://pag.ae/7-W8n5NNQ'; // Link para 1 camiseta + 1 corta vento
-    } // Continue adicionando outras combinações...
-    }
-
-    // Função para enviar o e-mail com detalhes do carrinho
-    function sendEmail(cpf, telefone, email) {
-    // Monta a string com os detalhes dos produtos no carrinho
-    const cartDetails = cart.map(item => `
-    <li>
-        <strong>${item.name}</strong> -
-        Tamanho: ${item.size} -
-        Cor: ${item.color} -
-        Tipo: ${item.type} -
-        Preço: R$ ${item.price.toFixed(2)}
-    </li>
+        // Função para enviar o e-mail com detalhes do carrinho
+        function sendEmail(cpf, telefone, email) {
+            // Monta a string com os detalhes dos produtos no carrinho
+            const cartDetails = cart.map(item => `
+        <li>
+            <strong>${item.name}</strong> - 
+            Tamanho: ${item.size} - 
+            Cor: ${item.color} - 
+            Tipo: ${item.type} - 
+            Preço: R$ ${item.price.toFixed(2)}
+        </li>
     `).join(''); // Converte o array em uma string HTML
 
-    // Verifica se o carrinho está vazio
-    if (cart.length === 0) {
-    alert("Seu carrinho está vazio!");
-    return;
-    }
+            // Verifica se o carrinho está vazio
+            if (cart.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
 
-    // Monta os parâmetros do template
-    const templateParams = {
-    cpf: String(cpf),
-    telefone: String(telefone),
-    from_email: String(email),
-    mensagem: `
+            // Monta os parâmetros do template
+            const templateParams = {
+                cpf: String(cpf),
+                telefone: String(telefone),
+                from_email: String(email),
+                mensagem: `
 
-    ${cartDetails}
-    `
-    };
+            ${cartDetails}
+        `
+            };
 
-    // Envia o e-mail
-    emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
-    .then((response) => {
-    // alert('Email enviado com sucesso!');//
-    console.log("Resposta do EmailJS:", response);
-    }, (error) => {
-    //alert('Erro ao enviar email. Tente novamente.');//
-    console.error("Erro ao enviar email:", error);
-    });
-    }
+            // Envia o e-mail
+            emailjs.send("service_b9odh4h", "template_357o4zs", templateParams)
+                .then((response) => {
+                    // alert('Email enviado com sucesso!');//
+                    console.log("Resposta do EmailJS:", response);
+                }, (error) => {
+                    //alert('Erro ao enviar email. Tente novamente.');//
+                    console.error("Erro ao enviar email:", error);
+                });
+        }
 
-    showSection('about'); // Exibir a seção inicial
+        showSection('about'); // Exibir a seção inicial
     </script>
 </body>
 
