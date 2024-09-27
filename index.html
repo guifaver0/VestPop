@@ -190,16 +190,14 @@
             /* Cor mais escura ao passar o mouse */
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
-            .product-list {
-                display: block;
-                /* Força a lista a ser um bloco */
-            }
 
-            .product-item {
+            .image-slider img,
+            .image-slider-mobile img {
                 width: 100%;
-                /* Um produto por linha em telas médias */
+                /* Manter a largura em 100% para dispositivos menores */
+                height: auto;
+                /* Ajusta altura automaticamente */
             }
         }
 
