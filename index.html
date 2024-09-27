@@ -435,15 +435,47 @@
             align-items: center;
         }
 
-        .collection-header {
-            text-align: center;
-        }
-
         .product-list {
             display: flex;
             flex-wrap: wrap;
+            /* Permite que os itens se movam para a próxima linha */
             justify-content: center;
+            /* Centraliza os itens */
+            gap: 20px;
+            /* Espaçamento entre os produtos */
+            padding: 20px;
+            /* Espaçamento interno */
         }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .product-list {
+                display: block;
+                /* Alterado para block para empilhar os produtos */
+            }
+
+            .product-item {
+                width: 100%;
+                /* Um produto por linha em telas médias */
+                margin-bottom: 20px;
+                /* Espaçamento inferior entre os itens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-list {
+                display: block;
+                /* Continua block para telas pequenas */
+            }
+
+            .product-item {
+                width: 100%;
+                /* Um produto por linha em telas muito pequenas */
+                margin-bottom: 20px;
+                /* Espaçamento inferior entre os itens */
+            }
+        }
+
 
         /* Atualização para os produtos na aba "Camisetas" */
         .collection-header {
