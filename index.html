@@ -827,8 +827,8 @@
         }
 
         .tab-button {
-            background-color: #1c8583;
-            /* Cor de fundo dos botões */
+            background: linear-gradient(135deg, #1c8583, #146b63);
+            /* Degradê */
             color: white;
             /* Cor do texto */
             padding: 12px 20px;
@@ -841,18 +841,19 @@
             /* Muda o cursor ao passar o mouse */
             font-size: 16px;
             /* Tamanho da fonte */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            /* Transição suave para a cor de fundo e transformação */
+            transition: background 0.3s ease, transform 0.3s ease;
+            /* Transição suave */
             margin: 0 10px;
             /* Espaçamento entre os botões */
         }
 
         .tab-button:hover {
-            background-color: #146b63;
-            /* Cor de fundo ao passar o mouse */
+            background: linear-gradient(135deg, #146b63, #1c8583);
+            /* Degradê invertido ao passar o mouse */
             transform: scale(1.05);
             /* Leve aumento no tamanho ao passar o mouse */
         }
+
 
         .tab-button:active {
             background-color: #0f6c61;
