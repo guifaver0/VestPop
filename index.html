@@ -438,29 +438,22 @@
         .product-list {
             display: flex;
             flex-wrap: wrap;
-            /* Permite que os itens se movam para a próxima linha */
             justify-content: center;
-            /* Centraliza os itens */
-            gap: 20px;
-            /* Espaçamento entre os produtos */
-            padding: 20px;
-            /* Espaçamento interno */
+            /* Centraliza os produtos */
+            gap: 10px;
+            /* Reduz o espaço entre os produtos */
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .product-list {
-                display: block;
-                /* Alterado para block para empilhar os produtos */
-            }
-
+        /* Adicione esta regra para a versão mobile */
+        @media (max-width: 600px) {
             .product-item {
-                width: 100%;
-                /* Um produto por linha em telas médias */
-                margin-bottom: 40px;
-                /* Espaçamento inferior entre os itens */
+                flex: 1 1 100%;
+                /* Faz com que cada produto ocupe 100% da largura */
+                max-width: 100%;
+                /* Garante que não ultrapasse a largura do contêiner */
             }
         }
+
 
         @media (max-width: 480px) {
             .product-list {
