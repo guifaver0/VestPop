@@ -228,9 +228,7 @@
             /* Cor de destaque ao interagir */
         }
 
-
         /* O restante do CSS permanece o mesmo */
-
         .product-item button {
             background-color: #4d8a92;
             color: white;
@@ -383,8 +381,6 @@
             /* Adiciona um espaço acima da descrição */
         }
 
-
-
         /* Ajuste para os slides na versão mobile */
         @media (max-width: 768px) {
             .image-slider {
@@ -446,259 +442,24 @@
             /* Espaçamento interno */
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .product-list {
-                display: block;
-                /* Alterado para block para empilhar os produtos */
-            }
-
-            .product-item {
-                width: 100%;
-                /* Um produto por linha em telas médias */
-                margin-bottom: 40px;
-                /* Espaçamento inferior entre os itens */
-            }
+        /* Ajustes específicos para o layout do carrinho */
+        #cart {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 480px) {
-            .product-list {
-                display: block;
-                /* Continua block para telas pequenas */
-            }
-
-            .product-item {
-                width: 100%;
-                /* Um produto por linha em telas muito pequenas */
-                margin-bottom: 40px;
-                /* Espaçamento inferior entre os itens */
-            }
+        /* Formatação para as mensagens de erro */
+        .error {
+            color: red;
+            font-weight: bold;
+            margin: 10px 0;
+            /* Espaçamento entre a mensagem de erro e os campos do formulário */
         }
-
-
-        /* Atualização para os produtos na aba "Camisetas" */
-        .collection-header {
-            text-align: center;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .artist-list {
-            display: flex;
-            overflow-x: auto;
-            padding: 5px 0;
-            white-space: nowrap;
-        }
-
-        .artist-toggle-btn {
-            background-color: #4d8a92;
-            /* Cor de fundo */
-            color: white;
-            /* Cor do texto */
-            border: none;
-            /* Sem borda */
-            padding: 10px 20px;
-            /* Espaçamento interno */
-            cursor: pointer;
-            /* Muda o cursor para indicar que é clicável */
-            border-radius: 50px;
-            /* Bordas arredondadas */
-            font-size: 16px;
-            /* Tamanho da fonte */
-            transition: background-color 0.3s, transform 0.3s;
-            /* Animações para transição */
-        }
-
-        .artist-toggle-btn:hover {
-            background-color: #3c7c80;
-            /* Cor ao passar o mouse */
-            transform: scale(1.05);
-            /* Efeito de aumento ao passar o mouse */
-        }
-
-        .artist-toggle-btn:active {
-            transform: scale(0.95);
-            /* Efeito de redução ao clicar */
-        }
-
-
-        .artist-item {
-            display: inline-block;
-            margin-right: 20px;
-            text-align: center;
-        }
-
-        .artist-item img {
-            width: 100px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 5px;
-        }
-
-        .artist-item h3 {
-            font-size: 16px;
-            margin: 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #4d8a92;
-            color: white;
-            position: relative;
-        }
-
-        .contact-icon {
-            font-size: 24px;
-            /* Ajuste o tamanho conforme necessário */
-            margin-right: 8px;
-            /* Espaçamento entre o ícone e o texto */
-        }
-
-        /* Estilização do select */
-        select {
-            appearance: none;
-            /* Remove o estilo padrão */
-            -webkit-appearance: none;
-            /* Para compatibilidade com Safari */
-            -moz-appearance: none;
-            /* Para compatibilidade com Firefox */
-            background-color: #f1f1f1;
-            /* Cor de fundo suave */
-            border: 2px solid #ccc;
-            /* Borda */
-            border-radius: 8px;
-            /* Bordas arredondadas */
-            padding: 10px;
-            /* Espaçamento interno */
-            width: 100%;
-            /* Largura completa */
-            font-size: 16px;
-            /* Tamanho da fonte */
-            color: #333;
-            /* Cor do texto */
-            outline: none;
-            /* Remove o contorno ao clicar */
-            cursor: pointer;
-            /* Cursor para indicar interatividade */
-            transition: all 0.3s ease;
-            /* Transição suave ao interagir */
-        }
-
-        /* Estilização do select ao focar (quando clica) */
-        select:focus {
-            border-color: #007BFF;
-            /* Muda a cor da borda ao clicar */
-        }
-
-        /* Adiciona uma seta personalizada no select */
-        select::after {
-            content: '\25BC';
-            /* Código para a seta para baixo */
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            font-size: 16px;
-            color: #007BFF;
-            /* Cor da seta */
-        }
-
-        /* Para o container que envolve o select */
-        .centered select {
-            max-width: 300px;
-            /* Define uma largura máxima */
-            margin: 0 auto;
-            /* Centraliza o select */
-        }
-
-        /* Para dispositivos móveis */
-        @media (max-width: 600px) {
-            select {
-                font-size: 14px;
-                /* Reduz o tamanho da fonte em telas menores */
-            }
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            /* Centraliza os produtos */
-            gap: 10px;
-            /* Reduz o espaço entre os produtos */
-        }
-
-        .product-item {
-            flex: 1 1 calc(30% - 10px);
-            /* Cada produto ocupa cerca de 30% da largura */
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            text-align: center;
-            /* Centraliza o texto dentro do item do produto */
-        }
-
-        .product-item img {
-            width: 100%;
-            /* Ajusta a largura da imagem para 100% do container */
-            height: auto;
-            /* Mantém a proporção da imagem */
-            max-height: 250px;
-            /* Ajusta a altura máxima da imagem (ajuste conforme necessário) */
-            object-fit: contain;
-            /* Garante que a imagem se ajuste bem ao container */
-        }
-
-        button {
-            background: linear-gradient(135deg, #4d8a92, #0d7377);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        button:hover {
-            background: linear-gradient(135deg, #3c7c80, #086969);
-            transform: scale(1.05);
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            /* Centraliza os produtos */
-            gap: 10px;
-            /* Reduz o espaço entre os produtos */
-        }
-
-        .product-item button {
-            background-color: #4d8a92;
-            color: white;
-            border: none;
-            padding: 8px;
-            /* Reduz o padding para diminuir o tamanho do botão */
-            font-size: 14px;
-            /* Tamanho da fonte menor */
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
 
         .security-container {
             display: flex;
