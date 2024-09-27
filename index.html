@@ -593,14 +593,16 @@
             justify-content: center;
             /* Centraliza os produtos */
             gap: 10px;
-            /* Reduz o espaço entre os produtos */
+            /* Espaço entre os produtos */
         }
 
         .product-item {
             flex: 1 1 calc(30% - 10px);
             /* Cada produto ocupa cerca de 30% da largura */
             box-sizing: border-box;
+            /* Inclui padding e border no cálculo de largura */
             margin-bottom: 20px;
+            /* Espaçamento abaixo de cada item */
             text-align: center;
             /* Centraliza o texto dentro do item do produto */
         }
@@ -611,10 +613,11 @@
             height: auto;
             /* Mantém a proporção da imagem */
             max-height: 250px;
-            /* Ajusta a altura máxima da imagem (ajuste conforme necessário) */
+            /* Ajusta a altura máxima da imagem */
             object-fit: contain;
             /* Garante que a imagem se ajuste bem ao container */
         }
+
 
         button {
             background: linear-gradient(135deg, #4d8a92, #0d7377);
