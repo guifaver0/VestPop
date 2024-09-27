@@ -1249,6 +1249,78 @@
             display: none;
         }
     }
+
+    /* Estilo para o preço do produto */
+    .product-price {
+        font-size: 20px;
+        /* Aumenta o tamanho da fonte */
+        font-weight: bold;
+        /* Torna o texto em negrito */
+        color: #1c8583;
+        /* Define a cor do preço */
+        margin: 10px 0;
+        /* Adiciona margem em cima e embaixo */
+    }
+
+    /* Estilo para os selects de tamanho e cor */
+    .styled-select {
+        appearance: none;
+        /* Remove a aparência padrão do select */
+        background-color: #f0f0f0;
+        /* Cor de fundo */
+        color: #333;
+        /* Cor do texto */
+        padding: 10px;
+        /* Espaçamento interno */
+        border: 1px solid #1c8583;
+        /* Borda */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        font-size: 16px;
+        /* Tamanho da fonte */
+        transition: border-color 0.3s ease;
+        /* Transição suave para a borda */
+        width: 100%;
+        /* Largura total */
+        max-width: 200px;
+        /* Largura máxima */
+        margin: 5px 0;
+        /* Margem em cima e embaixo */
+    }
+
+    /* Estilo para o hover nos selects */
+    .styled-select:hover {
+        border-color: #146b63;
+        /* Cor da borda ao passar o mouse */
+    }
+
+    /* Estilo para o botão "Adicionar ao Carrinho" */
+    .product-item button {
+        background-color: #1c8583;
+        /* Cor de fundo */
+        color: white;
+        /* Cor do texto */
+        padding: 12px 20px;
+        /* Espaçamento interno */
+        border: none;
+        /* Sem borda */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        cursor: pointer;
+        /* Muda o cursor ao passar o mouse */
+        font-size: 16px;
+        /* Tamanho da fonte */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        /* Transição suave */
+    }
+
+    .product-item button:hover {
+        background-color: #146b63;
+        /* Cor de fundo ao passar o mouse */
+        transform: scale(1.05);
+        /* Leve aumento no tamanho ao passar o mouse */
+    }
+    
 </style>
 
 <body>
