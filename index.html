@@ -861,6 +861,68 @@
             transform: scale(0.95);
             /* Leve diminuição no tamanho ao pressionar */
         }
+
+        .artist-toggle-btn {
+            background: linear-gradient(135deg, #1c8583, #146b63);
+            /* Degradê */
+            color: white;
+            /* Cor do texto */
+            padding: 12px 20px;
+            /* Espaçamento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Muda o cursor ao passar o mouse */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            transition: background 0.3s ease, transform 0.3s ease;
+            /* Transição suave */
+            margin: 20px auto;
+            /* Centralização */
+            width: 200px;
+            /* Largura fixa para uniformidade */
+        }
+
+        .artist-toggle-btn:hover {
+            background: linear-gradient(135deg, #146b63, #1c8583);
+            /* Degradê invertido ao passar o mouse */
+            transform: scale(1.05);
+            /* Leve aumento no tamanho ao passar o mouse */
+        }
+
+        .artist-select {
+            padding: 10px;
+            /* Espaçamento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            background: #f5f5f5;
+            /* Cor de fundo */
+            color: #333;
+            /* Cor do texto */
+            transition: background 0.3s ease, border 0.3s ease;
+            /* Transição suave */
+            margin: 20px auto;
+            /* Centralização */
+            width: 200px;
+            /* Largura fixa para uniformidade */
+            cursor: pointer;
+            /* Muda o cursor ao passar o mouse */
+        }
+
+        .artist-select:focus {
+            outline: none;
+            /* Remove contorno padrão */
+            background: #e0e0e0;
+            /* Cor de fundo ao focar */
+            border: 1px solid #1c8583;
+            /* Borda ao focar */
+        }
         
     </style>
 </head>
@@ -1840,11 +1902,10 @@
         <!-- Lista de artistas como um select -->
         <div class="collections-container" style="text-align: center;">
             <div class="centered">
-                <button class="artist-toggle-btn" onclick="toggleArtistList()"
-                    style="margin: 20px auto;">Artistas</button>
+                <button class="artist-toggle-btn" onclick="toggleArtistList()">Artistas</button>
             </div>
-            <div id="artist-list" style="display: none;  text-align: center;">
-                <select id="tipoAcesso" onchange="showCollection(this.value)" style="margin: 20px auto;">
+            <div id="artist-list" style="display: none; text-align: center;">
+                <select id="tipoAcesso" onchange="showCollection(this.value)" class="artist-select">
                     <option value="" disabled selected>Selecione um artista</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
                     <option value="Anitta">Anitta</option>
