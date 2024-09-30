@@ -2318,6 +2318,59 @@
                         Adicionar ao Carrinho
                     </button>
                 </div>
+
+                <!-- Produto Ariana 4 -->
+                <div class="product-item">
+                    <img id="ariana4-image" src="imagens/ariana4b.jpg" alt="ariana4b" class="product-image">
+                    <h3>Eternal</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size11">Tamanho:</label>
+                        <select id="size11">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color11">Cor:</label>
+                        <select id="color11" onchange="changeImage('ariana4-image', this.value, 'ariana4')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Eternal', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('ariana4-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Ariana 5 -->
+                <div class="product-item">
+                    <img id="ariana5-image" src="imagens/ariana5b.jpg" alt="ariana5b" class="product-image">
+                    <h3>B&W</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size12">Tamanho:</label>
+                        <select id="size12">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color12">Cor:</label>
+                        <select id="color12" onchange="changeImage('ariana5-image', this.value, 'ariana5')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('B&W - Ariana Grande', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta', document.getElementById('ariana5-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
                 <div class="product-item">
                     <img id="cortaariana-image" src="imagens/cortaariana.jpg" alt="cortaariana" class="product-image">
                     <h3>Ariana Grande</h3>
