@@ -3994,6 +3994,31 @@
             <div class="product-list">
                 <!-- Produto Bieber 1 -->
                 <div class="product-item">
+                    <img id="bieber1-image" src="imagens/bieber1b.jpg" alt="bieber1b" class="product-image">
+                    <h3>Justin Bieber</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size6">Tamanho:</label>
+                        <select id="size6">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color6">Cor:</label>
+                        <select id="color6" onchange="changeImage('bieber1-image', this.value, 'bieber1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Justin Bieber', 59.99, document.getElementById('size6').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('bieber1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="product-item">
                     <img id="cortabieber-image" src="imagens/cortabieber.jpg" alt="cortabieber" class="product-image">
                     <h3>Justin Bieber</h3>
                     <p>R$ 149,99</p>
