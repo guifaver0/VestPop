@@ -5783,6 +5783,32 @@
                     </button>
                 </div>
 
+                <!-- Produto Sabrina 7 -->
+                <div class="product-item">
+                    <img id="sabrina7-image" src="imagens/sabrina7b.jpg" alt="sabrina7b" class="product-image">
+                    <h3>Camaraderie</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size7">Tamanho:</label>
+                        <select id="size7">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color7">Cor:</label>
+                        <select id="color7" onchange="changeImage('sabrina7-image', this.value, 'sabrina7')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Camaraderie', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('sabrina7-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
                 <div class="product-item">
                     <img id="cortasabrina-image" src="imagens/cortasabrina.jpg" alt="cortasabrina"
                         class="product-image">
