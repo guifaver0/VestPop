@@ -2050,6 +2050,7 @@
                     <option value="Post Malone">Post Malone</option>
                     <option value="Rihanna">Rihanna</option>
                     <option value="Sabrina Carpenter">Sabrina Carpenter</option>
+                    <option value="Shakira">Shakira</option>
                     <option value="Shawn Mendes">Shawn Mendes</option>
                     <option value="Sia">Sia</option>
                     <option value="Sza">Sza</option>
@@ -5927,6 +5928,87 @@
                 </div>
             </div>
         </div>
+
+        <!-- COLEÇÃO SHAKIRA -->
+        <div class="collection-products" id="Shakira" style="display: none;">
+            <div class="product-list">
+                <!-- Produto Shawn 1 -->
+                <div class="product-item">
+                    <img id="shakira1-image" src="imagens/shakira1b.jpg" alt="shakira1b" class="product-image">
+                    <h3>Shakira</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size1">Tamanho:</label>
+                        <select id="size1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color1">Cor:</label>
+                        <select id="color1" onchange="changeImage('shakira1-image', this.value, 'shakira1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Shakira', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('shakira1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Shakira 2 -->
+                <div class="product-item">
+                    <img id="shakira2-image" src="imagens/shakira2b.jpg" alt="shakira2b" class="product-image">
+                    <h3>Carpet</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size2">Tamanho:</label>
+                        <select id="size2">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color2">Cor:</label>
+                        <select id="color2" onchange="changeImage('shakira2-image', this.value, 'shakira2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Carpet - Shakira', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('shakira2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Shakira 3 -->
+                <div class="product-item">
+                    <img id="shakira3-image" src="imagens/shakira3b.jpg" alt="shakira3b" class="product-image">
+                    <h3>Forget You</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size3">Tamanho:</label>
+                        <select id="size3">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color3">Cor:</label>
+                        <select id="color3" onchange="changeImage('shakira3-image', this.value, 'shakira3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Forget You', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('shakira3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
 
         <!-- COLEÇÃO SHAWN -->
         <div class="collection-products" id="Shawn Mendes" style="display: none;">
