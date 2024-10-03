@@ -4018,6 +4018,58 @@
                     </button>
                 </div>
 
+                <!-- Produto Bieber 2 -->
+                <div class="product-item">
+                    <img id="bieber2-image" src="imagens/bieber2b.jpg" alt="bieber2b" class="product-image">
+                    <h3>Polaroid</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size7">Tamanho:</label>
+                        <select id="size7">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color7">Cor:</label>
+                        <select id="color7" onchange="changeImage('bieber2-image', this.value, 'bieber2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Polaroid', 59.99, document.getElementById('size7').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('bieber2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Bieber 3 -->
+                <div class="product-item">
+                    <img id="bieber3-image" src="imagens/bieber3b.jpg" alt="bieber3b" class="product-image">
+                    <h3>Hailey</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size8">Tamanho:</label>
+                        <select id="size8">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color8">Cor:</label>
+                        <select id="color8" onchange="changeImage('bieber3-image', this.value, 'bieber3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Hailey', 59.99, document.getElementById('size8').value, document.getElementById('color8').value, 'Camiseta', document.getElementById('bieber3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
                 <div class="product-item">
                     <img id="cortabieber-image" src="imagens/cortabieber.jpg" alt="cortabieber" class="product-image">
                     <h3>Justin Bieber</h3>
