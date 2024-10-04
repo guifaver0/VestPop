@@ -2033,6 +2033,7 @@
                     <option value="Jão">Jão</option>
                     <option value="Justin Bieber">Justin Bieber</option>
                     <option value="Justin Timberlake">Justin Timberlake</option>
+                    <option value="Kali Uchis">Kali Uchis</option>
                     <option value="Karol G">Karol G</option>
                     <option value="Katy Perry">Katy Perry</option>
                     <option value="Kayblack">Kayblack</option>
@@ -4171,7 +4172,116 @@
             </div>
         </div>
 
-        <!-- COLEÇÃO KAROL -->
+        <!-- COLEÇÃO KALI UCHIS -->
+        <div class="collection-products" id="Kali Uchis" style="display: none;">
+            <div class="product-list">
+                <!-- Produto Kali Uchis 1 -->
+                <div class="product-item">
+                    <img id="kali1-image" src="imagens/kali1b.jpg" alt="kali1b" class="product-image">
+                    <h3>Kali Uchis</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size1">Tamanho:</label>
+                        <select id="size1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color1">Cor:</label>
+                        <select id="color1" onchange="changeImage('kali1-image', this.value, 'kali1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Kali Uchis', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('kali1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Kali Uchis 2 -->
+                <div class="product-item">
+                    <img id="kali2-image" src="imagens/kali2b.jpg" alt="kali2b" class="product-image">
+                    <h3>Moonlight</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size2">Tamanho:</label>
+                        <select id="size2">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color2">Cor:</label>
+                        <select id="color2" onchange="changeImage('kali2-image', this.value, 'kali2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Moonlight', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('kali2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Kali Uchis 3 -->
+                <div class="product-item">
+                    <img id="kali3-image" src="imagens/kali3b.jpg" alt="kali3b" class="product-image">
+                    <h3>Brazil Uchis</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size3">Tamanho:</label>
+                        <select id="size3">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color3">Cor:</label>
+                        <select id="color3" onchange="changeImage('kali3-image', this.value, 'kali3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Brazil Uchis', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('kali3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            
+                <!-- Produto Karol e Kali -->
+                <div class="product-item">
+                    <img id="karolkali-image" src="imagens/karolkalib.jpg" alt="karolkalib" class="product-image">
+                    <h3>Kali & Karol</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size4">Tamanho:</label>
+                        <select id="size4">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color4">Cor:</label>
+                        <select id="color4" onchange="changeImage('karolkali-image', this.value, 'karolkali')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Kali & Karol', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('karolkali-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLEÇÃO KAROL G -->
         <div class="collection-products" id="Karol G" style="display: none;">
             <div class="product-list">
                 <!-- Produto Karol 1 -->
@@ -4248,6 +4358,32 @@
                     </div>
                     <button
                         onclick="addToCart('Barbie', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('karol3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Karol e Kali -->
+                <div class="product-item">
+                    <img id="karolkali-image" src="imagens/karolkalib.jpg" alt="karolkalib" class="product-image">
+                    <h3>Kali & Karol</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size4">Tamanho:</label>
+                        <select id="size4">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color4">Cor:</label>
+                        <select id="color4" onchange="changeImage('karolkali-image', this.value, 'karolkali')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Kali & Karol', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('karolkali-image').src)">
                         Adicionar ao Carrinho
                     </button>
                 </div>
@@ -5927,7 +6063,7 @@
         <!-- COLEÇÃO SHAKIRA -->
         <div class="collection-products" id="Shakira" style="display: none;">
             <div class="product-list">
-                <!-- Produto Shawn 1 -->
+                <!-- Produto Shakira 1 -->
                 <div class="product-item">
                     <img id="shakira1-image" src="imagens/shakira1b.jpg" alt="shakira1b" class="product-image">
                     <h3>Shakira</h3>
@@ -6001,6 +6137,58 @@
                     </div>
                     <button
                         onclick="addToCart('Forget You', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('shakira3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Shakira 4 -->
+                <div class="product-item">
+                    <img id="shakira4-image" src="imagens/shakira4b.jpg" alt="shakira4b" class="product-image">
+                    <h3>Capa</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size4">Tamanho:</label>
+                        <select id="size4">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color4">Cor:</label>
+                        <select id="color4" onchange="changeImage('shakira4-image', this.value, 'shakira4')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Capa - Shakira', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('shakira4-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Shakira 5 -->
+                <div class="product-item">
+                    <img id="shakira5-image" src="imagens/shakira5b.jpg" alt="shakira5b" class="product-image">
+                    <h3>La Mujeres</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size5">Tamanho:</label>
+                        <select id="size5">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color5">Cor:</label>
+                        <select id="color5" onchange="changeImage('shakira5-image', this.value, 'shakira5')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('La Mujeres', 59.99, document.getElementById('size5').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('shakira5-image').src)">
                         Adicionar ao Carrinho
                     </button>
                 </div>
