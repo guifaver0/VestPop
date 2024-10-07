@@ -2024,6 +2024,7 @@
                     <option value="Chappell Roan">Chappell Roan</option>
                     <option value="Charli XCX">Charli XCX</option>
                     <option value="Clairo">Clairo</option>
+                    <option value="Danna Paola">Danna Paola</option>
                     <option value="Demi Lovato">Demi Lovato</option>
                     <option value="Doja Cat">Doja Cat</option>
                     <option value="Dua Lipa">Dua Lipa</option>
@@ -3282,6 +3283,89 @@
                     </div>
                     <button
                         onclick="addToCart('Clairo', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('clairo3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLEÇÃO DANNA -->
+        <div class="collection-products" id="Danna Paola" style="display: none;">
+            <div class="product-list">
+                <!-- Produto Danna 1 -->
+                <div class="product-item">
+                    <img id="danna1-image" src="imagens/danna1b.jpg" alt="danna1b" class="product-image">
+                    <h3>Danna</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size1">Tamanho:</label>
+                        <select id="size1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color1">Cor:</label>
+                        <select id="color1" onchange="changeImage('danna1-image', this.value, 'danna1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Danna', 59.99, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('danna1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Danna 2 -->
+                <div class="product-item">
+                    <img id="danna2-image" src="imagens/danna2b.jpg" alt="danna2b" class="product-image">
+                    <h3>Childstar</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size2">Tamanho:</label>
+                        <select id="size2">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color2">Cor:</label>
+                        <select id="color2" onchange="changeImage('danna2-image', this.value, 'danna2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Childstar', 59.99, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('danna2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Danna 3 -->
+                <div class="product-item">
+                    <img id="danna3-image" src="imagens/danna3b.jpg" alt="danna3b" class="product-image">
+                    <h3>Stars</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size3">Tamanho:</label>
+                        <select id="size3">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color3">Cor:</label>
+                        <select id="color3" onchange="changeImage('danna3-image', this.value, 'danna3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Stars - Danna Paola', 59.99, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('danna3-image').src)">
                         Adicionar ao Carrinho
                     </button>
                 </div>
