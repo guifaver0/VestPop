@@ -8026,17 +8026,26 @@
         let cart = [];
 
         function addToCart(name, price, size, color, type, imageSrc) {
-            const product = {
-                name: name,
-                price: price,
-                size: size,
-                color: color,
-                type: type, // Tipo de produto (Camiseta ou Corta Vento)
-                imageSrc: imageSrc
-            };
-            cart.push(product); // Adiciona ao carrinho
-            updateCartDisplay(); // Atualiza o carrinho
-        }
+    // Certifique-se de que o tamanho correto está sendo passado
+    const selectedSize = document.querySelector('input[name="size"]:checked');
+    
+    if (!selectedSize) {
+        alert("Por favor, selecione um tamanho.");
+        return;
+    }
+
+    const product = {
+        name: name,
+        price: price,
+        size: selectedSize.value, // Aqui pegamos o valor correto do tamanho
+        color: color,
+        type: type, // Tipo de produto (Camiseta ou Corta Vento)
+        imageSrc: imageSrc
+    };
+
+    cart.push(product); // Adiciona ao carrinho
+    updateCartDisplay(); // Atualiza o carrinho
+}
 
         function updateCartDisplay() {
             const cartItemsList = document.querySelector("#cart-items ul");
