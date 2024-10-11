@@ -6001,6 +6001,32 @@
                         Adicionar ao Carrinho
                     </button>
                 </div>
+
+                <!-- Produto Post 4 -->
+                <div class="product-item">
+                    <img id="post4-image" src="imagens/post4b.jpg" alt="post4b" class="product-image">
+                    <h3>Post Malone</h3>
+                    <p>R$ 59,99</p>
+                    <div class="product-options">
+                        <label for="size4">Tamanho:</label>
+                        <select id="size4">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color4">Cor:</label>
+                        <select id="color4" onchange="changeImage('post4-image', this.value, 'post4')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Post Malone', 59.99, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('post4-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
         </div>
 
