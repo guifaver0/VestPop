@@ -1329,6 +1329,110 @@
 
     <!-- VESTCINE -->
 <section id="movies">
+
+    <div class="collection-header">
+        <img src="imagens/universal.jpg" alt="universal" class="collection-image">
+        <h2>Coleção Wicked</h2>
+    </div>
+    <div class="product-list">
+        <div class="product-item" data-type="camiseta">
+            <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image">
+            <h3>Glinda</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size11">Tamanho:</label>
+                <select id="size11">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color11">Cor:</label>
+                <select id="color11" onchange="changeImage('glinda-image', this.value, 'glinda')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Glinda', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('glinda-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image">
+            <h3>Green Pink</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size12">Tamanho:</label>
+                <select id="size12">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color12">Cor:</label>
+                <select id="color12" onchange="changeImage('greenpink-image', this.value, 'greenpink')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Green Pink', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta', document.getElementById('greenpink-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image">
+            <h3>Wicked</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size13">Tamanho:</label>
+                <select id="size13">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color13">Cor:</label>
+                <select id="color13" onchange="changeImage('wicked-image', this.value, 'wicked')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Wicked', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta', document.getElementById('wicked-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+        <div class="product-item" data-type="camiseta">
+            <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image">
+            <h3>Castle</h3>
+            <p>R$ 59,99</p>
+            <div class="product-options">
+                <label for="size14">Tamanho:</label>
+                <select id="size14">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color14">Cor:</label>
+                <select id="color14" onchange="changeImage('castle-image', this.value, 'castle')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Castle', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('castle-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+
     <div class="collection-header">
         <img src="imagens/warner.jpg" alt="warner" class="collection-image">
         <h2>Coleção Joker</h2>
@@ -1431,109 +1535,6 @@
             </button>
         </div>
     </div>
-
-        <div class="collection-header">
-    <img src="imagens/universal.jpg" alt="universal" class="collection-image">
-    <h2>Coleção Wicked</h2>
-</div>
-<div class="product-list">
-    <div class="product-item" data-type="camiseta">
-        <img id="glinda-image" src="imagens/glindab.jpg" alt="glindab" class="product-image">
-        <h3>Glinda</h3>
-        <p>R$ 59,99</p>
-        <div class="product-options">
-            <label for="size11">Tamanho:</label>
-            <select id="size11">
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="G">G</option>
-                <option value="GG">GG</option>
-            </select>
-            <br>
-            <label for="color11">Cor:</label>
-            <select id="color11" onchange="changeImage('glinda-image', this.value, 'glinda')">
-                <option value="Preto">Preto</option>
-                <option value="Branco">Branco</option>
-            </select>
-        </div>
-        <button
-            onclick="addToCart('Glinda', 59.99, document.getElementById('size11').value, document.getElementById('color11').value, 'Camiseta', document.getElementById('glinda-image').src)">
-            Adicionar ao Carrinho
-        </button>
-    </div>
-    <div class="product-item" data-type="camiseta">
-        <img id="greenpink-image" src="imagens/greenpinkb.jpg" alt="greenpinkb" class="product-image">
-        <h3>Green Pink</h3>
-        <p>R$ 59,99</p>
-        <div class="product-options">
-            <label for="size12">Tamanho:</label>
-            <select id="size12">
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="G">G</option>
-                <option value="GG">GG</option>
-            </select>
-            <br>
-            <label for="color12">Cor:</label>
-            <select id="color12" onchange="changeImage('greenpink-image', this.value, 'greenpink')">
-                <option value="Preto">Preto</option>
-                <option value="Branco">Branco</option>
-            </select>
-        </div>
-        <button
-            onclick="addToCart('Green Pink', 59.99, document.getElementById('size12').value, document.getElementById('color12').value, 'Camiseta', document.getElementById('greenpink-image').src)">
-            Adicionar ao Carrinho
-        </button>
-    </div>
-    <div class="product-item" data-type="camiseta">
-        <img id="wicked-image" src="imagens/wickedb.jpg" alt="wickedb" class="product-image">
-        <h3>Wicked</h3>
-        <p>R$ 59,99</p>
-        <div class="product-options">
-            <label for="size13">Tamanho:</label>
-            <select id="size13">
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="G">G</option>
-                <option value="GG">GG</option>
-            </select>
-            <br>
-            <label for="color13">Cor:</label>
-            <select id="color13" onchange="changeImage('wicked-image', this.value, 'wicked')">
-                <option value="Preto">Preto</option>
-                <option value="Branco">Branco</option>
-            </select>
-        </div>
-        <button
-            onclick="addToCart('Wicked', 59.99, document.getElementById('size13').value, document.getElementById('color13').value, 'Camiseta', document.getElementById('wicked-image').src)">
-            Adicionar ao Carrinho
-        </button>
-    </div>
-    <div class="product-item" data-type="camiseta">
-        <img id="castle-image" src="imagens/castleb.jpg" alt="castleb" class="product-image">
-        <h3>Castle</h3>
-        <p>R$ 59,99</p>
-        <div class="product-options">
-            <label for="size14">Tamanho:</label>
-            <select id="size14">
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="G">G</option>
-                <option value="GG">GG</option>
-            </select>
-            <br>
-            <label for="color14">Cor:</label>
-            <select id="color14" onchange="changeImage('castle-image', this.value, 'castle')">
-                <option value="Preto">Preto</option>
-                <option value="Branco">Branco</option>
-            </select>
-        </div>
-        <button
-            onclick="addToCart('Castle', 59.99, document.getElementById('size14').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('castle-image').src)">
-            Adicionar ao Carrinho
-        </button>
-    </div>
-</div>
 </section>
 
     <!-- VESTPALOOZA -->
