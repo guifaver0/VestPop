@@ -961,18 +961,17 @@
 
         /* Estilo da mensagem de confirmação */
         #confirmation-message {
-            background: linear-gradient(135deg, #14416b, #1c8583);
+            background-color: #1c8583;
             color: white;
-            padding: 15px 20px;
+            padding: 10px 15px;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
+            top: 20px;
+            right: 20px;
+            border-radius: 5px;
             z-index: 1000;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Estilo do botão de remover */
@@ -8260,7 +8259,7 @@
 
             setTimeout(() => {
                 confirmationMessage.style.display = "none";
-            }, 3000);
+            }, 2000);
         }
 
         // Função de pagamento
