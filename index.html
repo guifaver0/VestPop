@@ -8262,6 +8262,14 @@
             }, 2000);
         }
 
+        // Variável para armazenar o cupom
+        let appliedCoupon = '';
+
+        // Função para aplicar o cupom de desconto
+        function applyCoupon(couponCode) {
+            appliedCoupon = couponCode.trim().toLowerCase();
+        }
+
         // Função de pagamento
         function processPayment() {
             if (cart.length === 0) {
@@ -8278,7 +8286,7 @@
                 return;
             }
 
-            let paymentLink = generatePaymentLink(cart);
+            let paymentLink = generatePaymentLink(cart, appliedCoupon);
             window.open(paymentLink, '_blank'); // Abre o link de pagamento
 
             // Chama a função de envio de e-mail
@@ -8294,17 +8302,15 @@
             confirmationMessage.innerHTML = "Após a finalização do pagamento, enviaremos um e-mail em até 2 horas com a confirmação do pedido e o prazo de entrega.";
             confirmationMessage.style.marginTop = '20px';
             confirmationMessage.style.fontSize = '1em';
-            confirmationMessage.style.color = '#fff'; // Cor do texto
-            // Adiciona um fundo em degradê
-            confirmationMessage.style.background = 'linear-gradient(to right, #14416b, #1c8583)'; // Degradê do verde mais escuro para um verde mais claro
-            confirmationMessage.style.padding = '10px'; // Adiciona espaçamento interno 
-            confirmationMessage.style.borderRadius = '5px'; // Borda arredondada
+            confirmationMessage.style.color = '#fff';
+            confirmationMessage.style.background = 'linear-gradient(to right, #14416b, #1c8583)';
+            confirmationMessage.style.padding = '10px';
+            confirmationMessage.style.borderRadius = '5px';
             document.getElementById('cart').appendChild(confirmationMessage);
-
         }
 
-        // Gerar link de pagamento com base no conteúdo do carrinho
-        function generatePaymentLink(cart) {
+        // Gerar link de pagamento com base no conteúdo do carrinho e cupom aplicado
+        function generatePaymentLink(cart, coupon) {
             let camisetaCount = 0;
             let cortaVentoCount = 0;
 
@@ -8315,6 +8321,21 @@
                     cortaVentoCount++;
                 }
             });
+
+            // Verifica se o cupom "szaiconic" foi aplicado
+            if (coupon === 'szaiconic') {
+                if (camisetaCount === 1 && cortaVentoCount === 0) {
+                    return 'https://pag.ae/7-_URCeup'; // Link para 1 camiseta com desconto
+                } else if (camisetaCount === 2 && cortaVentoCount === 0) {
+                    return 'https://pag.ae/7-_US19S1'; // Link para 2 camisetas com desconto
+                } else if (camisetaCount === 3 && cortaVentoCount === 0) {
+                    return 'https://pag.ae/7-_USrLb9'; // Link para 3 camisetas com desconto
+                } else if (camisetaCount === 0 && cortaVentoCount === 1) {
+                    return 'https://pag.ae/7-_UTjAhM'; // Link para 1 corta vento com desconto
+                } else if (camisetaCount === 1 && cortaVentoCount === 1) {
+                    return 'https://pag.ae/7-_UTRHYR'; // Link para 1 camiseta + 1 corta vento com desconto
+                }
+            }
 
             // Retorna o link com base na combinação de produtos
             if (camisetaCount === 1 && cortaVentoCount === 0) {
@@ -8361,6 +8382,11 @@
                 return 'https://pag.ae/7-_k3yipo'; // Link para 3 camiseta + 1 corta vento
             } // Continue adicionando outras combinações...
         }
+
+        // Chamar a função applyCoupon ao aplicar o cupom
+        document.getElementById('coupon-input').addEventListener('change', (event) => {
+            applyCoupon(event.target.value);
+        });
 
         // Função para enviar o e-mail com detalhes do carrinho
         function sendEmail(cpf, telefone, email) {
