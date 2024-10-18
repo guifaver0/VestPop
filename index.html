@@ -8004,16 +8004,23 @@
         <div>
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" placeholder="Digite seu CPF" required>
-
+    
             <label for="telefone">Telefone:</label>
             <input type="text" id="telefone" placeholder="Digite seu telefone" required>
-
+    
             <label for="email">E-mail:</label>
             <input type="email" id="email" placeholder="Digite seu e-mail" required>
         </div>
+    
+        <!-- Seção do Cupom -->
+        <div id="coupon-section">
+            <input type="text" id="coupon-input" placeholder="Digite o cupom de desconto">
+            <button id="apply-coupon-button">Aplicar Cupom</button>
+        </div>
+    
         <button class="finalize-button" onclick="processPayment()">Finalizar Compra</button>
     </section>
-
+    
     <div id="confirmation-message" style="display: none;">
         Item adicionado ao carrinho
     </div>
@@ -8267,8 +8274,9 @@
 
         // Função para aplicar o cupom de desconto
         function applyCoupon(couponCode) {
-            appliedCoupon = couponCode.trim().toLowerCase();
-        }
+    appliedCoupon = couponCode.trim().toLowerCase();
+    alert(`Cupom ${appliedCoupon} aplicado com sucesso!`);
+}
 
         // Função de pagamento
         function processPayment() {
