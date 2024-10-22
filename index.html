@@ -1780,6 +1780,84 @@
                     onclick="addToCart('Oliviapalooza', 64.90, document.getElementById('size20').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('oliviap-image').src)">Adicionar
                     ao Carrinho</button>
             </div>
+
+            <div class="product-item">
+                <img id="benson1-image" src="imagens/benson1b.jpg" alt="benson1b" class="product-image">
+                <h3>Benson Boone</h3>
+                <p>R$ 64,90</p>
+                <div class="product-options">
+                    <label for="size400">Tamanho:</label>
+                    <select id="size400">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color15">Cor:</label>
+                    <select id="color15" onchange="changeImage('benson1-image', this.value, 'benson1')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button
+                    onclick="addToCart('Benson Boone', 64.90, document.getElementById('size400').value, document.getElementById('color15').value, 'Camiseta', document.getElementById('benson1-image').src)">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
+
+            <!-- Produto Benson 2 -->
+            <div class="product-item">
+                <img id="benson2-image" src="imagens/benson2b.jpg" alt="benson2b" class="product-image">
+                <h3>Fireworks</h3>
+                <p>R$ 64,90</p>
+                <div class="product-options">
+                    <label for="size399">Tamanho:</label>
+                    <select id="size399">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color16">Cor:</label>
+                    <select id="color16" onchange="changeImage('benson2-image', this.value, 'benson2')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button
+                    onclick="addToCart('Fireworks - Benson Boone', 64.90, document.getElementById('size399').value, document.getElementById('color16').value, 'Camiseta', document.getElementById('benson2-image').src)">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
+
+            <!-- Produto Benson 3 -->
+            <div class="product-item">
+                <img id="benson3-image" src="imagens/benson3b.jpg" alt="benson3b" class="product-image">
+                <h3>Cowboy Stars</h3>
+                <p>R$ 64,90</p>
+                <div class="product-options">
+                    <label for="size500">Tamanho:</label>
+                    <select id="size500">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <label for="color17">Cor:</label>
+                    <select id="color17" onchange="changeImage('benson3-image', this.value, 'benson3')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button
+                    onclick="addToCart('Cowboy Stars - Benson Boone', 64.90, document.getElementById('size500').value, document.getElementById('color17').value, 'Camiseta', document.getElementById('benson3-image').src)">
+                    Adicionar ao Carrinho
+                </button>
+            </div>
+            
             <div class="product-item" data-type="camiseta">
                 <img id="jao-image" src="imagens/jaob.jpg" alt="jaob">
                 <h3>SuperNova</h3>
@@ -2121,6 +2199,7 @@
                     <option value="Anitta">Anitta</option>
                     <option value="Ariana Grande">Ariana Grande</option>
                     <option value="Baco Exu do Blues">Baco Exu do Blues</option>
+                    <option value="Benson Boone">Benson Boone</option>
                     <option value="Beyonce">Beyonce</option>
                     <option value="Billie Eilish">Billie Eilish</option>
                     <option value="Britney Spears">Britney Spears</option>
@@ -2602,6 +2681,89 @@
                     </div>
                     <button
                         onclick="addToCart('Girassóis', 64.90, document.getElementById('size50').value, document.getElementById('color17').value, 'Camiseta', document.getElementById('baco3-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLEÇÃO BENSON -->
+        <div class="collection-products" id="Benson Boone" style="display: none;">
+            <div class="product-list">
+                <!-- Produto Benson 1 -->
+                <div class="product-item">
+                    <img id="benson1-image" src="imagens/benson1b.jpg" alt="benson1b" class="product-image">
+                    <h3>Benson Boone</h3>
+                    <p>R$ 64,90</p>
+                    <div class="product-options">
+                        <label for="size400">Tamanho:</label>
+                        <select id="size400">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color15">Cor:</label>
+                        <select id="color15" onchange="changeImage('benson1-image', this.value, 'benson1')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Benson Boone', 64.90, document.getElementById('size400').value, document.getElementById('color15').value, 'Camiseta', document.getElementById('benson1-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Benson 2 -->
+                <div class="product-item">
+                    <img id="benson2-image" src="imagens/benson2b.jpg" alt="benson2b" class="product-image">
+                    <h3>Fireworks</h3>
+                    <p>R$ 64,90</p>
+                    <div class="product-options">
+                        <label for="size399">Tamanho:</label>
+                        <select id="size399">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color16">Cor:</label>
+                        <select id="color16" onchange="changeImage('benson2-image', this.value, 'benson2')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Fireworks - Benson Boone', 64.90, document.getElementById('size399').value, document.getElementById('color16').value, 'Camiseta', document.getElementById('benson2-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Produto Benson 3 -->
+                <div class="product-item">
+                    <img id="benson3-image" src="imagens/benson3b.jpg" alt="benson3b" class="product-image">
+                    <h3>Cowboy Stars</h3>
+                    <p>R$ 64,90</p>
+                    <div class="product-options">
+                        <label for="size500">Tamanho:</label>
+                        <select id="size500">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color17">Cor:</label>
+                        <select id="color17" onchange="changeImage('benson3-image', this.value, 'benson3')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('Cowboy Stars - Benson Boone', 64.90, document.getElementById('size500').value, document.getElementById('color17').value, 'Camiseta', document.getElementById('benson3-image').src)">
                         Adicionar ao Carrinho
                     </button>
                 </div>
