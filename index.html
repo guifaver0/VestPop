@@ -2195,6 +2195,7 @@
             <div id="artist-list" style="display: none; text-align: center;">
                 <select id="tipoAcesso" onchange="showCollection(this.value)" class="artist-select">
                     <option value="" disabled selected>Selecione um artista</option>
+                    <option value="Addison Rae">Addison Rae</option>
                     <option value="Alanis Morissette">Alanis Morissette</option>
                     <option value="Anitta">Anitta</option>
                     <option value="Ariana Grande">Ariana Grande</option>
@@ -2265,6 +2266,36 @@
                 <img src="imagens/bannercol.jpg" alt="bannercol"
                     style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
             </picture>
+        </div>
+
+        <!-- COLEÇÃO ADDISON -->
+        <div class="collection-products" id="Addison Rae" style="display: none;">
+            <div class="product-list">
+                <div class="product-item" data-type="camiseta">
+                    <img id="lanis-image" src="imagens/iaddisonb.jpg" alt="iaddisonb" class="product-image">
+                    <h3>I love Addison</h3>
+                    <p>R$ 64,90</p>
+                    <div class="product-options">
+                        <label for="size500">Tamanho:</label>
+                        <select id="size500">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                        <br>
+                        <label for="color14">Cor:</label>
+                        <select id="color14" onchange="changeImage('lanis-image', this.value, 'lanis')">
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                        </select>
+                    </div>
+                    <button
+                        onclick="addToCart('I love Addison', 64.90, document.getElementById('size500').value, document.getElementById('color14').value, 'Camiseta', document.getElementById('iaddison-image').src)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- COLEÇÃO ALANIS -->
