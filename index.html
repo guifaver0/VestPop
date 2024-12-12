@@ -994,6 +994,33 @@
         .remove-button i {
             margin-right: 5px;
         }
+
+        /* Aplica o estilo a todos os selects do site */
+select {
+    background: linear-gradient(135deg, #14416b, #1c8583); /* Gradiente de fundo */
+    border: 2px solid #1c8583; /* Cor da borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 12px 15px; /* Espaçamento interno para aumentar o tamanho */
+    font-size: 16px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    width: 160px; /* Largura fixa para os selects */
+    outline: none; /* Remove o contorno padrão */
+    cursor: pointer; /* Aparece como mãozinha ao passar o mouse */
+    transition: all 0.3s ease; /* Transição suave para hover/foco */
+}
+
+/* Efeito quando o mouse passa sobre o botão (hover) */
+select:hover {
+    background: linear-gradient(135deg, #1c8583, #14416b); /* Inverte o gradiente */
+    border-color: #14416b; /* Muda a cor da borda */
+}
+
+/* Efeito quando o select é focado */
+select:focus {
+    box-shadow: 0 0 8px rgba(28, 133, 131, 0.8); /* Sombra ao focar */
+    border-color: #14416b; /* Borda destaca ao focar */
+}
+
     </style>
 </head>
 
