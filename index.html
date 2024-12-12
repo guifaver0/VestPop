@@ -1585,35 +1585,45 @@ select:focus {
                 <img id="gal1-image" src="imagens/gal1b.jpg" alt="gal1b" class="product-image">
                 <h3>Frase Gal</h3>
                 <p>R$ 64,90</p>
-                <select id="size518">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color18" onchange="changeImage('gal1-image', this.value, 'gal1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Frase Gal', 64.90, document.getElementById('size518').value, document.getElementById('color18').value, 'Camiseta', document.getElementById('gal1-image').src)">Adicionar ao Carrinho</button>
+                <div class="product-options">
+                    <select id="size518">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <select id="color18" onchange="changeImage('gal1-image', this.value, 'gal1')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Frase Gal', 64.90, document.getElementById('size518').value, document.getElementById('color18').value, 'Camiseta', document.getElementById('gal1-image').src)">
+                    Adicionar ao Carrinho
+                </button>
             </div>
-        
+            
             <div class="product-item" data-type="camiseta">
                 <img id="gal2-image" src="imagens/gal2b.jpg" alt="gal2b" class="product-image">
                 <h3>Gal Costa</h3>
                 <p>R$ 64,90</p>
-                <select id="size519">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color19" onchange="changeImage('gal2-image', this.value, 'gal2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Gal Costa', 64.90, document.getElementById('size519').value, document.getElementById('color19').value, 'Camiseta', document.getElementById('gal2-image').src)">Adicionar ao Carrinho</button>
-            </div>
+                <div class="product-options">
+                    <select id="size519">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                    <br>
+                    <select id="color19" onchange="changeImage('gal2-image', this.value, 'gal2')">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Gal Costa', 64.90, document.getElementById('size519').value, document.getElementById('color19').value, 'Camiseta', document.getElementById('gal2-image').src)">
+                    Adicionar ao Carrinho
+                </button>
+            </div>            
         
             <div class="product-item" data-type="camiseta">
                 <img id="gal3-image" src="imagens/gal3b.jpg" alt="gal3b" class="product-image">
