@@ -1043,7 +1043,6 @@ select:focus {
         <a href="#camiseta" onclick="showSection('camiseta'); toggleSidebar();">Buscar Coleção</a>
         <a href="#collection" onclick="showSection('collection'); toggleSidebar();">VestPalooza</a>
         <a href="#collection" onclick="showSection('mpb'); toggleSidebar();">VestBrasil</a>
-        <a href="#movies" onclick="showSection('movies'); toggleSidebar();">VestCine</a>
         <a href="#corta" onclick="showSection('corta'); toggleSidebar();">Corta Vento</a>
         <a href="#medida" onclick="showSection('medida'); toggleSidebar();">Medidas</a>
         <a href="#sobre" onclick="showSection('sobre'); toggleSidebar();">Sobre a Loja</a>
@@ -1052,7 +1051,6 @@ select:focus {
     <div class="button-container">
         <button class="tab-button" onclick="showSection('about')">Início</button>
         <button class="tab-button" onclick="showSection('camiseta')">Buscar Coleção</button>
-        <button class="tab-button" onclick="showSection('movies')">VestCine</button>
         <button class="tab-button" onclick="showSection('collection')">VestPalooza</button>
         <button class="tab-button" onclick="showSection('mpb')">VestBrasil</button>
         <button class="tab-button" onclick="showSection('corta')">Corta Vento</button>
@@ -1707,113 +1705,6 @@ select:focus {
         </div>
     </div>
 </section>
-
-    <!-- VESTVERÃO -->
-    <section id="movies">
-
-        <div class="collection-header">
-            <img src="imagens/sol.png" alt="sol" class="collection-image">
-            <h2>Vest Cine</h2>
-        </div>
-        <div class="product-list">
-            <div class="product-item" data-type="camiseta">
-                <img id="joker-image" src="imagens/jokerb.jpg" alt="jokerb" class="product-image">
-                <h3>Joker</h3>
-                <p>R$ 74,90</p>
-                <div class="product-options">
-                    <label for="size1000">Tamanho:</label>
-                    <select id="size1000">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1100">Cor:</label>
-                    <select id="color1100" onchange="changeImage('anittaverao1-image', this.value, 'anittaverao1')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Joker', 74.90, document.getElementById('size1').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('joker-image').src)">
-                    Adicionar ao Carrinho
-                </button>
-            </div>
-            <div class="product-item" data-type="camiseta">
-                <img id="gaga-image" src="imagens/gagab.jpg" alt="gagab" class="product-image">
-                <h3>Gaga</h3>
-                <p>R$ 74,90</p>
-                <div class="product-options">
-                    <label for="size1200">Tamanho:</label>
-                    <select id="size1200">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1200">Cor:</label>
-                    <select id="color1200" onchange="changeImage('anittaverao2-image', this.value, 'anittaverao2')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Gaga', 74.90, document.getElementById('size2').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('gaga-image').src)">
-                    Adicionar ao Carrinho
-                </button>
-            </div>
-            <div class="product-item" data-type="camiseta">
-                <img id="couple-image" src="imagens/coupleb.jpg" alt="coupleb" class="product-image">
-                <h3>Couple</h3>
-                <p>R$ 74,90</p>
-                <div class="product-options">
-                    <label for="size1300">Tamanho:</label>
-                    <select id="size1300">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1300">Cor:</label>
-                    <select id="color1300" onchange="changeImage('anittaverao3-image', this.value, 'anittaverao3')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Couple', 74.90, document.getElementById('size3').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('couple-image').src)">
-                    Adicionar ao Carrinho
-                </button>
-            </div>
-            <div class="product-item" data-type="camiseta">
-                <img id="deux-image" src="imagens/deuxb.jpg" alt="deuxb" class="product-image">
-                <h3>Deux</h3>
-                <p>R$ 74,90</p>
-                <div class="product-options">
-                    <label for="size1400">Tamanho:</label>
-                    <select id="size1400">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                    <br>
-                    <label for="color1400">Cor:</label>
-                    <select id="color1400" onchange="changeImage('anittaverao4-image', this.value, 'anittaverao4')">
-                        <option value="Preto">Preto</option>
-                        <option value="Branco">Branco</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Deux', 74.90, document.getElementById('size4').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('deux-image').src)">
-                    Adicionar ao Carrinho
-                </button>
-            </div>
-        </div>
-    </section>
 
     <!-- VESTPALOOZA -->
 
@@ -10195,9 +10086,6 @@ select:focus {
             showSection('collection'); // Altera para a aba Vestpalooza
         };
 
-        document.getElementById('slide-bannercollectionmobile').onclick = function () {
-            showSection('camiseta'); // Altera para a aba Vestcine
-        };
 
         // Função para alterar imagem do produto com base na cor
         function changeImage(imageId, color, productName) {
