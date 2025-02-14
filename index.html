@@ -1072,14 +1072,11 @@ select:focus {
     <section id="about">
         <div id="novidades">
             <div class="image-slider">
-                <img src="imagens/bannerjoker.jpg" alt="bannerjoker" class="slide active" id="slide-bannerjoker">
                 <img src="imagens/bannerlolla.jpg" alt="bannerlolla" class="slide" id="slide-bannerlolla">
                 <img src="imagens/bannercam.jpg" alt="bannercam" class="slide" id="slide-bannercam">
             </div>
 
             <div class="image-slider-mobile">
-                <img src="imagens/bannerjokermobile.jpg" alt="bannerjokermobile" class="slide-mobile active"
-                    id="slide-bannerjokermobile">
                 <img src="imagens/bannercollectionmobile.jpg" alt="bannercollectionmobile" class="slide-mobile"
                     id="slide-bannercollectionmobile">
                     <img src="imagens/bannerlollamobile.jpg" alt="bannerlollamobile" class="slide-mobile"
@@ -10184,10 +10181,6 @@ select:focus {
         // Exibir a aba inicial
         showSection('about');
 
-        // Funções para alternar banners
-        document.getElementById('slide-bannerjoker').onclick = function () {
-            showSection('movies'); // Altera para a aba Coleções
-        };
 
         document.getElementById('slide-bannerlolla').onclick = function () {
             showSection('collection'); // Altera para a aba Vestpalooza
@@ -10197,10 +10190,6 @@ select:focus {
             showSection('camiseta'); // Altera para a aba Coleções
         };
 
-        // Funções para alternar banners
-        document.getElementById('slide-bannerjokermobile').onclick = function () {
-            showSection('movies'); // Altera para a aba Coleções
-        };
 
         document.getElementById('slide-bannerlollamobile').onclick = function () {
             showSection('collection'); // Altera para a aba Vestpalooza
