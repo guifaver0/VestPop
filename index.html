@@ -2469,24 +2469,31 @@ select:focus {
     </button>
 </div>
                 <div class="product-item">
-                    <img id="cortaxoxo-image" src="imagens/cortaxoxo.jpg" alt="cortaxoxo" class="product-image">
-                    <h3>Camila Cabello</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size68">Tamanho:</label>
-                        <select id="size68">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Xoxo', 159.99, document.getElementById('size68').value, '', 'Corta Vento', document.getElementById('cortaxoxo-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+    <img id="cortacamilab-image" src="imagens/cortacamilab.jpg" alt="cortacamilab" class="product-image">
+    <h3>Camila Cabello</h3>
+    <p>R$ 159,99</p>
+    <div class="product-options">
+        <label for="size68">Tamanho:</label>
+        <select id="size68">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color68">Cor:</label>
+        <select id="color68" onchange="changeImage('cortacamilab-image', this.value, 'cortacamilab')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Rosa">Rosa</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Xoxo', 159.99, document.getElementById('size68').value, document.getElementById('color68').value, 'Corta Vento', document.getElementById('cortacamilab-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
             </div>
         </div>
 
