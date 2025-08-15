@@ -1643,6 +1643,7 @@ select:focus {
                     <option value="Kali Uchis">Kali Uchis</option>
                     <option value="Katy Perry">Katy Perry</option>
                     <option value="Kayblack">Kayblack</option>
+                    <option value="Kendrick Lamar">Kendrick Lamar</option>
                     <option value="Kesha">Kesha</option>
                     <option value="Lady Gaga">Lady Gaga</option>
                     <option value="Lana Del Rey">Lana Del Rey</option>
@@ -4177,6 +4178,89 @@ select:focus {
                 </div>
             </div>
         </div>
+
+       <!-- COLEÇÃO KENDRICK LAMAR -->
+<div class="collection-products" id="Kendrick Lamar" style="display: none;">
+    <div class="product-list">
+        <!-- Produto Kendrick 1 -->
+        <div class="product-item">
+            <img id="kendrick1-image" src="imagens/kendrick1b.jpg" alt="kendrick1b" class="product-image">
+            <h3>GNX</h3>
+            <p>R$ 79,99 </p>
+            <div class="product-options">
+                <label for="size131">Tamanho:</label>
+                <select id="size131">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color1">Cor:</label>
+                <select id="color1" onchange="changeImage('kendrick1-image', this.value, 'kendrick1')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('GNX', 79.99, document.getElementById('size131').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('kendrick1-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Kendrick 2 -->
+        <div class="product-item">
+            <img id="kendrick2-image" src="imagens/kendrick2b.jpg" alt="kendrick2b" class="product-image">
+            <h3>Squabble Up</h3>
+            <p>R$ 79,99 </p>
+            <div class="product-options">
+                <label for="size132">Tamanho:</label>
+                <select id="size132">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color2">Cor:</label>
+                <select id="color2" onchange="changeImage('kendrick2-image', this.value, 'kendrick2')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Squabble Up', 79.99, document.getElementById('size132').value, document.getElementById('color2').value, 'Camiseta', document.getElementById('kendrick2-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+
+        <!-- Produto Kendrick 3 -->
+        <div class="product-item">
+            <img id="kendrick3-image" src="imagens/kendrick3b.jpg" alt="kendrick3b" class="product-image">
+            <h3>Kendrick Lamar</h3>
+            <p>R$ 79,99 </p>
+            <div class="product-options">
+                <label for="size133">Tamanho:</label>
+                <select id="size133">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <br>
+                <label for="color3">Cor:</label>
+                <select id="color3" onchange="changeImage('kendrick3-image', this.value, 'kendrick3')">
+                    <option value="Preto">Preto</option>
+                    <option value="Branco">Branco</option>
+                </select>
+            </div>
+            <button
+                onclick="addToCart('Kendrick Lamar', 79.99, document.getElementById('size133').value, document.getElementById('color3').value, 'Camiseta', document.getElementById('kendrick3-image').src)">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+</div>
 
         <!-- COLEÇÃO KESHA -->
         <div class="collection-products" id="Kesha" style="display: none;">
