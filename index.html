@@ -2992,6 +2992,59 @@ select:focus {
         <!-- COLEÇÃO DOJA -->
         <div class="collection-products" id="Doja Cat" style="display: none;">
             <div class="product-list">
+
+                <!-- Produto Doja 4 -->
+<div class="product-item">
+    <img id="doja4-image" src="imagens/doja4b.jpg" alt="doja4b" class="product-image">
+    <h3>Doja 4</h3>
+    <p>R$ 79,99 </p>
+    <div class="product-options">
+        <label for="size88">Tamanho:</label>
+        <select id="size88">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color4">Cor:</label>
+        <select id="color4" onchange="changeImage('doja4-image', this.value, 'doja4')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Doja 4', 74.90, document.getElementById('size88').value, document.getElementById('color4').value, 'Camiseta', document.getElementById('doja4-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
+<!-- Produto Doja 5 -->
+<div class="product-item">
+    <img id="doja5-image" src="imagens/doja5b.jpg" alt="doja5b" class="product-image">
+    <h3>Doja 5</h3>
+    <p>R$ 79,99 </p>
+    <div class="product-options">
+        <label for="size89">Tamanho:</label>
+        <select id="size89">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color5">Cor:</label>
+        <select id="color5" onchange="changeImage('doja5-image', this.value, 'doja5')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Doja 5', 74.90, document.getElementById('size89').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('doja5-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
                 <!-- Produto Doja 1 -->
                 <div class="product-item">
                     <img id="doja1-image" src="imagens/doja1b.jpg" alt="doja1b" class="product-image">
