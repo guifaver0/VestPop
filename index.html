@@ -1503,88 +1503,104 @@ select:focus {
                 </button>
             </div>
             <div class="product-item" data-type="camiseta">
-                <img id="gal3-image" src="imagens/gal3b.jpg" alt="gal3b" class="product-image">
-                <h3>Gal</h3>
-                <p>R$79,99 </p>
-                <select id="size520">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color20" onchange="changeImage('gal3-image', this.value, 'gal3')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Gal', 74.90, document.getElementById('size520').value, document.getElementById('color20').value, 'Camiseta', document.getElementById('gal3-image').src)">Adicionar ao Carrinho</button>
-            </div>
-            
-            <div class="product-item" data-type="camiseta">
-                <img id="tim1-image" src="imagens/tim1b.jpg" alt="tim1b" class="product-image">
-                <h3>Tim Maia</h3>
-                <p>R$79,99 </p>
-                <select id="size521">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color21" onchange="changeImage('tim1-image', this.value, 'tim1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Tim Maia', 74.90, document.getElementById('size521').value, document.getElementById('color21').value, 'Camiseta', document.getElementById('tim1-image').src)">Adicionar ao Carrinho</button>
-            </div>
-            
-            <div class="product-item" data-type="camiseta">
-                <img id="tim2-image" src="imagens/tim2b.jpg" alt="tim2b" class="product-image">
-                <h3>Capa Tim</h3>
-                <p>R$79,99 </p>
-                <select id="size522">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color22" onchange="changeImage('tim2-image', this.value, 'tim2')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Capa Tim', 74.90, document.getElementById('size522').value, document.getElementById('color22').value, 'Camiseta', document.getElementById('tim2-image').src)">Adicionar ao Carrinho</button>
-            </div>
-            
-            <div class="product-item" data-type="camiseta">
-                <img id="chico1-image" src="imagens/chico1b.jpg" alt="chico1b" class="product-image">
-                <h3>Chico Buarque</h3>
-                <p>R$79,99 </p>
-                <select id="size523">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color23" onchange="changeImage('chico1-image', this.value, 'chico1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Chico Buarque', 74.90, document.getElementById('size523').value, document.getElementById('color23').value, 'Camiseta', document.getElementById('chico1-image').src)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-item" data-type="camiseta">
-                <img id="djavan1-image" src="imagens/djavan1b.jpg" alt="djavan1b" class="product-image">
-                <h3>Djavan</h3>
-                <p>R$79,99 </p>
-                <select id="size526">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="G">G</option>
-                    <option value="GG">GG</option>
-                </select>
-                <select id="color26" onchange="changeImage('djavan1-image', this.value, 'djavan1')">
-                    <option value="Preto">Preto</option>
-                    <option value="Branco">Branco</option>
-                </select>
-                <button onclick="addToCart('Djavan', 74.90, document.getElementById('size526').value, document.getElementById('color26').value, 'Camiseta', document.getElementById('djavan1-image').src)">Adicionar ao Carrinho</button>
-            </div>          
+    <img id="gal3-image" src="imagens/gal3b.jpg" alt="gal3b" class="product-image">
+    <h3>Gal</h3>
+    <p>R$79,99 </p>
+    <div class="product-options">
+        <select id="size520">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <select id="color20" onchange="changeImage('gal3-image', this.value, 'gal3')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button onclick="addToCart('Gal', 74.90, document.getElementById('size520').value, document.getElementById('color20').value, 'Camiseta', document.getElementById('gal3-image').src)">Adicionar ao Carrinho</button>
+</div>
+
+<div class="product-item" data-type="camiseta">
+    <img id="tim1-image" src="imagens/tim1b.jpg" alt="tim1b" class="product-image">
+    <h3>Tim Maia</h3>
+    <p>R$79,99 </p>
+    <div class="product-options">
+        <select id="size521">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <select id="color21" onchange="changeImage('tim1-image', this.value, 'tim1')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button onclick="addToCart('Tim Maia', 74.90, document.getElementById('size521').value, document.getElementById('color21').value, 'Camiseta', document.getElementById('tim1-image').src)">Adicionar ao Carrinho</button>
+</div>
+
+<div class="product-item" data-type="camiseta">
+    <img id="tim2-image" src="imagens/tim2b.jpg" alt="tim2b" class="product-image">
+    <h3>Capa Tim</h3>
+    <p>R$79,99 </p>
+    <div class="product-options">
+        <select id="size522">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <select id="color22" onchange="changeImage('tim2-image', this.value, 'tim2')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button onclick="addToCart('Capa Tim', 74.90, document.getElementById('size522').value, document.getElementById('color22').value, 'Camiseta', document.getElementById('tim2-image').src)">Adicionar ao Carrinho</button>
+</div>
+
+<div class="product-item" data-type="camiseta">
+    <img id="chico1-image" src="imagens/chico1b.jpg" alt="chico1b" class="product-image">
+    <h3>Chico Buarque</h3>
+    <p>R$79,99 </p>
+    <div class="product-options">
+        <select id="size523">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <select id="color23" onchange="changeImage('chico1-image', this.value, 'chico1')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button onclick="addToCart('Chico Buarque', 74.90, document.getElementById('size523').value, document.getElementById('color23').value, 'Camiseta', document.getElementById('chico1-image').src)">Adicionar ao Carrinho</button>
+</div>
+
+<div class="product-item" data-type="camiseta">
+    <img id="djavan1-image" src="imagens/djavan1b.jpg" alt="djavan1b" class="product-image">
+    <h3>Djavan</h3>
+    <p>R$79,99 </p>
+    <div class="product-options">
+        <select id="size526">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <select id="color26" onchange="changeImage('djavan1-image', this.value, 'djavan1')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button onclick="addToCart('Djavan', 74.90, document.getElementById('size526').value, document.getElementById('color26').value, 'Camiseta', document.getElementById('djavan1-image').src)">Adicionar ao Carrinho</button>
+</div>
         </div>
     </div>
 </section>
