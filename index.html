@@ -6079,23 +6079,30 @@ select:focus {
         </div>
         <div class="product-list">
             
-            <div class="product-item" data-type="cortaVento">
-                <img id="cortaariana-image" src="imagens/cortaariana.jpg" alt="cortaariana" class="product-image">
-                <h3>Ariana Grande</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size222">Tamanho:</label>
-                    <select id="size222">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Ariana Grande', 159.99, document.getElementById('size222').value, 'Preto', 'Corta Vento', document.getElementById('cortaariana-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
+    <div class="product-item" data-type="cortaVento">
+    <img id="cortaariana-image" src="imagens/cortaarianab.jpg" alt="cortaarianab" class="product-image">
+    <h3>Ariana Grande</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size248">Tamanho:</label>
+        <select id="size248">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="colorarianab">Cor:</label>
+        <select id="colorarianab" onchange="changeImage('cortaariana-image', this.value, 'cortaariana')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Ariana Grande', 159.99, document.getElementById('size248').value, document.getElementById('colorarianab').value, 'Corta Vento', document.getElementById('cortaariana-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             
             <div class="product-item" data-type="cortaVento">
     <img id="cortabillieb-image" src="imagens/cortabillieb.jpg" alt="cortabillieb" class="product-image">
