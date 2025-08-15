@@ -6098,126 +6098,182 @@ select:focus {
             </div>
             
             <div class="product-item" data-type="cortaVento">
-                <img id="cortabillie-image" src="imagens/cortabillie.jpg" alt="cortabillie" class="product-image">
-                <h3>Billie Eilish</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size224">Tamanho:</label>
-                    <select id="size224">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Billie Eilish', 159.99, document.getElementById('size224').value, 'Preto', 'Corta Vento', document.getElementById('cortabillie-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
+    <img id="cortabillieb-image" src="imagens/cortabillieb.jpg" alt="cortabillieb" class="product-image">
+    <h3>Billie Eilish</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size224">Tamanho:</label>
+        <select id="size224">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color224">Cor:</label>
+        <select id="color224" onchange="changeImage('cortabillieb-image', this.value, 'cortabillieb')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Verde">Verde</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Billie Eilish', 159.99, document.getElementById('size224').value, document.getElementById('color224').value, 'Corta Vento', document.getElementById('cortabillieb-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             
+            <div class="product-item">
+    <img id="cortacamilab-image" src="imagens/cortacamilab.jpg" alt="cortacamilab" class="product-image">
+    <h3>Camila Cabello</h3>
+    <p>R$ 159,99</p>
+    <div class="product-options">
+        <label for="size68">Tamanho:</label>
+        <select id="size68">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color68">Cor:</label>
+        <select id="color68" onchange="changeImage('cortacamilab-image', this.value, 'cortacamilab')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Rosa">Rosa</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Xoxo', 159.99, document.getElementById('size68').value, document.getElementById('color68').value, 'Corta Vento', document.getElementById('cortacamilab-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
+            <!-- Produto Corta Vento Chappell B -->
+<div class="product-item" data-type="cortaVento">
+    <img id="cortachappellb-image" src="imagens/cortachappellb.jpg" alt="cortachappellb" class="product-image">
+    <h3>Chappell</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="sizechb">Tamanho:</label>
+        <select id="sizechb">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="colorchb">Cor:</label>
+        <select id="colorchb" onchange="changeImage('cortachappellb-image', this.value, 'cortachappellb')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Chappell', 159.99, document.getElementById('sizechb').value, document.getElementById('colorchb').value, 'Corta Vento', document.getElementById('cortachappellb-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
             <div class="product-item" data-type="cortaVento">
-                <img id="cortaxoxo-image" src="imagens/cortaxoxo.jpg" alt="cortaxoxo" class="product-image">
-                <h3>Camila Cabello</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size227">Tamanho:</label>
-                    <select id="size227">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Camila Cabello', 159.99, document.getElementById('size227').value, 'Preto', 'Corta Vento', document.getElementById('cortaxoxo-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
-            <div class="product-item" data-type="cortaVento">
-                <img id="cortachappell-image" src="imagens/cortachappell.jpg" alt="cortachappell" class="product-image">
-                <h3>Chappell Roan</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size228">Tamanho:</label>
-                    <select id="size228">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Chappell Roan', 159.99, document.getElementById('size228').value, 'Preto', 'Corta Vento', document.getElementById('cortachappell-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
-            <div class="product-item" data-type="cortaVento">
-                <img id="cortadoja-image" src="imagens/cortadoja.jpg" alt="cortadoja" class="product-image">
-                <h3>Doja Cat</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size229">Tamanho:</label>
-                    <select id="size229">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Doja Cat', 159.99, document.getElementById('size229').value, 'Preto', 'Corta Vento', document.getElementById('cortadoja-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
+    <img id="cortadojab-image" src="imagens/cortadojab.jpg" alt="cortadojab" class="product-image">
+    <h3>Doja Cat</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size229">Tamanho:</label>
+        <select id="size229">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color229">Cor:</label>
+        <select id="color229" onchange="changeImage('cortadojab-image', this.value, 'cortadojab')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Rosa">Rosa</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Doja Cat', 159.99, document.getElementById('size229').value, document.getElementById('color229').value, 'Corta Vento', document.getElementById('cortadojab-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
           
             <div class="product-item" data-type="cortaVento">
-                <img id="cortasabrina-image" src="imagens/cortasabrina.jpg" alt="cortasabrina" class="product-image">
-                <h3>Sabrina Carpenter</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size244">Tamanho:</label>
-                    <select id="size244">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Sabrina Carpenter', 159.99, document.getElementById('size244').value, 'Preto', 'Corta Vento', document.getElementById('cortasabrina-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
+    <img id="cortasabrinab-image" src="imagens/cortasabrinab.jpg" alt="cortasabrinab" class="product-image">
+    <h3>Sabrina Carpenter</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size246">Tamanho:</label>
+        <select id="size246">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="colorsabrinab">Cor:</label>
+        <select id="colorsabrinab" onchange="changeImage('cortasabrinab-image', this.value, 'cortasabrinab')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button>
+        onclick="addToCart('Sabrina Carpenter', 159.99, document.getElementById('size246').value, document.getElementById('colorsabrinab').value, 'Corta Vento', document.getElementById('cortasabrinab-image').src)">
+</button>
+   </div>
             <div class="product-item" data-type="cortaVento">
-                <img id="cortashort-image" src="imagens/cortashort.jpg" alt="cortashort" class="product-image">
-                <h3>Short n' Sweet</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size245">Tamanho:</label>
-                    <select id="size245">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Short n Sweet', 159.99, document.getElementById('size245').value, 'Preto', 'Corta Vento', document.getElementById('cortashort-image').src)">Adicionar
-                    ao Carrinho</button>
-            </div>
+    <img id="cortashortb-image" src="imagens/cortashortb.jpg" alt="cortashortb" class="product-image">
+    <h3>Short n' Sweet</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size247">Tamanho:</label>
+        <select id="size247">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="colorshortb">Cor:</label>
+        <select id="colorshortb" onchange="changeImage('cortashortb-image', this.value, 'cortashortb')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Short n Sweet', 159.99, document.getElementById('size247').value, document.getElementById('colorshortb').value, 'Corta Vento', document.getElementById('cortashortb-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
             
-            <div class="product-item" data-type="cortaVento">
-                <img id="cortataylor-image" src="imagens/cortataylor.jpg" alt="cortataylor" class="product-image">
-                <h3>Taylor Swift</h3>
-                <p>R$159,99</p>
-                <div class="product-options">
-                    <label for="size250">Tamanho:</label>
-                    <select id="size250">
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                    </select>
-                </div>
-                <button
-                    onclick="addToCart('Taylor Swift', 159.99, document.getElementById('size250').value, 'Preto', 'Corta Vento', document.getElementById('cortataylor-image').src)">Adicionar
-                    ao Carrinho</button>
+            <div class="product-item">
+    <img id="cortataylorb-image" src="imagens/cortataylorb.jpg" alt="cortataylorb" class="product-image">
+    <h3>Taylor Swift</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size213">Tamanho:</label>
+        <select id="size213">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color213">Cor:</label>
+        <select id="color213" onchange="changeImage('cortataylorb-image', this.value, 'cortataylorb')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Bege">Bege</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Taylor Swift', 159.99, document.getElementById('size213').value, document.getElementById('color213').value, 'Corta Vento', document.getElementById('cortataylorb-image').src)">
+        Adicionar ao Carrinho
+    </button>
             </div>
             </div>
         </div>
