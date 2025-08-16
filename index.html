@@ -2006,25 +2006,30 @@ select:focus {
                     </button>
                 </div>
 
-                <div class="product-item">
-                    <img id="cortaariana-image" src="imagens/cortaariana.jpg" alt="cortaariana" class="product-image">
-                    <h3>Ariana Grande</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size47">Tamanho:</label>
-                        <select id="size47">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Ariana Grande', 159.99, document.getElementById('size47').value, '', 'Corta Vento', document.getElementById('cortaariana-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+                <div class="product-item" data-type="cortaVento">
+    <img id="cortaariana-image" src="imagens/cortaarianab.jpg" alt="cortaarianab" class="product-image">
+    <h3>Ariana Grande</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size248">Tamanho:</label>
+        <select id="size248">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color248">Cor:</label>
+        <select id="color248" onchange="changeImage('cortaariana-image', this.value, 'cortaariana')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Ariana Grande', 159.99, document.getElementById('size248').value, document.getElementById('color248').value, 'Corta Vento', document.getElementById('cortaariana-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
@@ -2190,6 +2195,30 @@ select:focus {
     </button>
 </div>
 
+<div class="product-item" data-type="cortaVento">
+    <img id="cortabillie-image" src="imagens/cortabillieb.jpg" alt="cortabillieb" class="product-image">
+    <h3>Billie Eilish</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size224">Tamanho:</label>
+        <select id="size224">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color224">Cor:</label>
+        <select id="color224" onchange="changeImage('cortabillie-image', this.value, 'cortabillie')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Billie Eilish', 159.99, document.getElementById('size224').value, document.getElementById('color224').value, 'Corta Vento', document.getElementById('cortabillie-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
@@ -2551,27 +2580,30 @@ select:focus {
     </button>
 </div>
 
-                <div class="product-item">
-                    <img id="cortachappell-image" src="imagens/cortachappell.jpg" alt="cortachappell"
-                        class="product-image">
-                    <h3>Chappell Roan</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size72">Tamanho:</label>
-                        <select id="size72">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Chappell Roan', 159.99, document.getElementById('size72').value, '', 'Corta Vento', document.getElementById('cortachappell-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-
+                <div class="product-item" data-type="cortaVento">
+    <img id="cortachappell-image" src="imagens/cortachappellb.jpg" alt="cortachappellb" class="product-image">
+    <h3>Chappell</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="sizechb">Tamanho:</label>
+        <select id="sizechb">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="colorchb">Cor:</label>
+        <select id="colorchb" onchange="changeImage('cortachappell-image', this.value, 'cortachappell')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Chappell', 159.99, document.getElementById('sizechb').value, document.getElementById('colorchb').value, 'Corta Vento', document.getElementById('cortachappell-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
@@ -3021,26 +3053,30 @@ select:focus {
                         Adicionar ao Carrinho
                     </button>
                 </div>
-                <div class="product-item">
-                    <img id="cortascarlet-image" src="imagens/cortascarlet.jpg" alt="cortascarlet"
-                        class="product-image">
-                    <h3>Scarlet</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size89">Tamanho:</label>
-                        <select id="size89">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Scarlet', 159.99, document.getElementById('size89').value, '', 'Corta Vento', document.getElementById('cortascarlet-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+                <div class="product-item" data-type="cortaVento">
+    <img id="cortadoja-image" src="imagens/cortadojab.jpg" alt="cortadojab" class="product-image">
+    <h3>Doja Cat</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size229">Tamanho:</label>
+        <select id="size229">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color229">Cor:</label>
+        <select id="color229" onchange="changeImage('cortadoja-image', this.value, 'cortadoja')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Doja Cat', 159.99, document.getElementById('size229').value, document.getElementById('color229').value, 'Corta Vento', document.getElementById('cortadoja-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
@@ -3820,6 +3856,31 @@ select:focus {
                 Adicionar ao Carrinho
             </button>
         </div>
+
+        <div class="product-item" data-type="cortaVento">
+    <img id="cortakendrick-image" src="imagens/cortakendrickb.jpg" alt="cortakendrickb" class="product-image">
+    <h3>Kendrick Lamar</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size250">Tamanho:</label>
+        <select id="size250">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color250">Cor:</label>
+        <select id="color250" onchange="changeImage('cortakendrick-image', this.value, 'cortakendrick')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Kendrick Lamar', 159.99, document.getElementById('size250').value, document.getElementById('color250').value, 'Corta Vento', document.getElementById('cortakendrick-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
     </div>
 </div>
 
@@ -5079,45 +5140,55 @@ select:focus {
                     </button>
                 </div>
 
-                <div class="product-item">
-                    <img id="cortasabrina-image" src="imagens/cortasabrina.jpg" alt="cortasabrina"
-                        class="product-image">
-                    <h3>Sabrina Carpenter</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size181">Tamanho:</label>
-                        <select id="size181">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Sabrina Carpenter', 159.99, document.getElementById('size181').value, '', 'Corta Vento', document.getElementById('cortasabrina-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-                <div class="product-item">
-                    <img id="cortashort-image" src="imagens/cortashort.jpg" alt="cortashort" class="product-image">
-                    <h3>Short</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size182">Tamanho:</label>
-                        <select id="size182">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Short', 159.99, document.getElementById('size182').value, '', 'Corta Vento', document.getElementById('cortashort-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+                <div class="product-item" data-type="cortaVento">
+    <img id="cortasabrina-image" src="imagens/cortasabrinab.jpg" alt="cortasabrinab" class="product-image">
+    <h3>Sabrina Carpenter</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size246">Tamanho:</label>
+        <select id="size246">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color246">Cor:</label>
+        <select id="color246" onchange="changeImage('cortasabrina-image', this.value, 'cortasabrina')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+   </div>
+    <button
+        onclick="addToCart('Sabrina Carpenter', 159.99, document.getElementById('size246').value, document.getElementById('color246').value, 'Corta Vento', document.getElementById('cortasabrina-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
+<div class="product-item" data-type="cortaVento">
+    <img id="cortashort-image" src="imagens/cortashortb.jpg" alt="cortashortb" class="product-image">
+    <h3>Short n' Sweet</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size247">Tamanho:</label>
+        <select id="size247">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color247">Cor:</label>
+        <select id="color247" onchange="changeImage('cortashort-image', this.value, 'cortashort')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Short n Sweet', 159.99, document.getElementById('size247').value, document.getElementById('color247').value, 'Corta Vento', document.getElementById('cortashort-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
@@ -5780,25 +5851,30 @@ select:focus {
                     </button>
                 </div>
 
-                <div class="product-item">
-                    <img id="cortataylor-image" src="imagens/cortataylor.jpg" alt="cortataylor" class="product-image">
-                    <h3>Taylor Swift</h3>
-                    <p>R$159,99</p>
-                    <div class="product-options">
-                        <label for="size213">Tamanho:</label>
-                        <select id="size213">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                    </div>
-                    <button
-                        onclick="addToCart('Taylor Swift', 159.99, document.getElementById('size213').value, '', 'Corta Vento', document.getElementById('cortataylor-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+                <div class="product-item" data-type="cortaVento">
+    <img id="cortataylor-image" src="imagens/cortataylorb.jpg" alt="cortataylorb" class="product-image">
+    <h3>Taylor Swift</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size213">Tamanho:</label>
+        <select id="size213">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color213">Cor:</label>
+        <select id="color213" onchange="changeImage('cortataylor-image', this.value, 'cortataylor')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Taylor Swift', 159.99, document.getElementById('size213').value, document.getElementById('color213').value, 'Corta Vento', document.getElementById('cortataylor-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
@@ -6064,6 +6140,31 @@ select:focus {
                         Adicionar ao Carrinho
                     </button>
                 </div>
+
+<div class="product-item" data-type="cortaVento">
+    <img id="cortatyler-image" src="imagens/cortatylerb.jpg" alt="cortatylerb" class="product-image">
+    <h3>Tyler, The Creator</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size249">Tamanho:</label>
+        <select id="size249">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color249">Cor:</label>
+        <select id="color249" onchange="changeImage('cortatyler-image', this.value, 'cortatyler')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Tyler, The Creator', 159.99, document.getElementById('size249').value, document.getElementById('color249').value, 'Corta Vento', document.getElementById('cortatyler-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
             </div>
         </div>
 
