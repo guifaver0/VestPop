@@ -2686,6 +2686,82 @@ select:focus {
         <div class="collection-products" id="Charli XCX" style="display: none;">
             <div class="product-list">
 
+                <!-- Produto Charli 5 -->
+<div class="product-item">
+    <img id="charli5-image" src="imagens/charli5b.jpg" alt="charli5b" class="product-image">
+    <h3>BRAT Vibes</h3>
+    <p>R$ 79,99 </p>
+    <div class="product-options">
+        <label for="size77">Tamanho:</label>
+        <select id="size77">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color5">Cor:</label>
+        <select id="color5" onchange="changeImage('charli5-image', this.value, 'charli5')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('BRAT Vibes', 79.99, document.getElementById('size77').value, document.getElementById('color5').value, 'Camiseta', document.getElementById('charli5-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
+<!-- Produto Charli 6 -->
+<div class="product-item">
+    <img id="charli6-image" src="imagens/charli6b.jpg" alt="charli6b" class="product-image">
+    <h3>BRAT Energy</h3>
+    <p>R$ 79,99 </p>
+    <div class="product-options">
+        <label for="size78">Tamanho:</label>
+        <select id="size78">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color6">Cor:</label>
+        <select id="color6" onchange="changeImage('charli6-image', this.value, 'charli6')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('BRAT Energy', 79.99, document.getElementById('size78').value, document.getElementById('color6').value, 'Camiseta', document.getElementById('charli6-image').src)">
+        Adicionar ao Carr
+
+        <!-- Produto Charli 7 -->
+<div class="product-item">
+    <img id="charli7-image" src="imagens/charli7b.jpg" alt="charli7b" class="product-image">
+    <h3>BRAT Attitude</h3>
+    <p>R$ 79,99 </p>
+    <div class="product-options">
+        <label for="size79">Tamanho:</label>
+        <select id="size79">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color7">Cor:</label>
+        <select id="color7" onchange="changeImage('charli7-image', this.value, 'charli7')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('BRAT Attitude', 79.99, document.getElementById('size79').value, document.getElementById('color7').value, 'Camiseta', document.getElementById('charli7-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
                 <!-- Produto Charli 4 -->
 <div class="product-item">
     <img id="charli4-image" src="imagens/charli4b.jpg" alt="charli4b" class="product-image">
@@ -2711,31 +2787,57 @@ select:focus {
         Adicionar ao Carrinho
     </button>
 </div>
-                <!-- Produto Charli 1 -->
-                <div class="product-item">
-                    <img id="charli1-image" src="imagens/charli1b.jpg" alt="charli1b" class="product-image">
-                    <h3>BRAT</h3>
-                    <p>R$ 79,99 </p>
-                    <div class="product-options">
-                        <label for="size73">Tamanho:</label>
-                        <select id="size73">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                        </select>
-                        <br>
-                        <label for="color1">Cor:</label>
-                        <select id="color1" onchange="changeImage('charli1-image', this.value, 'charli1')">
-                            <option value="Preto">Preto</option>
-                            <option value="Branco">Branco</option>
-                        </select>
-                    </div>
-                    <button
-                        onclick="addToCart('BRAT', 79.99, document.getElementById('size73').value, document.getElementById('color1').value, 'Camiseta', document.getElementById('charli1-image').src)">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+               <!-- Produto Corta Vento Charli 1 -->
+<div class="product-item" data-type="cortaVento">
+    <img id="cortacharli1-image" src="imagens/cortacharli1b.jpg" alt="cortacharli1b" class="product-image">
+    <h3>Charli Corta Vento 1</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size249">Tamanho:</label>
+        <select id="size249">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color249">Cor:</label>
+        <select id="color249" onchange="changeImage('cortacharli1-image', this.value, 'cortacharli1')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Charli Corta Vento 1', 159.99, document.getElementById('size249').value, document.getElementById('color249').value, 'Corta Vento', document.getElementById('cortacharli1-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+<!-- Produto Corta Vento Charli 2 -->
+<div class="product-item" data-type="cortaVento">
+    <img id="cortacharli2-image" src="imagens/cortacharli2b.jpg" alt="cortacharli2b" class="product-image">
+    <h3>Charli Corta Vento 2</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size250">Tamanho:</label>
+        <select id="size250">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color250">Cor:</label>
+        <select id="color250" onchange="changeImage('cortacharli2-image', this.value, 'cortacharli2')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Charli Corta Vento 2', 159.99, document.getElementById('size250').value, document.getElementById('color250').value, 'Corta Vento', document.getElementById('cortacharli2-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
             </div>
         </div>
 
