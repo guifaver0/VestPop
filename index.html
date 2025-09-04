@@ -2810,7 +2810,7 @@ select:focus {
         </select>
     </div>
     <button
-        onclick="addToCart('Charli Corta Vento 1', 159.99, document.getElementById('size249').value, document.getElementById('color249').value, 'Corta Vento', document.getElementById('cortacharli1-image').src)">
+        onclick="addToCart('365 Moletom', 159.99, document.getElementById('size249').value, document.getElementById('color249').value, 'Corta Vento', document.getElementById('cortacharli1-image').src)">
         Adicionar ao Carrinho
     </button>
 </div>
@@ -2835,7 +2835,7 @@ select:focus {
         </select>
     </div>
     <button
-        onclick="addToCart('Charli Corta Vento 2', 159.99, document.getElementById('size250').value, document.getElementById('color250').value, 'Corta Vento', document.getElementById('cortacharli2-image').src)">
+        onclick="addToCart('Charli XCX Moletom', 159.99, document.getElementById('size250').value, document.getElementById('color250').value, 'Corta Vento', document.getElementById('cortacharli2-image').src)">
         Adicionar ao Carrinho
     </button>
 </div>
@@ -6634,6 +6634,57 @@ select:focus {
     </div>
     <button
         onclick="addToCart('Chappell', 159.99, document.getElementById('sizechb').value, document.getElementById('colorchb').value, 'Corta Vento', document.getElementById('cortachappell-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+
+<!-- Produto Corta Vento Charli 1 -->
+<div class="product-item" data-type="cortaVento">
+    <img id="cortacharli1-image" src="imagens/cortacharli1b.jpg" alt="cortacharli1b" class="product-image">
+    <h3>365</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size249">Tamanho:</label>
+        <select id="size249">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color249">Cor:</label>
+        <select id="color249" onchange="changeImage('cortacharli1-image', this.value, 'cortacharli1')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Charli', 159.99, document.getElementById('size249').value, document.getElementById('color249').value, 'Corta Vento', document.getElementById('cortacharli1-image').src)">
+        Adicionar ao Carrinho
+    </button>
+</div>
+<!-- Produto Corta Vento Charli 2 -->
+<div class="product-item" data-type="cortaVento">
+    <img id="cortacharli2-image" src="imagens/cortacharli2b.jpg" alt="cortacharli2b" class="product-image">
+    <h3>Charli XCX</h3>
+    <p>R$159,99</p>
+    <div class="product-options">
+        <label for="size250">Tamanho:</label>
+        <select id="size250">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select>
+        <br>
+        <label for="color250">Cor:</label>
+        <select id="color250" onchange="changeImage('cortacharli2-image', this.value, 'cortacharli2')">
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+        </select>
+    </div>
+    <button
+        onclick="addToCart('Charli XCX', 159.99, document.getElementById('size250').value, document.getElementById('color250').value, 'Corta Vento', document.getElementById('cortacharli2-image').src)">
         Adicionar ao Carrinho
     </button>
 </div>
